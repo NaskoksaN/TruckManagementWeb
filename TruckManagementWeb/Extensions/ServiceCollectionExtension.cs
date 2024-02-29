@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using TruckManagementWeb.Core.Contracts;
+using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Data;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -8,6 +10,8 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection AddApllicationServices(this IServiceCollection services)
         {
+            services.AddScoped<ITrcukService, TruckService>();
+
             return services;
         }
 

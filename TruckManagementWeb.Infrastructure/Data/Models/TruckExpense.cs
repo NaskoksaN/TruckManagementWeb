@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -57,5 +58,6 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         
         [ForeignKey(nameof(TruckId))]
         public Truck Truck { get; set; } = null!;
+
     }
 }

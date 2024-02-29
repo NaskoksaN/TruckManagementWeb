@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -57,7 +58,15 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Required]
         [Comment("End date of the trip.")]
         public DateTime EndDate { get; set; }
-        
+
+
+        [ForeignKey(nameof(CompanyId))]
+        public Company Company { get; set; } = null!;
+
+
+        [ForeignKey(nameof(TruckId))]
+        public Truck Truck { get; set; } = null!;
+
         public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 

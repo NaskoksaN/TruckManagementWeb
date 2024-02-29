@@ -7,6 +7,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddApllicationServices();
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -33,4 +35,4 @@ app.MapDefaultControllerRoute();
 
 app.MapRazorPages();
 
-app.Run();
+await app.RunAsync();

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -70,8 +71,10 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [ForeignKey(nameof(TripId))]
         public Trip Trip { get; set; } = null!;
 
+
         [ForeignKey(nameof(CompanyId))]
         public Company Company { get; set; } = null!;
+
     }
 
 }
