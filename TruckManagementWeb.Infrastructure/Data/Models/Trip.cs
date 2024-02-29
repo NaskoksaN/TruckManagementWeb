@@ -1,10 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+
+using static TruckManagementWeb.Infrastructure.Constants.DataConstants;
 
 namespace TruckManagementWeb.Infrastructure.Data.Models
 {
@@ -43,6 +41,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         /// </summary>
         [Required]
         [Comment("Price of the trip.")]
+        [Column(TypeName = DecimalColumnType)]
         public decimal TripPrice { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         /// </summary>
         [Required]
         [Comment("Price of the order.")]
+        [Column(TypeName = DecimalColumnType)]
         public decimal Price { get; set; }
 
         /// <summary>

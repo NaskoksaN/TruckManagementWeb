@@ -34,5 +34,7 @@
 
         public const int ExpenseNotesMinLength = 5;
         public const int ExpenseNotesMaxLength = 100;
+
+        public const string DecimalColumnType = "decimal(18,2)";
     }
 }

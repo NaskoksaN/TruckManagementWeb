@@ -36,6 +36,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         /// </summary>
         [Required]
         [Comment("Amount of expense")]
+        [Column(TypeName = DecimalColumnType)]
         public decimal Amount { get; set; }
 
         /// <summary>
