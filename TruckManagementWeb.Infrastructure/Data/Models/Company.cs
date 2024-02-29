@@ -52,5 +52,12 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Comment("Address of the company.")]
         [MaxLength(CompanyAddressMaxLength)]
         public string CompanyAddress { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Indicating whether the company is active or removed 
+        /// </summary>
+        [Required]
+        [Comment("Company activity")]
+        public bool IsActive { get; set; } = true;
     }
 }

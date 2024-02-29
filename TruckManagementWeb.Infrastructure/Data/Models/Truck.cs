@@ -5,7 +5,7 @@ using static TruckManagementWeb.Infrastructure.Constants.DataConstants;
 
 namespace TruckManagementWeb.Infrastructure.Data.Models
 {
-    [Comment("Truck tabel")]
+    [Comment("Truck table")]
     public class Truck
     {
         /// <summary>
