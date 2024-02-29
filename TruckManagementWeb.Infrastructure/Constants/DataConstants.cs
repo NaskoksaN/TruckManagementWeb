@@ -25,5 +25,14 @@
 
         public const int CompanyAddressMinLength = 5;
         public const int CompanyAddressMaxLength = 60;
+
+        public const int LoadingPostCodeMinLength = 5;
+        public const int LoadingPostCodeMaxLength = 10;
+
+        public const int DeliveryPostCodeMinLength = 5;
+        public const int DeliveryPostCodeMaxLength = 10;
+
+        public const int ExpenseNotesMinLength = 5;
+        public const int ExpenseNotesMaxLength = 100;
     }
 }

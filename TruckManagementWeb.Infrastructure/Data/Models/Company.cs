@@ -8,7 +8,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
     public class Company
     {
         /// <summary>
-        /// Gets or sets the unique identifier of the company.
+        /// Unique identifier of the company.
         /// </summary>
         [Key]
         public int Id { get; set; }
@@ -59,5 +59,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Required]
         [Comment("Company activity")]
         public bool IsActive { get; set; } = true;
+
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

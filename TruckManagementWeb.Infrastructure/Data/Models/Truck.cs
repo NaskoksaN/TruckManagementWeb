@@ -51,5 +51,9 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Required]
         [Comment("Truck activity")]
         public bool IsActive { get; set; } = true;
+
+        public ICollection<TruckExpense> Expenses { get; set; } = new List<TruckExpense>();
+        public ICollection<Trip> Trips { get; set; } = new List<Trip>();
+
     }
 }
