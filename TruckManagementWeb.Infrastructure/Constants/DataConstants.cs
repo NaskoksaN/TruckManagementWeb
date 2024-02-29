@@ -10,5 +10,20 @@
 
         public const int TruckModelMinLength = 2;
         public const int TruckModelMaxLength = 30;
+
+        public const int CompanyNameMinLength = 5;
+        public const int CompanyNameMaxLength = 50;
+
+        public const int CompanyVatMinLength = 7;
+        public const int CompanyVatMaxLength = 13;
+
+        public const int CompanyCountryMinLength = 2;
+        public const int CompanyCountryMaxLength = 30;
+
+        public const int CompanyTownMinLength = 2;
+        public const int CompanyTownMaxLength = 50;
+
+        public const int CompanyAddressMinLength = 5;
+        public const int CompanyAddressMaxLength = 60;
     }
 }
