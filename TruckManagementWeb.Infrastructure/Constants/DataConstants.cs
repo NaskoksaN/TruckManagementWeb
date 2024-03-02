@@ -36,5 +36,8 @@
         public const int ExpenseNotesMaxLength = 100;
 
         public const string DecimalColumnType = "decimal(18,2)";
+
+        public const int TruckProductionYearMinYear = 2000;
+        public const int TruckProductionYearMaxYear = 2050;
     }
 }
