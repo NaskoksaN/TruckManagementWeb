@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TruckManagementWeb.Infrastructure.Enum
+namespace TruckManagementWeb.Infrastructure.Data.Enum
 {
     public enum ExpenseType
     {

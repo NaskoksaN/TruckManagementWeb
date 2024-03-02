@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Data;
+using TruckManagementWeb.Infrastructure.Data.Common;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -21,6 +22,9 @@ namespace Microsoft.Extensions.DependencyInjection
             var connectionString = config.GetConnectionString("DefaultConnection");
             services.AddDbContext<TruckDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
+            services.AddScoped<IRepository, Repository>();
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             return services;

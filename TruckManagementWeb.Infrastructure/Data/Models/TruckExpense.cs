@@ -2,8 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
-using TruckManagementWeb.Infrastructure.Enum;
+using TruckManagementWeb.Infrastructure.Data.Enum;
 using static TruckManagementWeb.Infrastructure.Constants.DataConstants;
 
 
