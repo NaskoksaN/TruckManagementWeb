@@ -11,7 +11,7 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection AddApllicationServices(this IServiceCollection services)
         {
-            services.AddScoped<ITrcukService, TruckService>();
+            services.AddScoped<ITruckService, TruckService>();
 
             return services;
         }
