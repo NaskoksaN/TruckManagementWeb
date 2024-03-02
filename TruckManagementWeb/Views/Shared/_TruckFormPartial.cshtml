@@ -1,0 +1,31 @@
+﻿@model TruckFormModel
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-4 col-lg-4 offset-xl-3 col-xl-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="TruckPlate"></label>
+                <input asp-for="TruckPlate" class="form-control" placeholder="Truck plate ..">
+                <span asp-validation-for="TruckPlate" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckBrand"></label>
+                <input asp-for="TruckBrand" class="form-control" placeholder="Truck brand ..">
+                <span asp-validation-for="TruckBrand" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckModel"></label>
+                <input asp-for="TruckModel" class="form-control" placeholder="Truck model ..">
+                <span asp-validation-for="TruckModel" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductionYear"></label>
+                <input asp-for="ProductionYear" class="form-control" />
+                <span asp-validation-for="ProductionYear" class="small text-danger"></span>
+            </div>
+            <div class="text-center">
+                <input class="btn btn-primary mt-3" type="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>

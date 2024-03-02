@@ -1,0 +1,35 @@
+﻿@model TruckViewModel
+@{
+    ViewBag.Title = "Truck details for: " + Model.TruckPlate;
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if(Model == null)
+{
+    <h3>Truck with given plate was not foud.</h3>
+}
+else if (Model.IsActive == false)
+{
+    <h3>This truck was removed from service</h3>
+}
+else 
+{
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div>
+                    <p><span>Year of production: </span><strong>@Model.ProductionYear</strong></p>
+                    <p><span>Truck brand: </span><strong>@Model.TruckBrand</strong></p>
+                    <p><span>Truck model: </span><strong>@Model.TruckModel</strong></p>
+                    <div class="text-center">
+                        <a asp-controller="Truck" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+                        <a asp-controller="Truck" asp-action="DeleteTruck" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+                        <a asp-controller="Truck" asp-action="Index" class="btn btn-primary">Back to list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
