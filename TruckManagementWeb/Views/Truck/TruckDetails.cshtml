@@ -12,7 +12,7 @@
 }
 else if (Model.IsActive == false)
 {
-    <h3>This truck was removed from service</h3>
+    <h3>This truck was removed from service on date: @Model.RemovedDate</h3>
 }
 else 
 {
@@ -23,10 +23,11 @@ else
                     <p><span>Year of production: </span><strong>@Model.ProductionYear</strong></p>
                     <p><span>Truck brand: </span><strong>@Model.TruckBrand</strong></p>
                     <p><span>Truck model: </span><strong>@Model.TruckModel</strong></p>
+                    <p><span>Added on service: </span><strong>@Model.AddedDate</strong></p>
                     <div class="text-center">
-                        <a asp-controller="Truck" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+                        <a asp-controller="Truck" asp-action="EditTruck" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
                         <a asp-controller="Truck" asp-action="DeleteTruck" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
-                        <a asp-controller="Truck" asp-action="Index" class="btn btn-primary">Back to list</a>
+                        <a asp-controller="Truck" asp-action="TruckIndex" class="btn btn-primary">Back to truck list</a>
                     </div>
                 </div>
             </div>
