@@ -12,5 +12,6 @@ namespace TruckManagementWeb.Core.Constants
         public const string LengthMessage = "The {0} must be between {2} and {1} characters long.";
         public const string ProductionRangeMessage = "The{0} must be between {1} year nad {2} year.";
         public const string PlateMessage = "Truck plate must include uppercase letters and digits.";
+        public const string MileageMessage = "Must be positive number from {1} km to {2} km";
     }
 }

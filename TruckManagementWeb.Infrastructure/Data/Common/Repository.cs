@@ -25,7 +25,10 @@ namespace TruckManagementWeb.Infrastructure.Data.Common
             return DbSet<T>()
                 .AsNoTracking();
         }
-
+        public async Task<T> GetByIdAsync<T>(object id) where T : class
+        {
+            return await DbSet<T>().FindAsync(id);
+        }
         public async Task AddAsync<T>(T entity) where T : class
         {
             await DbSet<T>().AddAsync(entity);
