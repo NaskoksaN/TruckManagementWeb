@@ -32,10 +32,22 @@ namespace TruckManagementWeb.Core.Models.Truck
         public string TruckModel { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredMessage)]
-        [Display(Name = "year of production")]
+        [Display(Name = "Year of production")]
         [Range(TruckProductionYearMinYear, 
             TruckProductionYearMaxYear,
             ErrorMessage = ProductionRangeMessage)]
-        public int ProductionYear { get; set; } = DateTime.Now.Year;
+        public int ProductionYear { get; set; } = DateTime.UtcNow.Year;
+
+        [Required(ErrorMessage = RequiredMessage)]
+        [Display(Name = "Truck mileage in km.")]
+        [Range(TruckInitialMinMileage,
+            TruckInitialMaxMileage
+            , ErrorMessage = MileageMessage)]
+        public int TruckMilleage { get; set; } = 1;
+
+        public static implicit operator TruckFormModel?(TruckViewModel? v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
