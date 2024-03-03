@@ -1,0 +1,45 @@
+﻿@model CompanyViewModel
+@{
+    ViewBag.Title = "Company details for: " + Model.Name;
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@if (Model == null)
+{
+    <h3>Company details not found.</h3>
+}
+else if(Model.Active==false)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3>This truck was added for service on date: @Model.AddedOnDate</h3>
+                <h3>This truck was removed from service on date: @Model.RemovedOnDate</h3>
+                <div class="text-center">
+                    <a asp-controller="Truck" asp-action="FindCompany" class="btn btn-primary">Find another company</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div>
+                    <p><span>Company Name: </span><strong>@Model.Name</strong></p>
+                    <p><span>Company VAT: </span><strong>@Model.Vat</strong></p>
+                    <p><span>Company Country: </span><strong>@Model.Country</strong></p>
+                </div>
+                <div class="text-center">
+                    <a asp-controller="Company" asp-action="EditCompany" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+                    <a asp-controller="Company" asp-action="DeleteCompany" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+                    <a asp-controller="Company" asp-action="CompanyIndex" class="btn btn-primary">Back to company list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

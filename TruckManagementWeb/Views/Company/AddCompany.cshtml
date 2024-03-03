@@ -1,0 +1,13 @@
+﻿@model CompanyFormModel
+@{
+    ViewBag.Title = "Enter company details";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<partial name="_TruckFormPartial" model="@Model" />
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
