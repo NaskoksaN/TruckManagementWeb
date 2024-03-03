@@ -21,6 +21,7 @@ namespace TruckManagementWeb.Core.Models.Company
         [StringLength(CompanyVatMaxLength,
             MinimumLength = CompanyVatMinLength,
             ErrorMessage = LengthMessage)]
+        [RegularExpression(VatRegeValidation, ErrorMessage = VatRegexMessage)]
         public string CompanyVat { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredMessage)]
