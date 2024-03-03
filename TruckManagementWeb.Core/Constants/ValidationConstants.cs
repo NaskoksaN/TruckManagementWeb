@@ -10,5 +10,6 @@ namespace TruckManagementWeb.Core.Constants
     {
         public const string PlateRegexValidation = "^[A-Z\\d]+$";
         public const string UsedDateFormat = "dd-MM-yyyy";
+        public const string VatRegeValidation = "^[A-Z]{2}\\d+[A-Z]*$";
     }
 }
