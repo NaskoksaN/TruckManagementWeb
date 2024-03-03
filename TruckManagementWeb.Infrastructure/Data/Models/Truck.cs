@@ -52,6 +52,26 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Comment("Truck activity")]
         public bool IsActive { get; set; } = true;
 
+        /// <summary>
+        /// Represents the date when the truck was added to the database.
+        /// </summary>
+        [Required]
+        [Comment("Date of add truck to Database")]
+        public DateTime AddedDate { get; set; } = DateTime.UtcNow.Date;
+
+        /// <summary>
+        /// Represents the date when the truck was removed from the database.
+        /// </summary>
+        [Comment("Date when truck is removed")]
+        public DateTime? RemovedDate {  get; set; }
+
+        /// <summary>
+        /// Represents the initial mileage of the truck.
+        /// </summary>
+        [Required]
+        [Comment("Truck initial milleage")]
+        public int TruckInitialKm {  get; set; }
+
         public ICollection<TruckExpense> Expenses { get; set; } = new List<TruckExpense>();
         public ICollection<Trip> Trips { get; set; } = new List<Trip>();
 

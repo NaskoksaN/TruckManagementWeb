@@ -39,5 +39,8 @@
 
         public const int TruckProductionYearMinYear = 2000;
         public const int TruckProductionYearMaxYear = 2050;
+
+        public const int TruckInitialMinMileage = 1;
+        public const int TruckInitialMaxMileage = 2_500_000;
     }
 }
