@@ -59,6 +59,19 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Comment("Company activity")]
         public bool IsActive { get; set; } = true;
 
+        /// <summary>
+        /// Represents the date when the company was added to the database.
+        /// </summary>
+        [Required]
+        [Comment("Date of add Company")]
+        public DateTime AddedDate { get; set; } = DateTime.UtcNow.Date;
+
+        /// <summary>
+        /// Represents the date when the company was removed from the database.
+        /// </summary>
+        [Comment("Date when company is removed")]
+        public DateTime? RemovedDate { get; set; }
+
         public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }
