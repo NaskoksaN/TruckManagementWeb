@@ -2,6 +2,10 @@
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Truck;
 
+using static TruckManagementWeb.Constants.WebConstants;
+
+using X.PagedList;
+
 namespace TruckManagementWeb.Controllers
 {
     public class TruckController : Controller
@@ -44,19 +48,99 @@ namespace TruckManagementWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> TruckDetails(int id)
         {
-            TruckViewModel? viewModel = await service.GetTruckByIdAsync(id);
+            TruckViewModel? viewModel = await service.FindTruckByIdAsyncc(id);
             return View(viewModel);
         }
         [HttpGet]
         public async Task<IActionResult> DeleteTruck(int id)
         {
-            TruckViewModel model = await service.GetTruckByIdAsync(id);
+            TruckViewModel? model = await service.FindTruckByIdAsyncc(id);
+            if (model == null)
+            {
+                this.ModelState.AddModelError(nameof(model.Id),
+                    "Truck with this plate not exist");
+            }
             return View(model);
         }
         [HttpPost]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            TruckViewModel model = await service.RemoveTruckAsync(id);
+            if(model== null)
+            {
+                this.ModelState.AddModelError(nameof(model.Id),
+                    "Truck with this plate not exist");
+            }
 
+            return RedirectToAction(nameof(TruckController.TruckDetails), new { id = model?.Id });
         }
+        [HttpGet]
+        public IActionResult FindTruck()
+        {
+            FindTruckFormModel formModel = new();
+
+            return View(formModel);
+        }
+        [HttpPost]
+        public async Task<IActionResult> FindTruck(FindTruckFormModel form)
+        {
+            TruckViewModel? model = await service.FindTruckByPlateAsync(form.TruckPlate);
+            if (model != null)
+            {
+                return RedirectToAction(nameof(TruckController.TruckDetails), 
+                                    new { id = model.Id});
+            }
+            else
+            {
+                this.ModelState.AddModelError(nameof(form.TruckPlate),
+                    "Truck with this plate was not found");
+            }
+
+            return View(form);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> TruckIndex(int? page)
+        {
+            int pageNumber = page ?? TruckPageStartIndex;
+            int pageSize = TruckPageEndIndex; // Change this to your desired page size
+
+            IEnumerable<TruckIndexViewModel> trucks = await service.GetAlltruckReadOnlyAsync();
+
+            IPagedList<TruckIndexViewModel> pagedList = trucks.ToPagedList(pageNumber, pageSize);
+
+            return View(pagedList);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditTruck(int id)
+        {
+            TruckEditFormModel form = await service.GetTruckForEditById(id);
+
+            return View(form);
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditTruck(int id, TruckEditFormModel form)
+        {
+            if(id != form.Id)
+            {
+                return BadRequest();
+            }
+            if (await service.IsTruckExistAsync(form.TruckPlate))
+            {
+                this.ModelState.AddModelError(nameof(form.TruckPlate),
+                    "Truck with this plate already added");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(form);
+            }
+
+            await service.EditAsync(id, form);
+
+            return RedirectToAction(nameof(TruckController.TruckDetails), new { id = form.Id });
+        }
+
     }
 }
