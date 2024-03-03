@@ -20,4 +20,8 @@
     <ProjectReference Include="..\TruckManagementWeb.Core\TruckManagementWeb.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Company\" />
+  </ItemGroup>
+
 </Project>
