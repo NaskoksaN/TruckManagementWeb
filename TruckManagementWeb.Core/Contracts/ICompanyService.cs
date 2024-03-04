@@ -13,6 +13,7 @@ namespace TruckManagementWeb.Core.Contracts
         Task EditAsync(int id, CompanyEditFormModel form);
         Task<CompanyViewModel?> FindCompanyByIdAsync(int id);
         Task<CompanyViewModel> FindCompanyByVatAsync(string companyVat);
+        Task<IEnumerable<CompanyIndexViewModel>> GetAllCompanyReadOnlyOrderByNameAsync();
         Task<CompanyEditFormModel> GetCompanyForEditByIdAsync(int id);
         Task<bool> IsCompanyExistByVat(string companyVat);
         Task<CompanyViewModel> RemoveCompanyByIdAsync(int id);

@@ -81,6 +81,18 @@ namespace TruckManagementWeb.Core.Service
                 .FirstOrDefaultAsync();
         }
 
+        public async Task<IEnumerable<CompanyIndexViewModel>> GetAllCompanyReadOnlyOrderByNameAsync()
+        => await repository.AllReadOnlyAsync<Company>()
+            .Select(c => new CompanyIndexViewModel()
+            {
+                Id = c.Id,
+                Name = c.CompanyName,
+                Country = c.CompanyCountry,
+                Vat = c.CompanyVat,
+            })
+            .OrderBy(c => c.Name)
+            .ToListAsync();
+
         public async Task<CompanyEditFormModel?> GetCompanyForEditByIdAsync(int id)
         {
             CompanyEditFormModel? form = await repository.AllAsync<Company>()

@@ -103,7 +103,7 @@ namespace TruckManagementWeb.Controllers
         public async Task<IActionResult> TruckIndex(int? page)
         {
             int pageNumber = page ?? TruckPageStartIndex;
-            int pageSize = TruckPageEndIndex; // Change this to your desired page size
+            int pageSize = TruckPageEndIndex; 
 
             IEnumerable<TruckIndexViewModel> trucks = await service.GetAlltruckReadOnlyAsync();
 

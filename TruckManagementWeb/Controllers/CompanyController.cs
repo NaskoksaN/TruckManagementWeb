@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Company;
-using TruckManagementWeb.Core.Models.Truck;
+using X.PagedList;
+
+using static TruckManagementWeb.Constants.WebConstants;
 
 namespace TruckManagementWeb.Controllers
 {
@@ -127,6 +129,20 @@ namespace TruckManagementWeb.Controllers
             }
 
             return View(form);
+        }
+        [HttpGet]
+        public async Task<IActionResult> CompanyIndex (int? page)
+        {
+
+            int pageNumber = page ?? CompanyPageStartIndex;
+            int pageSize = CompanyPageEndIndex; 
+
+            IEnumerable<CompanyIndexViewModel> trucks = await service
+                                .GetAllCompanyReadOnlyOrderByNameAsync();
+
+            IPagedList<CompanyIndexViewModel> pagedList = trucks.ToPagedList(pageNumber, pageSize);
+
+            return View(pagedList);
         }
 
     }
