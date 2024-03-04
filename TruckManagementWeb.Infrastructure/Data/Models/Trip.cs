@@ -17,13 +17,6 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         public int Id { get; set; }
 
         /// <summary>
-        /// Identifier of the company associated with the trip.
-        /// </summary>
-        [Required]
-        [Comment("CompanyId associated with the trip.")]
-        public int CompanyId { get; set; }
-
-        /// <summary>
         /// Identifier of the truck associated with the trip.
         /// </summary>
         [Required]
@@ -58,11 +51,6 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Required]
         [Comment("End date of the trip.")]
         public DateTime EndDate { get; set; }
-
-
-        [ForeignKey(nameof(CompanyId))]
-        public Company Company { get; set; } = null!;
-
 
         [ForeignKey(nameof(TruckId))]
         public Truck Truck { get; set; } = null!;
