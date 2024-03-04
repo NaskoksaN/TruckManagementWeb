@@ -1,0 +1,19 @@
+﻿@model HashSet<CompanyCountryViewModel>
+
+@{
+    ViewBag.Title = "Select Country";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="form-group">
+    <label for="countrySelect">Select Country:</label>
+    <select class="form-select" id="countrySelect" onchange="location.href = this.value;">
+        <option selected disabled>Choose...</option>
+        @foreach (var country in Model)
+        {
+            <option value="@Url.Action("CompanyByCountry", "Company", new { selectedCountry = country.Country })">@country.Country</option>
+        }
+    </select>
+</div>

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Company;
+using TruckManagementWeb.Infrastructure.Data.Models;
 using X.PagedList;
 
 using static TruckManagementWeb.Constants.WebConstants;
@@ -137,12 +139,32 @@ namespace TruckManagementWeb.Controllers
             int pageNumber = page ?? CompanyPageStartIndex;
             int pageSize = CompanyPageEndIndex; 
 
-            IEnumerable<CompanyIndexViewModel> trucks = await service
+            IEnumerable<CompanyIndexViewModel> company = await service
                                 .GetAllCompanyReadOnlyOrderByNameAsync();
 
-            IPagedList<CompanyIndexViewModel> pagedList = trucks.ToPagedList(pageNumber, pageSize);
+            IPagedList<CompanyIndexViewModel> pagedList = company.ToPagedList(pageNumber, pageSize);
 
             return View(pagedList);
+        }
+        [HttpGet]
+        public async Task<IActionResult> SelectedCountry()
+        {
+            HashSet<CompanyCountryViewModel> countries = await service.GetAllUniqueCountryAsync();
+            return View(countries);
+        }
+        [HttpGet]
+        public async Task<IActionResult> CompanyByCountry(string selectedCountry, int? page)
+        {
+            int pageNumber = page ?? CompanyPageStartIndex;
+            int pageSize = CompanyPageEndIndex;
+
+            IEnumerable<CompanyIndexViewModel> companyByCountry =
+                    await service.GetCompanyFromCountryAsync(selectedCountry);
+
+            IPagedList<CompanyIndexViewModel> pagedList = companyByCountry
+                                                        .ToPagedList(pageNumber, pageSize);
+
+            return View(nameof(CompanyIndex), pagedList);
         }
 
     }

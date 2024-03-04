@@ -20,11 +20,11 @@ namespace TruckManagementWeb.Core.Service
         {
             Company company = new()
             {
-                CompanyVat = form.CompanyVat.ToUpper(),
+                CompanyVat = form.CompanyVat.Trim(),
                 CompanyAddress = form.Address,
-                CompanyCountry = form.Country,
-                CompanyName = form.Name,
-                CompanyTown = form.Town,
+                CompanyCountry = form.Country.Trim(),
+                CompanyName = form.Name.Trim(),
+                CompanyTown = form.Town
             };
 
             await repository.AddAsync(company);
@@ -93,6 +93,21 @@ namespace TruckManagementWeb.Core.Service
             .OrderBy(c => c.Name)
             .ToListAsync();
 
+        public async Task<HashSet<CompanyCountryViewModel>> GetAllUniqueCountryAsync()
+        {
+            List<string> allCountry = await repository
+                            .AllReadOnlyAsync<Company>()
+                            .Select(c => c.CompanyCountry.ToUpper())
+                            .Distinct()
+                            .ToListAsync();
+
+            HashSet<CompanyCountryViewModel> result = allCountry
+                            .Select(country => new CompanyCountryViewModel { Country = country })
+                            .ToHashSet();
+
+            return result;
+        }
+
         public async Task<CompanyEditFormModel?> GetCompanyForEditByIdAsync(int id)
         {
             CompanyEditFormModel? form = await repository.AllAsync<Company>()
@@ -111,9 +126,28 @@ namespace TruckManagementWeb.Core.Service
             return form;
         }
 
+        public async Task<IEnumerable<CompanyIndexViewModel>> GetCompanyFromCountryAsync(string selectedCountry)
+        {
+            var normalizedSelectedCountry = selectedCountry.ToUpperInvariant();
+            var result = await repository
+            .AllReadOnlyAsync<Company>()
+            .Where(c => c.CompanyCountry.ToUpper().Trim() == normalizedSelectedCountry.Trim())
+            .Select(c => new CompanyIndexViewModel()
+            {
+                Id = c.Id,
+                Name = c.CompanyName,
+                Country = c.CompanyCountry,
+                Vat = c.CompanyVat,
+            })
+            .OrderBy(c => c.Name)
+            .ToListAsync();
+
+            return result;
+        }
+
         public async Task<bool> IsCompanyExistByVat(string companyVat)
         => await repository.AllReadOnlyAsync<Company>()
-            .AnyAsync(c=> c.CompanyVat == companyVat.ToUpper());
+            .AnyAsync(c=> c.CompanyVat.ToUpper() == companyVat.ToUpper());
 
         public async Task<CompanyViewModel?> RemoveCompanyByIdAsync(int id)
         {
