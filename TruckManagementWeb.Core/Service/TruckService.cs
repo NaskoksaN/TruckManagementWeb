@@ -23,9 +23,9 @@ namespace TruckManagementWeb.Core.Service
             Truck truck = new Truck()
             {
                 ProductionYear = form.ProductionYear,
-                TruckBrand = form.TruckBrand,
-                TruckModel = form.TruckModel,
-                TruckPlate = form.TruckPlate,
+                TruckBrand = form.TruckBrand.Trim(),
+                TruckModel = form.TruckModel.Trim(),
+                TruckPlate = form.TruckPlate.Trim(),
                 TruckInitialKm = form.TruckMilleage
             };
 
@@ -142,9 +142,9 @@ namespace TruckManagementWeb.Core.Service
         {
             Truck truck = await repository.GetByIdAsync<Truck>(id);
 
-            truck.TruckPlate = form.TruckPlate;
-            truck.TruckBrand = form.TruckBrand;
-            truck.TruckModel = form.TruckModel;
+            truck.TruckPlate = form.TruckPlate.Trim();
+            truck.TruckBrand = form.TruckBrand.Trim();
+            truck.TruckModel = form.TruckModel.Trim();
             truck.TruckInitialKm = form.TruckMilleage;
             truck.ProductionYear = form.ProductionYear;
 

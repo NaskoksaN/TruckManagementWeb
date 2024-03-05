@@ -21,10 +21,10 @@ namespace TruckManagementWeb.Core.Service
             Company company = new()
             {
                 CompanyVat = form.CompanyVat.Trim(),
-                CompanyAddress = form.Address,
+                CompanyAddress = form.Address.Trim(),
                 CompanyCountry = form.Country.Trim(),
                 CompanyName = form.Name.Trim(),
-                CompanyTown = form.Town
+                CompanyTown = form.Town.Trim()
             };
 
             await repository.AddAsync(company);
@@ -37,11 +37,11 @@ namespace TruckManagementWeb.Core.Service
         {
             Company company = await repository.GetByIdAsync<Company>(id);
 
-            company.CompanyVat = form.CompanyVat.ToUpper();
-            company.CompanyAddress = form.Address;
-            company.CompanyName = form.Name;
-            company.CompanyTown = form.Town;
-            company.CompanyCountry = form.Country;
+            company.CompanyVat = form.CompanyVat.ToUpper().Trim();
+            company.CompanyAddress = form.Address.Trim();
+            company.CompanyName = form.Name.Trim();
+            company.CompanyTown = form.Town.Trim();
+            company.CompanyCountry = form.Country.Trim();
 
             await repository.SaveChangesAsync();
         }
