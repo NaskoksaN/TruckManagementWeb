@@ -10,8 +10,4 @@
     <ProjectReference Include="..\TruckManagementWeb.Infrastructure\TruckManagementWeb.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Trip\" />
-  </ItemGroup>
-
 </Project>
