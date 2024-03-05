@@ -12,5 +12,6 @@ namespace TruckManagementWeb.Core.Contracts
         Task<TruckEditFormModel> GetTruckForEditById(int id);
         Task<TruckViewModel?> FindTruckByPlateAsync(string plate);
         Task EditAsync(int id, TruckEditFormModel form);
+        Task<int> GetTruckIdByPlate(string plate);
     }
 }

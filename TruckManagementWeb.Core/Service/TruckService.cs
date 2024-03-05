@@ -100,8 +100,7 @@ namespace TruckManagementWeb.Core.Service
         public async Task<bool> IsTruckExistAsync(string truckPlate)
         {
             return await repository.AllReadOnlyAsync<Truck>()
-                .AnyAsync(t => t.TruckPlate == truckPlate);
-              
+                .AnyAsync(t => t.TruckPlate == truckPlate && t.IsActive==true);
         }
 
         public async Task<TruckViewModel> RemoveTruckAsync(int truckId)
@@ -149,6 +148,16 @@ namespace TruckManagementWeb.Core.Service
             truck.ProductionYear = form.ProductionYear;
 
             await repository.SaveChangesAsync();
+        }
+
+        public async Task<int> GetTruckIdByPlate(string plate)
+        {
+            var truck = await repository.AllAsync<Truck>()
+            .Where(t => t.TruckPlate == plate && t.IsActive == true)
+            .FirstOrDefaultAsync();
+            int t = truck.Id;
+
+            return truck?.Id ?? 0;
         }
     }
 }
