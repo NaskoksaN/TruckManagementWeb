@@ -55,7 +55,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         /// </summary>
         [Required]
         [Comment("Loaiding place")]
-        [MaxLength(LoadingPostCodeMaxLength)]
+        [MaxLength(PostCodeMaxLength)]
         public string LoadingPostCode { get; set; } = string.Empty;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         /// </summary>
         [Required]
         [Comment("Delivery place")]
-        [MaxLength(DeliveryPostCodeMaxLength)]
+        [MaxLength(PostCodeMaxLength)]
         public string DeliveryPostCode { get; set; } = string.Empty;
 
         

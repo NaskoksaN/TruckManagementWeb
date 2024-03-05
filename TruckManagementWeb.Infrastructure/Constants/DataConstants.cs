@@ -26,11 +26,8 @@
         public const int CompanyAddressMinLength = 5;
         public const int CompanyAddressMaxLength = 60;
 
-        public const int LoadingPostCodeMinLength = 5;
-        public const int LoadingPostCodeMaxLength = 10;
-
-        public const int DeliveryPostCodeMinLength = 5;
-        public const int DeliveryPostCodeMaxLength = 10;
+        public const int PostCodeMinLength = 5;
+        public const int PostCodeMaxLength = 15;
 
         public const int ExpenseNotesMinLength = 5;
         public const int ExpenseNotesMaxLength = 100;
@@ -42,5 +39,14 @@
 
         public const int TruckInitialMinMileage = 1;
         public const int TruckInitialMaxMileage = 2_500_000;
+
+        public const int TripMinKm = 1;
+        public const int TripMaxKm = 10000;
+
+        public const string TripMinPrice = "0.00";
+        public const string TripMaxPrice = "10000.00";
+
+        public const string OrderMinPrice = "0.00";
+        public const string orderMaxPrice = "10000.00";
     }
 }
