@@ -1,0 +1,52 @@
+﻿@model TripViewModel
+
+
+
+<div class="container">
+    <h5>Trip Details</h5>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Loading Date</th>
+                <th>Truck Plate</th>
+                <th>Price</th>
+                <th>Distance (km)</th>
+                <th>Price per Kilometer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.LoadingDate.ToString(UsedDateFormat)</td>
+                <td>@Model.TruckPlate</td>
+                <td>@Model.Price</td>
+                <td>@Model.TotalKm</td>
+                <td>@Model.EuPerKm</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="padding-left: 60px;">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="text-sm">Loading Date</th>
+                    <th class="text-sm">Company Name</th>
+                    <th class ="text-sm">Loading Place</th>
+                    <th class ="text-sm">Delivery Place</th>
+                    <th class="text-sm">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model.Orders)
+                {
+                    <tr>
+                        <td class="text-sm">@order.LoadingDate.ToString(UsedDateFormat)</td>
+                        <td class="text-sm">@order.CompanyName</td>
+                        <td class="text-sm">@order.LoadingCode</td>
+                        <td class="text-sm">@order.DeliveryCode</td>
+                        <td class="text-sm">@order.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

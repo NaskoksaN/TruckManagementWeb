@@ -155,7 +155,6 @@ namespace TruckManagementWeb.Core.Service
             var truck = await repository.AllAsync<Truck>()
             .Where(t => t.TruckPlate == plate && t.IsActive == true)
             .FirstOrDefaultAsync();
-            int t = truck.Id;
 
             return truck?.Id ?? 0;
         }

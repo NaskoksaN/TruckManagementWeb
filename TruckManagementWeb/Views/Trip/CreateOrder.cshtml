@@ -1,0 +1,81 @@
+﻿@model OrderFormModel
+
+@{
+    ViewBag.Title = "Enter order details.";
+}
+
+<h3 class="text-center">@ViewBag.Title</h3>
+<hr />
+
+
+<div class="container">
+    <form asp-controller="Trip" asp-action="CreateOrder" method="post">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="CompanyVat" class="control-label"></label>
+                    <input asp-for="CompanyVat" class="form-control" />
+                    <span asp-validation-for="CompanyVat" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4"></div> 
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="LoadingDate" class="control-label"></label>
+                    <input asp-for="LoadingDate" class="form-control datepicker" type="date" />
+                    <span asp-validation-for="LoadingDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="DeliveryDate" class="control-label"></label>
+                    <input asp-for="DeliveryDate" class="form-control datepicker" type="date" />
+                    <span asp-validation-for="DeliveryDate" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4"></div> 
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="LoadingPostCode" class="control-label"></label>
+                    <input asp-for="LoadingPostCode" class="form-control" />
+                    <span asp-validation-for="LoadingPostCode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="DeliveryPostCode" class="control-label"></label>
+                    <input asp-for="DeliveryPostCode" class="form-control" />
+                    <span asp-validation-for="DeliveryPostCode" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4"></div> 
+        <div class="form-group">
+            <input type="hidden" name="TripId" value="@Model.TripId" />
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary" name="button" value="CreateOrder">AddOrderToTrip</button>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-success" name="button" value="FinalizeTrip">AddOrderAndFinalizeTrip</button>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-danger" name="button" value="AbortTrip">AbortTrip</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

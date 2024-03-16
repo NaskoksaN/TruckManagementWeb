@@ -147,7 +147,7 @@ namespace TruckManagementWeb.Core.Service
 
         public async Task<bool> IsCompanyExistByVat(string companyVat)
         => await repository.AllReadOnlyAsync<Company>()
-            .AnyAsync(c=> c.CompanyVat.ToUpper() == companyVat.ToUpper());
+            .AnyAsync(c=> c.CompanyVat.ToUpper() == companyVat.ToUpper() && c.IsActive==true);
 
         public async Task<CompanyViewModel?> RemoveCompanyByIdAsync(int id)
         {

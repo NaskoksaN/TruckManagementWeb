@@ -2,11 +2,19 @@
 
 using static TruckManagementWeb.Core.Constants.MessageConstants;
 using static TruckManagementWeb.Infrastructure.Constants.DataConstants;
+using static TruckManagementWeb.Core.Constants.ValidationConstants;
 
 namespace TruckManagementWeb.Core.Models.Trip
 {
     public class OrderFormModel
     {
+        [Required(ErrorMessage = RequiredMessage)]
+        [Display(Name = "Company Vat")]
+        [StringLength(CompanyVatMaxLength,
+            MinimumLength = CompanyVatMinLength,
+            ErrorMessage = LengthMessage)]
+        [RegularExpression(VatRegeValidation, ErrorMessage = VatRegexMessage)]
+        public string CompanyVat { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredMessage)]
         [Display(Name = "Order price")]

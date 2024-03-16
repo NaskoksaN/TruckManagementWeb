@@ -22,6 +22,8 @@ namespace TruckManagementWeb.Core.Models.Trip
         [Range(TripMinKm, TripMaxKm, ErrorMessage = MileageMessage)]
         public int TripKm { get; set; }
 
+        public decimal EuPerKm { get; set; }
+
         [Required(ErrorMessage = RequiredMessage)]
         [Display(Name = "Trip total price")]
         [Range(typeof(Decimal), 

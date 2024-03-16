@@ -10,5 +10,9 @@ namespace TruckManagementWeb.Core.Contracts
     public interface ITripService
     {
         Task<int> CreateTripAsync(TripFormModel form);
+        Task DeleteGivenTripWithOrders(int tripId);
+        Task<IEnumerable<TripViewModel>> GetAllTripAsync();
+        Task<TripViewModel> GetViewTripByIdAsync(int id);
+        Task SaveOrderToTripAsync(OrderFormModel form);
     }
 }
