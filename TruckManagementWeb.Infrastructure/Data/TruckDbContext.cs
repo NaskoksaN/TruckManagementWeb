@@ -20,20 +20,14 @@ namespace TruckManagementWeb.Data
                 .HasForeignKey(o => o.TripId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-
             modelBuilder.ApplyConfiguration(new TruckConfiguration());
             modelBuilder.ApplyConfiguration(new CompanyConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
             modelBuilder.ApplyConfiguration(new TruckExpenseConfiguration());
             
-
             TripSeeder.SeedData(modelBuilder);
 
-
-
-
             base.OnModelCreating(modelBuilder);
-
         }
 
 
