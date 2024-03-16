@@ -23,6 +23,10 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Comment("TruckId associated with the trip.")]
         public int TruckId { get; set; }
 
+        [Required]
+        [Comment("Identifier of the employee managing the trip.")]
+        public int EmployeeId { get; set; }
+
         /// <summary>
         /// Distance traveled during the trip in kilometers.
         /// </summary>
@@ -39,6 +43,14 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         public decimal TripPrice { get; set; }
 
         /// <summary>
+        /// Represent Price / Km in euro
+        /// </summary>
+        [Required]
+        [Comment("Euro per Km")]
+        [Column(TypeName = DecimalColumnType)]
+        public decimal EuPerKm { get; set; }
+
+        /// <summary>
         /// The start date of the trip.
         /// </summary>
         [Required]
@@ -51,6 +63,9 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Required]
         [Comment("End date of the trip.")]
         public DateTime EndDate { get; set; }
+
+        [ForeignKey(nameof(EmployeeId))]
+        public Employee Employee { get; set; } = null!;
 
         [ForeignKey(nameof(TruckId))]
         public Truck Truck { get; set; } = null!;

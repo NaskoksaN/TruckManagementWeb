@@ -12,8 +12,8 @@ using TruckManagementWeb.Data;
 namespace TruckManagementWeb.Infrastructure.Migrations
 {
     [DbContext(typeof(TruckDbContext))]
-    [Migration("20240304174002_TripTableRemoveCompany")]
-    partial class TripTableRemoveCompany
+    [Migration("20240314173945_Final")]
+    partial class Final
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -281,6 +281,32 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                     b.ToTable("Companies");
                 });
 
+            modelBuilder.Entity("TruckManagementWeb.Infrastructure.Data.Models.Employee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasComment("Employee identifier");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasComment("Employee e-mail");
+
+                    b.Property<string>("EmployeeUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeUserId");
+
+                    b.ToTable("Employees");
+                });
+
             modelBuilder.Entity("TruckManagementWeb.Infrastructure.Data.Models.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -299,8 +325,8 @@ namespace TruckManagementWeb.Infrastructure.Migrations
 
                     b.Property<string>("DeliveryPostCode")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)")
                         .HasComment("Delivery place");
 
                     b.Property<DateTime>("LoadingDate")
@@ -309,8 +335,8 @@ namespace TruckManagementWeb.Infrastructure.Migrations
 
                     b.Property<string>("LoadingPostCode")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)")
                         .HasComment("Loaiding place");
 
                     b.Property<decimal>("Price")
@@ -339,9 +365,17 @@ namespace TruckManagementWeb.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int")
+                        .HasComment("Identifier of the employee managing the trip.");
+
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2")
                         .HasComment("End date of the trip.");
+
+                    b.Property<decimal>("EuPerKm")
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Euro per Km");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2")
@@ -360,6 +394,8 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         .HasComment("TruckId associated with the trip.");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
 
                     b.HasIndex("TruckId");
 
@@ -431,6 +467,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         .HasColumnType("decimal(18,2)")
                         .HasComment("Amount of expense");
 
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int")
+                        .HasComment("Identifier of the employee managing the trip.");
+
                     b.Property<DateTime>("ExpenseDate")
                         .HasColumnType("datetime2")
                         .HasComment("Expense date");
@@ -450,6 +490,8 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         .HasComment("Specify the type of the expense (e.g., maintenance, driver salary, road taxes, fuel).");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
 
                     b.HasIndex("TruckId");
 
@@ -507,6 +549,17 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("TruckManagementWeb.Infrastructure.Data.Models.Employee", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "EmployeeUser")
+                        .WithMany()
+                        .HasForeignKey("EmployeeUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EmployeeUser");
+                });
+
             modelBuilder.Entity("TruckManagementWeb.Infrastructure.Data.Models.Order", b =>
                 {
                     b.HasOne("TruckManagementWeb.Infrastructure.Data.Models.Company", "Company")
@@ -528,22 +581,38 @@ namespace TruckManagementWeb.Infrastructure.Migrations
 
             modelBuilder.Entity("TruckManagementWeb.Infrastructure.Data.Models.Trip", b =>
                 {
+                    b.HasOne("TruckManagementWeb.Infrastructure.Data.Models.Employee", "Employee")
+                        .WithMany("Trips")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("TruckManagementWeb.Infrastructure.Data.Models.Truck", "Truck")
                         .WithMany("Trips")
                         .HasForeignKey("TruckId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Employee");
+
                     b.Navigation("Truck");
                 });
 
             modelBuilder.Entity("TruckManagementWeb.Infrastructure.Data.Models.TruckExpense", b =>
                 {
+                    b.HasOne("TruckManagementWeb.Infrastructure.Data.Models.Employee", "Employee")
+                        .WithMany("TruckExpenses")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("TruckManagementWeb.Infrastructure.Data.Models.Truck", "Truck")
                         .WithMany("Expenses")
                         .HasForeignKey("TruckId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Employee");
 
                     b.Navigation("Truck");
                 });
@@ -551,6 +620,13 @@ namespace TruckManagementWeb.Infrastructure.Migrations
             modelBuilder.Entity("TruckManagementWeb.Infrastructure.Data.Models.Company", b =>
                 {
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("TruckManagementWeb.Infrastructure.Data.Models.Employee", b =>
+                {
+                    b.Navigation("Trips");
+
+                    b.Navigation("TruckExpenses");
                 });
 
             modelBuilder.Entity("TruckManagementWeb.Infrastructure.Data.Models.Trip", b =>

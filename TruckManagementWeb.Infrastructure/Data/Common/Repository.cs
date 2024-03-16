@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using TruckManagementWeb.Data;
 
 namespace TruckManagementWeb.Infrastructure.Data.Common
@@ -37,6 +38,30 @@ namespace TruckManagementWeb.Infrastructure.Data.Common
         public async Task<int> SaveChangesAsync()
         {
             return await context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync<T>(object id) where T : class
+        {
+            T entity = await GetByIdAsync<T>(id);
+
+            Delete<T>(entity);
+        }
+
+        public void Delete<T>(T entity) where T : class
+        {
+            EntityEntry entry = this.context.Entry(entity);
+
+            if (entry.State == EntityState.Detached)
+            {
+                this.DbSet<T>().Attach(entity);
+            }
+
+            entry.State = EntityState.Deleted;
+        }
+
+        public void DeleteRange<T>(IEnumerable<T> entities) where T : class
+        {
+            this.DbSet<T>().RemoveRange(entities);
         }
     }
 }

@@ -54,7 +54,14 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [MaxLength(ExpenseNotesMaxLength)]
         public string Notes { get; set; } = string.Empty;
 
-        
+        [Required]
+        [Comment("Identifier of the employee managing the trip.")]
+        public int EmployeeId { get; set; }
+
+        [ForeignKey(nameof(EmployeeId))]
+        public Employee Employee { get; set; } = null!;
+
+
         [ForeignKey(nameof(TruckId))]
         public Truck Truck { get; set; } = null!;
 
