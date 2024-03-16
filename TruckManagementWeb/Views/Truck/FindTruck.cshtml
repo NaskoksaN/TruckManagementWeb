@@ -7,21 +7,8 @@
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
 
-<div class="row">
-    <div class="col-sm-8 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4">
-        <form asp-action="FindTruck" method="post">
-            <div class="mb-3">
-                <div class="row">
-                    <div class="col">
-                        <label asp-for="TruckPlate" class="form-label-add-edit">Truck plate: </label>
-                        <input asp-for="TruckPlate" class="form-control" aria-required="true" />
-                        <span asp-validation-for="TruckPlate" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <input class="btn btn-primary mt-3" type="submit" value="Find" />
-            </div>
-        </form>
-    </div>
-</div>
+<partial name="_FindTruckPartial" model="@Model" />
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

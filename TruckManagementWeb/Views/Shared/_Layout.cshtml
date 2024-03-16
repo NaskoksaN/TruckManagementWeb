@@ -68,9 +68,6 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Trip" asp-action="TripIndex">View all orders</a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a class="dropdown-item" asp-area="" asp-controller="Trip" asp-action="CreateTrip">Create trip</a>
                                     </li>
                                     <li class="nav-item">
@@ -78,6 +75,33 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="dropdown-item" asp-area="" asp-controller="Trip" asp-action="TripIndex">List all trips</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                    Reports
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="TruckReportLastMonth">TruckResultLastMonth</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="AllReportLastMonth">AllTruckResultLastMonth</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="FindTruck">TruckLast3Months</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="AllReportLastQuarter">AllLast3Months</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="TruckCustomReport">TruckCustomReport</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="AllCustomReport">AllCustomReport</a>
                                     </li>
                                 </ul>
                             </div>

@@ -1,0 +1,15 @@
+﻿@model FindTruckFormModel
+
+@{
+    ViewBag.Title = "Enter valid truck by plate";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+<form asp-action="TruckReportLastMonth" method="post">
+    <partial name="_FindTruckPartial" model="@Model" />
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

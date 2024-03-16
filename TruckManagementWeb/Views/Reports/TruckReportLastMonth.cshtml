@@ -1,0 +1,112 @@
+﻿@model TruckMonthReportsViewModel
+
+@{
+    ViewBag.Title = $"Truck {@Model.PlateNumber} report last month";
+    decimal avgPricePerKm = @Model.TotalEuros / Model.TotalKilometers;
+    decimal result = @Model.TotalEuros - @Model.TotalExpenses;
+}
+
+<h6 class="text-center">@ViewBag.Title</h6>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p>Result: @result.ToString("F2")</p>
+        </div>
+        <div class="col-md-4">
+            <p>Total Kilometers: @Model.TotalKilometers</p>
+        </div>
+        <div class="col-md-4">
+            <p>Total Orders Sum: @Model.TotalEuros</p>
+        </div>
+        <div class="col-md-4">
+            <p>Average Price per Kilometer: @avgPricePerKm.ToString("F2")</p>
+        </div>
+        <div class="col-md-4">
+            <p>Total Orders Sum: @Model.TotalExpenses</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="container table-container">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Loading Date</th>
+                    <th>Truck Plate</th>
+                    <th>Price</th>
+                    <th>Distance (km)</th>
+                    <th>Price per Kilometer</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Trips)
+                {
+                    <tr>
+                        <td>@item.LoadingDate.ToString(UsedDateFormat)</td>
+                        <td>@item.TruckPlate</td>
+                        <td>@item.Price</td>
+                        <td>@item.TotalKm</td>
+                        <td>@item.EuPerKm</td>
+                        <td>
+                            <button class="btn btn-primary" onclick="toggleOrders('@item.Id')">Show Orders</button>
+                        </td>
+                    </tr>
+                    <tr id="orders-@item.Id" style="display: none;">
+                        <td colspan="6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Loading Date</th>
+                                                <th>Company Name</th>
+                                                <th>Loading Code</th>
+                                                <th>Delivery Code</th>
+                                                <th>Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var order in item.Orders)
+                                            {
+                                                <tr>
+                                                    <td>@order.LoadingDate.ToString(UsedDateFormat)</td>
+                                                    <td>@order.CompanyName</td>
+                                                    <td>@order.LoadingCode</td>
+                                                    <td>@order.DeliveryCode</td>
+                                                    <td>@order.Price</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .card {
+        margin-top: 10px;
+    }
+</style>
+
+<script>
+    function toggleOrders(tripId) {
+        var ordersRow = document.getElementById('orders-' + tripId);
+        if (ordersRow.style.display === 'none') {
+            ordersRow.style.display = 'table-row';
+        } else {
+            ordersRow.style.display = 'none';
+        }
+    }
+</script>
+

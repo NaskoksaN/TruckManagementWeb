@@ -14,6 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<ITruckService, TruckService>();
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<ITripService, TripService>();
+            services.AddScoped<IReports, ReportService>();
 
             return services;
         }
