@@ -1,13 +1,9 @@
-﻿@model TruckMonthReportsViewModel
+﻿@model TruckMonthReportViewModel
 
 @{
-    ViewBag.Title = $"Truck {@Model.PlateNumber} report last month";
     decimal avgPricePerKm = @Model.TotalEuros / Model.TotalKilometers;
     decimal result = @Model.TotalEuros - @Model.TotalExpenses;
 }
-
-<h6 class="text-center">@ViewBag.Title</h6>
-<hr />
 
 <div class="container">
     <div class="row">
@@ -15,16 +11,16 @@
             <p>Result: @result.ToString("F2")</p>
         </div>
         <div class="col-md-4">
-            <p>Total Kilometers: @Model.TotalKilometers</p>
-        </div>
-        <div class="col-md-4">
             <p>Total Orders Sum: @Model.TotalEuros</p>
         </div>
         <div class="col-md-4">
-            <p>Average Price per Kilometer: @avgPricePerKm.ToString("F2")</p>
+            <p>Total Orders Sum: @Model.TotalExpenses</p>
         </div>
         <div class="col-md-4">
-            <p>Total Orders Sum: @Model.TotalExpenses</p>
+            <p>Total Kilometers: @Model.TotalKilometers</p>
+        </div>
+        <div class="col-md-4">
+            <p>Average Price per Kilometer: @avgPricePerKm.ToString("F2")</p>
         </div>
 
     </div>
@@ -109,4 +105,5 @@
         }
     }
 </script>
+
 

@@ -4,6 +4,9 @@ namespace TruckManagementWeb.Core.Contracts
 {
     public interface IReports
     {
-        Task<TruckMonthReportsViewModel> GetTruckAndLastMonthResultAsync(string truckPlate);
+        Task<IEnumerable<TrucksMonthlyViewReport>> GetAllTruckMonthlyResult();
+        Task<TruckMonthReportViewModel> GetTruckPeriodResultAsync(string truckPlate
+                                , DateTime lastMonthStart
+                                , DateTime lastMonthEnd);
     }
 }

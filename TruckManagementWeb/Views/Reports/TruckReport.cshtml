@@ -1,0 +1,15 @@
+﻿@model FindTruckFormModel
+@{
+    ViewBag.Title = "Truck reports";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="text-center">
+    <a asp-controller="Reports" asp-action="TruckCurrentMonth" asp-route-reportType="CurrentMonth" asp-route-truckPlate="@Model.TruckPlate" class="btn btn-primary">Current Month</a>
+    <a asp-controller="Reports" asp-action="TruckLastMonth" asp-route-reportType="LastMonth" asp-route-truckPlate="@Model.TruckPlate" class="btn btn-primary">Last Month</a>
+    <a asp-controller="Reports" asp-action="TruckLastQuarter" asp-route-reportType="LastQuarter" asp-route-truckPlate="@Model.TruckPlate" class="btn btn-primary">Last Quarter</a>
+    <a asp-controller="Reports" asp-action="TruckLastYear" asp-route-reportType="LastYear" asp-route-truckPlate="@Model.TruckPlate" class="btn btn-primary">Last Year</a>
+    <a asp-controller="Reports" asp-action="CustomReport" asp-route-truckPlate="@Model.TruckPlate" class="btn btn-primary">Custom Report</a>
+</div>
+

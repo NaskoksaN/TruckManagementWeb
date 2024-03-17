@@ -2,7 +2,7 @@
 
 namespace TruckManagementWeb.Core.Models.Reports
 {
-    public  class TruckMonthReportsViewModel
+    public  class TruckMonthReportViewModel
     {
         public int Id {  get; set; }
         public string PlateNumber { get; set; } = string.Empty;
