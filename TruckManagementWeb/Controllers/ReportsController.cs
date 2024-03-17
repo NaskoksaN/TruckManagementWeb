@@ -116,6 +116,7 @@ namespace TruckManagementWeb.Controllers
 
             return View(truckReport);
         }
+
         [HttpGet]
         public async Task<IActionResult> TruckCurrentMonth(string truckPlate)
         {
@@ -145,8 +146,8 @@ namespace TruckManagementWeb.Controllers
 
             return View(truckReport);
         }
+
         [HttpGet]
-        
         public async Task<IActionResult> TruckLastQuarter(string truckPlate, int page = 1)
         {
             if (string.IsNullOrEmpty(truckPlate))
@@ -184,6 +185,30 @@ namespace TruckManagementWeb.Controllers
             }
             ViewBag.TruckPlate = truckPlate;
             return View(truckReport);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> TruckLastYear(string truckPlate)
+        {
+            if (string.IsNullOrEmpty(truckPlate))
+            {
+                return BadRequest("Truck plate is required.");
+            }
+
+            var truck = await truckService.FindTruckByPlateAsync(truckPlate);
+            if (truck == null)
+            {
+                return BadRequest();
+            }
+
+            DateTime today = DateTime.Today;
+            DateTime lastFullMonthStart = new DateTime(today.Year - 1, today.Month, 1).AddMonths(-1);
+            DateTime lastFullMonthEnd = new DateTime(today.Year - 1, today.Month, 1).AddDays(-1);
+
+            IEnumerable<TruckMonthSimpleViewModel> truckYearReport
+                                     = await reportService.GetTruckYearReport(truckPlate);
+
+            return View(truckYearReport);
         }
 
     }

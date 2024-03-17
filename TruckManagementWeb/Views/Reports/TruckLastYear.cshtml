@@ -1,0 +1,47 @@
+﻿@model List<TruckMonthSimpleViewModel>
+
+@{
+    decimal profit = Model.Sum(t => t.TotalEuros) - Model.Sum(t => t.TotalExpenses);
+    string profitLabel = profit >= 0 ? "Profit" : "Loss";
+    ViewBag.Title = $"Truck {Model.FirstOrDefault()?.PlateNumber} Year Result: {profitLabel} {Math.Abs(profit)} euro";
+}
+
+<h6 class="text-center">@ViewBag.Title</h6>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Plate Number</th>
+                        <th>Total Kilometers</th>
+                        <th>Total Euros</th>
+                        <th>Total Expenses</th>
+                        <th>Profit</th>
+                        <th>Euro Per Km</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var truck in Model)
+                    {
+                        <tr>
+                            <td>@truck.Month.ToString("MMMM yyyy")</td>
+                            <td>@truck.PlateNumber</td>
+                            <td>@truck.TotalKilometers</td>
+                            <td>@truck.TotalEuros</td>
+                            <td>@truck.TotalExpenses</td>
+                            <td>@(truck.TotalEuros - truck.TotalExpenses)</td>
+                            <td>@truck.EuroPerKm                     
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

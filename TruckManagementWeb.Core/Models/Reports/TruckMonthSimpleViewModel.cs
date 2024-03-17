@@ -1,16 +1,20 @@
-﻿using TruckManagementWeb.Core.Models.Trip;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace TruckManagementWeb.Core.Models.Reports
 {
-        
-    public  class TruckMonthReportViewModel 
+    public  class TruckMonthSimpleViewModel
     {
-        public int Id {  get; set; }
         public string PlateNumber { get; set; } = string.Empty;
         public decimal TotalKilometers { get; set; }
         public decimal TotalEuros { get; set; }
         public decimal TotalExpenses { get; set; }
-        public IEnumerable<TripViewModel> Trips { get; set; } = new List<TripViewModel>();
+
+        public string EuroPerKm { get; set; } = string.Empty;
+        public DateTime Month {  get; set; }
+      
     }
 }
-

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Reports;
 using TruckManagementWeb.Infrastructure.Data.Common;
@@ -9,12 +10,9 @@ namespace TruckManagementWeb.Core.Service
     public class ReportService : IReports
     {
         private readonly IRepository repository;
-        private readonly ITruckService truckService;
-        public ReportService(IRepository _repository,
-            ITruckService _truckService)
+        public ReportService(IRepository _repository)
         {
             repository = _repository;
-            truckService = _truckService;
         }
 
         public async Task<IEnumerable<TrucksMonthlyViewReport>> GetAllTruckMonthlyResult()
@@ -53,7 +51,9 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
-        public async Task<TruckMonthReportViewModel> GetTruckPeriodResultAsync(string truckPlate, DateTime lastMonthStart, DateTime lastMonthEnd)
+        public async Task<TruckMonthReportViewModel> GetTruckPeriodResultAsync(string truckPlate
+                                        , DateTime lastMonthStart
+                                        , DateTime lastMonthEnd)
         {
             var result = await repository.AllReadOnlyAsync<Truck>()
                .Where(t => t.TruckPlate == truckPlate)
@@ -101,5 +101,49 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
+        public async Task<IEnumerable<TruckMonthSimpleViewModel>> GetTruckYearReport(string truckPlate)
+                                       
+        {
+            List<TruckMonthSimpleViewModel> monthlyResults 
+                                = new List<TruckMonthSimpleViewModel>();
+            DateTime today = DateTime.Today;
+
+            for (int i = 1; i <= 12; i++)
+            {
+                DateTime lastMonthStart = today.AddMonths(-i).AddDays(1 - today.Day);
+                DateTime lastMonthEnd = lastMonthStart.AddMonths(1).AddDays(-1);
+
+                TruckMonthSimpleViewModel? truck = await repository.AllReadOnlyAsync<Truck>()
+                    .Include(trip => trip.Trips)
+                    .Where(t => t.TruckPlate == truckPlate && t.IsActive == true)
+                    .Select(t => new TruckMonthSimpleViewModel()
+                    {
+                        PlateNumber = truckPlate,
+                        TotalKilometers = t.Trips
+                            .Where(tr => tr.StartDate >= lastMonthStart && tr.StartDate <= lastMonthEnd)
+                            .Sum(tr => tr.TripKm),
+                        TotalEuros = t.Trips
+                            .Where(tr => tr.StartDate >= lastMonthStart && tr.StartDate <= lastMonthEnd)
+                            .Sum(tr => tr.TripPrice),
+                        TotalExpenses = t.Expenses
+                            .Where(ex => ex.ExpenseDate >= lastMonthStart && ex.ExpenseDate <= lastMonthEnd)
+                            .Sum(ex => ex.Amount),
+                        Month = lastMonthStart,
+                    }).FirstOrDefaultAsync();
+
+                if(truck.TotalEuros >0 && truck.TotalExpenses >0)
+                {
+                    truck.EuroPerKm = (truck.TotalEuros / truck.TotalKilometers).ToString("F2");
+                }
+                else
+                {
+                    truck.EuroPerKm = "N/A";
+                }
+
+                monthlyResults.Add(truck);
+            }
+
+            return monthlyResults;
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace TruckManagementWeb.Core.Contracts
         Task<TruckMonthReportViewModel> GetTruckPeriodResultAsync(string truckPlate
                                 , DateTime lastMonthStart
                                 , DateTime lastMonthEnd);
+        Task<IEnumerable<TruckMonthSimpleViewModel>> GetTruckYearReport(string truckPlate);
     }
 }
