@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TruckManagementWeb.Core.Models.Company;
+using TruckManagementWeb.Core.Models.Reports;
 
 namespace TruckManagementWeb.Core.Contracts
 {
