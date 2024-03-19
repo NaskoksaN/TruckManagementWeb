@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Trucks results";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="text-center">
+    <a asp-controller="Reports" asp-action="YearlyTrucksResult" class="btn btn-primary">Last Year</a>
+    <a asp-controller="Reports" asp-action="ResultOfTrucksLastMonth"  class="btn btn-primary">Last Month</a>
+</div>

@@ -2,15 +2,12 @@
 
 @{
     ViewBag.Title = $"Truck {@Model.PlateNumber} report last month";
-    decimal avgPricePerKm = @Model.TotalEuros / Model.TotalKilometers;
-    decimal result = @Model.TotalEuros - @Model.TotalExpenses;
 }
 
 <h6 class="text-center">@ViewBag.Title</h6>
 <hr />
 
 <partial name="_TruckPeriodReport" model="@Model" />
-
 
 
 

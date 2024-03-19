@@ -1,0 +1,16 @@
+﻿@model List<TruckMonthSimpleViewModel>
+
+@{
+
+    if (Model == null || !Model.Any())
+    {
+        <div class="container">
+            <div class="alert alert-warning" role="alert">
+                No truck month reports available.
+            </div>
+        </div>
+    }
+   
+}
+
+<partial name="_YearTrucksReport" model="@Model" />

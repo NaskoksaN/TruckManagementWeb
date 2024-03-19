@@ -1,0 +1,78 @@
+﻿@model List<TruckMonthSimpleViewModel>
+
+@{
+    int itemsPerPage = 6;
+    int totalPages = (int)Math.Ceiling((double)Model.Count / itemsPerPage);
+    int currentPage = Convert.ToInt32(ViewContext.HttpContext.Request.Query["page"]);
+    if (currentPage < 1)
+    {
+        currentPage = 1;
+    }
+    int startIndex = (currentPage - 1) * itemsPerPage;
+    int endIndex = Math.Min(startIndex + itemsPerPage, Model.Count);
+
+}
+
+@if (Model != null && Model.Any())
+{
+    <h6 class="text-center">@ViewBag.Title</h6>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Plate Number</th>
+                            <th>Total Kilometers</th>
+                            <th>Total Euros</th>
+                            <th>Total Expenses</th>
+                            <th>Profit</th>
+                            <th>Euro Per Km</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var truck in Model.Skip(startIndex).Take(itemsPerPage))
+                        {
+                            <tr>
+                                <td>@truck.PlateNumber</td>
+                                <td>@truck.TotalKilometers</td>
+                                <td>@truck.TotalEuros</td>
+                                <td>@truck.TotalExpenses</td>
+                                <td>@(truck.TotalEuros - truck.TotalExpenses)</td>
+                                <td>@truck.EuroPerKm</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                <a class="page-link" href="@Url.Action("ResultOfTrucksLastMonth", "Reports", new { page = currentPage - 1 })">Previous</a>
+            </li>
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(i == currentPage ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("ResultOfTrucksLastMonth", "Reports", new { page = i })">@i</a>
+                </li>
+            }
+            <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                <a class="page-link" href="@Url.Action("ResultOfTrucksLastMonth", "Reports", new { page = currentPage + 1 })">Next</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <a class="btn btn-primary" asp-controller="Reports" asp-action="AllTrucksReport">Return to All Truck Report</a>
+            </div>
+        </div>
+    </div>
+}

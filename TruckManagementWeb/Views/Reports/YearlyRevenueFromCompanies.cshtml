@@ -1,0 +1,69 @@
+﻿@model List<ReportRevenueFromCompany>
+
+@{
+
+    if (Model == null || !Model.Any())
+    {
+        <div class="container">
+            <div class="alert alert-warning" role="alert">
+                No truck month reports available.
+            </div>
+        </div>
+    }
+}
+
+@if (Model != null && Model.Any())
+{
+    <h6 class="text-center">@ViewBag.Title</h6>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>VAT</th>
+                            <th>Company Country</th>
+                            <th>Revenue from Company</th>
+                            <th>TotalOrdersCount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var company in Model)
+                        {
+                            <tr>
+                                <td>@company.CompanyName</td>
+                                <td>@company.Vat</td>
+                                <td>@company.CompanyCountry</td>
+                                <td>@company.RevenueFromCompany.ToString("F2")</td>
+                                <td>@company.TotalOrderCount</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                <a class="page-link" href="@Url.Action("YearlyRevenueFromCompanies", "Reports", new { page = ViewBag.CurrentPage - 1 })">Previous</a>
+            </li>
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("YearlyRevenueFromCompanies", "Reports", new { page = i })">@i</a>
+                </li>
+            }
+            <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                <a class="page-link" href="@Url.Action("YearlyRevenueFromCompanies", "Reports", new { page = ViewBag.CurrentPage + 1 })">Next</a>
+            </li>
+        </ul>
+    </nav>
+}
+
+
+
