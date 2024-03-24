@@ -10,6 +10,11 @@ namespace TruckManagementWeb.Core.Contracts
 {
     public interface ICompanyService
     {
+        /// <summary>
+        /// Create company 
+        /// </summary>
+        /// <param name="form"></param>
+        /// <returns></returns>
         Task<int> CreateAsync(CompanyFormModel form);
         Task EditAsync(int id, CompanyEditFormModel form);
         Task<CompanyViewModel?> FindCompanyByIdAsync(int id);
