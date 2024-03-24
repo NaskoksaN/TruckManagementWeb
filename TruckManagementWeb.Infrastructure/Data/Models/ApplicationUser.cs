@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TruckManagementWeb.Core.Models.ApplicationUser
 {
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser<string>
     {
         [Required]
         [DisplayName("E-mail")]

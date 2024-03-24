@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TruckManagementWeb.Core.Models.ApplicationUser;
 using static TruckManagementWeb.Infrastructure.Constants.DataConstants;
 
 namespace TruckManagementWeb.Infrastructure.Data.Models
@@ -27,7 +28,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Required]
         public string EmployeeUserId { get; set; } = string.Empty;
         [ForeignKey(nameof(EmployeeUserId))]
-        public IdentityUser EmployeeUser { get; set; } = null!;
+        public ApplicationUser EmployeeUser { get; set; } = null!;
 
 
         public ICollection<Trip> Trips { get; set; } = new List<Trip>();
