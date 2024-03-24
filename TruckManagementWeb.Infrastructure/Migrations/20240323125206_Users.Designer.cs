@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TruckManagementWeb.Data;
 
@@ -11,9 +12,10 @@ using TruckManagementWeb.Data;
 namespace TruckManagementWeb.Infrastructure.Migrations
 {
     [DbContext(typeof(TruckDbContext))]
-    partial class TruckDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240323125206_Users")]
+    partial class Users
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

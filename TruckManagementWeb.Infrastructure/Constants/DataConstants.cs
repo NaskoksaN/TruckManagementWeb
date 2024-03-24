@@ -49,6 +49,9 @@
         public const string OrderMinPrice = "0.00";
         public const string orderMaxPrice = "10000.00";
 
+        public const string ExpenseMinPrice = "0.00";
+        public const string ExpenseMaxPrice = "50000.00";
+
         public const int EmployeeNameMinLenght = 5;
         public const int EmployeeNameMaxLenght = 50;
 

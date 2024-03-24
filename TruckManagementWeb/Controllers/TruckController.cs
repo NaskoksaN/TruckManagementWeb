@@ -8,7 +8,7 @@ using X.PagedList;
 
 namespace TruckManagementWeb.Controllers
 {
-    public class TruckController : Controller
+    public class TruckController : BaseController
     {
         private readonly ITruckService service;
         private readonly ILogger<HomeController> logger;

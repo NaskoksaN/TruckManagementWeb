@@ -19,84 +19,108 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                    Truck
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="TruckIndex">View all trucks</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="AddTruck">Create trucks</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="FindTruck">Find, Delete, Edit truck data</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                    Company
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="CompanyIndex">View all company</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="SelectedCountry">View by country</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="AddCompany">Create Company</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="FindCompany">Find, Delete, Edit company data</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                    Trips
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Trip" asp-action="CreateTrip">Create trip</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Trip" asp-action="TripDetails">Trip detail</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Trip" asp-action="TripIndex">List all trips</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                    Reports
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="TruckReport">TruckReport</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="AllTrucksReport">AllTruckReport</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="YearlyRevenueFromCompanies">YearlyRevenueFromCompanies</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                        @if (!this.User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                        }
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        Truck
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="TruckIndex">View all trucks</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="AddTruck">Create trucks</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="FindTruck">Find, Delete, Edit truck data</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        Company
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="CompanyIndex">View all company</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="SelectedCountry">View by country</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="AddCompany">Create Company</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="FindCompany">Find, Delete, Edit company data</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        Trips
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Trip" asp-action="CreateTrip">Create trip</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Trip" asp-action="TripDetails">Trip detail</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Trip" asp-action="TripIndex">List all trips</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        Reports
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="TruckReport">TruckReport</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="AllTrucksReport">AllTruckReport</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="YearlyRevenueFromCompanies">YearlyRevenueFromCompanies</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        Expense
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Expense" asp-action="AddExpense">AddExpense</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Expense" asp-action="RemoveExpense">RemoveExpense</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Expense" asp-action="EditExpense">EditExpense</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

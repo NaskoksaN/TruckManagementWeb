@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TruckManagementWeb.Core.Models.ApplicationUser;
 using TruckManagementWeb.Infrastructure.Data.Configuration;
 using TruckManagementWeb.Infrastructure.Data.Models;
 
@@ -20,11 +22,17 @@ namespace TruckManagementWeb.Data
                 .HasForeignKey(o => o.TripId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            //modelBuilder.Entity<ApplicationUser>()
+            //        .HasKey(u => u.Id);
+
+
+           // modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration());
+
             modelBuilder.ApplyConfiguration(new TruckConfiguration());
             modelBuilder.ApplyConfiguration(new CompanyConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
             modelBuilder.ApplyConfiguration(new TruckExpenseConfiguration());
-            
+
             TripSeeder.SeedData(modelBuilder);
 
             base.OnModelCreating(modelBuilder);

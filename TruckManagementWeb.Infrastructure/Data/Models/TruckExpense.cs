@@ -53,7 +53,9 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Comment("Notes about the expense.")]
         [MaxLength(ExpenseNotesMaxLength)]
         public string Notes { get; set; } = string.Empty;
-
+        /// <summary>
+        /// Last Employee crud expense
+        /// </summary>
         [Required]
         [Comment("Identifier of the employee managing the trip.")]
         public int EmployeeId { get; set; }

@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 using static TruckManagementWeb.Infrastructure.Constants.DataConstants;
 
 namespace TruckManagementWeb.Infrastructure.Data.Models

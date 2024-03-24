@@ -5,7 +5,7 @@ using TruckManagementWeb.Infrastructure.Data.Common;
 
 namespace TruckManagementWeb.Controllers
 {
-    public class TripController : Controller
+    public class TripController : BaseController
     {
         private readonly ITripService service;
         private readonly ITruckService truckService;

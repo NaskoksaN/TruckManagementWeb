@@ -15,5 +15,7 @@ namespace TruckManagementWeb.Core.Constants
         public const string MileageMessage = "Must be positive number from {1} km to {2} km";
         public const string VatRegexMessage = "Must have only numbers and uppercase letter";
         public const string TripPriceMessage = "The {0} must be between {1} and {2}.";
+        public const string ExpensePriceMessage = "The {0} must be between {1} and {2}.";
+        public const string EmailMsg = "Invalid email format";
     }
 }

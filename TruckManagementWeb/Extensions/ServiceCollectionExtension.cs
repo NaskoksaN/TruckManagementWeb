@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TruckManagementWeb.Core.Contracts;
+using TruckManagementWeb.Core.Models.ApplicationUser;
 using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Data;
 using TruckManagementWeb.Infrastructure.Data.Common;
@@ -15,6 +16,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<ITripService, TripService>();
             services.AddScoped<IReports, ReportService>();
+            services.AddScoped<IExpenseService, ExpenseService>();
 
             return services;
         }
@@ -45,7 +47,9 @@ namespace Microsoft.Extensions.DependencyInjection
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
                 })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<TruckDbContext>();
+
 
             return services;
         }

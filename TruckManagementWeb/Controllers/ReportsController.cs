@@ -7,7 +7,7 @@ using TruckManagementWeb.Infrastructure.Data.Common;
 
 namespace TruckManagementWeb.Controllers
 {
-    public class ReportsController : Controller
+    public class ReportsController : BaseController
     {
         private readonly ITruckService truckService;
         private readonly IReports reportService;

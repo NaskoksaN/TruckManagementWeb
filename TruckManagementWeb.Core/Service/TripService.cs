@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Trip;
 using TruckManagementWeb.Infrastructure.Data.Common;

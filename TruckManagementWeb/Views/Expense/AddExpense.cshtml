@@ -1,0 +1,68 @@
+﻿@model ExpenseFormModel
+
+@{
+    ViewBag.Title = "Add expense";
+}
+
+<h3 class="text-center">@ViewBag.Title</h3>
+<hr />
+
+<div class="container">
+    <form asp-action="AddExpense" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="TruckPlate" class="control-label"></label>
+                    <input asp-for="TruckPlate" class="form-control" />
+                    <span asp-validation-for="TruckPlate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Amount" class="control-label"></label>
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="ExpenseDate" class="control-label"></label>
+                    <input asp-for="ExpenseDate" class="form-control datepicker" type="date" />
+                    <span asp-validation-for="ExpenseDate" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Notes" class="control-label"></label>
+                    <input asp-for="Notes" class="form-control" />
+                    <span asp-validation-for="Notes" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4"></div>
+        <div class="row">
+            <div class="col-md-4">
+                <select asp-for="ExpenseType" class="form-control" name="ExpenseType">
+                    <option value="">-- Select Expense Type --</option>
+                    @foreach (var expenseType in Model.ExpenseTypes)
+                    {
+                        <option value="@expenseType">@expenseType</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="row mb-4"></div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
