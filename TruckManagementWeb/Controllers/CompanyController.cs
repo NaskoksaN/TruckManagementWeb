@@ -18,7 +18,6 @@ namespace TruckManagementWeb.Controllers
             service = _service;
             logger = _logger;
         }
-        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult AddCompany()
         {
@@ -27,7 +26,6 @@ namespace TruckManagementWeb.Controllers
             return View(form);
         }
         [HttpPost]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddCompany(CompanyFormModel form)
         {
             if (await service.IsCompanyExistByVat(form.CompanyVat))
@@ -54,7 +52,7 @@ namespace TruckManagementWeb.Controllers
             return View(viewModel);
         }
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+       
         public async Task<IActionResult> DeleteCompany(int id)
         {
             CompanyViewModel? viewModel = await service.FindCompanyByIdAsync(id);
@@ -66,7 +64,7 @@ namespace TruckManagementWeb.Controllers
             return View(viewModel);
         }
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+       
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             CompanyViewModel model = await service.RemoveCompanyByIdAsync(id);
@@ -80,7 +78,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+       
         public async Task<IActionResult> EditCompany(int id)
         {
             CompanyEditFormModel form = await service.GetCompanyForEditByIdAsync(id);
@@ -88,7 +86,7 @@ namespace TruckManagementWeb.Controllers
             return View(form);
         }
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+       
         public async Task<IActionResult> EditCompany(int id, CompanyEditFormModel form)
         {
             if (id != form.Id)

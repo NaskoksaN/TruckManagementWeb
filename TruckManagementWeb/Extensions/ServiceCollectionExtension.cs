@@ -17,6 +17,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<ITripService, TripService>();
             services.AddScoped<IReports, ReportService>();
             services.AddScoped<IExpenseService, ExpenseService>();
+            services.AddScoped<IAdminService, AdminService>();
 
             return services;
         }
@@ -39,7 +40,7 @@ namespace Microsoft.Extensions.DependencyInjection
                             IConfiguration config)
         {
             services
-                .AddDefaultIdentity<IdentityUser>(options =>
+                .AddDefaultIdentity<ApplicationUser>(options =>
                 {
                     options.SignIn.RequireConfirmedAccount = false;
                     options.Password.RequireNonAlphanumeric = false;

@@ -126,11 +126,11 @@ namespace TruckManagementWeb.Controllers
             {
                 return BadRequest();
             }
-            if (await service.IsTruckExistAsync(form.TruckPlate))
-            {
-                this.ModelState.AddModelError(nameof(form.TruckPlate),
-                    "Truck with this plate already added");
-            }
+            //if (await service.IsTruckExistAsync(form.TruckPlate))
+            //{
+            //    this.ModelState.AddModelError(nameof(form.TruckPlate),
+            //        "Truck with this plate already added");
+            //}
 
             if (!ModelState.IsValid)
             {
