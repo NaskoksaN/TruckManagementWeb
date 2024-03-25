@@ -51,7 +51,13 @@ namespace Microsoft.Extensions.DependencyInjection
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<TruckDbContext>();
 
-
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", policy =>
+                {
+                    policy.RequireRole("admin");
+                });
+            });
             return services;
         }
     }
