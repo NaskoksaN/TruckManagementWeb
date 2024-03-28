@@ -17,7 +17,8 @@ namespace TruckManagementWeb.Infrastructure.Data.Configuration
                 Email = "admin@truck.com",
                 NormalizedEmail = "admin@truck.com",
                 UserName = "admin@truck.com",
-                NormalizedUserName = "admin@truck.com"
+                NormalizedUserName = "admin@truck.com",
+                SecurityStamp = Guid.NewGuid().ToString()
             };
         }
 

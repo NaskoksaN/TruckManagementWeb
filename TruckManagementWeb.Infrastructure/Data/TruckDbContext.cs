@@ -7,7 +7,7 @@ using TruckManagementWeb.Infrastructure.Data.Models;
 
 namespace TruckManagementWeb.Data
 {
-    public class TruckDbContext : IdentityDbContext<ApplicationUser, IdentityRole, string>
+    public class TruckDbContext : IdentityDbContext<ApplicationUser, IdentityRole<string>,string>
     {
         public TruckDbContext(DbContextOptions<TruckDbContext> options)
             : base(options)
@@ -41,7 +41,8 @@ namespace TruckManagementWeb.Data
                 {
                     Id = 1,
                     Email = "admin@truck.com",
-                    EmployeeUserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9"
+                    EmployeeUserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9",
+                    RoleId = "adminRoleId"
                 }
             );
 

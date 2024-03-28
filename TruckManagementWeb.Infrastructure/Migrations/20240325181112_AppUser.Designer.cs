@@ -12,8 +12,8 @@ using TruckManagementWeb.Data;
 namespace TruckManagementWeb.Infrastructure.Migrations
 {
     [DbContext(typeof(TruckDbContext))]
-    [Migration("20240324134130_UserRoleInitial")]
-    partial class UserRoleInitial
+    [Migration("20240325181112_AppUser")]
+    partial class AppUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,13 +24,17 @@ namespace TruckManagementWeb.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<string>", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -50,28 +54,7 @@ namespace TruckManagementWeb.Infrastructure.Migrations
 
                     b.ToTable("AspNetRoles", (string)null);
 
-                    b.HasData(
-                        new
-                        {
-                            Id = "adminRoleId",
-                            ConcurrencyStamp = "8523dd05-a589-4ba8-9882-e8c018b51cf5",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = "managerRoleId",
-                            ConcurrencyStamp = "1cb5bd1f-027f-4cac-a6b4-75f726810738",
-                            Name = "Manager",
-                            NormalizedName = "MANAGER"
-                        },
-                        new
-                        {
-                            Id = "dispatcherRoleId",
-                            ConcurrencyStamp = "bb23cbaa-5697-4f83-a82c-240c4388bca2",
-                            Name = "Dispo",
-                            NormalizedName = "DISPO"
-                        });
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityRole<string>");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -264,14 +247,15 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         {
                             Id = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7a930659-5e41-4e2b-9bae-b9cec7c9dea8",
+                            ConcurrencyStamp = "ec6c8f3b-ea10-4aa4-811a-3984e1809c5f",
                             Email = "admin@truck.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@truck.com",
                             NormalizedUserName = "admin@truck.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEL5thcJYo4TAj8VdIRq/g0NY210VIoxrOfJ9/pi/SwnnrA9e8qP46sYlaHaCIZBKbQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEExZERaTavJV/RK7WzbCjil6sRUOBBJ0wsYIvIv4jhHzhpJPdd/W21bWESBvR8yyfA==",
                             PhoneNumberConfirmed = false,
+                            SecurityStamp = "f298ef26-fc4b-4468-ba3a-12923f6f072e",
                             TwoFactorEnabled = false,
                             UserEmail = "",
                             UserName = "admin@truck.com"
@@ -558,9 +542,39 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                     b.ToTable("TruckExpenses");
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityRole<string>");
+
+                    b.HasDiscriminator().HasValue("IdentityRole");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "adminRoleId",
+                            ConcurrencyStamp = "90cc7c4c-3f58-465e-8fe1-de48115f2cfb",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "managerRoleId",
+                            ConcurrencyStamp = "9795d0b0-ec4d-4818-a4c4-36504a220f80",
+                            Name = "Manager",
+                            NormalizedName = "MANAGER"
+                        },
+                        new
+                        {
+                            Id = "dispatcherRoleId",
+                            ConcurrencyStamp = "e304cc35-7d18-45ae-a07b-f9fc6c355731",
+                            Name = "Dispo",
+                            NormalizedName = "DISPO"
+                        });
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<string>", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -587,7 +601,7 @@ namespace TruckManagementWeb.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<string>", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)

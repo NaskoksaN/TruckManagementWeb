@@ -4,18 +4,25 @@
 
 namespace TruckManagementWeb.Infrastructure.Migrations
 {
-    public partial class UserRoleInitial : Migration
+    public partial class AppUser : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AddColumn<string>(
+                name: "Discriminator",
+                table: "AspNetRoles",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
-                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                columns: new[] { "Id", "ConcurrencyStamp", "Discriminator", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "adminRoleId", "8523dd05-a589-4ba8-9882-e8c018b51cf5", "Admin", "ADMIN" },
-                    { "dispatcherRoleId", "bb23cbaa-5697-4f83-a82c-240c4388bca2", "Dispo", "DISPO" },
-                    { "managerRoleId", "1cb5bd1f-027f-4cac-a6b4-75f726810738", "Manager", "MANAGER" }
+                    { "adminRoleId", "90cc7c4c-3f58-465e-8fe1-de48115f2cfb", "IdentityRole", "Admin", "ADMIN" },
+                    { "dispatcherRoleId", "e304cc35-7d18-45ae-a07b-f9fc6c355731", "IdentityRole", "Dispo", "DISPO" },
+                    { "managerRoleId", "9795d0b0-ec4d-4818-a4c4-36504a220f80", "IdentityRole", "Manager", "MANAGER" }
                 });
 
             migrationBuilder.UpdateData(
@@ -23,7 +30,7 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                 keyColumn: "Id",
                 keyValue: "d401e5f8-2fe9-45e2-9209-69b7db1c1de9",
                 columns: new[] { "ConcurrencyStamp", "PasswordHash", "SecurityStamp" },
-                values: new object[] { "7a930659-5e41-4e2b-9bae-b9cec7c9dea8", "AQAAAAEAACcQAAAAEL5thcJYo4TAj8VdIRq/g0NY210VIoxrOfJ9/pi/SwnnrA9e8qP46sYlaHaCIZBKbQ==", null });
+                values: new object[] { "ec6c8f3b-ea10-4aa4-811a-3984e1809c5f", "AQAAAAEAACcQAAAAEExZERaTavJV/RK7WzbCjil6sRUOBBJ0wsYIvIv4jhHzhpJPdd/W21bWESBvR8yyfA==", "f298ef26-fc4b-4468-ba3a-12923f6f072e" });
 
             migrationBuilder.InsertData(
                 table: "Employees",
@@ -62,6 +69,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                 table: "AspNetRoles",
                 keyColumn: "Id",
                 keyValue: "adminRoleId");
+
+            migrationBuilder.DropColumn(
+                name: "Discriminator",
+                table: "AspNetRoles");
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",

@@ -52,10 +52,11 @@
         public const string ExpenseMinPrice = "0.00";
         public const string ExpenseMaxPrice = "50000.00";
 
-        public const int EmployeeNameMinLenght = 5;
+        public const int EmployeeNameMinLenght = 3;
         public const int EmployeeNameMaxLenght = 50;
 
         public const int EmployeeMailMinLenght = 5;
         public const int EmployeeMailMaxLenght = 50;
+
     }
 }
