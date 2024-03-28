@@ -1,4 +1,4 @@
-﻿namespace TruckManagementWeb.Core.Models.Admin
+﻿namespace TruckManagementWeb.Core.Models.User
 {
     public class RoleViewModel
     {

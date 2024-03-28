@@ -68,7 +68,8 @@ namespace TruckManagementWeb.Core.Service
 
         public async Task<CompanyViewModel?> FindCompanyByVatAsync(string companyVat)
         {
-            return await repository.AllAsync<Company>()
+
+            List<CompanyViewModel> companies =  await repository.AllAsync<Company>()
                 .Where(c => c.CompanyVat.ToUpper() == companyVat.ToUpper())
                 .Select(c => new CompanyViewModel()
                 {
@@ -78,11 +79,16 @@ namespace TruckManagementWeb.Core.Service
                     Vat = c.CompanyVat,
                     Country = c.CompanyCountry,
                 })
-                .FirstOrDefaultAsync();
+                .ToListAsync();
+
+            return companies.FirstOrDefault(model => model.Active) ?? companies.FirstOrDefault();
         }
 
         public async Task<IEnumerable<CompanyIndexViewModel>> GetAllCompanyReadOnlyOrderByNameAsync()
-        => await repository.AllReadOnlyAsync<Company>()
+        {
+            bool active = true;
+            var result =  await repository.AllReadOnlyAsync<Company>()
+            .Where(c => c.IsActive == active)
             .Select(c => new CompanyIndexViewModel()
             {
                 Id = c.Id,
@@ -93,10 +99,15 @@ namespace TruckManagementWeb.Core.Service
             .OrderBy(c => c.Name)
             .ToListAsync();
 
+            return result;
+        }
+
         public async Task<HashSet<CompanyCountryViewModel>> GetAllUniqueCountryAsync()
         {
+            bool active = true;
             List<string> allCountry = await repository
                             .AllReadOnlyAsync<Company>()
+                            .Where(c=>c.IsActive==active)
                             .Select(c => c.CompanyCountry.ToUpper())
                             .Distinct()
                             .ToListAsync();
@@ -129,9 +140,12 @@ namespace TruckManagementWeb.Core.Service
         public async Task<IEnumerable<CompanyIndexViewModel>> GetCompanyFromCountryAsync(string selectedCountry)
         {
             var normalizedSelectedCountry = selectedCountry.ToUpperInvariant();
+            bool active = true;
+
             var result = await repository
             .AllReadOnlyAsync<Company>()
-            .Where(c => c.CompanyCountry.ToUpper().Trim() == normalizedSelectedCountry.Trim())
+            .Where(c => c.CompanyCountry.ToUpper().Trim() == normalizedSelectedCountry.Trim() 
+                        && c.IsActive==active)
             .Select(c => new CompanyIndexViewModel()
             {
                 Id = c.Id,

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Truck;
 using TruckManagementWeb.Infrastructure.Data.Common;
@@ -37,8 +36,8 @@ namespace TruckManagementWeb.Core.Service
 
         public async Task<TruckViewModel?> FindTruckByPlateAsync(string plate)
         {
-            TruckViewModel? model = await repository.AllAsync<Truck>()
-                .Where(t=>t.TruckPlate==plate)
+            List<TruckViewModel> models = await repository.AllAsync<Truck>()
+                .Where(t => t.TruckPlate == plate)
                 .Select(t => new TruckViewModel()
                 {
                     Id = t.Id,
@@ -52,18 +51,19 @@ namespace TruckManagementWeb.Core.Service
                                   t.RemovedDate.Value.ToString(UsedDateFormat)
                                   : null
                 })
-                .FirstOrDefaultAsync();
+                .ToListAsync();
 
-            return model;
+            return models.FirstOrDefault(model => model.IsActive) ?? models.FirstOrDefault();
 
         }
 
         public async Task<IEnumerable<TruckIndexViewModel>> GetAlltruckReadOnlyAsync()
         {
+            bool active = true;
             IEnumerable<TruckIndexViewModel> result = await repository
                                         .AllReadOnlyAsync<Truck>()
                                         .AsNoTracking()
-                                        .Where(t=>t.IsActive==true)
+                                        .Where(t=>t.IsActive== active)
                                         .Select(t => new TruckIndexViewModel()
                                         {
                                             TruckPlate = t.TruckPlate,
@@ -118,7 +118,7 @@ namespace TruckManagementWeb.Core.Service
             return model;
         }
 
-        async Task<TruckEditFormModel?> ITruckService.GetTruckForEditById(int id)
+        public async Task<TruckEditFormModel?> GetTruckForEditByIdAsync(int id)
         {
             TruckEditFormModel? form = await repository.AllAsync<Truck>()
                 .Where(t => t.Id == id)
@@ -158,5 +158,6 @@ namespace TruckManagementWeb.Core.Service
 
             return truck?.Id ?? 0;
         }
+
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TruckManagementWeb.Core.Models.Admin
+using static TruckManagementWeb.Core.Constants.MessageConstants;
+using static TruckManagementWeb.Infrastructure.Constants.DataConstants;
+
+namespace TruckManagementWeb.Core.Models.User
 {
     public class RegisterFormModel
     {
@@ -31,6 +34,15 @@ namespace TruckManagementWeb.Core.Models.Admin
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; } = string.Empty;
+        /// <summary>
+        /// Employee full name
+        /// </summary>
+        [Required(ErrorMessage = RequiredMessage)]
+        [Display(Name =" Employee full name")]
+        [StringLength(EmployeeNameMaxLenght, 
+            MinimumLength =EmployeeNameMinLenght,
+            ErrorMessage = LengthMessage )]
+        public string FullName {  get; set; }=string.Empty;
 
         public string SelectedRole { get; set; } = string.Empty;
         public IEnumerable<RoleViewModel> Roles {get; set;} = new List<RoleViewModel>();
