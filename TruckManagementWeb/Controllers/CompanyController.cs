@@ -18,6 +18,7 @@ namespace TruckManagementWeb.Controllers
             service = _service;
             logger = _logger;
         }
+
         [HttpGet]
         public IActionResult AddCompany()
         {
@@ -25,6 +26,7 @@ namespace TruckManagementWeb.Controllers
 
             return View(form);
         }
+
         [HttpPost]
         public async Task<IActionResult> AddCompany(CompanyFormModel form)
         {
@@ -44,6 +46,7 @@ namespace TruckManagementWeb.Controllers
             return RedirectToAction(nameof(CompanyController.CompanyDetails), new { id = newCompanyId });
 
         }
+
         [HttpGet]
         public async Task<IActionResult> CompanyDetails(int id)
         {
@@ -51,8 +54,8 @@ namespace TruckManagementWeb.Controllers
 
             return View(viewModel);
         }
+
         [HttpGet]
-       
         public async Task<IActionResult> DeleteCompany(int id)
         {
             CompanyViewModel? viewModel = await service.FindCompanyByIdAsync(id);
@@ -63,8 +66,8 @@ namespace TruckManagementWeb.Controllers
             }
             return View(viewModel);
         }
+
         [HttpPost]
-       
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             CompanyViewModel model = await service.RemoveCompanyByIdAsync(id);
@@ -78,15 +81,14 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
-       
         public async Task<IActionResult> EditCompany(int id)
         {
             CompanyEditFormModel form = await service.GetCompanyForEditByIdAsync(id);
 
             return View(form);
         }
+
         [HttpPost]
-       
         public async Task<IActionResult> EditCompany(int id, CompanyEditFormModel form)
         {
             if (id != form.Id)
@@ -117,6 +119,7 @@ namespace TruckManagementWeb.Controllers
             FindCompanyFormModel form = new();
             return View(form);
         }
+
         [HttpPost]
         public async Task<IActionResult> FindCompany(FindCompanyFormModel form)
         {
@@ -135,6 +138,7 @@ namespace TruckManagementWeb.Controllers
 
             return View(form);
         }
+
         [HttpGet]
         public async Task<IActionResult> CompanyIndex (int? page)
         {
@@ -149,12 +153,14 @@ namespace TruckManagementWeb.Controllers
 
             return View(pagedList);
         }
+
         [HttpGet]
         public async Task<IActionResult> SelectedCountry()
         {
             HashSet<CompanyCountryViewModel> countries = await service.GetAllUniqueCountryAsync();
             return View(countries);
         }
+
         [HttpGet]
         public async Task<IActionResult> CompanyByCountry(string selectedCountry, int? page)
         {

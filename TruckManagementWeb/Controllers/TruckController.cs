@@ -115,7 +115,11 @@ namespace TruckManagementWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> EditTruck(int id)
         {
-            TruckEditFormModel form = await service.GetTruckForEditById(id);
+            TruckEditFormModel? form = await service.GetTruckForEditByIdAsync(id);
+            if(form == null)
+            {
+                return BadRequest();
+            }
 
             return View(form);
         }
@@ -126,11 +130,13 @@ namespace TruckManagementWeb.Controllers
             {
                 return BadRequest();
             }
-            //if (await service.IsTruckExistAsync(form.TruckPlate))
-            //{
-            //    this.ModelState.AddModelError(nameof(form.TruckPlate),
-            //        "Truck with this plate already added");
-            //}
+            var existTruck = await service.FindTruckByPlateAsync(form.TruckPlate);
+
+            if (existTruck.Id!= form.Id )
+            {
+                this.ModelState.AddModelError(nameof(form.TruckPlate),
+                    "Truck with this plate already added");
+            }
 
             if (!ModelState.IsValid)
             {

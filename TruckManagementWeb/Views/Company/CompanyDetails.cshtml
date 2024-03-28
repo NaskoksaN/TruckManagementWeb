@@ -15,10 +15,10 @@ else if(Model.Active==false)
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <h3>This truck was added for service on date: @Model.AddedOnDate</h3>
-                <h3>This truck was removed from service on date: @Model.RemovedOnDate</h3>
+                <h3>This companywas added for service on date: @Model.AddedOnDate</h3>
+                <h3>This company was removed from service on date: @Model.RemovedOnDate</h3>
                 <div class="text-center">
-                    <a asp-controller="Truck" asp-action="FindCompany" class="btn btn-primary">Find another company</a>
+                    <a asp-controller="Company" asp-action="FindCompany" class="btn btn-primary">Find another company</a>
                 </div>
             </div>
         </div>
@@ -35,9 +35,15 @@ else
                     <p><span>Company Country: </span><strong>@Model.Country</strong></p>
                 </div>
                 <div class="text-center">
-                    <a asp-controller="Company" asp-action="EditCompany" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
-                    <a asp-controller="Company" asp-action="DeleteCompany" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
-                    <a asp-controller="Company" asp-action="CompanyIndex" class="btn btn-primary">Back to company list</a>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Company" asp-action="EditCompany" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+                        <a asp-controller="Company" asp-action="DeleteCompany" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Company" asp-action="CompanyIndex" class="btn btn-primary">Back to company list</a>
+                    }
                 </div>
             </div>
         </div>

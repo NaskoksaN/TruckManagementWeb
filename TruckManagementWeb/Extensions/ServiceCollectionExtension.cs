@@ -17,7 +17,8 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<ITripService, TripService>();
             services.AddScoped<IReports, ReportService>();
             services.AddScoped<IExpenseService, ExpenseService>();
-            services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
 
             return services;
         }
@@ -55,7 +56,9 @@ namespace Microsoft.Extensions.DependencyInjection
             {
                 options.AddPolicy("AdminOnly", policy =>
                 {
-                    policy.RequireRole("admin");
+                    policy.RequireRole("Admin");
+                    policy.RequireRole("Manager");
+                    policy.RequireRole("Dispo");
                 });
             });
             return services;

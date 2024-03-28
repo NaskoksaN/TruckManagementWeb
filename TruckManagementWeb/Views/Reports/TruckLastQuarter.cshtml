@@ -54,33 +54,7 @@ else
 
 
 
-@* 
-<div>
-    <h6>Total Profit for last three months: @totalProfit | Total Income: @Model.Sum(report => report.TotalEuros) | Total Expenses: @Model.Sum(report => report.TotalExpenses)</h6>
-    <hr />
-</div>
 
-@foreach (var report in Model.Skip(startIndex).Take(itemsPerPage))
-{
-    <partial name="_TruckPeriodReport" model="@report" />
-}
-
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <li class="page-item @(currentPage == 1 ? "disabled" : "")">
-            <a class="page-link" href="@Url.Action("TruckLastQuarter", "Reports", new { truckPlate = ViewBag.TruckPlate, page = currentPage - 1 })">Previous</a>
-        </li>
-        @for (int i = 1; i <= totalPages; i++)
-        {
-            <li class="page-item @(i == currentPage ? "active" : "")">
-                <a class="page-link" href="@Url.Action("TruckLastQuarter", "Reports", new { truckPlate = ViewBag.TruckPlate, page = i })">@i</a>
-            </li>
-        }
-        <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
-            <a class="page-link" href="@Url.Action("TruckLastQuarter", "Reports", new { truckPlate = ViewBag.TruckPlate, page = currentPage + 1 })">Next</a>
-        </li>
-    </ul>
-</nav> *@
 
 
 

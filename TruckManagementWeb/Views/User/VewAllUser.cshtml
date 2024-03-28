@@ -1,0 +1,48 @@
+﻿@model List<UserViewModel>
+@{
+    ViewData["Title"] = "Users";
+    int pageNumber = (int)ViewData["PageNumber"];
+    int totalPages = (int)ViewData["TotalPages"];
+}
+
+<h2>Users</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Access Area</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td>@user.AccessArea</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(i == pageNumber ? "active" : "")">
+                    <a class="page-link" href="/ViewAllUser?pageNumber=@i">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}
+else
+{
+    <p>No users found.</p>
+}
