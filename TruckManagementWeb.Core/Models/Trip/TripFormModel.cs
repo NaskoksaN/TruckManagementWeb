@@ -40,6 +40,9 @@ namespace TruckManagementWeb.Core.Models.Trip
         [Display(Name = "Trip end date")]
         public DateTime EndDate { get; set; }
 
+        [Required]
+        public int EmployeeId {  get; set; }
+
         ICollection<OrderFormModel> Orders { get; set; } = new List<OrderFormModel>();
     }
 }

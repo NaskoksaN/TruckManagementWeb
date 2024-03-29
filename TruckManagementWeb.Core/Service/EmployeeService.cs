@@ -1,4 +1,5 @@
-﻿using TruckManagementWeb.Core.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.User;
 using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Models;
@@ -25,6 +26,14 @@ namespace TruckManagementWeb.Core.Service
 
             await repository.AddAsync(employee);
             await repository.SaveChangesAsync();
+        }
+
+        public async Task<int> FindEmployeeIdAsync(string employeeUserId)
+        {
+            var employee = await repository.AllAsync<Employee>()
+                                            .Where(e => e.EmployeeUserId == employeeUserId)
+                                            .FirstOrDefaultAsync();
+            return employee.Id;
         }
     }
 }

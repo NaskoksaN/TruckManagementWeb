@@ -33,7 +33,8 @@ namespace TruckManagementWeb.Core.Service
                 StartDate = form.StartDate,
                 EndDate = form.EndDate,
                 TruckId = truckId,
-                EuPerKm = form.TripPrice/form.TripKm
+                EuPerKm = form.TripPrice/form.TripKm,
+                EmployeeId= form.EmployeeId,
             };
 
             await repository.AddAsync(trip);
@@ -52,7 +53,10 @@ namespace TruckManagementWeb.Core.Service
                 .FirstOrDefaultAsync();
             if(trip != null )
             {
-                repository.DeleteRange(trip.Orders);
+                if (trip.Orders != null)
+                {
+                    repository.DeleteRange(trip.Orders);
+                }
                 repository.Delete(trip);
 
                 await repository.SaveChangesAsync();
@@ -120,10 +124,12 @@ namespace TruckManagementWeb.Core.Service
             Trip? trip = await repository.AllAsync<Trip>()
                 .Where(t => t.Id == form.TripId)
                 .FirstOrDefaultAsync();
+
             Company? company = await repository.AllAsync<Company>()
                 .Where(c => c.IsActive == true
                 && c.CompanyVat == form.CompanyVat)
                 .FirstOrDefaultAsync();
+
             Order order = new Order()
             {
                 TripId = trip.Id,

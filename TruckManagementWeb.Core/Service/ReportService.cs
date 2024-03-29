@@ -61,8 +61,9 @@ namespace TruckManagementWeb.Core.Service
                                         , DateTime lastMonthStart
                                         , DateTime lastMonthEnd)
         {
+            var active = true;
             var result = await repository.AllReadOnlyAsync<Truck>()
-               .Where(t => t.TruckPlate == truckPlate)
+               .Where(t => t.TruckPlate == truckPlate && t.IsActive==active)
                .Select(t => new TruckMonthReportViewModel
                {
                    PlateNumber = t.TruckPlate,
@@ -111,8 +112,9 @@ namespace TruckManagementWeb.Core.Service
                                                                                        , DateTime lastDay)
         {
             List<TruckMonthSimpleViewModel> result = new List<TruckMonthSimpleViewModel>();
-
+            bool active = true;
             var trucks = await repository.AllReadOnlyAsync<Truck>()
+                .Where(t=> t.IsActive==active)
                 .Include(tr => tr.Trips)
                 .Include(tr => tr.Expenses)
                 .ToListAsync();

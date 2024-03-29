@@ -36,8 +36,9 @@ namespace TruckManagementWeb.Core.Service
 
         public async Task<TruckViewModel?> FindTruckByPlateAsync(string plate)
         {
+            bool active = true;
             List<TruckViewModel> models = await repository.AllAsync<Truck>()
-                .Where(t => t.TruckPlate == plate)
+                .Where(t => t.TruckPlate == plate && t.IsActive==active)
                 .Select(t => new TruckViewModel()
                 {
                     Id = t.Id,
