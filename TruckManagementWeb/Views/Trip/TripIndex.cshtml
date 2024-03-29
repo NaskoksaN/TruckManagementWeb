@@ -1,33 +1,16 @@
-﻿@model IEnumerable<TripViewModel>
+﻿
+@model IEnumerable<TripViewModel>
 
 @{
     ViewBag.Title = "Trips";
 
-    decimal totalOrdersSum = Model.Sum(t => t.Orders.Sum(o => o.Price));
-    decimal totalKm = Model.Sum(t => t.TotalKm);
-    decimal totalEuPerKm = (totalOrdersSum / totalKm);
-
-    decimal avgPricePerKm = totalOrdersSum != 0 ? totalOrdersSum / totalKm : 0;
 }
 
 <h6 class="text-center">@ViewBag.Title</h6>
 <hr />
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <p>Total Kilometers: @totalKm</p>
-        </div>
-        <div class="col-md-4">
-            <p>Total Orders Sum: @totalOrdersSum</p>
-        </div>
-        <div class="col-md-4">
-            <p>Average Price per Kilometer: @avgPricePerKm.ToString("F2")</p>
-        </div>
-    </div>
-</div>
-
-<div class="container table-container">
+@if(Model.Any())
+{
+    <div class="container table-container">
     <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
@@ -88,7 +71,12 @@
             </tbody>
         </table>
     </div>
-</div>
+    </div>
+}
+else
+{
+    <h4>No trips added</h4>
+}
 
 <style>
     .card {

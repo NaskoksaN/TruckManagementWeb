@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Trip;
+using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Infrastructure.Data.Common;
 
 namespace TruckManagementWeb.Controllers
@@ -10,13 +12,16 @@ namespace TruckManagementWeb.Controllers
         private readonly ITripService service;
         private readonly ITruckService truckService;
         private readonly ICompanyService companyService;
+        private readonly IEmployeeService employeeService;
         public TripController(ITripService _service,
                     ITruckService _truckService, 
-                    ICompanyService _companyService)
+                    ICompanyService _companyService,
+                    IEmployeeService _employeeService)
         {
             service = _service;
             truckService = _truckService;
             companyService = _companyService;
+            employeeService = _employeeService;
         }
 
         [HttpGet]
@@ -38,12 +43,16 @@ namespace TruckManagementWeb.Controllers
                     "Truck with this plate not exist.");
             }
 
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 form.StartDate = DateTime.UtcNow;
                 form.EndDate = DateTime.UtcNow;
                 return View(form);
             }
+
+            string employeeUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            int employeeId = await employeeService.FindEmployeeIdAsync(employeeUserId);
+            form.EmployeeId = employeeId;
 
             int newTripId = await service.CreateTripAsync(form);
 
@@ -65,8 +74,9 @@ namespace TruckManagementWeb.Controllers
         {
             if (button == "AbortTrip")
             {
+                
                 await service.DeleteGivenTripWithOrders(form.TripId);
-
+                
                 return RedirectToAction(nameof(CreateTrip));
             }
 
@@ -86,11 +96,12 @@ namespace TruckManagementWeb.Controllers
 
             if(button== "CreateOrder")
             {
+                await service.SaveOrderToTripAsync(form);
                 form.LoadingDate = DateTime.UtcNow;
                 form.DeliveryDate = DateTime.UtcNow;
                 form.Price = 0M;
                 form.CompanyVat = "";
-                await service.SaveOrderToTripAsync(form);
+
                 return RedirectToAction(nameof(TripController.CreateOrder), new { id = form.TripId });
             }
              
@@ -117,8 +128,9 @@ namespace TruckManagementWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> TripIndex()
         {
-            IEnumerable<TripViewModel> resultView = await service.GetAllTripAsync();
-            return View(resultView);
+            var allTrips = await service.GetAllTripAsync();
+
+            return View(allTrips);
         }
 
     }

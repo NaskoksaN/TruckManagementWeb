@@ -170,18 +170,21 @@ namespace TruckManagementWeb.Controllers
 
             List<TruckMonthReportViewModel> truckReport = new List<TruckMonthReportViewModel>();
 
-            DateTime startDate = today.AddMonths(-1).AddDays(1);
+            DateTime currentMonthStartDate = new DateTime(today.Year, today.Month, 1);
+
+            
+            currentMonthStartDate = currentMonthStartDate.AddMonths(-1);
 
             for (int i = 0; i < 3; i++)
             {
-                DateTime firstDayOfMonth = new DateTime(startDate.Year, startDate.Month, 1);
-                DateTime lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+                DateTime startDate = currentMonthStartDate.AddMonths(-i);
+                DateTime endDate = startDate.AddMonths(1).AddDays(-1);
 
-                var truckMonthly = await reportService.GetTruckPeriodResultAsync(truckPlate, firstDayOfMonth, lastDayOfMonth);
+                var truckMonthly = await reportService.GetTruckPeriodResultAsync(truckPlate, startDate, endDate);
 
                 truckReport.Insert(0, truckMonthly);
 
-                startDate = startDate.AddMonths(-1);
+                
             }
 
             if (truckReport == null)

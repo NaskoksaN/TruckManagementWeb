@@ -58,6 +58,14 @@
 }
 
 
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <a class="btn btn-primary" asp-controller="Reports" asp-action="TruckReport">Return to Truck Report</a>
+        </div>
+    </div>
+</div>
+
 @* 
 @{
     decimal profit = Model.Sum(t => t.TotalEuros) - Model.Sum(t => t.TotalExpenses);
