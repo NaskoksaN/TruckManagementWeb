@@ -63,5 +63,15 @@ namespace TruckManagementWeb.Infrastructure.Data.Common
         {
             this.DbSet<T>().RemoveRange(entities);
         }
+
+        /// <summary>
+        /// Ads collection of entities to the database
+        /// </summary>
+        /// <param name="entities">Enumerable list of entities</param>
+        public async Task AddRangeAsync<T>(IEnumerable<T> entities) where T : class
+        {
+            await DbSet<T>().AddRangeAsync(entities);
+        }
+
     }
 }
