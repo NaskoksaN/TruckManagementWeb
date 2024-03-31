@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Expense;
+using TruckManagementWeb.Core.Service;
 
 namespace TruckManagementWeb.Controllers
 {
@@ -8,15 +10,17 @@ namespace TruckManagementWeb.Controllers
     {
         private readonly IExpenseService service;
         private readonly ITruckService truckerService;
-        public ExpenseController(IExpenseService _service
-            , ITruckService _truckerService)
+        private readonly IEmployeeService employeeService;
+        public ExpenseController(IExpenseService _service, 
+            ITruckService _truckerService,
+            IEmployeeService _employeeService)
         {
             service = _service;
             this.truckerService = _truckerService;
-
+            this.employeeService = _employeeService;
         }
         [HttpGet]
-        public async Task<IActionResult> AddExpense()
+        public IActionResult AddExpense()
         {
             ExpenseFormModel formModel = new();
             formModel.ExpenseDate = DateTime.Now;
@@ -43,9 +47,20 @@ namespace TruckManagementWeb.Controllers
                 return View(formModel);
             }
 
+            string employeeUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            int employeeId = await employeeService.FindEmployeeIdAsync(employeeUserId);
+            formModel.EmployeeId = employeeId;
+
             int newExpenseId = await service.AddExpenseAsync(formModel);
 
-            return View();
+            return RedirectToAction(nameof(ExpenseDetails), new { id = newExpenseId });
+        }
+        [HttpGet]
+        public async Task<IActionResult> ExpenseDetails(int id)
+        {
+            ExpenseViewModel model = await service.GetExpenseByIdAsync(id);
+            
+            return View(model);
         }
     }
 }

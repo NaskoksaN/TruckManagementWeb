@@ -25,8 +25,9 @@ namespace TruckManagementWeb.Core.Service
             DateTime lastMonthEnd = DateTime
                                 .Today
                                 .AddDays(-DateTime.Today.Day);
-
+            bool active = true;
             var result = await repository.AllReadOnlyAsync<Truck>()
+                    .Where(t=>t.IsActive==active)
                     .Include(t => t.Trips)
                     .Include(ex => ex.Expenses)
                     .Select(t => new TrucksMonthlyViewReport
@@ -157,7 +158,9 @@ namespace TruckManagementWeb.Core.Service
 
             List<TruckMonthSimpleViewModel> yearlyResults = new List<TruckMonthSimpleViewModel>();
 
+            bool active = true;
             List<Truck> trucks = await repository.AllReadOnlyAsync<Truck>()
+                .Where(t=>t.IsActive==active)
                 .Include(tr => tr.Trips)
                 .Include(tr => tr.Expenses)
                 .ToListAsync();
@@ -204,7 +207,7 @@ namespace TruckManagementWeb.Core.Service
             List<TruckMonthSimpleViewModel> monthlyResults 
                                 = new List<TruckMonthSimpleViewModel>();
             DateTime today = DateTime.Today;
-
+            bool active = true;
             for (int i = 1; i <= 12; i++)
             {
                 DateTime lastMonthStart = today.AddMonths(-i).AddDays(1 - today.Day);
@@ -212,7 +215,7 @@ namespace TruckManagementWeb.Core.Service
 
                 TruckMonthSimpleViewModel? truck = await repository.AllReadOnlyAsync<Truck>()
                     .Include(trip => trip.Trips)
-                    .Where(t => t.TruckPlate == truckPlate && t.IsActive == true)
+                    .Where(t => t.TruckPlate == truckPlate && t.IsActive == active)
                     .Select(t => new TruckMonthSimpleViewModel()
                     {
                         PlateNumber = t.TruckPlate,
@@ -254,8 +257,10 @@ namespace TruckManagementWeb.Core.Service
 
         public async Task<List<ReportRevenueFromCompany>> YearlyCompanyRevenueAsync()
         {
+            bool active = true;
             List<Company> companies = await repository
                                 .AllReadOnlyAsync<Company>()
+                                .Where(c=>c.IsActive==active)
                                 .Include(o => o.Orders)
                                 .ToListAsync();
             DateTime today = DateTime.Today;

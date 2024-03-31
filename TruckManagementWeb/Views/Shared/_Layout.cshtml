@@ -121,42 +121,42 @@
                                     </div>
                                 </li>
                             }
-                            <li class="nav-item dropdown">
-                                <div class="dropdown">
-                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                        Reports
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="TruckReport">TruckReport</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="AllTrucksReport">AllTruckReport</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="YearlyRevenueFromCompanies">YearlyRevenueFromCompanies</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <div class="dropdown">
-                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                        Expense
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="" asp-controller="Expense" asp-action="AddExpense">AddExpense</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="" asp-controller="Expense" asp-action="RemoveExpense">RemoveExpense</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="" asp-controller="Expense" asp-action="EditExpense">EditExpense</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("Manager"))
+                            {
+                                <li class="nav-item dropdown">
+                                    <div class="dropdown">
+                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                            Reports
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="TruckReport">TruckReport</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="AllTrucksReport">AllTruckReport</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="dropdown-item" asp-area="" asp-controller="Reports" asp-action="YearlyRevenueFromCompanies">YearlyRevenueFromCompanies</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            }
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("Manager") || User.IsInRole("Dispo"))
+                            {
+                                <li class="nav-item dropdown">
+                                    <div class="dropdown">
+                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                            Expense
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a class="dropdown-item" asp-area="" asp-controller="Expense" asp-action="AddExpense">AddExpense</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            }
                         } 
                     </ul>
                     <partial name="_LoginPartial" />

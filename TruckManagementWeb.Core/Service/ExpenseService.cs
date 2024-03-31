@@ -1,4 +1,5 @@
-﻿using TruckManagementWeb.Core.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Expense;
 using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Enum;
@@ -26,6 +27,7 @@ namespace TruckManagementWeb.Core.Service
                 Amount = formModel.Amount,
                 Notes = formModel.Notes,
                 ExpenseDate = formModel.ExpenseDate,
+                EmployeeId = formModel.EmployeeId,
             };
             if (Enum.TryParse(formModel.ExpenseType, out ExpenseType expenseTypeEnum))
             {
@@ -33,7 +35,29 @@ namespace TruckManagementWeb.Core.Service
             }
 
             await repository.AddAsync(expense);
-            return await repository.SaveChangesAsync();
+            await repository.SaveChangesAsync();
+
+            return expense.Id;
+        }
+
+        public async Task<ExpenseViewModel> GetExpenseByIdAsync(int id)
+        {
+            var expense = await repository.AllAsync<TruckExpense>()
+                    .Where(e => e.Id == id)
+                    .FirstOrDefaultAsync();
+            var truck = await truckService.FindTruckByIdAsyncc(expense.TruckId);
+
+            ExpenseViewModel model = new ExpenseViewModel()
+            {
+                Id=expense.Id,
+                Amount = expense.Amount,
+                Notes = expense.Notes ?? "n/a",
+                TruckPlate=truck.TruckPlate,
+                ExpenseDate=expense.ExpenseDate,
+                ExpenseType = expense.Type.ToString(),
+            };
+
+            return model;
         }
 
         public List<string> GetExpenseTypesAsync() => Enum

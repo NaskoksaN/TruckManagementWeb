@@ -35,9 +35,12 @@ namespace TruckManagementWeb.Core.Models.Expense
         [Display(Name = "Invoice date")]
         public DateTime ExpenseDate { get; set; }
 
+        [Required(ErrorMessage = RequiredMessage)]
         [StringLength(ExpenseNotesMaxLength,
             MinimumLength = ExpenseNotesMinLength,
             ErrorMessage = LengthMessage)]
-        public string? Notes {  get; set; }
+        public string Notes {  get; set; } = string.Empty;
+
+        public int EmployeeId {  get; set; }
     }
 }

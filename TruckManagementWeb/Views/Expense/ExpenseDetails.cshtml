@@ -1,0 +1,24 @@
+﻿@model ExpenseViewModel
+
+@{
+    ViewBag.Title = "Expense details for: " + Model.TruckPlate;
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div>
+                <p><span>Truck plate: </span><strong>@Model.TruckPlate</strong></p>
+                <p><span>Amount: </span><strong>@Model.Amount</strong></p>
+                <p><span>Expense type: </span><strong>@Model.ExpenseType</strong></p>
+                <p><span>date of expense: </span><strong>@Model.ExpenseDate</strong></p>
+                <p><span>Note: </span><strong>@Model.Notes</strong></p>
+                <div class="text-center">
+                    <a asp-controller="Expense" asp-action="AddExpense" class="btn btn-primary">Back to add expense</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

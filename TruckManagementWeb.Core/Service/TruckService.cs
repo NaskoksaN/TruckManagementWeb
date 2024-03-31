@@ -153,8 +153,9 @@ namespace TruckManagementWeb.Core.Service
 
         public async Task<int> GetTruckIdByPlate(string plate)
         {
+            bool active = true;
             var truck = await repository.AllAsync<Truck>()
-            .Where(t => t.TruckPlate == plate && t.IsActive == true)
+            .Where(t => t.TruckPlate == plate && t.IsActive == active)
             .FirstOrDefaultAsync();
 
             return truck?.Id ?? 0;
