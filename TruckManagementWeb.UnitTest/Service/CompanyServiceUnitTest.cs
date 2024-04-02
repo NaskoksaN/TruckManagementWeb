@@ -27,7 +27,7 @@ namespace TruckManagementWeb.UnitTest.Service
         public void SetUp()
         {
             var contextOptions = new DbContextOptionsBuilder<TruckDbContext>()
-               .UseInMemoryDatabase("HouseDB")
+               .UseInMemoryDatabase("TruckDB")
                .Options;
             applicationDbContext = new TruckDbContext(contextOptions);
 
@@ -38,8 +38,8 @@ namespace TruckManagementWeb.UnitTest.Service
         [Test]
         public async Task Test_CreateAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
+            //var loggerMock = new Mock<ILogger<CompanyService>>();
+            //logger = loggerMock.Object;
             var repo = new Repository(applicationDbContext);
             companyService = new CompanyService(repo);
             var newCompany = new CompanyFormModel()
@@ -439,6 +439,8 @@ namespace TruckManagementWeb.UnitTest.Service
             Assert.That(result.Active, Is.False);
             Assert.That(result, Is.Not.Null);
         }
+
+
         [TearDown]
         public void TearDown()
         {
