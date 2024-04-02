@@ -98,7 +98,7 @@ namespace TruckManagementWeb.Core.Service
             return model;
         }
 
-        public async Task<bool> IsTruckExistAsync(string truckPlate)
+        public async Task<bool> IsTruckByPlateExistAsync(string truckPlate)
         {
             return await repository.AllReadOnlyAsync<Truck>()
                 .AnyAsync(t => t.TruckPlate == truckPlate && t.IsActive==true);
@@ -106,8 +106,8 @@ namespace TruckManagementWeb.Core.Service
 
         public async Task<TruckViewModel> RemoveTruckAsync(int truckId)
         {
-            Truck truck = await repository.AllAsync<Truck>()
-                .FirstOrDefaultAsync(t=> t.Id == truckId);
+            Truck truck = await repository.GetByIdAsync<Truck>(truckId);
+               // .FirstOrDefaultAsync(t=> t.Id == truckId);
           
             truck.IsActive = false;
             truck.RemovedDate = DateTime.UtcNow.Date;
@@ -158,7 +158,8 @@ namespace TruckManagementWeb.Core.Service
             .Where(t => t.TruckPlate == plate && t.IsActive == active)
             .FirstOrDefaultAsync();
 
-            return truck?.Id ?? 0;
+            //return truck?.Id ?? 0;
+            return truck.Id;
         }
 
     }

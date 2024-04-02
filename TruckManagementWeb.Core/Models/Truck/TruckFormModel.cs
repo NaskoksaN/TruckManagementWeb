@@ -45,9 +45,6 @@ namespace TruckManagementWeb.Core.Models.Truck
             , ErrorMessage = MileageMessage)]
         public int TruckMilleage { get; set; } = 1;
 
-        public static implicit operator TruckFormModel?(TruckViewModel? v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

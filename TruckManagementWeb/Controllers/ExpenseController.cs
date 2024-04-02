@@ -30,7 +30,7 @@ namespace TruckManagementWeb.Controllers
         [HttpPost]
         public async Task<IActionResult> AddExpense(ExpenseFormModel formModel)
         {
-            if(await truckerService.IsTruckExistAsync(formModel.TruckPlate)==false)
+            if(await truckerService.IsTruckByPlateExistAsync(formModel.TruckPlate)==false)
             {
                 this.ModelState.AddModelError(nameof(formModel.TruckPlate),
                    "Truck with this plate not exist");

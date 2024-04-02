@@ -34,7 +34,7 @@ namespace TruckManagementWeb.Controllers
             {
                 return BadRequest();
             }
-            if (await truckService.IsTruckExistAsync(form.TruckPlate) == false)
+            if (await truckService.IsTruckByPlateExistAsync(form.TruckPlate) == false)
             {
                 this.ModelState.AddModelError(nameof(form.TruckPlate),
                     "Truck not exist");

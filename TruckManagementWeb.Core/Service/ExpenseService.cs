@@ -63,7 +63,6 @@ namespace TruckManagementWeb.Core.Service
         public List<string> GetExpenseTypesAsync() => Enum
                                                       .GetNames(typeof(ExpenseType))
                                                       .ToList();
-        
     }
     
 }

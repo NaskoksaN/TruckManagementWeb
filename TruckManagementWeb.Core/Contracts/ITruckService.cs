@@ -7,7 +7,7 @@ namespace TruckManagementWeb.Core.Contracts
         Task<int> CreateAsync(TruckFormModel form);
         Task<IEnumerable<TruckIndexViewModel>> GetAlltruckReadOnlyAsync();
         Task<TruckViewModel?> FindTruckByIdAsyncc(int id);
-        Task<bool> IsTruckExistAsync(string truckPlate);
+        Task<bool> IsTruckByPlateExistAsync(string truckPlate);
         Task<TruckViewModel> RemoveTruckAsync(int truckId);
         Task<TruckEditFormModel?> GetTruckForEditByIdAsync(int id);
         Task<TruckViewModel?> FindTruckByPlateAsync(string plate);

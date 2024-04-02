@@ -29,7 +29,7 @@ namespace TruckManagementWeb.Controllers
         [HttpPost]
         public async Task<IActionResult> AddTruck(TruckFormModel form)
         {
-            if(await service.IsTruckExistAsync(form.TruckPlate))
+            if(await service.IsTruckByPlateExistAsync(form.TruckPlate))
             {
                 this.ModelState.AddModelError(nameof(form.TruckPlate),
                     "Truck with this plate already added");

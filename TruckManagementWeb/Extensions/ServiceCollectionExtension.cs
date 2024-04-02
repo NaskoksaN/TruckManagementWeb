@@ -20,6 +20,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
 
+
             return services;
         }
 
@@ -61,6 +62,7 @@ namespace Microsoft.Extensions.DependencyInjection
                     policy.RequireRole("Dispo");
                 });
             });
+
             return services;
         }
     }

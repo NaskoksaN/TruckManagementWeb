@@ -95,6 +95,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
+       
         public IActionResult Login(string? returnUrl = null)
         {
             LoginFormModel model = new LoginFormModel()

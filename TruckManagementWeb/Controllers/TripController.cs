@@ -37,7 +37,7 @@ namespace TruckManagementWeb.Controllers
         public async Task<IActionResult> CreateTrip(TripFormModel form)
         {
             string plate = form.TruckPlate;
-            if(await truckService.IsTruckExistAsync(plate)==false)
+            if(await truckService.IsTruckByPlateExistAsync(plate)==false)
             {
                 this.ModelState.AddModelError(nameof(form.TruckPlate),
                     "Truck with this plate not exist.");
