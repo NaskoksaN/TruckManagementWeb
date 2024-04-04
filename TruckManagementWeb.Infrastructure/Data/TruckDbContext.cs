@@ -22,45 +22,17 @@ namespace TruckManagementWeb.Data
                 .HasForeignKey(o => o.TripId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            //modelBuilder.Entity<ApplicationUser>()
-            //        .HasKey(u => u.Id);
 
-
+            modelBuilder.ApplyConfiguration(new IdentityRoleConfiguration());
             modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration());
+            modelBuilder.ApplyConfiguration(new IdentityUserRoleConfiguration());
 
-            // Seed roles
-            modelBuilder.Entity<IdentityRole>().HasData(
-                new IdentityRole { Id = "adminRoleId", Name = "Admin", NormalizedName = "ADMIN" },
-                new IdentityRole { Id = "managerRoleId", Name = "Manager", NormalizedName = "MANAGER" },
-                new IdentityRole { Id = "dispatcherRoleId", Name = "Dispo", NormalizedName = "DISPO" }
-            );
+            modelBuilder.ApplyConfiguration(new TruckConfiguration());
+            modelBuilder.ApplyConfiguration(new CompanyConfiguration());
+            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+            modelBuilder.ApplyConfiguration(new TruckExpenseConfiguration());
 
-            // Seed employee and assign admin role
-            modelBuilder.Entity<Employee>().HasData(
-                new Employee
-                {
-                    Id = 1,
-                    Email = "admin@truck.com",
-                    EmployeeUserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9",
-                    RoleId = "adminRoleId"
-                }
-            );
-
-            
-            modelBuilder.Entity<IdentityUserRole<string>>().HasData(
-                new IdentityUserRole<string>
-                {
-                    UserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9", 
-                    RoleId = "adminRoleId" 
-                }
-            );
-
-            //modelBuilder.ApplyConfiguration(new TruckConfiguration());
-            //modelBuilder.ApplyConfiguration(new CompanyConfiguration());
-            //modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
-            //modelBuilder.ApplyConfiguration(new TruckExpenseConfiguration());
-
-            //TripSeeder.SeedData(modelBuilder);
+            TripSeeder.SeedData(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }
