@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Reports;
 using TruckManagementWeb.Core.Models.Truck;
-using TruckManagementWeb.Infrastructure.Data.Common;
 
 namespace TruckManagementWeb.Controllers
 {
@@ -48,50 +46,6 @@ namespace TruckManagementWeb.Controllers
             return View(nameof(TruckReport), form);
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> TruckLastMonth(string truckPlate)
-        //{
-        //    return await GenerateTruckReportForPeriod(truckPlate, DateTime.Today.AddMonths(-1), "last");
-        //}
-
-        //[HttpGet]
-        //public async Task<IActionResult> TruckCurrentMonth(string truckPlate)
-        //{
-        //    return await GenerateTruckReportForPeriod(truckPlate, DateTime.Today, "current");
-        //}
-
-        //private async Task<IActionResult> GenerateTruckReportForPeriod(string truckPlate, DateTime startDate, string period)
-        //{
-        //    if (string.IsNullOrEmpty(truckPlate))
-        //    {
-        //        return BadRequest("Truck plate is required.");
-        //    }
-
-        //    var truck = await truckService.FindTruckByPlateAsync(truckPlate);
-        //    if (truck == null)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    DateTime firstDayOfMonth = new DateTime(startDate.Year, startDate.Month, 1);
-        //    DateTime lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
-
-        //    TruckMonthReportViewModel truckReport = await reportService.GetTruckPeriodResultAsync(
-        //        truckPlate,
-        //        firstDayOfMonth,
-        //        lastDayOfMonth
-        //    );
-
-        //    if (truckReport == null)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    ViewBag.Title = $"Truck {truckReport.PlateNumber} report for {period} month";
-
-        //    return View(truckReport);
-        //}
-
         [HttpGet]
         public async Task<IActionResult> TruckLastMonth(string truckPlate)
         {
@@ -105,14 +59,7 @@ namespace TruckManagementWeb.Controllers
                 return BadRequest();
             }
 
-            DateTime today = DateTime.Today;
-            DateTime firstDayOfLastMonth = new DateTime(today.Year, today.Month - 1, 1);
-            DateTime lastDayOfLastMonth = firstDayOfLastMonth.AddMonths(1).AddDays(-1);
-
-            TruckMonthReportViewModel truckReport = await reportService
-                        .GetTruckPeriodResultAsync(truckPlate
-                                                    , firstDayOfLastMonth
-                                                    , lastDayOfLastMonth);
+            TruckMonthReportViewModel truckReport = await reportService.TruckLastMonthAsync(truckPlate);
 
             if (truckReport == null)
             {
@@ -135,14 +82,7 @@ namespace TruckManagementWeb.Controllers
                 return BadRequest();
             }
 
-            DateTime today = DateTime.Today;
-            DateTime firstDayOfCurrentMonth = new DateTime(today.Year, today.Month, 1);
-            DateTime lastDayOfCurrentMonth = firstDayOfCurrentMonth.AddMonths(1).AddDays(-1);
-
-            TruckMonthReportViewModel truckReport = await reportService
-                        .GetTruckPeriodResultAsync(truckPlate
-                                                    , firstDayOfCurrentMonth
-                                                    , lastDayOfCurrentMonth);
+            TruckMonthReportViewModel truckReport = await reportService.TruckCurrentMonthAsync(truckPlate);
 
             if (truckReport == null)
             {
@@ -166,26 +106,7 @@ namespace TruckManagementWeb.Controllers
                 return BadRequest();
             }
 
-            DateTime today = DateTime.Today;
-
-            List<TruckMonthReportViewModel> truckReport = new List<TruckMonthReportViewModel>();
-
-            DateTime currentMonthStartDate = new DateTime(today.Year, today.Month, 1);
-
-            
-            currentMonthStartDate = currentMonthStartDate.AddMonths(-1);
-
-            for (int i = 0; i < 3; i++)
-            {
-                DateTime startDate = currentMonthStartDate.AddMonths(-i);
-                DateTime endDate = startDate.AddMonths(1).AddDays(-1);
-
-                var truckMonthly = await reportService.GetTruckPeriodResultAsync(truckPlate, startDate, endDate);
-
-                truckReport.Insert(0, truckMonthly);
-
-                
-            }
+            List<TruckMonthReportViewModel> truckReport = await reportService.TruckLastQuarterAsync(truckPlate);
 
             if (truckReport == null)
             {

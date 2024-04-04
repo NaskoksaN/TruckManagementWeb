@@ -58,56 +58,6 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
-        public async Task<TruckMonthReportViewModel> GetTruckPeriodResultAsync(string truckPlate
-                                        , DateTime lastMonthStart
-                                        , DateTime lastMonthEnd)
-        {
-            var active = true;
-            var result = await repository.AllReadOnlyAsync<Truck>()
-               .Where(t => t.TruckPlate == truckPlate && t.IsActive==active)
-               .Select(t => new TruckMonthReportViewModel
-               {
-                   PlateNumber = t.TruckPlate,
-                   TotalKilometers = t.Trips
-                                       .Where(tr => tr.StartDate >= lastMonthStart
-                                               && tr.StartDate <= lastMonthEnd)
-                                       .Sum(tr => tr.TripKm),
-                   TotalEuros = t.Trips
-                                   .Where(tr => tr.StartDate >= lastMonthStart
-                                               && tr.StartDate <= lastMonthEnd)
-                                   .Sum(tr => tr.TripPrice),
-                   TotalExpenses = t.Expenses
-                                       .Where(ex => ex.ExpenseDate >= lastMonthStart
-                                                   && ex.ExpenseDate <= lastMonthEnd)
-                                       .Sum(ex => ex.Amount),
-                   Trips = t.Trips
-                               .Where(tr => tr.StartDate >= lastMonthStart
-                                           && tr.StartDate <= lastMonthEnd)
-                               .Select(tr => new Models.Trip.TripViewModel
-                               {
-                                   Id = tr.Id,
-                                   LoadingDate = tr.StartDate,
-                                   TruckPlate = truckPlate,
-                                   Price = tr.TripPrice,
-                                   TotalKm = tr.TripKm,
-                                   EuPerKm = tr.EuPerKm.ToString("F2"),
-                                   Orders = tr.Orders
-                                               .Select(o => new Models.Trip.OrderViewModel
-                                               {
-                                                   LoadingDate = o.LoadingDate,
-                                                   CompanyName = o.Company.CompanyName,
-                                                   Price = o.Price,
-                                                   LoadingCode = o.LoadingPostCode,
-                                                   DeliveryCode = o.DeliveryPostCode
-                                               })
-                                               .ToList()
-                               })
-                               .ToList()
-               })
-               .FirstOrDefaultAsync();
-
-            return result;
-        }
 
         public async Task<List<TruckMonthSimpleViewModel>> GetTrucksMonthlyResultAsync(DateTime firstDay
                                                                                        , DateTime lastDay)
@@ -202,57 +152,103 @@ namespace TruckManagementWeb.Core.Service
 
 
         public async Task<IEnumerable<TruckMonthSimpleViewModel>> GetTruckYearReport(string truckPlate)
-                                       
         {
-            List<TruckMonthSimpleViewModel> monthlyResults 
-                                = new List<TruckMonthSimpleViewModel>();
+            List<TruckMonthSimpleViewModel> monthlyResults = new List<TruckMonthSimpleViewModel>();
             DateTime today = DateTime.Today;
             bool active = true;
-            for (int i = 1; i <= 12; i++)
+
+            DateTime startOfLastFullMonth = today.AddMonths(-1).AddDays(1 - today.Day);
+
+            var truckData = await repository.AllReadOnlyAsync<Truck>()
+                .Include(truck => truck.Trips)
+                .Include(truck => truck.Expenses)
+                .Where(truck =>
+                    truck.TruckPlate == truckPlate &&
+                    truck.IsActive == active &&
+                    truck.Trips.Any(trip => trip.StartDate >= startOfLastFullMonth.AddYears(-1) && trip.StartDate <= startOfLastFullMonth) &&
+                    truck.Expenses.Any(expense => expense.ExpenseDate >= startOfLastFullMonth.AddYears(-1) && expense.ExpenseDate <= startOfLastFullMonth))
+                .ToListAsync();
+
+            for (int i = 0; i < 12; i++)
             {
-                DateTime lastMonthStart = today.AddMonths(-i).AddDays(1 - today.Day);
-                DateTime lastMonthEnd = lastMonthStart.AddMonths(1).AddDays(-1);
+                DateTime currentMonth = startOfLastFullMonth.AddMonths(-i);
 
-                TruckMonthSimpleViewModel? truck = await repository.AllReadOnlyAsync<Truck>()
-                    .Include(trip => trip.Trips)
-                    .Where(t => t.TruckPlate == truckPlate && t.IsActive == active)
-                    .Select(t => new TruckMonthSimpleViewModel()
+                var truckMonthData = truckData.Select(truck => new TruckMonthSimpleViewModel
+                {
+                    PlateNumber = truck.TruckPlate,
+                    TotalKilometers = truck.Trips != null ? truck.Trips
+                        .Where(trip => trip.StartDate.Month == currentMonth.Month && trip.StartDate.Year == currentMonth.Year)
+                        .Select(trip => trip.TripKm)
+                        .Sum() : 0,
+                    TotalEuros = truck.Trips != null ? truck.Trips
+                        .Where(trip => trip.StartDate.Month == currentMonth.Month && trip.StartDate.Year == currentMonth.Year)
+                        .Select(trip => trip.TripPrice)
+                        .Sum() : 0,
+                    TotalExpenses = truck.Expenses != null ? truck.Expenses
+                        .Where(expense => expense.ExpenseDate.Month == currentMonth.Month && expense.ExpenseDate.Year == currentMonth.Year)
+                        .Select(expense => expense.Amount)
+                        .Sum() : 0,
+                    Month = currentMonth,
+                }).FirstOrDefault();
+
+                if (truckMonthData != null)
+                {
+                    if (truckMonthData.TotalKilometers > 0 && truckMonthData.TotalEuros > 0)
                     {
-                        PlateNumber = t.TruckPlate,
-                        TotalKilometers = t.Trips !=null ?
-                                t.Trips
-                                .Where(tr => tr.StartDate >= lastMonthStart && tr.StartDate <= lastMonthEnd)
-                                .Select(tr => tr.TripKm)
-                                .Sum()
-                                : 0,
-                        TotalEuros = t.Trips != null ?
-                                t.Trips
-                                .Where(tr => tr.StartDate >= lastMonthStart && tr.StartDate <= lastMonthEnd)
-                                .Select(tr => tr.TripPrice)
-                                .Sum()
-                                : 0,
-                        TotalExpenses = t.Expenses != null ?
-                                t.Expenses
-                                .Where(ex => ex.ExpenseDate >= lastMonthStart && ex.ExpenseDate <= lastMonthEnd)
-                                .Select(ex => ex.Amount)
-                                .Sum()
-                                : 0,
-                        Month = lastMonthStart,
-                    }).FirstOrDefaultAsync();
+                        truckMonthData.EuroPerKm = (truckMonthData.TotalEuros / truckMonthData.TotalKilometers).ToString("F2");
+                    }
+                    else
+                    {
+                        truckMonthData.EuroPerKm = "N/A";
+                    }
 
-                if(truck.TotalEuros >0 && truck.TotalExpenses >0)
-                {
-                    truck.EuroPerKm = (truck.TotalEuros / truck.TotalKilometers).ToString("F2");
+                    monthlyResults.Add(truckMonthData);
                 }
-                else
-                {
-                    truck.EuroPerKm = "N/A";
-                }
-
-                monthlyResults.Add(truck);
             }
 
             return monthlyResults;
+        }
+
+        public Task<TruckMonthReportViewModel> TruckCurrentMonthAsync(string truckPlate)
+        {
+            DateTime today = DateTime.Today;
+            DateTime firstDayOfCurrentMonth = new DateTime(today.Year, today.Month, 1);
+            DateTime lastDayOfCurrentMonth = firstDayOfCurrentMonth.AddMonths(1).AddDays(-1);
+
+            return GetTruckPeriodResultAsync(truckPlate, firstDayOfCurrentMonth, lastDayOfCurrentMonth);
+        }
+
+        public Task<TruckMonthReportViewModel> TruckLastMonthAsync(string truckPlate)
+        {
+            DateTime today = DateTime.Today;
+            DateTime firstDayOfLastMonth = new DateTime(today.Year, today.Month - 1, 1);
+            DateTime lastDayOfLastMonth = firstDayOfLastMonth.AddMonths(1).AddDays(-1);
+
+            return GetTruckPeriodResultAsync(truckPlate, firstDayOfLastMonth, lastDayOfLastMonth);
+        }
+
+        public async Task<List<TruckMonthReportViewModel>> TruckLastQuarterAsync(string truckPlate)
+        {
+            DateTime today = DateTime.Today;
+
+            List<TruckMonthReportViewModel> truckReport = new List<TruckMonthReportViewModel>();
+
+            DateTime currentMonthStartDate = new DateTime(today.Year, today.Month, 1);
+
+
+            currentMonthStartDate = currentMonthStartDate.AddMonths(-1);
+
+            for (int i = 0; i < 3; i++)
+            {
+                DateTime startDate = currentMonthStartDate.AddMonths(-i);
+                DateTime endDate = startDate.AddMonths(1).AddDays(-1);
+
+                var truckMonthly = await GetTruckPeriodResultAsync(truckPlate, startDate, endDate);
+
+                truckReport.Insert(0, truckMonthly);
+            }
+
+            return truckReport;
         }
 
         public async Task<List<ReportRevenueFromCompany>> YearlyCompanyRevenueAsync()
@@ -290,6 +286,57 @@ namespace TruckManagementWeb.Core.Service
             }
 
             return yearlyResults;
+        }
+
+        private  async Task<TruckMonthReportViewModel> GetTruckPeriodResultAsync(string truckPlate
+                                        , DateTime lastMonthStart
+                                        , DateTime lastMonthEnd)
+        {
+            var active = true;
+            var result = await repository.AllReadOnlyAsync<Truck>()
+               .Where(t => t.TruckPlate == truckPlate && t.IsActive == active)
+               .Select(t => new TruckMonthReportViewModel
+               {
+                   PlateNumber = t.TruckPlate,
+                   TotalKilometers = t.Trips
+                                       .Where(tr => tr.StartDate >= lastMonthStart
+                                               && tr.StartDate <= lastMonthEnd)
+                                       .Sum(tr => tr.TripKm),
+                   TotalEuros = t.Trips
+                                   .Where(tr => tr.StartDate >= lastMonthStart
+                                               && tr.StartDate <= lastMonthEnd)
+                                   .Sum(tr => tr.TripPrice),
+                   TotalExpenses = t.Expenses
+                                       .Where(ex => ex.ExpenseDate >= lastMonthStart
+                                                   && ex.ExpenseDate <= lastMonthEnd)
+                                       .Sum(ex => ex.Amount),
+                   Trips = t.Trips
+                               .Where(tr => tr.StartDate >= lastMonthStart
+                                           && tr.StartDate <= lastMonthEnd)
+                               .Select(tr => new Models.Trip.TripViewModel
+                               {
+                                   Id = tr.Id,
+                                   LoadingDate = tr.StartDate,
+                                   TruckPlate = truckPlate,
+                                   Price = tr.TripPrice,
+                                   TotalKm = tr.TripKm,
+                                   EuPerKm = tr.EuPerKm.ToString("F2"),
+                                   Orders = tr.Orders
+                                               .Select(o => new Models.Trip.OrderViewModel
+                                               {
+                                                   LoadingDate = o.LoadingDate,
+                                                   CompanyName = o.Company.CompanyName,
+                                                   Price = o.Price,
+                                                   LoadingCode = o.LoadingPostCode,
+                                                   DeliveryCode = o.DeliveryPostCode
+                                               })
+                                               .ToList()
+                               })
+                               .ToList()
+               })
+               .FirstOrDefaultAsync();
+
+            return result;
         }
     }
 }
