@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Reports;
 using TruckManagementWeb.Core.Models.Truck;
@@ -145,45 +146,23 @@ namespace TruckManagementWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> ResultOfTrucksLastMonth()
         {
-            DateTime today = DateTime.Today;
-            DateTime firstDayOfLastMonth = new DateTime(today.Year, today.Month - 1, 1);
-            DateTime lastDayOfLastMonth = firstDayOfLastMonth.AddMonths(1).AddDays(-1);
+            var( title,monthlyResult) = await reportService.GetMonthlyTrucksResultAsync();
 
-            List<TruckMonthSimpleViewModel> monthlyResult = await reportService
-                .GetTrucksMonthlyResultAsync(firstDayOfLastMonth, lastDayOfLastMonth);
-
-            decimal profit = monthlyResult.Sum(t => t.TotalEuros) - monthlyResult.Sum(t => t.TotalExpenses);
-            string profitLabel = profit >= 0 ? "Profit" : "Loss";
-            string period = $"{firstDayOfLastMonth.ToString("dd/MM/yyyy")} - {lastDayOfLastMonth.ToString("dd/MM/yyyy")}";
-            ViewBag.Title = $"Trucks last month ({period}) Result: {profitLabel} {Math.Abs(profit)} euro";
-
+            ViewBag.Title = title;
             return View(monthlyResult);
         }
         [HttpGet]
         public async Task<IActionResult> YearlyTrucksResult()
         {
-            List<TruckMonthSimpleViewModel> yearResult = await reportService
-                .GetTrucksYearResultAsync();
+            var (title, monthlyResult) = await reportService.GetTrucksYearResultAsync();
 
-            decimal profit = yearResult.Sum(t => t.TotalEuros) - yearResult.Sum(t => t.TotalExpenses);
-            string profitLabel = profit >= 0 ? "Profit" : "Loss";
-
-            DateTime lastFullMonthStart = DateTime.Today.AddMonths(-1).AddDays(1 - DateTime.Today.Day);
-            DateTime lastFullMonthEnd = lastFullMonthStart.AddMonths(1).AddDays(-1);
-            DateTime startOfLast12Months = lastFullMonthStart.AddYears(-1).AddMonths(1);
-
-            ViewBag.Title = $"Trucks last year ({startOfLast12Months.ToString("dd/MM/yyyy")} - {lastFullMonthEnd.ToString("dd/MM/yyyy")}) Result: {profitLabel} {Math.Abs(profit)} euro";
-            return View(yearResult);
+            ViewBag.Title = title;
+            return View(monthlyResult);
         }
         [HttpGet]
         public async Task<IActionResult> YearlyRevenueFromCompanies(int page =1)
         {
-            List<ReportRevenueFromCompany> companiesRevenue = await reportService.YearlyCompanyRevenueAsync();
-            DateTime lastFullMonthStart = DateTime.Today.AddMonths(-1).AddDays(1 - DateTime.Today.Day);
-            DateTime lastFullMonthEnd = lastFullMonthStart.AddMonths(1).AddDays(-1);
-            DateTime startOfLast12Months = lastFullMonthStart.AddYears(-1).AddMonths(1);
-
-            ViewBag.Title = $"Income from Companies for last year ({startOfLast12Months.ToString("dd/MM/yyyy")} - {lastFullMonthEnd.ToString("dd/MM/yyyy")})";
+            var (title, companiesRevenue) = await reportService.YearlyCompanyRevenueAsync();
 
             int itemsPerPage = 6;
             int totalCompanies = companiesRevenue.Count;
@@ -196,6 +175,7 @@ namespace TruckManagementWeb.Controllers
 
             List<ReportRevenueFromCompany> companiesForPage = companiesRevenue.GetRange(startIndex, endIndex - startIndex);
 
+            ViewBag.Title = title;
             ViewBag.CurrentPage = page;
             ViewBag.TotalPages = totalPages;
 
