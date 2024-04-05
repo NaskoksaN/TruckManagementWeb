@@ -8,7 +8,7 @@ using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Enum;
 using TruckManagementWeb.Infrastructure.Data.Models;
 
-namespace TruckManagementWeb.UnitTest.Service
+namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
     public class ExpenseServiceUnitTest
     {
@@ -36,7 +36,7 @@ namespace TruckManagementWeb.UnitTest.Service
         public async Task Test_AddExpenseAsync()
         {
             var repo = new Repository(applicationDbContext);
-            ITruckService truckService= new TruckService(repo);
+            ITruckService truckService = new TruckService(repo);
             var expenseService = new ExpenseService(repo, truckService);
 
             TruckExpense expense = new()

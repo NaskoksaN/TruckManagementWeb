@@ -8,7 +8,7 @@ using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Models;
 using TruckManagementWeb.Infrastructure.Migrations;
 
-namespace TruckManagementWeb.UnitTest.Service
+namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
     public class EmployeeServiceUnitTest
     {

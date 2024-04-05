@@ -9,7 +9,7 @@ using TruckManagementWeb.Data;
 using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Models;
 
-namespace TruckManagementWeb.UnitTest.Service
+namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
     public class TruckServiceUnitTest
     {
@@ -214,7 +214,7 @@ namespace TruckManagementWeb.UnitTest.Service
         {
             var repo = new Repository(applicationDbContext);
             truckService = new TruckService(repo);
-           
+
             await repo.AddRangeAsync(new List<Truck>()
             {
                 new Truck()
@@ -250,7 +250,7 @@ namespace TruckManagementWeb.UnitTest.Service
         {
             var repo = new Repository(applicationDbContext);
             truckService = new TruckService(repo);
-            await repo.AddAsync( new Truck()
+            await repo.AddAsync(new Truck()
             {
                 TruckPlate = "B1115TC",
                 TruckBrand = "Iveco",
@@ -263,11 +263,11 @@ namespace TruckManagementWeb.UnitTest.Service
 
             await truckService.EditAsync(1, new TruckEditFormModel()
             {
-                TruckPlate="EDIT",
-                TruckBrand="Edit",
-                TruckModel="Edit",
-                TruckMilleage=100,
-                ProductionYear=2000
+                TruckPlate = "EDIT",
+                TruckBrand = "Edit",
+                TruckModel = "Edit",
+                TruckMilleage = 100,
+                ProductionYear = 2000
             });
 
             var truck = await repo.GetByIdAsync<Truck>(1);

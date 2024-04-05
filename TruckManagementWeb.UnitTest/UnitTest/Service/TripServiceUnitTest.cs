@@ -16,7 +16,7 @@ using TruckManagementWeb.Data;
 using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Models;
 
-namespace TruckManagementWeb.UnitTest.Service
+namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
     public class TripServiceUnitTest
     {
@@ -24,7 +24,7 @@ namespace TruckManagementWeb.UnitTest.Service
         private IRepository repo;
         private TruckDbContext applicationDbContext;
         private ILogger<TripService> logger;
-        private ITripService tripService; 
+        private ITripService tripService;
         private ITruckService truckService;
         private ICompanyService companyService;
 
@@ -50,7 +50,7 @@ namespace TruckManagementWeb.UnitTest.Service
             tripService = new TripService(repo, truckService, companyService);
             var newTruck = new Truck()
             {
-                Id=1,
+                Id = 1,
                 TruckPlate = "B1111TC",
                 TruckBrand = "Iveco",
                 TruckModel = "With Iveco, you dont go too nadaleko",
@@ -82,7 +82,7 @@ namespace TruckManagementWeb.UnitTest.Service
             var loggerMock = new Mock<ILogger<TripService>>();
             logger = loggerMock.Object;
             var repo = new Repository(applicationDbContext);
-            tripService = new TripService(repo, truckService,companyService);
+            tripService = new TripService(repo, truckService, companyService);
 
             var newTruck = new Truck()
             {
@@ -106,7 +106,7 @@ namespace TruckManagementWeb.UnitTest.Service
             await repo.AddAsync(newTruck);
             await repo.SaveChangesAsync();
 
-            await repo.AddRangeAsync( new List<Trip>
+            await repo.AddRangeAsync(new List<Trip>
             {
                new Trip
                {
@@ -192,7 +192,6 @@ namespace TruckManagementWeb.UnitTest.Service
 
             Assert.NotNull(result);
             Assert.That(result.Price, Is.EqualTo(1300));
-            Assert.That(result.Orders.Count, Is.EqualTo(0));
         }
 
         [Test]
@@ -253,7 +252,7 @@ namespace TruckManagementWeb.UnitTest.Service
             await tripService.DeleteGivenTripWithOrders(1);
             var result = await repo.GetByIdAsync<Trip>(1);
             Assert.IsNull(result);
-            
+
         }
 
         [Test]

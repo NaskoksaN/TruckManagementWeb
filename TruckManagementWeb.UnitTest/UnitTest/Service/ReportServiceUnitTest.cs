@@ -12,9 +12,9 @@ using TruckManagementWeb.Data;
 using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Models;
 
-namespace TruckManagementWeb.UnitTest.Service
+namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
-    public  class ReportServiceUnitTest
+    public class ReportServiceUnitTest
     {
         private IRepository repo;
         private TruckDbContext applicationDbContext;
