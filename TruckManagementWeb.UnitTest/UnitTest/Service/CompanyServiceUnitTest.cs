@@ -15,11 +15,8 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
     [TestFixture]
     public class CompanyServiceUnitTest
     {
-        private IEnumerable<Company> companies;
         private IRepository repo;
         private TruckDbContext truckDbContext;
-        private ILogger<CompanyService> logger;
-
         private ICompanyService companyService;
 
 
@@ -39,8 +36,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_CreateAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
             companyService = new CompanyService(repo);
             var newCompany = new CompanyFormModel()
@@ -62,8 +57,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_EditAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
 
             companyService = new CompanyService(repo);
@@ -102,8 +95,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_FindCompanyByIdAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
 
             companyService = new CompanyService(repo);
@@ -136,8 +127,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_RetuenNullFindCompanyByIdAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
 
             companyService = new CompanyService(repo);
@@ -167,8 +156,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_FindCompanyByVatAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
 
             companyService = new CompanyService(repo);
@@ -199,8 +186,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_RetuenNullFindCompanyByVatAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
 
             companyService = new CompanyService(repo);
@@ -230,8 +215,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_GetAllCompanyReadOnlyOrderByNameAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
 
             companyService = new CompanyService(repo);
@@ -264,8 +247,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_GetAllUniqueCountryAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
 
             companyService = new CompanyService(repo);
@@ -304,8 +285,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_GetCompanyForEditByIdAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
 
             companyService = new CompanyService(repo);
@@ -337,8 +316,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_GetCompanyFromCountryAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
 
             companyService = new CompanyService(repo);
@@ -376,8 +353,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_ReturnTrueIsCompanyExistByVat()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
             companyService = new CompanyService(repo);
             var newCompany = new CompanyFormModel()
@@ -399,8 +374,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_ReturnFalseIsCompanyExistByVat()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
             companyService = new CompanyService(repo);
             var newCompany = new CompanyFormModel()
@@ -422,8 +395,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_ReturnNotNullRemoveCompanyByIdAsync()
         {
-            var loggerMock = new Mock<ILogger<CompanyService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(truckDbContext);
             companyService = new CompanyService(repo);
             var newCompany = new CompanyFormModel()

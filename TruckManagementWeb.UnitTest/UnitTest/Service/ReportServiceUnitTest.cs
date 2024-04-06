@@ -16,7 +16,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
     {
         private IRepository repo;
         private TruckDbContext applicationDbContext;
-        private ILogger<ReportService> logger;
         private IReports reportService;
 
 
@@ -242,6 +241,12 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
 
             await repo.AddRangeAsync<Truck>(testData);
             await repo.SaveChangesAsync();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            applicationDbContext.Dispose();
         }
     }
 }

@@ -13,10 +13,8 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
     public class TripServiceUnitTest
     {
-        private IEnumerable<Trip> trips;
         private IRepository repo;
         private TruckDbContext applicationDbContext;
-        private ILogger<TripService> logger;
         private ITripService tripService;
         private ITruckService truckService;
         private ICompanyService companyService;
@@ -72,8 +70,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_GetAllTripAsync()
         {
-            var loggerMock = new Mock<ILogger<TripService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(applicationDbContext);
             tripService = new TripService(repo, truckService, companyService);
 

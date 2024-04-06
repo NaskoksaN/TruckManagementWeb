@@ -13,10 +13,8 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
     public class TruckServiceUnitTest
     {
-        private IEnumerable<Truck> trucks;
         private IRepository repo;
         private TruckDbContext applicationDbContext;
-        private ILogger<TruckService> logger;
         private ITruckService truckService;
 
 
@@ -35,8 +33,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_CreateAsync()
         {
-            var loggerMock = new Mock<ILogger<TruckService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(applicationDbContext);
             truckService = new TruckService(repo);
             var newTruck = new TruckFormModel()
@@ -57,8 +53,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_FindTruckByPlateAsync()
         {
-            var loggerMock = new Mock<ILogger<TruckService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(applicationDbContext);
             truckService = new TruckService(repo);
             var newTruck = new TruckFormModel()
@@ -78,8 +72,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_ReturnNullFindTruckByPlateAsync()
         {
-            var loggerMock = new Mock<ILogger<TruckService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(applicationDbContext);
             truckService = new TruckService(repo);
             var newTruck = new TruckFormModel()
@@ -99,8 +91,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_GetAlltruckReadOnlyAsync()
         {
-            var loggerMock = new Mock<ILogger<TruckService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(applicationDbContext);
             truckService = new TruckService(repo);
             var newTruck = new TruckFormModel()
@@ -121,8 +111,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_FindTruckByIdAsyncc()
         {
-            var loggerMock = new Mock<ILogger<TruckService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(applicationDbContext);
             truckService = new TruckService(repo);
             var newTruck = new TruckFormModel()
@@ -148,8 +136,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_IsTruckByPlateExistAsync()
         {
-            var loggerMock = new Mock<ILogger<TruckService>>();
-            logger = loggerMock.Object;
             var repo = new Repository(applicationDbContext);
             truckService = new TruckService(repo);
             var newTruck = new TruckFormModel()
@@ -170,8 +156,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_ReturnFalseIsTruckByPlateExistAsync()
         {
-            //var loggerMock = new Mock<ILogger<TruckService>>();
-            //logger = loggerMock.Object;
             var repo = new Repository(applicationDbContext);
             truckService = new TruckService(repo);
             var newTruck = new TruckFormModel()

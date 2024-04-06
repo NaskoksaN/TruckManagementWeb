@@ -12,10 +12,8 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
     public class ExpenseServiceUnitTest
     {
-        private IEnumerable<TruckExpense> expenses;
         private IRepository repo;
         private TruckDbContext applicationDbContext;
-        private ILogger<ExpenseService> logger;
         private ICompanyService expenseService;
         private ITruckService truckService;
 

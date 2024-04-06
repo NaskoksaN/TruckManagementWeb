@@ -12,10 +12,8 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
     public class EmployeeServiceUnitTest
     {
-        private IEnumerable<Employee> employees;
         private IRepository repo;
         private TruckDbContext applicationDbContext;
-        private ILogger<EmployeeService> logger;
         private IEmployeeService employeeService;
 
         [SetUp]
