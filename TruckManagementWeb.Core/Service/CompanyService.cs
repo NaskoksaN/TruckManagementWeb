@@ -33,6 +33,12 @@ namespace TruckManagementWeb.Core.Service
             return company.Id;
         }
 
+
+        /// <summary>
+        /// Asynchronously updates the details of a company identified by its ID using the provided form data.
+        /// The method retrieves the company from the repository based on the given ID, updates its properties
+        /// with the values from the provided form, and saves the changes asynchronously.
+        /// </summary>
         public async Task EditAsync(int id, CompanyEditFormModel form)
         {
             Company company = await repository.GetByIdAsync<Company>(id);
@@ -46,6 +52,11 @@ namespace TruckManagementWeb.Core.Service
             await repository.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Asynchronously finds a company by its ID and returns a view model representation of the company.
+        /// The method queries the repository for a company with the specified ID, maps its properties to a
+        /// CompanyViewModel object, and returns the result. If no company is found with the given ID, null is returned.
+        /// </summary>
         public async Task<CompanyViewModel?> FindCompanyByIdAsync(int id)
         {
             CompanyViewModel? model = await repository.AllAsync<Company>()
@@ -66,6 +77,13 @@ namespace TruckManagementWeb.Core.Service
             return model;
         }
 
+
+        /// <summary>
+        /// Asynchronously finds a company by its VAT number and returns a view model representation of the company.
+        /// The method queries the repository for companies with the specified VAT number (case-insensitive comparison),
+        /// maps their properties to CompanyViewModel objects, and returns the first active company found.
+        /// If no active company is found with the given VAT number, the method returns the first company found.
+        /// </summary>
         public async Task<CompanyViewModel?> FindCompanyByVatAsync(string companyVat)
         {
 
@@ -84,6 +102,11 @@ namespace TruckManagementWeb.Core.Service
             return companies.FirstOrDefault(model => model.Active) ?? companies.FirstOrDefault();
         }
 
+
+        /// <summary>
+        /// Asynchronously retrieves all active companies from the repository,
+        /// orders them by name, and returns their view model representations.
+        /// </summary>
         public async Task<IEnumerable<CompanyIndexViewModel>> GetAllCompanyReadOnlyOrderByNameAsync()
         {
             bool active = true;
@@ -102,6 +125,10 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
+        /// <summary>
+        /// Asynchronously retrieves all active companies from the repository,
+        /// extracts their unique country names, and returns them as a HashSet of CompanyCountryViewModel objects.
+        /// </summary>
         public async Task<HashSet<CompanyCountryViewModel>> GetAllUniqueCountryAsync()
         {
             bool active = true;
@@ -119,6 +146,10 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
+
+        /// <summary>
+        /// Asynchronously retrieves a company for editing by its ID from the repository.
+        /// </summary>
         public async Task<CompanyEditFormModel?> GetCompanyForEditByIdAsync(int id)
         {
             CompanyEditFormModel? form = await repository.AllAsync<Company>()
@@ -137,6 +168,9 @@ namespace TruckManagementWeb.Core.Service
             return form;
         }
 
+        /// <summary>
+        /// Asynchronously retrieves companies from a specific country from the repository.
+        /// </summary>
         public async Task<IEnumerable<CompanyIndexViewModel>> GetCompanyFromCountryAsync(string selectedCountry)
         {
             var normalizedSelectedCountry = selectedCountry.ToUpperInvariant();
@@ -159,10 +193,16 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
+        /// <summary>
+        /// Asynchronously checks if a company with the specified VAT exists in the repository.
+        /// </summary>
         public async Task<bool> IsCompanyExistByVat(string companyVat)
         => await repository.AllReadOnlyAsync<Company>()
             .AnyAsync(c=> c.CompanyVat.ToUpper() == companyVat.ToUpper() && c.IsActive==true);
 
+        /// <summary>
+        /// Asynchronously removes a company with the specified ID from the repository.
+        /// </summary>
         public async Task<CompanyViewModel?> RemoveCompanyByIdAsync(int id)
         {
             Company company = await repository.GetByIdAsync<Company>(id);

@@ -13,6 +13,14 @@ namespace TruckManagementWeb.Core.Service
         {
             repository = _repository;
         }
+
+        /// <summary>
+        /// Asynchronously creates a new employee with the provided details.
+        /// </summary>
+        /// <param name="model">The model containing the details of the employee to create.</param>
+        /// <param name="userId">The ID of the user associated with the employee.</param>
+        /// <param name="roleId">The ID of the role assigned to the employee.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
         public async Task CreateEmployeeAsync(RegisterFormModel model, string userId, string roleId)
         {
 
@@ -28,6 +36,14 @@ namespace TruckManagementWeb.Core.Service
             await repository.SaveChangesAsync();
         }
 
+
+
+        /// <summary>
+        /// Asynchronously finds the ID of the employee associated with the provided user ID.
+        /// </summary>
+        /// <param name="employeeUserId">The ID of the user associated with the employee.</param>
+        /// <returns>The ID of the employee if found, otherwise 0.</returns>
+        /// <remarks>If no employee is found with the given user ID, returns 0.</remarks>
         public async Task<int> FindEmployeeIdAsync(string employeeUserId)
         {
             var employee = await repository.AllAsync<Employee>()
@@ -36,6 +52,12 @@ namespace TruckManagementWeb.Core.Service
             return employee.Id;
         }
 
+
+        /// <summary>
+        /// Retrieves a list of all active users along with their details.
+        /// </summary>
+        /// <returns>A list of <see cref="UserViewModel"/> objects representing active users.</returns>
+        /// <remarks>Only users marked as active are included in the result.</remarks>
         public async Task<List<UserViewModel>> GetAllUserAsync()
         {
             bool activity = true;

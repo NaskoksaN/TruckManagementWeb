@@ -18,6 +18,10 @@ namespace TruckManagementWeb.Core.Service
             truckService = _truckService;
         }
 
+
+        /// <summary>
+        /// Adds an expense to the database based on the provided expense form model.
+        /// </summary>
         public async Task<int> AddExpenseAsync(ExpenseFormModel formModel)
         {
             var truckId = await truckService.GetTruckIdByPlate(formModel.TruckPlate);
@@ -40,6 +44,9 @@ namespace TruckManagementWeb.Core.Service
             return expense.Id;
         }
 
+        /// <summary>
+        /// Retrieves an expense by its ID from the database and maps it to an expense view model.
+        /// </summary>
         public async Task<ExpenseViewModel> GetExpenseByIdAsync(int id)
         {
             var expense = await repository.AllAsync<TruckExpense>()
@@ -60,6 +67,9 @@ namespace TruckManagementWeb.Core.Service
             return model;
         }
 
+        /// <summary>
+        /// Retrieves a list of expense types.
+        /// </summary>
         public List<string> GetExpenseTypesAsync() => Enum
                                                       .GetNames(typeof(ExpenseType))
                                                       .ToList();

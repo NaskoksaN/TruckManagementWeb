@@ -22,6 +22,9 @@ namespace TruckManagementWeb.Core.Service
             companyService = _companyService;
         }
 
+        /// <summary>
+        /// Creates a new trip asynchronously.
+        /// </summary>
         public async Task<int> CreateTripAsync(TripFormModel form)
         {
             string plate = form.TruckPlate.Trim();
@@ -45,6 +48,9 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
+        /// <summary>
+        /// Deletes a trip along with its associated orders.
+        /// </summary>
         public async Task DeleteGivenTripWithOrders(int tripId)
         {
             Trip? trip = await repository.AllAsync<Trip>()
@@ -63,6 +69,9 @@ namespace TruckManagementWeb.Core.Service
             }
         }
 
+        /// <summary>
+        /// Retrieves all trips with associated orders.
+        /// </summary>
         public async Task<IEnumerable<TripViewModel>> GetAllTripAsync()
         {
             var result = await repository.AllAsync<Trip>()
@@ -92,6 +101,9 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
+        /// <summary>
+        /// Retrieves a trip with associated orders by its identifier.
+        /// </summary>
         public async Task<TripViewModel> GetViewTripByIdAsync(int id)
         {
             TripViewModel? result = await repository.AllAsync<Trip>()
@@ -119,6 +131,9 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
+        /// <summary>
+        /// Saves an order to a trip asynchronously.
+        /// </summary>
         public async Task SaveOrderToTripAsync(OrderFormModel form)
         {
             Trip? trip = await repository.AllAsync<Trip>()
