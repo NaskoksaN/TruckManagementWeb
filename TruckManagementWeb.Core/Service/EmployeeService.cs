@@ -35,5 +35,22 @@ namespace TruckManagementWeb.Core.Service
                                             .FirstOrDefaultAsync();
             return employee.Id;
         }
+
+        public async Task<List<UserViewModel>> GetAllUserAsync()
+        {
+            bool activity = true;
+            var users = await repository.AllReadOnlyAsync<Employee>()
+                    .Where(e => e.IsActive == activity)
+                    .Select(e => new UserViewModel
+                    {
+                        Id = e.Id,
+                        FullName = e.FullName,
+                        Email = e.Email,
+                        AccessArea = e.Role.Name
+                    })
+                    .ToListAsync();
+
+            return users;
+        }
     }
 }

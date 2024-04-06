@@ -6,5 +6,6 @@ namespace TruckManagementWeb.Core.Contracts
     {
         Task CreateEmployeeAsync(RegisterFormModel model, string userId, string roleId);
         Task<int> FindEmployeeIdAsync(string employeeUserId);
+        Task<List<UserViewModel>> GetAllUserAsync();
     }
 }

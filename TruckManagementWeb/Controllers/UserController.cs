@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.ApplicationUser;
 using TruckManagementWeb.Core.Models.User;
@@ -14,7 +15,6 @@ namespace TruckManagementWeb.Controllers
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly IUserStore<ApplicationUser> userStore;
         private readonly RoleManager<IdentityRole> roleManager;
-        private readonly IUserService service;
         private IEmployeeService employeeService;
 
 
@@ -22,21 +22,26 @@ namespace TruckManagementWeb.Controllers
                                 SignInManager<ApplicationUser> _signInManager,
                                 IUserStore<ApplicationUser> _userStore,
                                 RoleManager<IdentityRole> _roleManager,
-                                IUserService _service,
                                 IEmployeeService _employeeService)
         {
             userManager = _userManager;
             signInManager = _signInManager;
             userStore = _userStore;
             roleManager = _roleManager;
-            service = _service;
             employeeService = _employeeService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Register()
         {
-            IEnumerable<RoleViewModel> roles = await service.GetRolesAsync();
+            IEnumerable<RoleViewModel> roles = await roleManager
+                .Roles
+                .Select(r => new RoleViewModel()
+                {
+                    Id = r.Id,
+                    Name = r.Name
+                })
+                .ToListAsync();
             RegisterFormModel adminModel = new RegisterFormModel();
             adminModel.Roles = roles;
             return View(adminModel);
@@ -46,7 +51,7 @@ namespace TruckManagementWeb.Controllers
         {
             if (!ModelState.IsValid)
             {
-                IEnumerable<RoleViewModel> roles = await service.GetRolesAsync();
+                IEnumerable<RoleViewModel> roles = await GetRolesAsync();
                 model.Roles = roles;
                 return View(model);
             }
@@ -56,7 +61,7 @@ namespace TruckManagementWeb.Controllers
             if (role == null)
             {
                 ModelState.AddModelError(string.Empty, "Selected role not found.");
-                IEnumerable<RoleViewModel> roles = await service.GetRolesAsync();
+                IEnumerable<RoleViewModel> roles = await GetRolesAsync();
                 model.Roles = roles;
                 return View(model);
             }
@@ -89,7 +94,7 @@ namespace TruckManagementWeb.Controllers
                 }
             }
 
-            IEnumerable<RoleViewModel> availableRoles = await service.GetRolesAsync();
+            IEnumerable<RoleViewModel> availableRoles = await GetRolesAsync();
             model.Roles = availableRoles;
             return View(model);
         }
@@ -109,7 +114,7 @@ namespace TruckManagementWeb.Controllers
         public async Task<IActionResult> VewAllUser(int pageNumber=1)
         {
             int pageSize = 6;
-            List<UserViewModel> users = await service.GetAllUserAync();
+            List<UserViewModel> users = await employeeService.GetAllUserAsync();
             int totalCount = users.Count();
             var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
 
@@ -120,5 +125,16 @@ namespace TruckManagementWeb.Controllers
             return View(users);
         }
 
+
+
+        private async Task<IEnumerable<RoleViewModel>> GetRolesAsync()
+            => await roleManager
+                .Roles
+                .Select(r => new RoleViewModel()
+                {
+                    Id = r.Id,
+                    Name = r.Name
+                })
+                .ToListAsync();
     }
 }

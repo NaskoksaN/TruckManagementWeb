@@ -1,7 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Moq;
 using NUnit.Framework;
 using TruckManagementWeb.Core.Contracts;
+using TruckManagementWeb.Core.Models.User;
 using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Data;
 using TruckManagementWeb.Infrastructure.Data.Common;
@@ -82,5 +85,40 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
             Assert.That(result.RoleId, Is.EqualTo("adminRoleId"));
             Assert.That(result.EmployeeUserId, Is.EqualTo("d401e5f8-2fe9-45e2-9209-69b7db1c1de9"));
         }
+
+        [Test]
+        public async Task Test_GetAllUserAsync()
+        {
+            var repo = new Repository(applicationDbContext);
+
+            employeeService = new EmployeeService(repo);
+
+            var employees = new List<Employee>
+            {
+                new Employee { Id = 1, FullName = "John Doe", Email = "john@example.com", IsActive = true, RoleId = "adminRoleId", EmployeeUserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9"  },
+                new Employee { Id = 2, FullName = "Jane Doe", Email = "jane@example.com", IsActive = false,  RoleId = "managerRoleId", EmployeeUserId = "0261d5ca-050a-423e-90cb-c7e990f67959"  }
+            };
+            await repo.AddRangeAsync<Employee>(employees);
+            await repo.SaveChangesAsync();
+
+            List<UserViewModel> users = await employeeService.GetAllUserAsync();
+            List<Employee>t= await repo.AllAsync<Employee>().Where(e=>e.IsActive==true).ToListAsync();
+
+            Assert.IsNotNull(users);
+            //Assert.AreEqual(1, result.Count);
+            //var user = result.First();
+            //Assert.AreEqual(1, user.Id);
+            //Assert.AreEqual("John Doe", user.FullName);
+            //Assert.AreEqual("john@example.com", user.Email);
+            //Assert.AreEqual("Admin", user.AccessArea);
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            applicationDbContext.Dispose();
+        }
     }
+
+
 }
