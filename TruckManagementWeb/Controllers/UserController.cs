@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,20 +14,17 @@ namespace TruckManagementWeb.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
-        private readonly IUserStore<ApplicationUser> userStore;
         private readonly RoleManager<IdentityRole> roleManager;
         private IEmployeeService employeeService;
 
 
         public UserController(UserManager<ApplicationUser> _userManager,
                                 SignInManager<ApplicationUser> _signInManager,
-                                IUserStore<ApplicationUser> _userStore,
                                 RoleManager<IdentityRole> _roleManager,
                                 IEmployeeService _employeeService)
         {
             userManager = _userManager;
             signInManager = _signInManager;
-            userStore = _userStore;
             roleManager = _roleManager;
             employeeService = _employeeService;
         }
@@ -99,15 +97,42 @@ namespace TruckManagementWeb.Controllers
             return View(model);
         }
 
+
+        [AllowAnonymous]
         [HttpGet]
        
-        public IActionResult Login(string? returnUrl = null)
+        public async Task<IActionResult> Login(string? returnUrl = null)
         {
+            // from MS =>Clear the existing external cookie to ensure a clean login process
+            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+
             LoginFormModel model = new LoginFormModel()
             {
                 ReturnUrl = returnUrl
             };
             return View(model);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task <IActionResult> Login(LoginFormModel model)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            Microsoft.AspNetCore.Identity.SignInResult? result =
+                await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
+
+            if(!result.Succeeded)
+            {
+                this.ModelState.AddModelError(string.Empty,
+                   "Error while in login in. Contact administrator");
+                TempData["ErrorMessage"] = "Error while in login in. Contact administrator";
+                return View(model);
+            }
+
+            return Redirect(model.ReturnUrl ?? "~/Home/Index");
         }
 
         [HttpGet]
@@ -124,7 +149,7 @@ namespace TruckManagementWeb.Controllers
 
             return View(users);
         }
-
+        
 
 
         private async Task<IEnumerable<RoleViewModel>> GetRolesAsync()

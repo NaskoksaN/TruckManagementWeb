@@ -7,5 +7,6 @@
 
         public const int CompanyPageStartIndex = 1;
         public const int CompanyPageEndIndex = 10;
+
     }
 }
