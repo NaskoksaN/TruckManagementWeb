@@ -13,7 +13,12 @@ namespace TruckManagementWeb.Core.Service
         {
             repository = _repository;
         }
-
+        /// <summary>
+        /// Retrieves the truck result for the last month along with a string title indicating the period.
+        /// </summary>
+        /// <returns>
+        /// A tuple containing the title string and a list of TruckMonthSimpleViewModel representing the monthly result.
+        /// </returns>
         public async Task<(string title, List<TruckMonthSimpleViewModel> monthlyResult)> GetMonthlyTrucksResultAsync()
         {
             DateTime today = DateTime.Today;
@@ -31,6 +36,12 @@ namespace TruckManagementWeb.Core.Service
             return (title, monthlyResult);
         }
 
+        /// <summary>
+        /// Retrieves the yearly financial results of trucks.
+        /// </summary>
+        /// <returns>
+        /// A tuple containing the title summarizing the period and a list of TruckMonthSimpleViewModel objects, each representing financial data from a truck for the year.
+        /// </returns>
         public async Task<(string title, List<TruckMonthSimpleViewModel> monthlyResult)> GetTrucksYearResultAsync()
         {
             DateTime today = DateTime.Today;
@@ -48,7 +59,11 @@ namespace TruckManagementWeb.Core.Service
             return (title, yearlyResults);
         }
 
-
+        /// <summary>
+        /// Retrieves a yearly report for a specified truck, including monthly statistics on kilometers traveled, expenses, and profits.
+        /// </summary>
+        /// <param name="truckPlate">The license plate number of the truck for which the report is generated.</param>
+        /// <returns>An enumerable collection of <see cref="TruckMonthSimpleViewModel"/> representing monthly statistics for the specified truck.</returns>
         public async Task<IEnumerable<TruckMonthSimpleViewModel>> GetTruckYearReport(string truckPlate)
         {
             List<TruckMonthSimpleViewModel> monthlyResults = new List<TruckMonthSimpleViewModel>();
@@ -106,15 +121,24 @@ namespace TruckManagementWeb.Core.Service
             return monthlyResults;
         }
 
+        /// <summary>
+        /// Retrieves the current month financial result of given truck.
+        /// </summary>
+        /// <param name="truckPlate"></param>
+        /// <returns></returns>
         public Task<TruckMonthReportViewModel> TruckCurrentMonthAsync(string truckPlate)
         {
             DateTime today = DateTime.Today;
             DateTime firstDayOfCurrentMonth = new DateTime(today.Year, today.Month, 1);
-            DateTime lastDayOfCurrentMonth = firstDayOfCurrentMonth.AddMonths(1).AddDays(-1);
 
-            return GetTruckPeriodResultAsync(truckPlate, firstDayOfCurrentMonth, lastDayOfCurrentMonth);
+            return GetTruckPeriodResultAsync(truckPlate, firstDayOfCurrentMonth, today);
         }
 
+        /// <summary>
+        /// Retrieves the last month financial result of given truck with trips and orders.
+        /// </summary>
+        /// <param name="truckPlate"></param>
+        /// <returns></returns>
         public Task<TruckMonthReportViewModel> TruckLastMonthAsync(string truckPlate)
         {
             DateTime today = DateTime.Today;
@@ -124,6 +148,11 @@ namespace TruckManagementWeb.Core.Service
             return GetTruckPeriodResultAsync(truckPlate, firstDayOfLastMonth, lastDayOfLastMonth);
         }
 
+        /// <summary>
+        /// Retrieves the last quarter  financial result of given truck with trips and orders.
+        /// </summary>
+        /// <param name="truckPlate"></param>
+        /// <returns></returns>
         public async Task<List<TruckMonthReportViewModel>> TruckLastQuarterAsync(string truckPlate)
         {
             DateTime today = DateTime.Today;
@@ -148,6 +177,9 @@ namespace TruckManagementWeb.Core.Service
             return truckReport;
         }
 
+        /// <summary>
+        /// Retrieves the yearly revenue data from companies within the last year.
+        /// </summary>
         public async Task<(string title,List<ReportRevenueFromCompany>)> YearlyCompanyRevenueAsync()
         {
             DateTime today = DateTime.Today;
@@ -185,7 +217,14 @@ namespace TruckManagementWeb.Core.Service
             return (title, yearlyResults);
         }
 
-        private  async Task<TruckMonthReportViewModel> GetTruckPeriodResultAsync(string truckPlate
+
+        /// <summary>
+        /// Retrieves the financial report for truck within a given period.
+        /// </summary>
+        /// /// <param name="truckPlate">The plate number of the truck.</param>
+        /// <param name="lastMonthStart">The start date of the period.</param>
+        /// <param name="lastMonthEnd">The end date of the period.</param>
+        private async Task<TruckMonthReportViewModel> GetTruckPeriodResultAsync(string truckPlate
                                         , DateTime lastMonthStart
                                         , DateTime lastMonthEnd)
         {
@@ -236,6 +275,9 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
+        /// <summary>
+        /// Retrieves the financial report for All trucks within a given period.
+        /// </summary>
         private async Task<List<TruckMonthSimpleViewModel>> GetTrucksMonthlyResult(DateTime firstDay,
                                                                     DateTime lastDay)
         {
@@ -276,6 +318,9 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
+        /// <summary>
+        /// Generates a title summarizing the financial results of trucks for a given period.
+        /// </summary>
         private string GetTitle(List<TruckMonthSimpleViewModel> truckPeriod, 
                                     string period, 
                                     DateTime startPeriod,

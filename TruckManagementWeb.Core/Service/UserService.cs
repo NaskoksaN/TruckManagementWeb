@@ -11,15 +11,12 @@ namespace TruckManagementWeb.Core.Service
 {
     public class UserService : IUserService
     {
-        private readonly UserManager<ApplicationUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly IRepository repository;
 
-        public UserService(UserManager<ApplicationUser> _userManager,
-                                RoleManager<IdentityRole> _roleManager,
-                                IRepository _repository)
+        public UserService( RoleManager<IdentityRole> _roleManager,
+                            IRepository _repository)
         {
-            userManager = _userManager;
             roleManager = _roleManager;
             repository = _repository;
         }
