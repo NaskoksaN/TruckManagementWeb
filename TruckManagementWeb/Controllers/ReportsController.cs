@@ -181,6 +181,13 @@ namespace TruckManagementWeb.Controllers
 
             return View(companiesForPage);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> UserIndex()
+        {
+
+            return View();
+        }
     }
 
     

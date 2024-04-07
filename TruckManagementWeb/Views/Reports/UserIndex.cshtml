@@ -1,54 +1,28 @@
-﻿
-@model OveralTrucksInfoViewModel
-
-@{
-    ViewBag.Title = $"For {DateTime.Now.Year} compay have made service";
-    ViewBag.CompanyInformation = CompanyInfo;
+﻿@{
+    ViewBag.Title = $"For {DateTime.Now.Year}  have";
 }
 
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title</title>
 </head>
 
 <div class="text-center">
+    <h4>@ViewBag.Title</h4>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 text-left">
-                <h4>Company Information</h4>
-                <p>@ViewBag.CompanyInformation</p>
+            <div class="col-md-4 offset-md-4 text-center">
+                <h2>Number of Trucks</h2>
+                <div class="counter truck-counter" data-count="100">0</div>
+                <h2>Kilometers Driven</h2>
+                <div class="counter km-counter" data-count="5000">0</div>
+                <h2>Total Orders</h2>
+                <div class="counter order-counter" data-count="200">0</div>
             </div>
-
-            <div class="col-md-8 text-center">
-                <h4>For @DateTime.Now.Year company have made service</h4>
-                <div class="d-flex justify-content-around">
-                    <div>
-                        <h4>Number of Trucks</h4>
-                        <div class="counter truck-counter" data-count="@Model.TotaltruckCount">0</div>
-                    </div>
-                    <div>
-                        <h4>Total Orders</h4>
-                        <div class="counter km-counter" data-count="@Model.TotalOrdersMade">0</div>
-                    </div>
-                    <div>
-                        <h4>Total mileage pass</h4>
-                        <div class="counter order-counter" data-count="@Model.TotalTraveledKm">0</div>
-                    </div>
-                </div>
-                <div class="col-md-8 text-center">
-                    <picture>
-                        <img src="/truck.jpg" class="img-fluid truck-image" alt="...">
-                    </picture>
-                </div>
-            </div>
-            
         </div>
     </div>
-</div>
-
 
     @section Scripts {
         <script>
@@ -74,7 +48,7 @@
                 const kmTargetCount = parseInt(kmCounterElement.getAttribute('data-count'));
                 const orderTargetCount = parseInt(orderCounterElement.getAttribute('data-count'));
 
-                const animationDuration = 1000; 
+                const animationDuration = 1000;
 
                 animateCounter(truckCounterElement, truckTargetCount, animationDuration);
                 setTimeout(() => animateCounter(kmCounterElement, kmTargetCount, animationDuration), 1000); // Delay for sequential animation
@@ -83,3 +57,4 @@
         </script>
     }
 </div>
+
