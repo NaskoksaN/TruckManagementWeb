@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.ApplicationUser;
 using TruckManagementWeb.Core.Models.User;
+using static TruckManagementWeb.Core.Constants.CustomClaims;
 
 namespace TruckManagementWeb.Controllers
 {
@@ -82,7 +84,13 @@ namespace TruckManagementWeb.Controllers
 
                 string userId = user.Id;
                 await employeeService.CreateEmployeeAsync(model, userId, role.Id);
-                return RedirectToAction("Index", "Home");
+
+                await userManager.AddClaimAsync(user, 
+                                        new System.Security
+                                        .Claims
+                                        .Claim(UserFullNameClaims, $"{user.Email}"));
+
+                return RedirectToAction("HomeUserIndex", "Home");
             }
             else
             {
@@ -122,7 +130,7 @@ namespace TruckManagementWeb.Controllers
             }
 
             Microsoft.AspNetCore.Identity.SignInResult? result =
-                await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
+                await signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
 
             if(!result.Succeeded)
             {

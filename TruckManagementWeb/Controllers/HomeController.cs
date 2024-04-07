@@ -4,23 +4,30 @@ using Microsoft.Extensions.Caching.Memory;
 using TruckManagementWeb.Core.Contracts;
 
 using static TruckManagementWeb.Constants.WebConstants;
+using static TruckManagementWeb.Core.Constants.CustomClaims;
 using TruckManagementWeb.Core.Models.Reports;
+using Microsoft.AspNetCore.Identity;
+using TruckManagementWeb.Core.Models.ApplicationUser;
+using System.Security.Claims;
 
 namespace TruckManagementWeb.Controllers
 {
     public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly UserManager<ApplicationUser> userManager;
         private readonly IReports reportService;
         private readonly IMemoryCache cache;
 
         public HomeController(ILogger<HomeController> logger, 
                         IReports _reportService,
-                        IMemoryCache _cache)
+                        IMemoryCache _cache,
+                        UserManager<ApplicationUser> _userManager)
         {
             _logger = logger;
             reportService= _reportService;
             cache= _cache;
+            userManager= _userManager;
         }
         [AllowAnonymous]
         [HttpGet]
@@ -47,7 +54,8 @@ namespace TruckManagementWeb.Controllers
         [Authorize]
         public async Task<IActionResult> HomeUserIndex()
         {
-            return View();
+            string userName = User.FindFirstValue(UserFullNameClaims) ?? string.Empty;
+            return View(nameof(HomeUserIndex), userName);
         }
 
         [AllowAnonymous]
