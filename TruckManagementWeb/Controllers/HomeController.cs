@@ -36,6 +36,12 @@ namespace TruckManagementWeb.Controllers
             ViewBag.CompanyInformation = CompanyInfo;
             return View(model);
         }
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Contacts()
+        {
+            return View();
+        }
 
         [AllowAnonymous]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -51,6 +57,7 @@ namespace TruckManagementWeb.Controllers
             }
             return View();
         }
+
 
     }
 }
