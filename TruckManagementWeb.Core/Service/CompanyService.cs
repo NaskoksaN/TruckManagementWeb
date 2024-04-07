@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Company;
 using TruckManagementWeb.Infrastructure.Data.Common;
@@ -146,6 +147,12 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
+        public async Task<List<string>> UniqueCountryAsync()=> await repository
+                            .AllReadOnlyAsync<Company>()
+                            .Where(c => c.IsActive == true)
+                            .Select(c => c.CompanyCountry.ToUpper())
+                            .Distinct()
+                            .ToListAsync();
 
         /// <summary>
         /// Asynchronously retrieves a company for editing by its ID from the repository.

@@ -1,0 +1,116 @@
+﻿@model CompanyQueryModel
+
+@{
+    ViewBag.Title = "Company Revenue";
+    int CurrentPage = Model.CurrentPage;
+    var TotalPages = Math.Ceiling((double)Model.TotalCompanyCount / Model.PerPage);
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<form method="get">
+    <div class="row">
+        <div class="form-group col-md-3 d-flex justify-content-between">
+            <div class="form-group">
+                <label asp-for="Country"></label>
+                <select asp-for="Country" class="form-control">
+                    <option value="">All</option>
+                    @foreach (var country in Model.Countries)
+                    {
+                        <option value="@country">@country</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-md-3">
+            <label asp-for="SearchTerm"></label>
+            <input asp-for="SearchTerm" class="form-control" placeholder="part of company name">
+        </div>
+
+        <div class="form-group col-md-3">
+            <div class="form-group">
+                <label asp-for="Sorting"></label>
+                <select asp-for="Sorting" class="form-control">
+                    <option value="0">None</option>
+                    <option value="1">Highest Income</option>
+                    <option value="2">Lowest Income</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-group mt-4 p-2">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@if (Model != null && Model.RevenueReports.Any())
+{
+    <h6 class="text-center">@ViewBag.Title</h6>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>VAT</th>
+                            <th>Company Country</th>
+                            <th>Revenue from Company</th>
+                            <th>TotalOrdersCount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var company in Model.RevenueReports.Skip((Model.CurrentPage - 1) * Model.PerPage).Take(Model.PerPage))
+                        {
+                            <tr>
+                                <td>@company.CompanyName</td>
+                                <td>@company.Vat</td>
+                                <td>@company.CompanyCountry</td>
+                                <td>@company.RevenueFromCompany.ToString("F2")</td>
+                                <td>@company.TotalOrderCount</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-start">
+            <a class="btn btn-primary @(Model.CurrentPage == 1 ? "disabled" : string.Empty)"
+               asp-controller="Reports"
+               asp-action="FilteredCompanyRevenue"
+               asp-route-currentPage="@(Model.CurrentPage - 1)"
+               asp-route-category="@Model.Country"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-sorting="@((int)Model.Sorting)">Previous</a>
+        </div>
+
+        <div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-end">
+            <a class="btn btn-primary @(Model.CurrentPage == TotalPages ? "disabled" : string.Empty)"
+               asp-controller="Reports"
+               asp-action="FilteredCompanyRevenue"
+               asp-route-currentPage="@(Model.CurrentPage + 1)"
+               asp-route-category="@Model.Country"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-sorting="@((int)Model.Sorting)">Next</a>
+        </div>
+    </div>
+}
+else
+{
+    <h2 class="text-center">No company found by the given criteria!</h2>
+}
+
+
+
+
+

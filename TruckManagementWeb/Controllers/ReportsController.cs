@@ -1,8 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using TruckManagementWeb.Core.Contracts;
+using TruckManagementWeb.Core.Enumeration;
+using TruckManagementWeb.Core.Models.Company;
 using TruckManagementWeb.Core.Models.Reports;
 using TruckManagementWeb.Core.Models.Truck;
+using TruckManagementWeb.Infrastructure.Data.Common;
+using TruckManagementWeb.Infrastructure.Data.Models;
 
 namespace TruckManagementWeb.Controllers
 {
@@ -10,14 +15,16 @@ namespace TruckManagementWeb.Controllers
     {
         private readonly ITruckService truckService;
         private readonly IReports reportService;
-        
+        private readonly ICompanyService companyService;
 
-        public ReportsController(ITruckService _truckService
-                            , IReports _reportService)
+        public ReportsController(ITruckService _truckService, 
+                    IReports _reportService,
+                    ICompanyService _companyService)
 
         {
             this.truckService = _truckService;
             this.reportService = _reportService;
+            companyService = _companyService;
             }
 
         [HttpGet]
@@ -183,10 +190,22 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> UserIndex()
+        public async Task<IActionResult> FilteredCompanyRevenue([FromQuery] CompanyQueryModel query)
         {
+            var model = await reportService
+                            .FilteredCompanyRevenue(query.Country,
+                                                    query.SearchTerm,
+                                                    query.Sorting,
+                                                    query.CurrentPage,
+                                                    query.PerPage);
 
-            return View();
+            query.TotalCompanyCount = model.TotalCompanyCount;
+            query.RevenueReports = model.RevenueReports;
+
+            query.Countries = await companyService.UniqueCountryAsync();
+
+
+            return View(query);
         }
     }
 

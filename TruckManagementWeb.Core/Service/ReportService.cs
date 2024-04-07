@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using TruckManagementWeb.Core.Contracts;
+using TruckManagementWeb.Core.Enumeration;
 using TruckManagementWeb.Core.Models.Reports;
 using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Models;
@@ -185,7 +186,7 @@ namespace TruckManagementWeb.Core.Service
         {
             DateTime today = DateTime.Today;
             string period = "year";
-            DateTime lastMonthEnd = today.AddDays(-today.Day);
+            DateTime lastMonthEnd = today.AddDays(-today.Day).AddDays(-1);
             DateTime oneYearAgoStart = today.AddYears(-1).AddDays(1 - today.Day);
             bool active = true;
 
@@ -219,6 +220,48 @@ namespace TruckManagementWeb.Core.Service
         }
 
 
+        public async Task<CompanyRevenueQueryModel> FilteredCompanyRevenue(string? country,
+                            string? searchTerm,
+                            CompanyRevenueSorting sorting = CompanyRevenueSorting.None
+                            ,int currentPgae = 1,
+                            int companyPerPage = 6)
+        {
+            var(title, companiesToShow) = await YearlyCompanyRevenueAsync();
+
+            if (!string.IsNullOrEmpty(country))
+            {
+                companiesToShow = companiesToShow
+                                    .Where(c => c.CompanyCountry.ToLower() == country.ToLower())
+                                    .ToList();
+            }
+            if(searchTerm!=null)
+            {
+                companiesToShow = companiesToShow
+                                    .Where(c=>c.CompanyName.ToLower().Contains(searchTerm.ToLower()))
+                                    .ToList();
+            }
+
+            companiesToShow = sorting switch
+            {
+                CompanyRevenueSorting.HighestIncome => companiesToShow
+                                                .OrderByDescending(c => c.RevenueFromCompany)
+                                                .ToList(),
+                CompanyRevenueSorting.LowestIncome => companiesToShow
+                                        .OrderBy(c => c.RevenueFromCompany)
+                                        .ToList(),
+                _ => companiesToShow
+            };
+
+            int totalCountOfcompany = companiesToShow.Count;
+
+            var model = new CompanyRevenueQueryModel()
+            {
+                TotalCompanyCount = companiesToShow.Count,
+                RevenueReports = companiesToShow
+            };
+
+            return model;
+        }
         public async Task<OveralTrucksInfoViewModel> OveralInfo()
         {
             DateTime yearBeginning = new DateTime (DateTime.Now.Year,1,1);
