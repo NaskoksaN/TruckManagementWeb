@@ -36,9 +36,16 @@ namespace TruckManagementWeb.Controllers
             ViewBag.CompanyInformation = CompanyInfo;
             return View(model);
         }
+
         [AllowAnonymous]
         [HttpGet]
         public IActionResult Contacts()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public async Task<IActionResult> HomeUserIndex()
         {
             return View();
         }

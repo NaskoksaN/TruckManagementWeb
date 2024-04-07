@@ -132,7 +132,7 @@ namespace TruckManagementWeb.Controllers
                 return View(model);
             }
 
-            return Redirect(model.ReturnUrl ?? "~/Home/Index");
+            return Redirect(model.ReturnUrl ?? "~/Home/HomeUserIndex");
         }
 
         [HttpGet]
