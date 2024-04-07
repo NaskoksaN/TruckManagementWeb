@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Reports;
 using TruckManagementWeb.Infrastructure.Data.Common;
@@ -217,6 +218,36 @@ namespace TruckManagementWeb.Core.Service
             return (title, yearlyResults);
         }
 
+
+        public async Task<OveralTrucksInfoViewModel> OveralInfo()
+        {
+            DateTime yearBeginning = new DateTime (DateTime.Now.Year,1,1);
+            DateTime currentDate = DateTime.Now;
+            bool activity = true;
+
+            var truckCount = await repository.AllReadOnlyAsync<Truck>()
+                        .Where(t => t.IsActive == activity)
+                        .CountAsync();
+
+            var kmCount = await repository.AllReadOnlyAsync<Trip>()
+                .Where(t => t.StartDate >= yearBeginning && t.StartDate <= currentDate)
+                .Select(t=>t.TripKm)
+                .SumAsync();
+
+            var orderCount = await repository.AllReadOnlyAsync<Order>()
+                .Where(t => t.LoadingDate >= yearBeginning && t.DeliveryDate <= currentDate)
+                .CountAsync();
+
+            OveralTrucksInfoViewModel result = new OveralTrucksInfoViewModel()
+            {
+                TotaltruckCount = truckCount,
+                TotalTraveledKm = kmCount,
+                TotalOrdersMade = orderCount
+            };
+
+
+            return result;
+        }
 
         /// <summary>
         /// Retrieves the financial report for truck within a given period.

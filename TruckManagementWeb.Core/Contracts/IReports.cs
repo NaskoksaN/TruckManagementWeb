@@ -7,6 +7,7 @@ namespace TruckManagementWeb.Core.Contracts
         Task<(string title, List<TruckMonthSimpleViewModel> monthlyResult)> GetMonthlyTrucksResultAsync();
         Task<(string title, List<TruckMonthSimpleViewModel> monthlyResult)> GetTrucksYearResultAsync();
         Task<IEnumerable<TruckMonthSimpleViewModel>> GetTruckYearReport(string truckPlate);
+        Task<OveralTrucksInfoViewModel> OveralInfo();
         Task<TruckMonthReportViewModel> TruckCurrentMonthAsync(string truckPlate);
         Task<TruckMonthReportViewModel> TruckLastMonthAsync(string truckPlate);
         Task<List<TruckMonthReportViewModel>> TruckLastQuarterAsync(string truckPlate);
