@@ -35,7 +35,7 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         public async Task Test_YearlyCompanyRevenueAsync()
         {
             DateTime today = DateTime.Today;
-            DateTime lastMonthEnd = today.AddDays(-today.Day);
+            DateTime lastMonthEnd = today.AddDays(-today.Day).AddDays(-1);
             DateTime oneYearAgoStart = today.AddYears(-1).AddDays(1 - today.Day);
 
             var repo = new Repository(applicationDbContext);
