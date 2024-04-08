@@ -107,6 +107,7 @@ namespace TruckManagementWeb.Controllers
 
             IEnumerable<TruckIndexViewModel> trucks = await service.GetAlltruckReadOnlyAsync();
 
+
             IPagedList<TruckIndexViewModel> pagedList = trucks.ToPagedList(pageNumber, pageSize);
 
             return View(pagedList);

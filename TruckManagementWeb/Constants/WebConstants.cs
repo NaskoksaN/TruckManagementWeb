@@ -6,7 +6,7 @@
         public const int TruckPageEndIndex = 6;
 
         public const int CompanyPageStartIndex = 1;
-        public const int CompanyPageEndIndex = 10;
+        public const int CompanyPageEndIndex = 8;
 
         public const int ChacheHomeIndexTime = 1;
 
