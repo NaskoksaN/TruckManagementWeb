@@ -27,7 +27,6 @@ namespace TruckManagementWeb.Core.Service
             Employee employee = new Employee()
             {
                 Email = model.Email,
-                FullName = model.FullName,
                 EmployeeUserId = userId,
                 RoleId = roleId,
             };
@@ -66,7 +65,7 @@ namespace TruckManagementWeb.Core.Service
                     .Select(e => new UserViewModel
                     {
                         Id = e.Id,
-                        FullName = e.FullName,
+                        FullName = e.EmployeeUser.FullName,
                         Email = e.Email,
                         AccessArea = e.Role.Name
                     })

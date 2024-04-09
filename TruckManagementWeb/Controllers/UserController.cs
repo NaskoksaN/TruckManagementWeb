@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+using System.Net;
+using System.Net.Mail;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.ApplicationUser;
 using TruckManagementWeb.Core.Models.User;
@@ -68,7 +69,7 @@ namespace TruckManagementWeb.Controllers
 
             var user = new ApplicationUser
             {
-                UserEmail = model.Email,
+                FullName = model.FullName,
                 UserName = model.Email
             };
 
@@ -85,10 +86,10 @@ namespace TruckManagementWeb.Controllers
                 string userId = user.Id;
                 await employeeService.CreateEmployeeAsync(model, userId, role.Id);
 
-                await userManager.AddClaimAsync(user, 
+                await userManager.AddClaimAsync(user,
                                         new System.Security
                                         .Claims
-                                        .Claim(UserFullNameClaims, $"{user.Email}"));
+                                        .Claim(UserFullNameClaims, $"{user.FullName}"));
 
                 return RedirectToAction("HomeUserIndex", "Home");
             }
@@ -157,9 +158,6 @@ namespace TruckManagementWeb.Controllers
 
             return View(users);
         }
-        
-
-
         private async Task<IEnumerable<RoleViewModel>> GetRolesAsync()
             => await roleManager
                 .Roles
@@ -169,5 +167,29 @@ namespace TruckManagementWeb.Controllers
                     Name = r.Name
                 })
                 .ToListAsync();
+
+        private void SendRegistrationEmail(string email, string password)
+        {
+            string smtpServer = "smtp.abv.bg";
+            int smtpPort = 465;
+            string smtpUsername = "webtruckfounder@abv.bg";
+            string smtpPassword = "Aa@123456";
+
+            using (var client = new SmtpClient(smtpServer, smtpPort))
+            {
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
+
+                var message = new MailMessage
+                {
+                    From = new MailAddress(smtpUsername),
+                    Subject = "Registration Details",
+                    Body = $"Hello,\n\nThank you for registering on our website. Your registration details are:\nEmail: {email}\nPassword: {password}"
+                };
+                message.To.Add(email);
+
+                client.Send(message);
+            }
+        }
     }
 }

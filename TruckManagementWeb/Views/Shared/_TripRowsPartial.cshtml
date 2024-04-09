@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TripViewModel>
+
+@foreach (var item in Model)
+{
+    <tr class="trip-row">
+        <td>@item.LoadingDate.ToString(UsedDateFormat)</td>
+        <td>@item.TruckPlate</td>
+        <td>@item.Price</td>
+        <td>@item.TotalKm</td>
+        <td>@item.EuPerKm</td>
+        <td>
+            <button class="btn btn-primary" onclick="toggleOrders('@item.Id')">Show Orders</button>
+        </td>
+    </tr>
+    <tr id="orders-@item.Id" style="display: none;">
+        <td colspan="6">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Loading Date</th>
+                                <th>Company Name</th>
+                                <th>Loading Code</th>
+                                <th>Delivery Code</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in item.Orders)
+                            {
+                                <tr>
+                                    <td>@order.LoadingDate.ToString(UsedDateFormat)</td>
+                                    <td>@order.CompanyName</td>
+                                    <td>@order.LoadingCode</td>
+                                    <td>@order.DeliveryCode</td>
+                                    <td>@order.Price</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+}

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TruckManagementWeb.Data;
 
@@ -11,9 +12,10 @@ using TruckManagementWeb.Data;
 namespace TruckManagementWeb.Infrastructure.Migrations
 {
     [DbContext(typeof(TruckDbContext))]
-    partial class TruckDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240409131951_AddApllayConfigInDB")]
+    partial class AddApllayConfigInDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,28 +111,28 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         {
                             Id = 1,
                             ClaimType = "user:fullname",
-                            ClaimValue = "Admin Admin",
+                            ClaimValue = "admin@truck.com",
                             UserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9"
                         },
                         new
                         {
                             Id = 2,
                             ClaimType = "user:fullname",
-                            ClaimValue = "Chief Chiefov",
+                            ClaimValue = "manager@truck.com",
                             UserId = "0261d5ca-050a-423e-90cb-c7e990f67959"
                         },
                         new
                         {
                             Id = 3,
                             ClaimType = "user:fullname",
-                            ClaimValue = "Hans Uno",
+                            ClaimValue = "dispo1@truck.com",
                             UserId = "62154153-66df-4b35-91ed-56ac983c9a8e"
                         },
                         new
                         {
                             Id = 4,
                             ClaimType = "user:fullname",
-                            ClaimValue = "Admin Admin",
+                            ClaimValue = "dispo2@truck.com",
                             UserId = "19918df1-9468-434b-aaf9-a3d22b2d12e2"
                         });
                 });
@@ -291,16 +293,16 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         {
                             Id = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a8041fbf-1246-47fd-ae9a-d9eb4f82a925",
+                            ConcurrencyStamp = "67fbfc90-0b2e-49b1-bc15-b5ca0c9a7442",
                             Email = "admin@truck.com",
                             EmailConfirmed = false,
                             FullName = "Admin Admin",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@TRUCK.COM",
                             NormalizedUserName = "ADMIN@TRUCK.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEH5th77tuzHP+bGsuiTu9mGL19zl5N4YOCxEToOCOraOJ09L/zIymLT1nryYpHJc5w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBJ4tI/H20PAiwKRGeUlvb0K4n0/RKzQ33yMrH1FhaAVqrlJ2cBkkgAiMx42Jf31OQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "da5ed0ff-d9bf-45b4-9ec1-146b8bd1fb0a",
+                            SecurityStamp = "8e0ddbe6-a303-44b2-887b-05806067e85e",
                             TwoFactorEnabled = false,
                             UserName = "admin@truck.com"
                         },
@@ -308,16 +310,16 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         {
                             Id = "0261d5ca-050a-423e-90cb-c7e990f67959",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d588985d-0bc0-4478-9f1d-09e16f2b054a",
+                            ConcurrencyStamp = "24a78680-9df7-4cdb-9aab-dfc7ef8fdaaa",
                             Email = "manager@truck.com",
                             EmailConfirmed = false,
-                            FullName = "Chief Chiefov",
+                            FullName = "Chief",
                             LockoutEnabled = false,
                             NormalizedEmail = "MANAGER@TRUCK.COM",
                             NormalizedUserName = "MANAGER@TRUCK.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECMnD+k1WraKHg87UzCG//7UcICMAIIEEtYfz77JHGJdspl40Alb/pAzoqRDzdKLfQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKUt7RvqiJOUbFUfqtr08x9yWxqP6ULWHUP4gtuCzwh/O3ySSfO79TDihJguuRNFAg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1716167d-d011-4797-8e08-cdfc40240d4f",
+                            SecurityStamp = "37a14e82-6b7a-4b50-98ba-3be776399123",
                             TwoFactorEnabled = false,
                             UserName = "manager@truck.com"
                         },
@@ -325,16 +327,16 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         {
                             Id = "62154153-66df-4b35-91ed-56ac983c9a8e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3264166b-250f-4d92-ab3e-e3cc7e35af71",
+                            ConcurrencyStamp = "98a25738-d7b9-40e7-898e-df432c7fe5eb",
                             Email = "dispo1@truck.com",
                             EmailConfirmed = false,
                             FullName = "Hans Uno",
                             LockoutEnabled = false,
                             NormalizedEmail = "DISPO1@TRUCK.COM",
                             NormalizedUserName = "DISPO1@TRUCK.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBdU710xQiJjICEEXtVJf437+Rc2XJCxwbcXaMGUg2tvsEzvCDGr5GMoP+qvRMHzAw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDp3cue6OkVQ+c1tr/Um2LVyCrYcVu8zDw3jMYhbCTC7XuhaZ7ttXEGp1+chjdJUhQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8e9c45a2-309c-43d5-a801-935b4d877469",
+                            SecurityStamp = "c4030f75-2c74-40e0-942a-ee4941d4e4b7",
                             TwoFactorEnabled = false,
                             UserName = "dispo1@truck.com"
                         },
@@ -342,16 +344,16 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         {
                             Id = "19918df1-9468-434b-aaf9-a3d22b2d12e2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "840b823c-93a6-48d5-b289-c0653406de68",
+                            ConcurrencyStamp = "e209af01-d5d2-4801-87a1-b0acf77bc1dd",
                             Email = "dispo2@truck.com",
                             EmailConfirmed = false,
                             FullName = "Hans Due",
                             LockoutEnabled = false,
                             NormalizedEmail = "DISPO2@TRUCK.COM",
                             NormalizedUserName = "DISPO2@TRUCK.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOVEABMTpRxO42Em4oasl3/L+DWuzaYnkqGLE0uVUQe4loOWxht6BMD3DYooPnjw3w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGA3dZPCmY7mGBRy9XG7hO9VCCCdamhklDnCATM5RKVci5i28liwDQ5e2yz1gSbhVg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9ec15704-d893-47af-ab21-d310a932d038",
+                            SecurityStamp = "aee55223-e386-4b37-b2b4-14f698718652",
                             TwoFactorEnabled = false,
                             UserName = "dispo2@truck.com"
                         });
@@ -646,122 +648,122 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CompanyId = 10,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1026.62584938136m,
+                            Price = 1078.446345436273m,
                             TripId = 1
                         },
                         new
                         {
                             Id = 2,
-                            CompanyId = 1,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1233.322788945354m,
+                            Price = 1143.825659224534m,
                             TripId = 2
                         },
                         new
                         {
                             Id = 3,
-                            CompanyId = 9,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1288.289924580188m,
+                            Price = 1241.678757756792m,
                             TripId = 3
                         },
                         new
                         {
                             Id = 4,
-                            CompanyId = 8,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1064.184927352476m,
+                            Price = 1056.990500728139m,
                             TripId = 4
                         },
                         new
                         {
                             Id = 5,
-                            CompanyId = 9,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 957.55742606456028m,
+                            Price = 977.1503800358797m,
                             TripId = 5
                         },
                         new
                         {
                             Id = 6,
-                            CompanyId = 4,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1170.6026700503m,
+                            Price = 1022.6855812310789m,
                             TripId = 6
                         },
                         new
                         {
                             Id = 7,
-                            CompanyId = 10,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1263.698210739349m,
+                            Price = 1242.039910106411m,
                             TripId = 7
                         },
                         new
                         {
                             Id = 8,
-                            CompanyId = 7,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1187.373225140677m,
+                            Price = 1279.46932630631m,
                             TripId = 8
                         },
                         new
                         {
                             Id = 9,
-                            CompanyId = 4,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1190.38775095469m,
+                            Price = 1134.354255175718m,
                             TripId = 9
                         },
                         new
                         {
                             Id = 10,
-                            CompanyId = 2,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1279.899257971681m,
+                            Price = 1161.203387032952m,
                             TripId = 10
                         },
                         new
                         {
                             Id = 11,
-                            CompanyId = 2,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1259.790402064277m,
+                            Price = 1161.447381793846m,
                             TripId = 11
                         },
                         new
@@ -772,106 +774,106 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1200.970185564297m,
+                            Price = 1120.735232746609m,
                             TripId = 12
                         },
                         new
                         {
                             Id = 13,
-                            CompanyId = 4,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1236.094630411535m,
+                            Price = 1239.903652369437m,
                             TripId = 13
                         },
                         new
                         {
                             Id = 14,
-                            CompanyId = 8,
-                            DeliveryDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1155.411260986387m,
-                            TripId = 14
-                        },
-                        new
-                        {
-                            Id = 15,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1223.870121035836m,
-                            TripId = 15
-                        },
-                        new
-                        {
-                            Id = 16,
-                            CompanyId = 8,
-                            DeliveryDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1169.825895638562m,
-                            TripId = 16
-                        },
-                        new
-                        {
-                            Id = 17,
-                            CompanyId = 2,
-                            DeliveryDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1250.48525618123m,
-                            TripId = 17
-                        },
-                        new
-                        {
-                            Id = 18,
                             CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1186.654275456949m,
+                            Price = 1101.101830333145m,
+                            TripId = 14
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1224.463684999461m,
+                            TripId = 15
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CompanyId = 1,
+                            DeliveryDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1147.974851289735m,
+                            TripId = 16
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CompanyId = 3,
+                            DeliveryDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1100.528631748183m,
+                            TripId = 17
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CompanyId = 8,
+                            DeliveryDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1211.345690672614m,
                             TripId = 18
                         },
                         new
                         {
                             Id = 19,
-                            CompanyId = 9,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1254.225540328305m,
+                            Price = 1224.944497397175m,
                             TripId = 19
                         },
                         new
                         {
                             Id = 20,
-                            CompanyId = 9,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1138.550043745191m,
+                            Price = 1289.130766425168m,
                             TripId = 20
                         },
                         new
                         {
                             Id = 21,
-                            CompanyId = 9,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1273.80098349376m,
+                            Price = 1060.560613020289m,
                             TripId = 21
                         },
                         new
@@ -882,7 +884,7 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1011.8646634545983m,
+                            Price = 1152.984795160404m,
                             TripId = 22
                         },
                         new
@@ -893,18 +895,18 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1156.788376030194m,
+                            Price = 1284.608547289091m,
                             TripId = 23
                         },
                         new
                         {
                             Id = 24,
-                            CompanyId = 1,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1296.725331353243m,
+                            Price = 1168.456630622596m,
                             TripId = 24
                         },
                         new
@@ -915,29 +917,29 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1264.370517455684m,
+                            Price = 1068.20405270032m,
                             TripId = 25
                         },
                         new
                         {
                             Id = 26,
-                            CompanyId = 4,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 960.0469638633832m,
+                            Price = 1184.524628851278m,
                             TripId = 26
                         },
                         new
                         {
                             Id = 27,
-                            CompanyId = 9,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1062.077811404838m,
+                            Price = 1069.32581975012m,
                             TripId = 27
                         },
                         new
@@ -948,216 +950,216 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1135.280942644212m,
+                            Price = 1095.800949679294m,
                             TripId = 28
                         },
                         new
                         {
                             Id = 29,
-                            CompanyId = 2,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 973.8584356881391m,
+                            Price = 957.0828466227521m,
                             TripId = 29
                         },
                         new
                         {
                             Id = 30,
-                            CompanyId = 3,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1048.3106629834873m,
+                            Price = 1218.955968200008m,
                             TripId = 30
                         },
                         new
                         {
                             Id = 31,
-                            CompanyId = 5,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1177.718515618221m,
+                            Price = 1193.242496334641m,
                             TripId = 31
                         },
                         new
                         {
                             Id = 32,
-                            CompanyId = 10,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1167.095655570293m,
+                            Price = 1122.204365229822m,
                             TripId = 32
                         },
                         new
                         {
                             Id = 33,
-                            CompanyId = 10,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1205.781604053378m,
+                            Price = 1023.8403383996812m,
                             TripId = 33
                         },
                         new
                         {
                             Id = 34,
-                            CompanyId = 7,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 966.4045086893468m,
+                            Price = 1094.145335898455m,
                             TripId = 34
                         },
                         new
                         {
                             Id = 35,
-                            CompanyId = 7,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1106.076340886329m,
+                            Price = 1197.432207729403m,
                             TripId = 35
                         },
                         new
                         {
                             Id = 36,
-                            CompanyId = 9,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1149.165421586637m,
+                            Price = 998.4944373576082m,
                             TripId = 36
                         },
                         new
                         {
                             Id = 37,
-                            CompanyId = 2,
-                            DeliveryDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1125.624572417809m,
-                            TripId = 37
-                        },
-                        new
-                        {
-                            Id = 38,
                             CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1205.054109811173m,
+                            Price = 1027.2007897858137m,
+                            TripId = 37
+                        },
+                        new
+                        {
+                            Id = 38,
+                            CompanyId = 6,
+                            DeliveryDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1161.796021864121m,
                             TripId = 38
                         },
                         new
                         {
                             Id = 39,
-                            CompanyId = 7,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1008.3693885127663m,
+                            Price = 1113.223959448066m,
                             TripId = 39
                         },
                         new
                         {
                             Id = 40,
-                            CompanyId = 1,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 982.853459628419m,
+                            Price = 1293.819608220286m,
                             TripId = 40
                         },
                         new
                         {
                             Id = 41,
-                            CompanyId = 7,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 982.0933670578144m,
+                            Price = 1093.057535484672m,
                             TripId = 41
                         },
                         new
                         {
                             Id = 42,
-                            CompanyId = 8,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1085.983523240347m,
+                            Price = 972.3470649272733m,
                             TripId = 42
                         },
                         new
                         {
                             Id = 43,
-                            CompanyId = 8,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1046.1265940836628m,
+                            Price = 1165.428398776446m,
                             TripId = 43
                         },
                         new
                         {
                             Id = 44,
-                            CompanyId = 4,
-                            DeliveryDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1074.64247468768m,
-                            TripId = 44
-                        },
-                        new
-                        {
-                            Id = 45,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 953.60249033559357m,
-                            TripId = 45
-                        },
-                        new
-                        {
-                            Id = 46,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1264.357979453577m,
-                            TripId = 46
-                        },
-                        new
-                        {
-                            Id = 47,
                             CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1139.2546002325m,
+                            Price = 1234.012494056442m,
+                            TripId = 44
+                        },
+                        new
+                        {
+                            Id = 45,
+                            CompanyId = 1,
+                            DeliveryDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 966.0078753974227m,
+                            TripId = 45
+                        },
+                        new
+                        {
+                            Id = 46,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1281.278553246676m,
+                            TripId = 46
+                        },
+                        new
+                        {
+                            Id = 47,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1236.392168206777m,
                             TripId = 47
                         },
                         new
@@ -1168,95 +1170,95 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1168.399953179402m,
+                            Price = 1131.058434066147m,
                             TripId = 48
                         },
                         new
                         {
                             Id = 49,
-                            CompanyId = 5,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 972.937522075003m,
+                            Price = 999.5495930483512m,
                             TripId = 49
                         },
                         new
                         {
                             Id = 50,
-                            CompanyId = 7,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1246.200368476577m,
+                            Price = 1111.769360458829m,
                             TripId = 50
                         },
                         new
                         {
                             Id = 51,
-                            CompanyId = 7,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 975.3220829897518m,
+                            Price = 1167.692405493646m,
                             TripId = 51
                         },
                         new
                         {
                             Id = 52,
-                            CompanyId = 2,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1052.142948328783m,
+                            Price = 1268.264288129042m,
                             TripId = 52
                         },
                         new
                         {
                             Id = 53,
-                            CompanyId = 2,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1001.2426036095333m,
+                            Price = 1290.232121871243m,
                             TripId = 53
                         },
                         new
                         {
                             Id = 54,
-                            CompanyId = 7,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1017.4037198191923m,
+                            Price = 1039.1317265949221m,
                             TripId = 54
                         },
                         new
                         {
                             Id = 55,
-                            CompanyId = 1,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1187.950664552041m,
+                            Price = 1191.115400886603m,
                             TripId = 55
                         },
                         new
                         {
                             Id = 56,
-                            CompanyId = 7,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1076.489251546806m,
+                            Price = 1013.1775355304345m,
                             TripId = 56
                         },
                         new
@@ -1267,7 +1269,7 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1236.616619509779m,
+                            Price = 1057.043862800029m,
                             TripId = 57
                         },
                         new
@@ -1278,106 +1280,106 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1063.802205961234m,
+                            Price = 1098.088788270309m,
                             TripId = 58
                         },
                         new
                         {
                             Id = 59,
-                            CompanyId = 1,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1024.174442223399m,
+                            Price = 1167.231130005691m,
                             TripId = 59
                         },
                         new
                         {
                             Id = 60,
-                            CompanyId = 3,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1102.761007970415m,
+                            Price = 989.4769865953695m,
                             TripId = 60
                         },
                         new
                         {
                             Id = 61,
-                            CompanyId = 2,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1217.3120915575m,
+                            Price = 1041.6833747942932m,
                             TripId = 61
                         },
                         new
                         {
                             Id = 62,
-                            CompanyId = 5,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1034.5577005084968m,
+                            Price = 971.6073293461018m,
                             TripId = 62
                         },
                         new
                         {
                             Id = 63,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1127.183100451555m,
-                            TripId = 63
-                        },
-                        new
-                        {
-                            Id = 64,
-                            CompanyId = 2,
-                            DeliveryDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 960.0386333982423m,
-                            TripId = 64
-                        },
-                        new
-                        {
-                            Id = 65,
                             CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1218.131832719772m,
+                            Price = 1009.9717665739317m,
+                            TripId = 63
+                        },
+                        new
+                        {
+                            Id = 64,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1087.098208227499m,
+                            TripId = 64
+                        },
+                        new
+                        {
+                            Id = 65,
+                            CompanyId = 7,
+                            DeliveryDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 957.11582604855991m,
                             TripId = 65
                         },
                         new
                         {
                             Id = 66,
-                            CompanyId = 10,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1114.32180153394m,
+                            Price = 1193.451658694351m,
                             TripId = 66
                         },
                         new
                         {
                             Id = 67,
-                            CompanyId = 10,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 962.9769006596615m,
+                            Price = 1035.4930187729926m,
                             TripId = 67
                         },
                         new
@@ -1388,7 +1390,7 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1049.9504513875003m,
+                            Price = 980.1737331299274m,
                             TripId = 68
                         },
                         new
@@ -1399,40 +1401,40 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1252.909049691525m,
+                            Price = 1183.9638029583m,
                             TripId = 69
                         },
                         new
                         {
                             Id = 70,
-                            CompanyId = 1,
-                            DeliveryDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 996.1679399491521m,
-                            TripId = 70
-                        },
-                        new
-                        {
-                            Id = 71,
                             CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1184.615078428004m,
-                            TripId = 71
+                            Price = 1097.137637434082m,
+                            TripId = 70
                         },
                         new
                         {
-                            Id = 72,
+                            Id = 71,
                             CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1113.668239889585m,
+                            Price = 1134.270128594889m,
+                            TripId = 71
+                        },
+                        new
+                        {
+                            Id = 72,
+                            CompanyId = 6,
+                            DeliveryDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1197.620930658365m,
                             TripId = 72
                         },
                         new
@@ -1443,304 +1445,304 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1213.152101595968m,
+                            Price = 1015.3065485554498m,
                             TripId = 73
                         },
                         new
                         {
                             Id = 74,
-                            CompanyId = 5,
-                            DeliveryDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1173.440404376449m,
-                            TripId = 74
-                        },
-                        new
-                        {
-                            Id = 75,
-                            CompanyId = 2,
-                            DeliveryDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1250.628068480336m,
-                            TripId = 75
-                        },
-                        new
-                        {
-                            Id = 76,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1064.632917228477m,
-                            TripId = 76
-                        },
-                        new
-                        {
-                            Id = 77,
                             CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1106.057929394154m,
+                            Price = 968.1456856265727m,
+                            TripId = 74
+                        },
+                        new
+                        {
+                            Id = 75,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1078.145308365493m,
+                            TripId = 75
+                        },
+                        new
+                        {
+                            Id = 76,
+                            CompanyId = 2,
+                            DeliveryDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1187.625687260574m,
+                            TripId = 76
+                        },
+                        new
+                        {
+                            Id = 77,
+                            CompanyId = 5,
+                            DeliveryDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1239.822106943898m,
                             TripId = 77
                         },
                         new
                         {
                             Id = 78,
-                            CompanyId = 10,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1186.512559563449m,
+                            Price = 1109.057427324766m,
                             TripId = 78
                         },
                         new
                         {
                             Id = 79,
-                            CompanyId = 7,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1138.61333629047m,
+                            Price = 1154.627251562629m,
                             TripId = 79
                         },
                         new
                         {
                             Id = 80,
-                            CompanyId = 5,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 977.9203689046818m,
+                            Price = 994.9899858014139m,
                             TripId = 80
                         },
                         new
                         {
                             Id = 81,
-                            CompanyId = 7,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1193.58688731028m,
+                            Price = 1154.994687601263m,
                             TripId = 81
                         },
                         new
                         {
                             Id = 82,
-                            CompanyId = 9,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1266.293831863806m,
+                            Price = 1261.698370651341m,
                             TripId = 82
                         },
                         new
                         {
                             Id = 83,
-                            CompanyId = 6,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 990.8152458932036m,
+                            Price = 960.0152755842904m,
                             TripId = 83
                         },
                         new
                         {
                             Id = 84,
-                            CompanyId = 6,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1060.623962266452m,
+                            Price = 1108.21561651363m,
                             TripId = 84
                         },
                         new
                         {
                             Id = 85,
-                            CompanyId = 10,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1049.3509988970514m,
+                            Price = 1282.392301847288m,
                             TripId = 85
                         },
                         new
                         {
                             Id = 86,
-                            CompanyId = 4,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1262.776059143265m,
+                            Price = 1187.294429114299m,
                             TripId = 86
                         },
                         new
                         {
                             Id = 87,
-                            CompanyId = 6,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1191.929115286823m,
+                            Price = 1158.312377254489m,
                             TripId = 87
                         },
                         new
                         {
                             Id = 88,
-                            CompanyId = 7,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1183.019024938505m,
+                            Price = 1194.638982678175m,
                             TripId = 88
                         },
                         new
                         {
                             Id = 89,
-                            CompanyId = 1,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1283.42258997774m,
+                            Price = 1077.365425412263m,
                             TripId = 89
                         },
                         new
                         {
                             Id = 90,
-                            CompanyId = 1,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1056.845774294313m,
+                            Price = 1139.36309301569m,
                             TripId = 90
                         },
                         new
                         {
                             Id = 91,
-                            CompanyId = 2,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1111.832550828044m,
+                            Price = 1210.879912235824m,
                             TripId = 91
                         },
                         new
                         {
                             Id = 92,
-                            CompanyId = 7,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1012.481029201473m,
+                            Price = 1055.619879334509m,
                             TripId = 92
                         },
                         new
                         {
                             Id = 93,
-                            CompanyId = 8,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1073.349172327833m,
+                            Price = 1028.1865076363052m,
                             TripId = 93
                         },
                         new
                         {
                             Id = 94,
-                            CompanyId = 8,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1299.703130354536m,
+                            Price = 1225.022562768569m,
                             TripId = 94
                         },
                         new
                         {
                             Id = 95,
-                            CompanyId = 1,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1084.135212196368m,
+                            Price = 1068.750607599102m,
                             TripId = 95
                         },
                         new
                         {
                             Id = 96,
-                            CompanyId = 6,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1221.368014383631m,
+                            Price = 1189.71897600855m,
                             TripId = 96
                         },
                         new
                         {
                             Id = 97,
-                            CompanyId = 8,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1009.9511274794337m,
+                            Price = 1285.801435341081m,
                             TripId = 97
                         },
                         new
                         {
                             Id = 98,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 954.87736931598786m,
-                            TripId = 98
-                        },
-                        new
-                        {
-                            Id = 99,
                             CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1033.3028299730979m,
+                            Price = 1219.575194917621m,
+                            TripId = 98
+                        },
+                        new
+                        {
+                            Id = 99,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1037.5199009280679m,
                             TripId = 99
                         },
                         new
                         {
                             Id = 100,
-                            CompanyId = 10,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1132.815988138666m,
+                            Price = 996.2957467612916m,
                             TripId = 100
                         },
                         new
@@ -1751,29 +1753,29 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1185.545280605044m,
+                            Price = 1271.491176618446m,
                             TripId = 101
                         },
                         new
                         {
                             Id = 102,
-                            CompanyId = 5,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1069.227864979915m,
+                            Price = 1173.858532187692m,
                             TripId = 102
                         },
                         new
                         {
                             Id = 103,
-                            CompanyId = 4,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1215.933947077809m,
+                            Price = 1007.3244902411768m,
                             TripId = 103
                         },
                         new
@@ -1784,7 +1786,7 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1285.471824622142m,
+                            Price = 1274.945066870476m,
                             TripId = 104
                         },
                         new
@@ -1795,238 +1797,238 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1193.759539835669m,
+                            Price = 1002.3516916021293m,
                             TripId = 105
                         },
                         new
                         {
                             Id = 106,
-                            CompanyId = 5,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1298.522118751352m,
+                            Price = 1154.580323322214m,
                             TripId = 106
                         },
                         new
                         {
                             Id = 107,
-                            CompanyId = 2,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1069.876887157639m,
+                            Price = 1291.873303486497m,
                             TripId = 107
                         },
                         new
                         {
                             Id = 108,
-                            CompanyId = 3,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1200.73643171303m,
+                            Price = 961.9737771022318m,
                             TripId = 108
                         },
                         new
                         {
                             Id = 109,
-                            CompanyId = 6,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1158.299979688543m,
+                            Price = 992.471852883179m,
                             TripId = 109
                         },
                         new
                         {
                             Id = 110,
-                            CompanyId = 7,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1021.13029220679m,
+                            Price = 1288.394414781002m,
                             TripId = 110
                         },
                         new
                         {
                             Id = 111,
-                            CompanyId = 7,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1206.569220550547m,
+                            Price = 1005.8438661692631m,
                             TripId = 111
                         },
                         new
                         {
                             Id = 112,
-                            CompanyId = 6,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1163.977442239777m,
+                            Price = 1142.950235737978m,
                             TripId = 112
                         },
                         new
                         {
                             Id = 113,
-                            CompanyId = 5,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1247.166327050781m,
+                            Price = 1118.607627767872m,
                             TripId = 113
                         },
                         new
                         {
                             Id = 114,
-                            CompanyId = 8,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1192.16646114371m,
+                            Price = 1116.957647580199m,
                             TripId = 114
                         },
                         new
                         {
                             Id = 115,
-                            CompanyId = 4,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1109.182266680406m,
+                            Price = 1030.1826982497748m,
                             TripId = 115
                         },
                         new
                         {
                             Id = 116,
-                            CompanyId = 8,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1126.377528638575m,
+                            Price = 1078.083906143335m,
                             TripId = 116
                         },
                         new
                         {
                             Id = 117,
-                            CompanyId = 8,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1249.841098298566m,
+                            Price = 972.9263814316639m,
                             TripId = 117
                         },
                         new
                         {
                             Id = 118,
-                            CompanyId = 2,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1241.488796311812m,
+                            Price = 1189.445840032086m,
                             TripId = 118
                         },
                         new
                         {
                             Id = 119,
-                            CompanyId = 7,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1059.745901087047m,
+                            Price = 1027.739154195135m,
                             TripId = 119
                         },
                         new
                         {
                             Id = 120,
-                            CompanyId = 7,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 963.3519899113168m,
+                            Price = 1055.120635201568m,
                             TripId = 120
                         },
                         new
                         {
                             Id = 121,
-                            CompanyId = 4,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1084.539489093131m,
+                            Price = 1151.880653497479m,
                             TripId = 121
                         },
                         new
                         {
                             Id = 122,
-                            CompanyId = 5,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1205.106014307608m,
+                            Price = 956.59799764193198m,
                             TripId = 122
                         },
                         new
                         {
                             Id = 123,
-                            CompanyId = 7,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1255.528022908514m,
+                            Price = 1236.962488170454m,
                             TripId = 123
                         },
                         new
                         {
                             Id = 124,
-                            CompanyId = 6,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1074.544848649968m,
+                            Price = 1086.980435943077m,
                             TripId = 124
                         },
                         new
                         {
                             Id = 125,
-                            CompanyId = 4,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1030.2587251492059m,
+                            Price = 1225.046464534358m,
                             TripId = 125
                         },
                         new
                         {
                             Id = 126,
-                            CompanyId = 4,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1226.785818402565m,
+                            Price = 1023.7182981362839m,
                             TripId = 126
                         },
                         new
@@ -2037,106 +2039,106 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1069.894587350213m,
+                            Price = 1151.566843422964m,
                             TripId = 127
                         },
                         new
                         {
                             Id = 128,
-                            CompanyId = 9,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 992.1120624534141m,
+                            Price = 961.3858384246577m,
                             TripId = 128
                         },
                         new
                         {
                             Id = 129,
-                            CompanyId = 9,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 961.1701139544834m,
+                            Price = 1247.141333751259m,
                             TripId = 129
                         },
                         new
                         {
                             Id = 130,
-                            CompanyId = 6,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1231.31397744242m,
+                            Price = 1097.860928844621m,
                             TripId = 130
                         },
                         new
                         {
                             Id = 131,
-                            CompanyId = 5,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1277.181098845854m,
+                            Price = 1250.997105206233m,
                             TripId = 131
                         },
                         new
                         {
                             Id = 132,
-                            CompanyId = 6,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 991.1211017829426m,
+                            Price = 1202.115574525017m,
                             TripId = 132
                         },
                         new
                         {
                             Id = 133,
-                            CompanyId = 2,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1152.840190889211m,
+                            Price = 1159.123254753961m,
                             TripId = 133
                         },
                         new
                         {
                             Id = 134,
-                            CompanyId = 8,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1264.180817039698m,
+                            Price = 1109.969775330476m,
                             TripId = 134
                         },
                         new
                         {
                             Id = 135,
-                            CompanyId = 9,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1276.554719358273m,
+                            Price = 1086.898036044729m,
                             TripId = 135
                         },
                         new
                         {
                             Id = 136,
-                            CompanyId = 5,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1152.301295540839m,
+                            Price = 1228.99579631826m,
                             TripId = 136
                         },
                         new
@@ -2147,282 +2149,282 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1126.219222636789m,
+                            Price = 1071.463533451704m,
                             TripId = 137
                         },
                         new
                         {
                             Id = 138,
-                            CompanyId = 3,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 995.5266876363178m,
+                            Price = 1235.040403695289m,
                             TripId = 138
                         },
                         new
                         {
                             Id = 139,
-                            CompanyId = 1,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1293.498744044185m,
+                            Price = 1260.52721852772m,
                             TripId = 139
                         },
                         new
                         {
                             Id = 140,
-                            CompanyId = 7,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1111.108383215473m,
+                            Price = 1206.351549185371m,
                             TripId = 140
                         },
                         new
                         {
                             Id = 141,
-                            CompanyId = 6,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1114.521057335668m,
+                            Price = 1296.430847890931m,
                             TripId = 141
                         },
                         new
                         {
                             Id = 142,
-                            CompanyId = 8,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1076.654469032094m,
+                            Price = 1205.284033384216m,
                             TripId = 142
                         },
                         new
                         {
                             Id = 143,
-                            CompanyId = 5,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1026.1823860789152m,
+                            Price = 1170.650016367299m,
                             TripId = 143
                         },
                         new
                         {
                             Id = 144,
-                            CompanyId = 4,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1299.617995794012m,
+                            Price = 1165.639228521485m,
                             TripId = 144
                         },
                         new
                         {
                             Id = 145,
-                            CompanyId = 9,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1216.34303345067m,
+                            Price = 1290.450363333923m,
                             TripId = 145
                         },
                         new
                         {
                             Id = 146,
-                            CompanyId = 8,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1118.926385367075m,
+                            Price = 1135.244048480546m,
                             TripId = 146
                         },
                         new
                         {
                             Id = 147,
-                            CompanyId = 9,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1026.6053474155957m,
+                            Price = 1092.034621037771m,
                             TripId = 147
                         },
                         new
                         {
                             Id = 148,
-                            CompanyId = 4,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1012.118983567963m,
+                            Price = 1066.215213471952m,
                             TripId = 148
                         },
                         new
                         {
                             Id = 149,
-                            CompanyId = 1,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 979.4511953686578m,
+                            Price = 1256.046723385165m,
                             TripId = 149
                         },
                         new
                         {
                             Id = 150,
-                            CompanyId = 10,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 982.670659748967m,
+                            Price = 1244.267785247458m,
                             TripId = 150
                         },
                         new
                         {
                             Id = 151,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1075.220225220574m,
-                            TripId = 151
-                        },
-                        new
-                        {
-                            Id = 152,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1107.638648306752m,
-                            TripId = 152
-                        },
-                        new
-                        {
-                            Id = 153,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1221.094208833211m,
-                            TripId = 153
-                        },
-                        new
-                        {
-                            Id = 154,
                             CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1248.093101551919m,
-                            TripId = 154
+                            Price = 1074.099725146757m,
+                            TripId = 151
                         },
                         new
                         {
-                            Id = 155,
-                            CompanyId = 5,
+                            Id = 152,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1272.799434706465m,
-                            TripId = 155
+                            Price = 1247.835238924495m,
+                            TripId = 152
                         },
                         new
                         {
-                            Id = 156,
+                            Id = 153,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 988.7936777338646m,
+                            TripId = 153
+                        },
+                        new
+                        {
+                            Id = 154,
                             CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1245.266042420102m,
+                            Price = 996.9460588832286m,
+                            TripId = 154
+                        },
+                        new
+                        {
+                            Id = 155,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1267.23888967442m,
+                            TripId = 155
+                        },
+                        new
+                        {
+                            Id = 156,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1195.787201615007m,
                             TripId = 156
                         },
                         new
                         {
                             Id = 157,
-                            CompanyId = 8,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1264.093534228982m,
+                            Price = 1188.627394427399m,
                             TripId = 157
                         },
                         new
                         {
                             Id = 158,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1179.80889161619m,
-                            TripId = 158
-                        },
-                        new
-                        {
-                            Id = 159,
                             CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1041.339889922773m,
+                            Price = 1002.6615730699009m,
+                            TripId = 158
+                        },
+                        new
+                        {
+                            Id = 159,
+                            CompanyId = 5,
+                            DeliveryDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1291.352816797847m,
                             TripId = 159
                         },
                         new
                         {
                             Id = 160,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1184.255177682289m,
-                            TripId = 160
-                        },
-                        new
-                        {
-                            Id = 161,
                             CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1276.921064566498m,
+                            Price = 995.1080357494832m,
+                            TripId = 160
+                        },
+                        new
+                        {
+                            Id = 161,
+                            CompanyId = 8,
+                            DeliveryDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1094.975676505602m,
                             TripId = 161
                         },
                         new
                         {
                             Id = 162,
-                            CompanyId = 10,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1023.4840731609427m,
+                            Price = 1123.262184899693m,
                             TripId = 162
                         },
                         new
@@ -2433,194 +2435,194 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1176.215679448751m,
+                            Price = 1013.8877573717945m,
                             TripId = 163
                         },
                         new
                         {
                             Id = 164,
-                            CompanyId = 9,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1031.8790006009608m,
+                            Price = 1222.473319194194m,
                             TripId = 164
                         },
                         new
                         {
                             Id = 165,
-                            CompanyId = 4,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1187.386909311098m,
+                            Price = 1193.82383808689m,
                             TripId = 165
                         },
                         new
                         {
                             Id = 166,
-                            CompanyId = 9,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1172.053053434213m,
+                            Price = 1150.411213005577m,
                             TripId = 166
                         },
                         new
                         {
                             Id = 167,
-                            CompanyId = 4,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 972.2246370286498m,
+                            Price = 984.7476533215094m,
                             TripId = 167
                         },
                         new
                         {
                             Id = 168,
-                            CompanyId = 7,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1030.4649694607124m,
+                            Price = 1263.104209645724m,
                             TripId = 168
                         },
                         new
                         {
                             Id = 169,
-                            CompanyId = 4,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1228.362090875635m,
+                            Price = 1211.016654705035m,
                             TripId = 169
                         },
                         new
                         {
                             Id = 170,
-                            CompanyId = 4,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 966.4720631583343m,
+                            Price = 1053.619129454666m,
                             TripId = 170
                         },
                         new
                         {
                             Id = 171,
-                            CompanyId = 6,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1191.021600816297m,
+                            Price = 976.8173361441953m,
                             TripId = 171
                         },
                         new
                         {
                             Id = 172,
-                            CompanyId = 9,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1198.135231061533m,
+                            Price = 1146.501179266308m,
                             TripId = 172
                         },
                         new
                         {
                             Id = 173,
-                            CompanyId = 4,
-                            DeliveryDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 979.7239061574434m,
-                            TripId = 173
-                        },
-                        new
-                        {
-                            Id = 174,
                             CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 985.7669087503289m,
+                            Price = 1063.004548219606m,
+                            TripId = 173
+                        },
+                        new
+                        {
+                            Id = 174,
+                            CompanyId = 5,
+                            DeliveryDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1092.067597333971m,
                             TripId = 174
                         },
                         new
                         {
                             Id = 175,
-                            CompanyId = 1,
-                            DeliveryDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1049.0342673609868m,
-                            TripId = 175
-                        },
-                        new
-                        {
-                            Id = 176,
-                            CompanyId = 5,
-                            DeliveryDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1227.03746570033m,
-                            TripId = 176
-                        },
-                        new
-                        {
-                            Id = 177,
-                            CompanyId = 5,
-                            DeliveryDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1044.0001474338941m,
-                            TripId = 177
-                        },
-                        new
-                        {
-                            Id = 178,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1121.164994133873m,
-                            TripId = 178
-                        },
-                        new
-                        {
-                            Id = 179,
                             CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1201.12584135331m,
+                            Price = 1254.274547622331m,
+                            TripId = 175
+                        },
+                        new
+                        {
+                            Id = 176,
+                            CompanyId = 6,
+                            DeliveryDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1084.459048779877m,
+                            TripId = 176
+                        },
+                        new
+                        {
+                            Id = 177,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1129.426515255443m,
+                            TripId = 177
+                        },
+                        new
+                        {
+                            Id = 178,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1274.599993894164m,
+                            TripId = 178
+                        },
+                        new
+                        {
+                            Id = 179,
+                            CompanyId = 1,
+                            DeliveryDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1034.1317632283506m,
                             TripId = 179
                         },
                         new
                         {
                             Id = 180,
-                            CompanyId = 2,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1084.442364099988m,
+                            Price = 1279.056060975087m,
                             TripId = 180
                         },
                         new
@@ -2631,139 +2633,139 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1036.0506202258038m,
+                            Price = 1233.997158756896m,
                             TripId = 181
                         },
                         new
                         {
                             Id = 182,
-                            CompanyId = 3,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1170.550099825262m,
+                            Price = 995.8537488842195m,
                             TripId = 182
                         },
                         new
                         {
                             Id = 183,
-                            CompanyId = 3,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1225.111769049067m,
+                            Price = 1144.620428249967m,
                             TripId = 183
                         },
                         new
                         {
                             Id = 184,
-                            CompanyId = 4,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1072.72515271658m,
+                            Price = 1158.863718363382m,
                             TripId = 184
                         },
                         new
                         {
                             Id = 185,
-                            CompanyId = 10,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1088.074649828327m,
+                            Price = 1029.0731919404256m,
                             TripId = 185
                         },
                         new
                         {
                             Id = 186,
-                            CompanyId = 10,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1069.150430086985m,
+                            Price = 1048.7502565500707m,
                             TripId = 186
                         },
                         new
                         {
                             Id = 187,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1267.660837011696m,
-                            TripId = 187
-                        },
-                        new
-                        {
-                            Id = 188,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1105.154534764625m,
-                            TripId = 188
-                        },
-                        new
-                        {
-                            Id = 189,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 958.61004426720889m,
-                            TripId = 189
-                        },
-                        new
-                        {
-                            Id = 190,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1126.068717024009m,
-                            TripId = 190
-                        },
-                        new
-                        {
-                            Id = 191,
-                            CompanyId = 8,
-                            DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1143.941012392712m,
-                            TripId = 191
-                        },
-                        new
-                        {
-                            Id = 192,
                             CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1125.188041386222m,
+                            Price = 995.1615749232978m,
+                            TripId = 187
+                        },
+                        new
+                        {
+                            Id = 188,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 975.3525283053674m,
+                            TripId = 188
+                        },
+                        new
+                        {
+                            Id = 189,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1064.482460413487m,
+                            TripId = 189
+                        },
+                        new
+                        {
+                            Id = 190,
+                            CompanyId = 5,
+                            DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1125.324786027222m,
+                            TripId = 190
+                        },
+                        new
+                        {
+                            Id = 191,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1139.98724167272m,
+                            TripId = 191
+                        },
+                        new
+                        {
+                            Id = 192,
+                            CompanyId = 8,
+                            DeliveryDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1108.092838555826m,
                             TripId = 192
                         },
                         new
                         {
                             Id = 193,
-                            CompanyId = 2,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1205.732164580272m,
+                            Price = 995.3754369124203m,
                             TripId = 193
                         },
                         new
@@ -2774,51 +2776,51 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 956.05282400079228m,
+                            Price = 1080.69117610787m,
                             TripId = 194
                         },
                         new
                         {
                             Id = 195,
-                            CompanyId = 6,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1146.525847809912m,
+                            Price = 981.3551682811043m,
                             TripId = 195
                         },
                         new
                         {
                             Id = 196,
-                            CompanyId = 2,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1293.208688107426m,
+                            Price = 1196.501401738184m,
                             TripId = 196
                         },
                         new
                         {
                             Id = 197,
-                            CompanyId = 2,
-                            DeliveryDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1192.423861772155m,
-                            TripId = 197
-                        },
-                        new
-                        {
-                            Id = 198,
                             CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1061.208520385773m,
+                            Price = 957.97375505745923m,
+                            TripId = 197
+                        },
+                        new
+                        {
+                            Id = 198,
+                            CompanyId = 8,
+                            DeliveryDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1173.940755717681m,
                             TripId = 198
                         },
                         new
@@ -2829,7 +2831,7 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1099.216780816466m,
+                            Price = 968.3356729195874m,
                             TripId = 199
                         },
                         new
@@ -2840,304 +2842,304 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1060.616692141994m,
+                            Price = 986.7038204029482m,
                             TripId = 200
                         },
                         new
                         {
                             Id = 201,
-                            CompanyId = 5,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1207.834686649395m,
+                            Price = 1079.142207897944m,
                             TripId = 201
                         },
                         new
                         {
                             Id = 202,
-                            CompanyId = 6,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1294.931400494929m,
+                            Price = 992.9844110361698m,
                             TripId = 202
                         },
                         new
                         {
                             Id = 203,
-                            CompanyId = 3,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1030.6998916647351m,
+                            Price = 1002.377479654299m,
                             TripId = 203
                         },
                         new
                         {
                             Id = 204,
-                            CompanyId = 3,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1073.861262390596m,
+                            Price = 1016.3567552622599m,
                             TripId = 204
                         },
                         new
                         {
                             Id = 205,
-                            CompanyId = 5,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1121.917317551021m,
+                            Price = 1069.712658862388m,
                             TripId = 205
                         },
                         new
                         {
                             Id = 206,
-                            CompanyId = 1,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1101.188087613946m,
+                            Price = 1182.838370913023m,
                             TripId = 206
                         },
                         new
                         {
                             Id = 207,
-                            CompanyId = 1,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1286.190228610127m,
+                            Price = 1175.131721105406m,
                             TripId = 207
                         },
                         new
                         {
                             Id = 208,
-                            CompanyId = 5,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1167.567638569884m,
+                            Price = 1048.6872273413445m,
                             TripId = 208
                         },
                         new
                         {
                             Id = 209,
-                            CompanyId = 7,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1167.787473159599m,
+                            Price = 988.765218116788m,
                             TripId = 209
                         },
                         new
                         {
                             Id = 210,
-                            CompanyId = 7,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1298.317318817622m,
+                            Price = 1297.142618877366m,
                             TripId = 210
                         },
                         new
                         {
                             Id = 211,
-                            CompanyId = 3,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1117.263345604011m,
+                            Price = 1009.7779376534429m,
                             TripId = 211
                         },
                         new
                         {
                             Id = 212,
-                            CompanyId = 6,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1277.585315608451m,
+                            Price = 1133.274429508757m,
                             TripId = 212
                         },
                         new
                         {
                             Id = 213,
-                            CompanyId = 8,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1000.9328418588997m,
+                            Price = 1291.303222572272m,
                             TripId = 213
                         },
                         new
                         {
                             Id = 214,
-                            CompanyId = 5,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1246.914354350012m,
+                            Price = 1117.450853266776m,
                             TripId = 214
                         },
                         new
                         {
                             Id = 215,
-                            CompanyId = 1,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1152.391523571055m,
+                            Price = 1248.748100872722m,
                             TripId = 215
                         },
                         new
                         {
                             Id = 216,
-                            CompanyId = 3,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1148.055326189078m,
+                            Price = 1151.65364675999m,
                             TripId = 216
                         },
                         new
                         {
                             Id = 217,
-                            CompanyId = 1,
-                            DeliveryDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1205.02839234745m,
-                            TripId = 217
-                        },
-                        new
-                        {
-                            Id = 218,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1225.23641358108m,
-                            TripId = 218
-                        },
-                        new
-                        {
-                            Id = 219,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1239.238982055616m,
-                            TripId = 219
-                        },
-                        new
-                        {
-                            Id = 220,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1001.7652065215724m,
-                            TripId = 220
-                        },
-                        new
-                        {
-                            Id = 221,
                             CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1253.95519816666m,
+                            Price = 1242.555625126118m,
+                            TripId = 217
+                        },
+                        new
+                        {
+                            Id = 218,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1113.194437017128m,
+                            TripId = 218
+                        },
+                        new
+                        {
+                            Id = 219,
+                            CompanyId = 2,
+                            DeliveryDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1042.1837535471717m,
+                            TripId = 219
+                        },
+                        new
+                        {
+                            Id = 220,
+                            CompanyId = 5,
+                            DeliveryDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1189.143522021308m,
+                            TripId = 220
+                        },
+                        new
+                        {
+                            Id = 221,
+                            CompanyId = 8,
+                            DeliveryDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1081.095334130957m,
                             TripId = 221
                         },
                         new
                         {
                             Id = 222,
-                            CompanyId = 6,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1207.559850336242m,
+                            Price = 1264.607899660182m,
                             TripId = 222
                         },
                         new
                         {
                             Id = 223,
-                            CompanyId = 1,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1294.404699733866m,
+                            Price = 1080.568107944881m,
                             TripId = 223
                         },
                         new
                         {
                             Id = 224,
-                            CompanyId = 6,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 990.8031660081931m,
+                            Price = 1216.55965836899m,
                             TripId = 224
                         },
                         new
                         {
                             Id = 225,
-                            CompanyId = 1,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1001.7054752086466m,
+                            Price = 1205.92042982591m,
                             TripId = 225
                         },
                         new
                         {
                             Id = 226,
-                            CompanyId = 7,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1108.287216451925m,
+                            Price = 1084.638408222363m,
                             TripId = 226
                         },
                         new
                         {
                             Id = 227,
-                            CompanyId = 7,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 958.01970622069176m,
+                            Price = 1195.892503663246m,
                             TripId = 227
                         },
                         new
@@ -3148,73 +3150,73 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1239.141045347272m,
+                            Price = 1248.278757412071m,
                             TripId = 228
                         },
                         new
                         {
                             Id = 229,
-                            CompanyId = 10,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1144.812370026189m,
+                            Price = 1183.776911574749m,
                             TripId = 229
                         },
                         new
                         {
                             Id = 230,
-                            CompanyId = 1,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1282.408177104074m,
+                            Price = 1099.39118906234m,
                             TripId = 230
                         },
                         new
                         {
                             Id = 231,
-                            CompanyId = 7,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1038.4400925936596m,
+                            Price = 1184.04460873908m,
                             TripId = 231
                         },
                         new
                         {
                             Id = 232,
-                            CompanyId = 9,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1027.1584796703328m,
+                            Price = 951.90831117425105m,
                             TripId = 232
                         },
                         new
                         {
                             Id = 233,
-                            CompanyId = 2,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1034.2759794447878m,
+                            Price = 1215.39536270842m,
                             TripId = 233
                         },
                         new
                         {
                             Id = 234,
-                            CompanyId = 10,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1296.547183587309m,
+                            Price = 1227.690001996657m,
                             TripId = 234
                         },
                         new
@@ -3225,348 +3227,348 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1280.748182803942m,
+                            Price = 1251.300734393153m,
                             TripId = 235
                         },
                         new
                         {
                             Id = 236,
-                            CompanyId = 8,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1165.593076642999m,
+                            Price = 1096.339165587935m,
                             TripId = 236
                         },
                         new
                         {
                             Id = 237,
-                            CompanyId = 2,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1066.843461772174m,
+                            Price = 1161.468371078493m,
                             TripId = 237
                         },
                         new
                         {
                             Id = 238,
-                            CompanyId = 1,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1059.310521107043m,
+                            Price = 1013.3875357812625m,
                             TripId = 238
                         },
                         new
                         {
                             Id = 239,
-                            CompanyId = 1,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1242.972251166292m,
+                            Price = 1135.836210873308m,
                             TripId = 239
                         },
                         new
                         {
                             Id = 240,
-                            CompanyId = 8,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1061.393703382628m,
+                            Price = 1171.034214363752m,
                             TripId = 240
                         },
                         new
                         {
                             Id = 241,
-                            CompanyId = 7,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1047.3191362338174m,
+                            Price = 1285.845314112747m,
                             TripId = 241
                         },
                         new
                         {
                             Id = 242,
-                            CompanyId = 2,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1270.278120893341m,
+                            Price = 1153.594890681952m,
                             TripId = 242
                         },
                         new
                         {
                             Id = 243,
-                            CompanyId = 1,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1209.762675372828m,
+                            Price = 952.2145419341381m,
                             TripId = 243
                         },
                         new
                         {
                             Id = 244,
-                            CompanyId = 4,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1073.624633473066m,
+                            Price = 977.6323482080216m,
                             TripId = 244
                         },
                         new
                         {
                             Id = 245,
-                            CompanyId = 5,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1110.368015838472m,
+                            Price = 1176.651554708289m,
                             TripId = 245
                         },
                         new
                         {
                             Id = 246,
-                            CompanyId = 6,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1046.8325123539972m,
+                            Price = 1056.122031863918m,
                             TripId = 246
                         },
                         new
                         {
                             Id = 247,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 963.2141965489075m,
-                            TripId = 247
-                        },
-                        new
-                        {
-                            Id = 248,
-                            CompanyId = 1,
-                            DeliveryDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1057.437572566414m,
-                            TripId = 248
-                        },
-                        new
-                        {
-                            Id = 249,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1044.5446707063482m,
-                            TripId = 249
-                        },
-                        new
-                        {
-                            Id = 250,
-                            CompanyId = 9,
-                            DeliveryDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1087.841964045449m,
-                            TripId = 250
-                        },
-                        new
-                        {
-                            Id = 251,
                             CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1157.796094493168m,
+                            Price = 980.9596809286392m,
+                            TripId = 247
+                        },
+                        new
+                        {
+                            Id = 248,
+                            CompanyId = 6,
+                            DeliveryDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1251.988021276407m,
+                            TripId = 248
+                        },
+                        new
+                        {
+                            Id = 249,
+                            CompanyId = 3,
+                            DeliveryDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1136.999402251221m,
+                            TripId = 249
+                        },
+                        new
+                        {
+                            Id = 250,
+                            CompanyId = 6,
+                            DeliveryDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1291.859645329156m,
+                            TripId = 250
+                        },
+                        new
+                        {
+                            Id = 251,
+                            CompanyId = 6,
+                            DeliveryDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1211.906370631199m,
                             TripId = 251
                         },
                         new
                         {
                             Id = 252,
-                            CompanyId = 7,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1144.242005172318m,
+                            Price = 1045.9305882913706m,
                             TripId = 252
                         },
                         new
                         {
                             Id = 253,
-                            CompanyId = 9,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1040.8453215908239m,
+                            Price = 1228.613109177276m,
                             TripId = 253
                         },
                         new
                         {
                             Id = 254,
-                            CompanyId = 1,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1098.537865911649m,
+                            Price = 1147.42240146741m,
                             TripId = 254
                         },
                         new
                         {
                             Id = 255,
-                            CompanyId = 3,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 983.9581351561036m,
+                            Price = 1253.272343398617m,
                             TripId = 255
                         },
                         new
                         {
                             Id = 256,
-                            CompanyId = 9,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1039.4429478594562m,
+                            Price = 1118.098513174156m,
                             TripId = 256
                         },
                         new
                         {
                             Id = 257,
-                            CompanyId = 5,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1201.300440929128m,
+                            Price = 1047.7874107324105m,
                             TripId = 257
                         },
                         new
                         {
                             Id = 258,
-                            CompanyId = 9,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1138.846824319901m,
+                            Price = 1168.139928223168m,
                             TripId = 258
                         },
                         new
                         {
                             Id = 259,
-                            CompanyId = 8,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1063.141487283838m,
+                            Price = 986.584547642735m,
                             TripId = 259
                         },
                         new
                         {
                             Id = 260,
-                            CompanyId = 3,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1262.220312256501m,
+                            Price = 966.1331918060514m,
                             TripId = 260
                         },
                         new
                         {
                             Id = 261,
-                            CompanyId = 7,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 962.5150808205888m,
+                            Price = 1030.2260617446946m,
                             TripId = 261
                         },
                         new
                         {
                             Id = 262,
-                            CompanyId = 4,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1288.764936869344m,
+                            Price = 1160.966571582577m,
                             TripId = 262
                         },
                         new
                         {
                             Id = 263,
-                            CompanyId = 2,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1204.36336272945m,
+                            Price = 1216.488987140232m,
                             TripId = 263
                         },
                         new
                         {
                             Id = 264,
-                            CompanyId = 3,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1186.520420392324m,
+                            Price = 1049.3690066811012m,
                             TripId = 264
                         },
                         new
                         {
                             Id = 265,
-                            CompanyId = 5,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1166.704890371437m,
+                            Price = 1063.088341310572m,
                             TripId = 265
                         },
                         new
                         {
                             Id = 266,
-                            CompanyId = 8,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1255.156573318871m,
+                            Price = 1216.72063624198m,
                             TripId = 266
                         },
                         new
@@ -3577,51 +3579,51 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 960.7190818708087m,
+                            Price = 1287.342185276096m,
                             TripId = 267
                         },
                         new
                         {
                             Id = 268,
-                            CompanyId = 10,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1231.989190604798m,
+                            Price = 1221.31409840197m,
                             TripId = 268
                         },
                         new
                         {
                             Id = 269,
-                            CompanyId = 9,
-                            DeliveryDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1081.874501511918m,
-                            TripId = 269
-                        },
-                        new
-                        {
-                            Id = 270,
                             CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1230.074358706012m,
+                            Price = 1088.731113854867m,
+                            TripId = 269
+                        },
+                        new
+                        {
+                            Id = 270,
+                            CompanyId = 2,
+                            DeliveryDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1074.954603932754m,
                             TripId = 270
                         },
                         new
                         {
                             Id = 271,
-                            CompanyId = 3,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1262.757835330602m,
+                            Price = 1191.724276680675m,
                             TripId = 271
                         },
                         new
@@ -3632,359 +3634,359 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1267.109384569519m,
+                            Price = 1280.691407193324m,
                             TripId = 272
                         },
                         new
                         {
                             Id = 273,
-                            CompanyId = 1,
-                            DeliveryDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1052.231735880632m,
-                            TripId = 273
-                        },
-                        new
-                        {
-                            Id = 274,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1287.613708359716m,
-                            TripId = 274
-                        },
-                        new
-                        {
-                            Id = 275,
                             CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1129.335096197816m,
-                            TripId = 275
+                            Price = 1257.211606321472m,
+                            TripId = 273
                         },
                         new
                         {
-                            Id = 276,
+                            Id = 274,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1228.003118547837m,
+                            TripId = 274
+                        },
+                        new
+                        {
+                            Id = 275,
                             CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1280.203205340605m,
+                            Price = 1050.198029020317m,
+                            TripId = 275
+                        },
+                        new
+                        {
+                            Id = 276,
+                            CompanyId = 7,
+                            DeliveryDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1217.927193373484m,
                             TripId = 276
                         },
                         new
                         {
                             Id = 277,
-                            CompanyId = 4,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1070.648029631917m,
+                            Price = 1297.162477363955m,
                             TripId = 277
                         },
                         new
                         {
                             Id = 278,
-                            CompanyId = 7,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1211.316384192899m,
+                            Price = 1054.693042942056m,
                             TripId = 278
                         },
                         new
                         {
                             Id = 279,
-                            CompanyId = 10,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1241.586296578501m,
+                            Price = 1292.212524195565m,
                             TripId = 279
                         },
                         new
                         {
                             Id = 280,
-                            CompanyId = 2,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1285.893581074744m,
+                            Price = 1198.37036997524m,
                             TripId = 280
                         },
                         new
                         {
                             Id = 281,
-                            CompanyId = 2,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1244.640852440432m,
+                            Price = 1016.570815362278m,
                             TripId = 281
                         },
                         new
                         {
                             Id = 282,
-                            CompanyId = 10,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1017.5009850924103m,
+                            Price = 1227.457892616795m,
                             TripId = 282
                         },
                         new
                         {
                             Id = 283,
-                            CompanyId = 6,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 995.422113627917m,
+                            Price = 1044.5752617474505m,
                             TripId = 283
                         },
                         new
                         {
                             Id = 284,
-                            CompanyId = 7,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1203.145052989478m,
+                            Price = 1188.716297091317m,
                             TripId = 284
                         },
                         new
                         {
                             Id = 285,
-                            CompanyId = 10,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1236.716141003015m,
+                            Price = 1056.923696635454m,
                             TripId = 285
                         },
                         new
                         {
                             Id = 286,
-                            CompanyId = 3,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1207.170597733751m,
+                            Price = 1129.137293430158m,
                             TripId = 286
                         },
                         new
                         {
                             Id = 287,
-                            CompanyId = 5,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 959.57895842215709m,
+                            Price = 1040.3172983609612m,
                             TripId = 287
                         },
                         new
                         {
                             Id = 288,
-                            CompanyId = 10,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1059.781154335465m,
+                            Price = 1027.5393694407771m,
                             TripId = 288
                         },
                         new
                         {
                             Id = 289,
-                            CompanyId = 4,
-                            DeliveryDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1049.1082078980986m,
-                            TripId = 289
-                        },
-                        new
-                        {
-                            Id = 290,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1078.644288380041m,
-                            TripId = 290
-                        },
-                        new
-                        {
-                            Id = 291,
-                            CompanyId = 8,
-                            DeliveryDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1016.0336976823744m,
-                            TripId = 291
-                        },
-                        new
-                        {
-                            Id = 292,
                             CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 970.8914657962977m,
+                            Price = 1284.01016125706m,
+                            TripId = 289
+                        },
+                        new
+                        {
+                            Id = 290,
+                            CompanyId = 2,
+                            DeliveryDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1128.550968420235m,
+                            TripId = 290
+                        },
+                        new
+                        {
+                            Id = 291,
+                            CompanyId = 2,
+                            DeliveryDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1288.816900851166m,
+                            TripId = 291
+                        },
+                        new
+                        {
+                            Id = 292,
+                            CompanyId = 2,
+                            DeliveryDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1229.579326512112m,
                             TripId = 292
                         },
                         new
                         {
                             Id = 293,
-                            CompanyId = 5,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1298.424348351517m,
+                            Price = 1149.645359563698m,
                             TripId = 293
                         },
                         new
                         {
                             Id = 294,
-                            CompanyId = 10,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1231.622710777789m,
+                            Price = 1255.438495709059m,
                             TripId = 294
                         },
                         new
                         {
                             Id = 295,
-                            CompanyId = 2,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1150.073275377629m,
+                            Price = 1014.64246169763m,
                             TripId = 295
                         },
                         new
                         {
                             Id = 296,
-                            CompanyId = 3,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1155.749318106983m,
+                            Price = 1239.599970376268m,
                             TripId = 296
                         },
                         new
                         {
                             Id = 297,
-                            CompanyId = 1,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1206.796327628478m,
+                            Price = 1056.964644397593m,
                             TripId = 297
                         },
                         new
                         {
                             Id = 298,
-                            CompanyId = 8,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1150.430164155173m,
+                            Price = 1083.570768403341m,
                             TripId = 298
                         },
                         new
                         {
                             Id = 299,
-                            CompanyId = 5,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1013.8871304870518m,
+                            Price = 1021.1423904160326m,
                             TripId = 299
                         },
                         new
                         {
                             Id = 300,
-                            CompanyId = 5,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1260.519260941828m,
+                            Price = 1014.0823881873722m,
                             TripId = 300
                         },
                         new
                         {
                             Id = 301,
-                            CompanyId = 5,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1181.230151934566m,
+                            Price = 1000.5773187996968m,
                             TripId = 301
                         },
                         new
                         {
                             Id = 302,
-                            CompanyId = 1,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1139.7425907469m,
+                            Price = 1020.9571121891008m,
                             TripId = 302
                         },
                         new
                         {
                             Id = 303,
-                            CompanyId = 10,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1277.247765896234m,
+                            Price = 1161.650174285244m,
                             TripId = 303
                         },
                         new
                         {
                             Id = 304,
-                            CompanyId = 5,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1209.133755823178m,
+                            Price = 1045.1763197356076m,
                             TripId = 304
                         },
                         new
@@ -3995,161 +3997,161 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1267.591520396234m,
+                            Price = 989.2265033038633m,
                             TripId = 305
                         },
                         new
                         {
                             Id = 306,
-                            CompanyId = 7,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1282.101024458263m,
+                            Price = 1203.734848740476m,
                             TripId = 306
                         },
                         new
                         {
                             Id = 307,
-                            CompanyId = 8,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1287.31474336726m,
+                            Price = 1037.7014234471026m,
                             TripId = 307
                         },
                         new
                         {
                             Id = 308,
-                            CompanyId = 8,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1129.542616424237m,
+                            Price = 1247.010954871365m,
                             TripId = 308
                         },
                         new
                         {
                             Id = 309,
-                            CompanyId = 7,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1207.931585661307m,
+                            Price = 1036.4135423497459m,
                             TripId = 309
                         },
                         new
                         {
                             Id = 310,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1046.0627079328141m,
-                            TripId = 310
-                        },
-                        new
-                        {
-                            Id = 311,
                             CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1016.2840268345764m,
+                            Price = 1106.617753367702m,
+                            TripId = 310
+                        },
+                        new
+                        {
+                            Id = 311,
+                            CompanyId = 8,
+                            DeliveryDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1104.006707897637m,
                             TripId = 311
                         },
                         new
                         {
                             Id = 312,
-                            CompanyId = 2,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1233.170128485435m,
+                            Price = 1268.927941118819m,
                             TripId = 312
                         },
                         new
                         {
                             Id = 313,
-                            CompanyId = 6,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1057.683544921708m,
+                            Price = 1116.356114720643m,
                             TripId = 313
                         },
                         new
                         {
                             Id = 314,
-                            CompanyId = 10,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1241.012894626934m,
+                            Price = 1014.3346209567712m,
                             TripId = 314
                         },
                         new
                         {
                             Id = 315,
-                            CompanyId = 9,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1196.328077298204m,
+                            Price = 954.12575375530318m,
                             TripId = 315
                         },
                         new
                         {
                             Id = 316,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1253.804819266851m,
-                            TripId = 316
-                        },
-                        new
-                        {
-                            Id = 317,
                             CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1061.64125147881m,
+                            Price = 1239.526441448535m,
+                            TripId = 316
+                        },
+                        new
+                        {
+                            Id = 317,
+                            CompanyId = 1,
+                            DeliveryDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1223.534967742373m,
                             TripId = 317
                         },
                         new
                         {
                             Id = 318,
-                            CompanyId = 7,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1157.851535756461m,
+                            Price = 1013.4228582651175m,
                             TripId = 318
                         },
                         new
                         {
                             Id = 319,
-                            CompanyId = 9,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1037.3724406239807m,
+                            Price = 1295.172764359335m,
                             TripId = 319
                         },
                         new
@@ -4160,62 +4162,62 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1038.7542532689953m,
+                            Price = 1209.417168599135m,
                             TripId = 320
                         },
                         new
                         {
                             Id = 321,
-                            CompanyId = 5,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1171.815292692055m,
+                            Price = 1241.888420317863m,
                             TripId = 321
                         },
                         new
                         {
                             Id = 322,
-                            CompanyId = 3,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1153.437961445986m,
+                            Price = 1294.125897220361m,
                             TripId = 322
                         },
                         new
                         {
                             Id = 323,
-                            CompanyId = 3,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 963.9669339072167m,
+                            Price = 1066.306828329411m,
                             TripId = 323
                         },
                         new
                         {
                             Id = 324,
-                            CompanyId = 3,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1193.716707691921m,
+                            Price = 1106.216865642365m,
                             TripId = 324
                         },
                         new
                         {
                             Id = 325,
-                            CompanyId = 4,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1070.734328143948m,
+                            Price = 1014.3575867800036m,
                             TripId = 325
                         },
                         new
@@ -4226,84 +4228,84 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1249.999024521232m,
+                            Price = 1152.244330053576m,
                             TripId = 326
                         },
                         new
                         {
                             Id = 327,
-                            CompanyId = 3,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1011.590774217532m,
+                            Price = 1006.6440925375796m,
                             TripId = 327
                         },
                         new
                         {
                             Id = 328,
-                            CompanyId = 4,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1233.728588395462m,
+                            Price = 1215.449537829799m,
                             TripId = 328
                         },
                         new
                         {
                             Id = 329,
-                            CompanyId = 10,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1188.800930718239m,
+                            Price = 1063.006890872525m,
                             TripId = 329
                         },
                         new
                         {
                             Id = 330,
-                            CompanyId = 7,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 963.37932622994m,
+                            Price = 1211.411767538103m,
                             TripId = 330
                         },
                         new
                         {
                             Id = 331,
-                            CompanyId = 8,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1047.3784768118697m,
+                            Price = 1266.85525831289m,
                             TripId = 331
                         },
                         new
                         {
                             Id = 332,
-                            CompanyId = 8,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 997.1107767089846m,
+                            Price = 1081.202808396257m,
                             TripId = 332
                         },
                         new
                         {
                             Id = 333,
-                            CompanyId = 8,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1007.998971074398m,
+                            Price = 1264.95776028907m,
                             TripId = 333
                         },
                         new
@@ -4314,7 +4316,7 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1259.440032649652m,
+                            Price = 1133.022722738003m,
                             TripId = 334
                         },
                         new
@@ -4325,183 +4327,183 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1118.918832906113m,
+                            Price = 1184.039067993537m,
                             TripId = 335
                         },
                         new
                         {
                             Id = 336,
-                            CompanyId = 1,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1019.9358258406669m,
+                            Price = 1177.134425254365m,
                             TripId = 336
                         },
                         new
                         {
                             Id = 337,
-                            CompanyId = 9,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1030.6444353317848m,
+                            Price = 982.2299126745051m,
                             TripId = 337
                         },
                         new
                         {
                             Id = 338,
-                            CompanyId = 6,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1110.029078868105m,
+                            Price = 1066.807044565863m,
                             TripId = 338
                         },
                         new
                         {
                             Id = 339,
-                            CompanyId = 10,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1250.621726081404m,
+                            Price = 1118.973256629761m,
                             TripId = 339
                         },
                         new
                         {
                             Id = 340,
-                            CompanyId = 9,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 975.2388181159264m,
+                            Price = 1040.2889255535666m,
                             TripId = 340
                         },
                         new
                         {
                             Id = 341,
-                            CompanyId = 3,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1078.526742613044m,
+                            Price = 1083.455999157459m,
                             TripId = 341
                         },
                         new
                         {
                             Id = 342,
-                            CompanyId = 5,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1204.815115979391m,
+                            Price = 1061.938695104716m,
                             TripId = 342
                         },
                         new
                         {
                             Id = 343,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1217.651711810965m,
-                            TripId = 343
-                        },
-                        new
-                        {
-                            Id = 344,
-                            CompanyId = 4,
-                            DeliveryDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1172.80523502638m,
-                            TripId = 344
-                        },
-                        new
-                        {
-                            Id = 345,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1148.019507412179m,
-                            TripId = 345
-                        },
-                        new
-                        {
-                            Id = 346,
                             CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1145.340729651822m,
+                            Price = 1143.42144945357m,
+                            TripId = 343
+                        },
+                        new
+                        {
+                            Id = 344,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1035.1306564780535m,
+                            TripId = 344
+                        },
+                        new
+                        {
+                            Id = 345,
+                            CompanyId = 8,
+                            DeliveryDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1204.974962976879m,
+                            TripId = 345
+                        },
+                        new
+                        {
+                            Id = 346,
+                            CompanyId = 7,
+                            DeliveryDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1121.402713781365m,
                             TripId = 346
                         },
                         new
                         {
                             Id = 347,
-                            CompanyId = 6,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1013.0385432847959m,
+                            Price = 1007.8769620997317m,
                             TripId = 347
                         },
                         new
                         {
                             Id = 348,
-                            CompanyId = 9,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1106.993469005068m,
+                            Price = 1027.7351184494113m,
                             TripId = 348
                         },
                         new
                         {
                             Id = 349,
-                            CompanyId = 9,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1107.012394202323m,
+                            Price = 992.6919691668706m,
                             TripId = 349
                         },
                         new
                         {
                             Id = 350,
-                            CompanyId = 3,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1243.501030812097m,
+                            Price = 1297.759610871059m,
                             TripId = 350
                         },
                         new
                         {
                             Id = 351,
-                            CompanyId = 8,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1267.803557139317m,
+                            Price = 956.81371765726865m,
                             TripId = 351
                         },
                         new
@@ -4512,84 +4514,84 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1069.960685509868m,
+                            Price = 1089.684059069324m,
                             TripId = 352
                         },
                         new
                         {
                             Id = 353,
-                            CompanyId = 1,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1220.001725039227m,
+                            Price = 1212.254238769068m,
                             TripId = 353
                         },
                         new
                         {
                             Id = 354,
-                            CompanyId = 4,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1199.08241265109m,
+                            Price = 1176.588021293226m,
                             TripId = 354
                         },
                         new
                         {
                             Id = 355,
-                            CompanyId = 9,
-                            DeliveryDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1282.961635733568m,
-                            TripId = 355
-                        },
-                        new
-                        {
-                            Id = 356,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1113.429397565762m,
-                            TripId = 356
-                        },
-                        new
-                        {
-                            Id = 357,
-                            CompanyId = 5,
-                            DeliveryDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1108.783252092705m,
-                            TripId = 357
-                        },
-                        new
-                        {
-                            Id = 358,
                             CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1073.30358535391m,
+                            Price = 1163.33559444837m,
+                            TripId = 355
+                        },
+                        new
+                        {
+                            Id = 356,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1053.527488470124m,
+                            TripId = 356
+                        },
+                        new
+                        {
+                            Id = 357,
+                            CompanyId = 2,
+                            DeliveryDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 963.9460576400105m,
+                            TripId = 357
+                        },
+                        new
+                        {
+                            Id = 358,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1162.516091868261m,
                             TripId = 358
                         },
                         new
                         {
                             Id = 359,
-                            CompanyId = 7,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1228.269157318523m,
+                            Price = 968.2737499501195m,
                             TripId = 359
                         },
                         new
@@ -4600,150 +4602,150 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1267.970679443197m,
+                            Price = 1195.711577737737m,
                             TripId = 360
                         },
                         new
                         {
                             Id = 361,
-                            CompanyId = 2,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1042.4191309639436m,
+                            Price = 1232.608928768507m,
                             TripId = 361
                         },
                         new
                         {
                             Id = 362,
-                            CompanyId = 8,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1184.799729865522m,
+                            Price = 956.78820589245228m,
                             TripId = 362
                         },
                         new
                         {
                             Id = 363,
-                            CompanyId = 1,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1207.488239890872m,
+                            Price = 1296.479170744138m,
                             TripId = 363
                         },
                         new
                         {
                             Id = 364,
-                            CompanyId = 3,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1038.2788045062883m,
+                            Price = 1281.546296207584m,
                             TripId = 364
                         },
                         new
                         {
                             Id = 365,
-                            CompanyId = 6,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 953.70880614077801m,
+                            Price = 1177.534002233347m,
                             TripId = 365
                         },
                         new
                         {
                             Id = 366,
-                            CompanyId = 10,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1128.538681090996m,
+                            Price = 1067.023121462883m,
                             TripId = 366
                         },
                         new
                         {
                             Id = 367,
-                            CompanyId = 10,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 996.3388658307127m,
+                            Price = 1023.4452346202197m,
                             TripId = 367
                         },
                         new
                         {
                             Id = 368,
-                            CompanyId = 1,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1039.9414643723636m,
+                            Price = 1109.201002056425m,
                             TripId = 368
                         },
                         new
                         {
                             Id = 369,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1088.065599744962m,
-                            TripId = 369
-                        },
-                        new
-                        {
-                            Id = 370,
-                            CompanyId = 9,
-                            DeliveryDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1029.1890597283027m,
-                            TripId = 370
-                        },
-                        new
-                        {
-                            Id = 371,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 994.73996307288m,
-                            TripId = 371
-                        },
-                        new
-                        {
-                            Id = 372,
                             CompanyId = 2,
                             DeliveryDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 996.879346652464m,
+                            Price = 1044.3197509719564m,
+                            TripId = 369
+                        },
+                        new
+                        {
+                            Id = 370,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 959.64005042458261m,
+                            TripId = 370
+                        },
+                        new
+                        {
+                            Id = 371,
+                            CompanyId = 1,
+                            DeliveryDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1085.58119699428m,
+                            TripId = 371
+                        },
+                        new
+                        {
+                            Id = 372,
+                            CompanyId = 6,
+                            DeliveryDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 971.8438974090041m,
                             TripId = 372
                         },
                         new
                         {
                             Id = 373,
-                            CompanyId = 9,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1137.53528559332m,
+                            Price = 1151.876381401535m,
                             TripId = 373
                         },
                         new
@@ -4754,139 +4756,139 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1177.527430907917m,
+                            Price = 1046.3741773708746m,
                             TripId = 374
                         },
                         new
                         {
                             Id = 375,
-                            CompanyId = 7,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 992.2179028433237m,
+                            Price = 1096.982168611971m,
                             TripId = 375
                         },
                         new
                         {
                             Id = 376,
-                            CompanyId = 5,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1240.227281262817m,
+                            Price = 1218.907264868532m,
                             TripId = 376
                         },
                         new
                         {
                             Id = 377,
-                            CompanyId = 3,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1132.378631365415m,
+                            Price = 1014.3859070117778m,
                             TripId = 377
                         },
                         new
                         {
                             Id = 378,
-                            CompanyId = 4,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1111.910455517722m,
+                            Price = 993.7522956214925m,
                             TripId = 378
                         },
                         new
                         {
                             Id = 379,
-                            CompanyId = 1,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1094.381520628807m,
+                            Price = 1105.291830784422m,
                             TripId = 379
                         },
                         new
                         {
                             Id = 380,
-                            CompanyId = 7,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1236.334042642756m,
+                            Price = 1139.242761520371m,
                             TripId = 380
                         },
                         new
                         {
                             Id = 381,
-                            CompanyId = 3,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1193.672739044355m,
+                            Price = 1159.272041876161m,
                             TripId = 381
                         },
                         new
                         {
                             Id = 382,
-                            CompanyId = 9,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1190.454815443948m,
+                            Price = 1140.15031388761m,
                             TripId = 382
                         },
                         new
                         {
                             Id = 383,
-                            CompanyId = 1,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1031.2119009691462m,
+                            Price = 976.201021558602m,
                             TripId = 383
                         },
                         new
                         {
                             Id = 384,
-                            CompanyId = 3,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 982.5186868764557m,
+                            Price = 1201.798364248326m,
                             TripId = 384
                         },
                         new
                         {
                             Id = 385,
-                            CompanyId = 2,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1061.813175057271m,
+                            Price = 1030.8637414691091m,
                             TripId = 385
                         },
                         new
                         {
                             Id = 386,
-                            CompanyId = 3,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1112.464011383525m,
+                            Price = 1048.0614848520986m,
                             TripId = 386
                         },
                         new
@@ -4897,216 +4899,216 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1063.278264349562m,
+                            Price = 1204.269833944372m,
                             TripId = 387
                         },
                         new
                         {
                             Id = 388,
-                            CompanyId = 8,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1254.475400252643m,
+                            Price = 1011.3506315537354m,
                             TripId = 388
                         },
                         new
                         {
                             Id = 389,
-                            CompanyId = 5,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1029.8010022346445m,
+                            Price = 1193.0254896162m,
                             TripId = 389
                         },
                         new
                         {
                             Id = 390,
-                            CompanyId = 1,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1223.607333023038m,
+                            Price = 1226.813032322282m,
                             TripId = 390
                         },
                         new
                         {
                             Id = 391,
-                            CompanyId = 1,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1098.740646582708m,
+                            Price = 1056.538555936553m,
                             TripId = 391
                         },
                         new
                         {
                             Id = 392,
-                            CompanyId = 8,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1255.010824682368m,
+                            Price = 1022.4455579976905m,
                             TripId = 392
                         },
                         new
                         {
                             Id = 393,
-                            CompanyId = 1,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 957.65216590336768m,
+                            Price = 997.5827659096965m,
                             TripId = 393
                         },
                         new
                         {
                             Id = 394,
-                            CompanyId = 9,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1173.279468110945m,
+                            Price = 1094.287451605291m,
                             TripId = 394
                         },
                         new
                         {
                             Id = 395,
-                            CompanyId = 6,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1058.352167905438m,
+                            Price = 1118.046421091091m,
                             TripId = 395
                         },
                         new
                         {
                             Id = 396,
-                            CompanyId = 3,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1086.742792307244m,
+                            Price = 967.7012722890027m,
                             TripId = 396
                         },
                         new
                         {
                             Id = 397,
-                            CompanyId = 5,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1284.745731839266m,
+                            Price = 1144.78059326741m,
                             TripId = 397
                         },
                         new
                         {
                             Id = 398,
-                            CompanyId = 5,
-                            DeliveryDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1009.9818061239574m,
-                            TripId = 398
-                        },
-                        new
-                        {
-                            Id = 399,
                             CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1137.492446284748m,
+                            Price = 1288.62689941702m,
+                            TripId = 398
+                        },
+                        new
+                        {
+                            Id = 399,
+                            CompanyId = 3,
+                            DeliveryDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1028.2008471215686m,
                             TripId = 399
                         },
                         new
                         {
                             Id = 400,
-                            CompanyId = 6,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1162.400260776297m,
+                            Price = 1016.7296256990834m,
                             TripId = 400
                         },
                         new
                         {
                             Id = 401,
-                            CompanyId = 9,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1249.190861950179m,
+                            Price = 1111.000233727538m,
                             TripId = 401
                         },
                         new
                         {
                             Id = 402,
-                            CompanyId = 6,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1251.786374484905m,
+                            Price = 1048.3118951133151m,
                             TripId = 402
                         },
                         new
                         {
                             Id = 403,
-                            CompanyId = 1,
-                            DeliveryDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1289.91160330185m,
-                            TripId = 403
-                        },
-                        new
-                        {
-                            Id = 404,
                             CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1164.30795115988m,
+                            Price = 1293.689397230955m,
+                            TripId = 403
+                        },
+                        new
+                        {
+                            Id = 404,
+                            CompanyId = 8,
+                            DeliveryDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1236.236594543356m,
                             TripId = 404
                         },
                         new
                         {
                             Id = 405,
-                            CompanyId = 2,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1100.173197276856m,
+                            Price = 1107.015687790166m,
                             TripId = 405
                         },
                         new
                         {
                             Id = 406,
-                            CompanyId = 9,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1112.045320868212m,
+                            Price = 1162.792654752335m,
                             TripId = 406
                         },
                         new
@@ -5117,128 +5119,128 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1172.361822058872m,
+                            Price = 1270.561274264223m,
                             TripId = 407
                         },
                         new
                         {
                             Id = 408,
-                            CompanyId = 9,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1140.0415225726m,
+                            Price = 1079.181915396552m,
                             TripId = 408
                         },
                         new
                         {
                             Id = 409,
-                            CompanyId = 10,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1190.841716063837m,
+                            Price = 1281.415558135032m,
                             TripId = 409
                         },
                         new
                         {
                             Id = 410,
-                            CompanyId = 8,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1148.913945701068m,
+                            Price = 1207.857098823833m,
                             TripId = 410
                         },
                         new
                         {
                             Id = 411,
-                            CompanyId = 4,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1131.550245615456m,
+                            Price = 970.0641617798485m,
                             TripId = 411
                         },
                         new
                         {
                             Id = 412,
-                            CompanyId = 6,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 959.01392156832503m,
+                            Price = 1211.323007310952m,
                             TripId = 412
                         },
                         new
                         {
                             Id = 413,
-                            CompanyId = 10,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 955.34723273676786m,
+                            Price = 1256.287723344754m,
                             TripId = 413
                         },
                         new
                         {
                             Id = 414,
-                            CompanyId = 8,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1030.6637165531879m,
+                            Price = 1132.368527584823m,
                             TripId = 414
                         },
                         new
                         {
                             Id = 415,
-                            CompanyId = 10,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1137.881416798787m,
+                            Price = 1158.48642492774m,
                             TripId = 415
                         },
                         new
                         {
                             Id = 416,
-                            CompanyId = 1,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1030.2403009911593m,
+                            Price = 1148.287674278045m,
                             TripId = 416
                         },
                         new
                         {
                             Id = 417,
-                            CompanyId = 1,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1109.871896978094m,
+                            Price = 1284.961919770158m,
                             TripId = 417
                         },
                         new
                         {
                             Id = 418,
-                            CompanyId = 10,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1156.872898475132m,
+                            Price = 1122.397172345694m,
                             TripId = 418
                         },
                         new
@@ -5249,282 +5251,282 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1075.53500795307m,
+                            Price = 1185.705763030953m,
                             TripId = 419
                         },
                         new
                         {
                             Id = 420,
-                            CompanyId = 2,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1027.1920033518978m,
+                            Price = 1201.56362566908m,
                             TripId = 420
                         },
                         new
                         {
                             Id = 421,
-                            CompanyId = 8,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1014.1903284050271m,
+                            Price = 1209.571901391962m,
                             TripId = 421
                         },
                         new
                         {
                             Id = 422,
-                            CompanyId = 2,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1216.983005757314m,
+                            Price = 1214.567877297081m,
                             TripId = 422
                         },
                         new
                         {
                             Id = 423,
-                            CompanyId = 7,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 996.2308791854556m,
+                            Price = 1184.250800400959m,
                             TripId = 423
                         },
                         new
                         {
                             Id = 424,
-                            CompanyId = 5,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1244.153392972404m,
+                            Price = 1238.033204560986m,
                             TripId = 424
                         },
                         new
                         {
                             Id = 425,
-                            CompanyId = 8,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 994.105895585129m,
+                            Price = 1159.316669602769m,
                             TripId = 425
                         },
                         new
                         {
                             Id = 426,
-                            CompanyId = 5,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1201.919134300677m,
+                            Price = 1086.09714791088m,
                             TripId = 426
                         },
                         new
                         {
                             Id = 427,
-                            CompanyId = 9,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1042.5703880000276m,
+                            Price = 1000.3820366674598m,
                             TripId = 427
                         },
                         new
                         {
                             Id = 428,
-                            CompanyId = 10,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1114.880219977635m,
+                            Price = 977.6184837671156m,
                             TripId = 428
                         },
                         new
                         {
                             Id = 429,
-                            CompanyId = 9,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1139.945550541339m,
+                            Price = 962.2546997039848m,
                             TripId = 429
                         },
                         new
                         {
                             Id = 430,
-                            CompanyId = 9,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1044.5920101480866m,
+                            Price = 1132.517817807211m,
                             TripId = 430
                         },
                         new
                         {
                             Id = 431,
-                            CompanyId = 9,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1257.980126537491m,
+                            Price = 1174.762193425006m,
                             TripId = 431
                         },
                         new
                         {
                             Id = 432,
-                            CompanyId = 9,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1295.072579321332m,
+                            Price = 1172.403604897722m,
                             TripId = 432
                         },
                         new
                         {
                             Id = 433,
-                            CompanyId = 2,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1249.120410562678m,
+                            Price = 1280.617032743712m,
                             TripId = 433
                         },
                         new
                         {
                             Id = 434,
-                            CompanyId = 7,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1182.491752957608m,
+                            Price = 951.80893580852306m,
                             TripId = 434
                         },
                         new
                         {
                             Id = 435,
-                            CompanyId = 10,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1170.727853617873m,
+                            Price = 1244.119957121806m,
                             TripId = 435
                         },
                         new
                         {
                             Id = 436,
-                            CompanyId = 7,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1273.174053899555m,
+                            Price = 1295.048844031553m,
                             TripId = 436
                         },
                         new
                         {
                             Id = 437,
-                            CompanyId = 9,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 979.2900446294665m,
+                            Price = 989.9030714690484m,
                             TripId = 437
                         },
                         new
                         {
                             Id = 438,
-                            CompanyId = 5,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1198.038696800598m,
+                            Price = 1285.585859028484m,
                             TripId = 438
                         },
                         new
                         {
                             Id = 439,
-                            CompanyId = 5,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1219.382697239828m,
+                            Price = 1010.232969462127m,
                             TripId = 439
                         },
                         new
                         {
                             Id = 440,
-                            CompanyId = 10,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1146.756170397677m,
+                            Price = 1001.638936116051m,
                             TripId = 440
                         },
                         new
                         {
                             Id = 441,
-                            CompanyId = 6,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1094.029126468162m,
+                            Price = 1058.761246866806m,
                             TripId = 441
                         },
                         new
                         {
                             Id = 442,
-                            CompanyId = 9,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1010.7149334608478m,
+                            Price = 979.3004133645941m,
                             TripId = 442
                         },
                         new
                         {
                             Id = 443,
-                            CompanyId = 8,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1013.1909389408238m,
+                            Price = 1003.4353224832033m,
                             TripId = 443
                         },
                         new
                         {
                             Id = 444,
-                            CompanyId = 8,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1026.5649656624579m,
+                            Price = 1019.5895217560181m,
                             TripId = 444
                         },
                         new
@@ -5535,161 +5537,161 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1010.9991618227945m,
+                            Price = 1135.925219036551m,
                             TripId = 445
                         },
                         new
                         {
                             Id = 446,
-                            CompanyId = 1,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1261.82451838834m,
+                            Price = 1098.682446293168m,
                             TripId = 446
                         },
                         new
                         {
                             Id = 447,
-                            CompanyId = 5,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1012.2538678193679m,
+                            Price = 997.2254571424881m,
                             TripId = 447
                         },
                         new
                         {
                             Id = 448,
-                            CompanyId = 6,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1171.255446131304m,
+                            Price = 1010.7426591017172m,
                             TripId = 448
                         },
                         new
                         {
                             Id = 449,
-                            CompanyId = 1,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1069.291681757474m,
+                            Price = 1195.87253025964m,
                             TripId = 449
                         },
                         new
                         {
                             Id = 450,
-                            CompanyId = 6,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 987.9235364023881m,
+                            Price = 1092.332243643493m,
                             TripId = 450
                         },
                         new
                         {
                             Id = 451,
-                            CompanyId = 9,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1100.754300632222m,
+                            Price = 1026.6883846158072m,
                             TripId = 451
                         },
                         new
                         {
                             Id = 452,
-                            CompanyId = 6,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1294.863896314161m,
+                            Price = 1251.62706228752m,
                             TripId = 452
                         },
                         new
                         {
                             Id = 453,
-                            CompanyId = 2,
-                            DeliveryDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 960.4949277389442m,
-                            TripId = 453
-                        },
-                        new
-                        {
-                            Id = 454,
                             CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1243.534420141873m,
+                            Price = 1034.5110137776972m,
+                            TripId = 453
+                        },
+                        new
+                        {
+                            Id = 454,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1181.864112362564m,
                             TripId = 454
                         },
                         new
                         {
                             Id = 455,
-                            CompanyId = 1,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1039.0196172223053m,
+                            Price = 1220.393711260142m,
                             TripId = 455
                         },
                         new
                         {
                             Id = 456,
-                            CompanyId = 8,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 980.8930603053683m,
+                            Price = 973.883450420111m,
                             TripId = 456
                         },
                         new
                         {
                             Id = 457,
-                            CompanyId = 1,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1246.00154969927m,
+                            Price = 1252.806585257811m,
                             TripId = 457
                         },
                         new
                         {
                             Id = 458,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1231.441336248621m,
-                            TripId = 458
-                        },
-                        new
-                        {
-                            Id = 459,
                             CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1228.091411051617m,
+                            Price = 1041.400920248098m,
+                            TripId = 458
+                        },
+                        new
+                        {
+                            Id = 459,
+                            CompanyId = 7,
+                            DeliveryDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1185.934829199867m,
                             TripId = 459
                         },
                         new
@@ -5700,150 +5702,150 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1179.139451205521m,
+                            Price = 1048.980847049156m,
                             TripId = 460
                         },
                         new
                         {
                             Id = 461,
-                            CompanyId = 1,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1117.066251093711m,
+                            Price = 994.4766839540531m,
                             TripId = 461
                         },
                         new
                         {
                             Id = 462,
-                            CompanyId = 5,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1000.7768591855303m,
+                            Price = 1108.866007084362m,
                             TripId = 462
                         },
                         new
                         {
                             Id = 463,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1192.994025826223m,
-                            TripId = 463
-                        },
-                        new
-                        {
-                            Id = 464,
-                            CompanyId = 9,
-                            DeliveryDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1273.302822655855m,
-                            TripId = 464
-                        },
-                        new
-                        {
-                            Id = 465,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1118.497780642262m,
-                            TripId = 465
-                        },
-                        new
-                        {
-                            Id = 466,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1038.9798770759049m,
-                            TripId = 466
-                        },
-                        new
-                        {
-                            Id = 467,
                             CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1266.509949211601m,
+                            Price = 954.37606517401571m,
+                            TripId = 463
+                        },
+                        new
+                        {
+                            Id = 464,
+                            CompanyId = 5,
+                            DeliveryDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1013.7253822236227m,
+                            TripId = 464
+                        },
+                        new
+                        {
+                            Id = 465,
+                            CompanyId = 3,
+                            DeliveryDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1299.123119713066m,
+                            TripId = 465
+                        },
+                        new
+                        {
+                            Id = 466,
+                            CompanyId = 6,
+                            DeliveryDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1145.887357242142m,
+                            TripId = 466
+                        },
+                        new
+                        {
+                            Id = 467,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1169.220973833832m,
                             TripId = 467
                         },
                         new
                         {
                             Id = 468,
-                            CompanyId = 2,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 968.6201451350853m,
+                            Price = 1227.335399343668m,
                             TripId = 468
                         },
                         new
                         {
                             Id = 469,
-                            CompanyId = 2,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1120.6103934399m,
+                            Price = 991.3996395780469m,
                             TripId = 469
                         },
                         new
                         {
                             Id = 470,
-                            CompanyId = 1,
-                            DeliveryDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1142.08327199222m,
-                            TripId = 470
-                        },
-                        new
-                        {
-                            Id = 471,
                             CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1258.039852855693m,
-                            TripId = 471
+                            Price = 1103.695179333132m,
+                            TripId = 470
                         },
                         new
                         {
-                            Id = 472,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1093.426886790717m,
-                            TripId = 472
-                        },
-                        new
-                        {
-                            Id = 473,
+                            Id = 471,
                             CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1088.535749644661m,
+                            Price = 984.5753678707093m,
+                            TripId = 471
+                        },
+                        new
+                        {
+                            Id = 472,
+                            CompanyId = 3,
+                            DeliveryDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1045.2728583378972m,
+                            TripId = 472
+                        },
+                        new
+                        {
+                            Id = 473,
+                            CompanyId = 8,
+                            DeliveryDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1286.912373847317m,
                             TripId = 473
                         },
                         new
@@ -5854,62 +5856,62 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1229.563616131916m,
+                            Price = 1017.169751453472m,
                             TripId = 474
                         },
                         new
                         {
                             Id = 475,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1202.620772677657m,
-                            TripId = 475
-                        },
-                        new
-                        {
-                            Id = 476,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1235.880002791694m,
-                            TripId = 476
-                        },
-                        new
-                        {
-                            Id = 477,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1145.083449592874m,
-                            TripId = 477
-                        },
-                        new
-                        {
-                            Id = 478,
                             CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1295.373837842017m,
-                            TripId = 478
+                            Price = 1202.019313458741m,
+                            TripId = 475
                         },
                         new
                         {
-                            Id = 479,
+                            Id = 476,
                             CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1190.314316098745m,
+                            Price = 1192.942604792298m,
+                            TripId = 476
+                        },
+                        new
+                        {
+                            Id = 477,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 997.1868551118192m,
+                            TripId = 477
+                        },
+                        new
+                        {
+                            Id = 478,
+                            CompanyId = 1,
+                            DeliveryDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1216.186204460323m,
+                            TripId = 478
+                        },
+                        new
+                        {
+                            Id = 479,
+                            CompanyId = 7,
+                            DeliveryDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1102.566524809078m,
                             TripId = 479
                         },
                         new
@@ -5920,150 +5922,150 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1123.230189428845m,
+                            Price = 1274.633758617169m,
                             TripId = 480
                         },
                         new
                         {
                             Id = 481,
-                            CompanyId = 10,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1075.182778632585m,
+                            Price = 965.9304771440067m,
                             TripId = 481
                         },
                         new
                         {
                             Id = 482,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1199.917968843835m,
-                            TripId = 482
-                        },
-                        new
-                        {
-                            Id = 483,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1287.572778173669m,
-                            TripId = 483
-                        },
-                        new
-                        {
-                            Id = 484,
-                            CompanyId = 8,
-                            DeliveryDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1060.542429441336m,
-                            TripId = 484
-                        },
-                        new
-                        {
-                            Id = 485,
                             CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1217.92531759266m,
+                            Price = 1208.932456217558m,
+                            TripId = 482
+                        },
+                        new
+                        {
+                            Id = 483,
+                            CompanyId = 2,
+                            DeliveryDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 987.2148524697715m,
+                            TripId = 483
+                        },
+                        new
+                        {
+                            Id = 484,
+                            CompanyId = 5,
+                            DeliveryDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 959.16801449558787m,
+                            TripId = 484
+                        },
+                        new
+                        {
+                            Id = 485,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1048.9288156086728m,
                             TripId = 485
                         },
                         new
                         {
                             Id = 486,
-                            CompanyId = 3,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1013.2075600299065m,
+                            Price = 1151.78762260244m,
                             TripId = 486
                         },
                         new
                         {
                             Id = 487,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1001.5224104255509m,
-                            TripId = 487
-                        },
-                        new
-                        {
-                            Id = 488,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1248.177594601254m,
-                            TripId = 488
-                        },
-                        new
-                        {
-                            Id = 489,
                             CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1192.568923770806m,
+                            Price = 959.9633070710346m,
+                            TripId = 487
+                        },
+                        new
+                        {
+                            Id = 488,
+                            CompanyId = 3,
+                            DeliveryDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1200.290254929741m,
+                            TripId = 488
+                        },
+                        new
+                        {
+                            Id = 489,
+                            CompanyId = 6,
+                            DeliveryDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1093.143289926146m,
                             TripId = 489
                         },
                         new
                         {
                             Id = 490,
-                            CompanyId = 4,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1058.25505066681m,
+                            Price = 1272.107283805551m,
                             TripId = 490
                         },
                         new
                         {
                             Id = 491,
-                            CompanyId = 1,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1247.517041561021m,
+                            Price = 1008.7568337307095m,
                             TripId = 491
                         },
                         new
                         {
                             Id = 492,
-                            CompanyId = 9,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1159.872774612616m,
+                            Price = 1240.472037787012m,
                             TripId = 492
                         },
                         new
                         {
                             Id = 493,
-                            CompanyId = 10,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1148.547707503436m,
+                            Price = 1282.183478508503m,
                             TripId = 493
                         },
                         new
@@ -6074,40 +6076,40 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1230.631262474508m,
+                            Price = 1283.731989711923m,
                             TripId = 494
                         },
                         new
                         {
                             Id = 495,
-                            CompanyId = 6,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1050.375347539848m,
+                            Price = 1270.542167135442m,
                             TripId = 495
                         },
                         new
                         {
                             Id = 496,
-                            CompanyId = 3,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1150.77368378906m,
+                            Price = 1070.044043162905m,
                             TripId = 496
                         },
                         new
                         {
                             Id = 497,
-                            CompanyId = 4,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1268.01678878865m,
+                            Price = 1225.808949130856m,
                             TripId = 497
                         },
                         new
@@ -6118,62 +6120,62 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 995.9400913178437m,
+                            Price = 1247.175420870666m,
                             TripId = 498
                         },
                         new
                         {
                             Id = 499,
-                            CompanyId = 1,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 994.4905763136821m,
+                            Price = 1112.276150112979m,
                             TripId = 499
                         },
                         new
                         {
                             Id = 500,
-                            CompanyId = 3,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1096.518902148228m,
+                            Price = 1126.211185521449m,
                             TripId = 500
                         },
                         new
                         {
                             Id = 501,
-                            CompanyId = 1,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1249.509407537949m,
+                            Price = 1009.4234921848235m,
                             TripId = 501
                         },
                         new
                         {
                             Id = 502,
-                            CompanyId = 10,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1093.849083784512m,
+                            Price = 960.9984994128591m,
                             TripId = 502
                         },
                         new
                         {
                             Id = 503,
-                            CompanyId = 3,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1117.407969322131m,
+                            Price = 1131.93091840454m,
                             TripId = 503
                         },
                         new
@@ -6184,106 +6186,106 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1086.923042867253m,
+                            Price = 1137.692918190143m,
                             TripId = 504
                         },
                         new
                         {
                             Id = 505,
-                            CompanyId = 8,
-                            DeliveryDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1148.252762985214m,
-                            TripId = 505
-                        },
-                        new
-                        {
-                            Id = 506,
                             CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1008.8332026978725m,
-                            TripId = 506
+                            Price = 1279.50777327207m,
+                            TripId = 505
                         },
                         new
                         {
-                            Id = 507,
-                            CompanyId = 5,
-                            DeliveryDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1035.4673728743828m,
-                            TripId = 507
-                        },
-                        new
-                        {
-                            Id = 508,
-                            CompanyId = 4,
-                            DeliveryDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1172.888504179606m,
-                            TripId = 508
-                        },
-                        new
-                        {
-                            Id = 509,
-                            CompanyId = 8,
-                            DeliveryDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1053.184750657088m,
-                            TripId = 509
-                        },
-                        new
-                        {
-                            Id = 510,
+                            Id = 506,
                             CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1059.283172922822m,
+                            Price = 1015.9970740454967m,
+                            TripId = 506
+                        },
+                        new
+                        {
+                            Id = 507,
+                            CompanyId = 1,
+                            DeliveryDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 959.8150026352293m,
+                            TripId = 507
+                        },
+                        new
+                        {
+                            Id = 508,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 966.7252081836485m,
+                            TripId = 508
+                        },
+                        new
+                        {
+                            Id = 509,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1100.973229120388m,
+                            TripId = 509
+                        },
+                        new
+                        {
+                            Id = 510,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1090.626016260397m,
                             TripId = 510
                         },
                         new
                         {
                             Id = 511,
-                            CompanyId = 1,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1190.178596859903m,
+                            Price = 1223.796807850754m,
                             TripId = 511
                         },
                         new
                         {
                             Id = 512,
-                            CompanyId = 5,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1009.5846206858847m,
+                            Price = 1171.088087704802m,
                             TripId = 512
                         },
                         new
                         {
                             Id = 513,
-                            CompanyId = 4,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1066.379221113552m,
+                            Price = 1216.378328279758m,
                             TripId = 513
                         },
                         new
@@ -6294,7 +6296,7 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1002.4128810896375m,
+                            Price = 1176.814911504229m,
                             TripId = 514
                         },
                         new
@@ -6305,84 +6307,84 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1178.88784223764m,
+                            Price = 1280.539153284325m,
                             TripId = 515
                         },
                         new
                         {
                             Id = 516,
-                            CompanyId = 3,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1183.538759758386m,
+                            Price = 1172.608327884254m,
                             TripId = 516
                         },
                         new
                         {
                             Id = 517,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1191.217549003691m,
-                            TripId = 517
-                        },
-                        new
-                        {
-                            Id = 518,
-                            CompanyId = 4,
-                            DeliveryDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1086.848909085317m,
-                            TripId = 518
-                        },
-                        new
-                        {
-                            Id = 519,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1164.732519214095m,
-                            TripId = 519
-                        },
-                        new
-                        {
-                            Id = 520,
-                            CompanyId = 2,
-                            DeliveryDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1036.4947143872879m,
-                            TripId = 520
-                        },
-                        new
-                        {
-                            Id = 521,
                             CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 955.7504377053375m,
+                            Price = 1273.103839100072m,
+                            TripId = 517
+                        },
+                        new
+                        {
+                            Id = 518,
+                            CompanyId = 5,
+                            DeliveryDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1022.1559419986737m,
+                            TripId = 518
+                        },
+                        new
+                        {
+                            Id = 519,
+                            CompanyId = 5,
+                            DeliveryDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1187.831285718244m,
+                            TripId = 519
+                        },
+                        new
+                        {
+                            Id = 520,
+                            CompanyId = 3,
+                            DeliveryDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1102.926910895434m,
+                            TripId = 520
+                        },
+                        new
+                        {
+                            Id = 521,
+                            CompanyId = 1,
+                            DeliveryDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 972.692039138034m,
                             TripId = 521
                         },
                         new
                         {
                             Id = 522,
-                            CompanyId = 6,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1221.775832922558m,
+                            Price = 1262.135831776762m,
                             TripId = 522
                         },
                         new
@@ -6393,128 +6395,128 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1296.345049486251m,
+                            Price = 1088.84050398074m,
                             TripId = 523
                         },
                         new
                         {
                             Id = 524,
-                            CompanyId = 7,
+                            CompanyId = 3,
                             DeliveryDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1066.245752115223m,
+                            Price = 1287.892843070672m,
                             TripId = 524
                         },
                         new
                         {
                             Id = 525,
-                            CompanyId = 3,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1145.228550865561m,
+                            Price = 1040.6399820607079m,
                             TripId = 525
                         },
                         new
                         {
                             Id = 526,
-                            CompanyId = 6,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1248.884310992507m,
+                            Price = 1058.083078398397m,
                             TripId = 526
                         },
                         new
                         {
                             Id = 527,
-                            CompanyId = 10,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 988.008145725089m,
+                            Price = 1186.969858497865m,
                             TripId = 527
                         },
                         new
                         {
                             Id = 528,
-                            CompanyId = 5,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1025.3007985358881m,
+                            Price = 1230.093775104499m,
                             TripId = 528
                         },
                         new
                         {
                             Id = 529,
-                            CompanyId = 5,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1165.948734864764m,
+                            Price = 956.21557122457969m,
                             TripId = 529
                         },
                         new
                         {
                             Id = 530,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 978.1512474312611m,
-                            TripId = 530
-                        },
-                        new
-                        {
-                            Id = 531,
                             CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1092.889130154302m,
-                            TripId = 531
+                            Price = 1135.67065416886m,
+                            TripId = 530
                         },
                         new
                         {
-                            Id = 532,
-                            CompanyId = 9,
-                            DeliveryDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1229.17007561019m,
-                            TripId = 532
-                        },
-                        new
-                        {
-                            Id = 533,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 998.8924141427185m,
-                            TripId = 533
-                        },
-                        new
-                        {
-                            Id = 534,
+                            Id = 531,
                             CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1108.270313385746m,
+                            Price = 1186.977288361365m,
+                            TripId = 531
+                        },
+                        new
+                        {
+                            Id = 532,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 953.44589442277328m,
+                            TripId = 532
+                        },
+                        new
+                        {
+                            Id = 533,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1146.168574474872m,
+                            TripId = 533
+                        },
+                        new
+                        {
+                            Id = 534,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 953.0764738533093m,
                             TripId = 534
                         },
                         new
@@ -6525,18 +6527,18 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1168.428494513661m,
+                            Price = 1231.948550004874m,
                             TripId = 535
                         },
                         new
                         {
                             Id = 536,
-                            CompanyId = 3,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1051.658337207817m,
+                            Price = 1116.039800071013m,
                             TripId = 536
                         },
                         new
@@ -6547,117 +6549,117 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1091.608237547006m,
+                            Price = 1056.814497762744m,
                             TripId = 537
                         },
                         new
                         {
                             Id = 538,
-                            CompanyId = 10,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1107.275420401627m,
+                            Price = 1241.017392205555m,
                             TripId = 538
                         },
                         new
                         {
                             Id = 539,
-                            CompanyId = 10,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1031.8128905126093m,
+                            Price = 1195.3719742445m,
                             TripId = 539
                         },
                         new
                         {
                             Id = 540,
-                            CompanyId = 6,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1246.352553601561m,
+                            Price = 1241.655826227019m,
                             TripId = 540
                         },
                         new
                         {
                             Id = 541,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1273.957789763545m,
-                            TripId = 541
-                        },
-                        new
-                        {
-                            Id = 542,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 970.4564411150859m,
-                            TripId = 542
-                        },
-                        new
-                        {
-                            Id = 543,
-                            CompanyId = 9,
-                            DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1128.084692645668m,
-                            TripId = 543
-                        },
-                        new
-                        {
-                            Id = 544,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1087.346415762942m,
-                            TripId = 544
-                        },
-                        new
-                        {
-                            Id = 545,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1094.987569243125m,
-                            TripId = 545
-                        },
-                        new
-                        {
-                            Id = 546,
                             CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 959.33554131004754m,
+                            Price = 952.50868364021049m,
+                            TripId = 541
+                        },
+                        new
+                        {
+                            Id = 542,
+                            CompanyId = 7,
+                            DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1010.0464433152512m,
+                            TripId = 542
+                        },
+                        new
+                        {
+                            Id = 543,
+                            CompanyId = 7,
+                            DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1013.8020851499027m,
+                            TripId = 543
+                        },
+                        new
+                        {
+                            Id = 544,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1196.095098003103m,
+                            TripId = 544
+                        },
+                        new
+                        {
+                            Id = 545,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1193.203486282473m,
+                            TripId = 545
+                        },
+                        new
+                        {
+                            Id = 546,
+                            CompanyId = 1,
+                            DeliveryDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1101.801893599097m,
                             TripId = 546
                         },
                         new
                         {
                             Id = 547,
-                            CompanyId = 1,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1226.191440439943m,
+                            Price = 1212.355253070191m,
                             TripId = 547
                         },
                         new
@@ -6668,29 +6670,29 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 987.3154684410437m,
+                            Price = 1238.856373533626m,
                             TripId = 548
                         },
                         new
                         {
                             Id = 549,
-                            CompanyId = 10,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1209.210510614287m,
+                            Price = 1129.551773120752m,
                             TripId = 549
                         },
                         new
                         {
                             Id = 550,
-                            CompanyId = 7,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1136.47868811211m,
+                            Price = 1000.338042283464m,
                             TripId = 550
                         },
                         new
@@ -6701,62 +6703,62 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 960.4668328651034m,
+                            Price = 1203.215305782022m,
                             TripId = 551
                         },
                         new
                         {
                             Id = 552,
-                            CompanyId = 5,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1035.4842104864669m,
+                            Price = 984.8436926590615m,
                             TripId = 552
                         },
                         new
                         {
                             Id = 553,
-                            CompanyId = 6,
-                            DeliveryDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1040.4647863396279m,
-                            TripId = 553
-                        },
-                        new
-                        {
-                            Id = 554,
                             CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1112.051704535727m,
+                            Price = 1165.825646969392m,
+                            TripId = 553
+                        },
+                        new
+                        {
+                            Id = 554,
+                            CompanyId = 6,
+                            DeliveryDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1151.588570481341m,
                             TripId = 554
                         },
                         new
                         {
                             Id = 555,
-                            CompanyId = 7,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1148.533749005062m,
+                            Price = 1104.94522842674m,
                             TripId = 555
                         },
                         new
                         {
                             Id = 556,
-                            CompanyId = 9,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 973.2452983270446m,
+                            Price = 1117.471273063295m,
                             TripId = 556
                         },
                         new
@@ -6767,128 +6769,128 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1229.523769382855m,
+                            Price = 1263.236143577347m,
                             TripId = 557
                         },
                         new
                         {
                             Id = 558,
-                            CompanyId = 2,
+                            CompanyId = 4,
                             DeliveryDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 960.2124791832306m,
+                            Price = 1045.8295782538555m,
                             TripId = 558
                         },
                         new
                         {
                             Id = 559,
-                            CompanyId = 4,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1184.79052607562m,
+                            Price = 1201.788881771164m,
                             TripId = 559
                         },
                         new
                         {
                             Id = 560,
-                            CompanyId = 8,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 983.2655936668417m,
+                            Price = 1273.474638476302m,
                             TripId = 560
                         },
                         new
                         {
                             Id = 561,
-                            CompanyId = 4,
+                            CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1247.817402790665m,
+                            Price = 1008.0494747937404m,
                             TripId = 561
                         },
                         new
                         {
                             Id = 562,
-                            CompanyId = 10,
+                            CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1140.433486337486m,
+                            Price = 1094.967528587783m,
                             TripId = 562
                         },
                         new
                         {
                             Id = 563,
-                            CompanyId = 9,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1210.953758670425m,
+                            Price = 1091.078660037391m,
                             TripId = 563
                         },
                         new
                         {
                             Id = 564,
-                            CompanyId = 1,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1271.869418288796m,
+                            Price = 1024.2073160544688m,
                             TripId = 564
                         },
                         new
                         {
                             Id = 565,
-                            CompanyId = 7,
-                            DeliveryDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1023.696395565939m,
-                            TripId = 565
-                        },
-                        new
-                        {
-                            Id = 566,
-                            CompanyId = 10,
-                            DeliveryDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1069.618518403721m,
-                            TripId = 566
-                        },
-                        new
-                        {
-                            Id = 567,
-                            CompanyId = 1,
-                            DeliveryDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1051.700095257034m,
-                            TripId = 567
-                        },
-                        new
-                        {
-                            Id = 568,
                             CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1064.804346495533m,
+                            Price = 1252.99858660753m,
+                            TripId = 565
+                        },
+                        new
+                        {
+                            Id = 566,
+                            CompanyId = 9,
+                            DeliveryDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1289.615346377673m,
+                            TripId = 566
+                        },
+                        new
+                        {
+                            Id = 567,
+                            CompanyId = 3,
+                            DeliveryDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1079.743255681052m,
+                            TripId = 567
+                        },
+                        new
+                        {
+                            Id = 568,
+                            CompanyId = 10,
+                            DeliveryDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1208.369812157934m,
                             TripId = 568
                         },
                         new
@@ -6899,62 +6901,62 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1173.210423365663m,
+                            Price = 958.41301650182641m,
                             TripId = 569
                         },
                         new
                         {
                             Id = 570,
-                            CompanyId = 8,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1097.30866741086m,
+                            Price = 1290.396715315075m,
                             TripId = 570
                         },
                         new
                         {
                             Id = 571,
-                            CompanyId = 9,
-                            DeliveryDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1054.773582038426m,
-                            TripId = 571
-                        },
-                        new
-                        {
-                            Id = 572,
-                            CompanyId = 8,
-                            DeliveryDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1022.5205243083593m,
-                            TripId = 572
-                        },
-                        new
-                        {
-                            Id = 573,
                             CompanyId = 2,
                             DeliveryDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 958.20182908972775m,
+                            Price = 1158.873881522175m,
+                            TripId = 571
+                        },
+                        new
+                        {
+                            Id = 572,
+                            CompanyId = 3,
+                            DeliveryDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1175.395865087764m,
+                            TripId = 572
+                        },
+                        new
+                        {
+                            Id = 573,
+                            CompanyId = 4,
+                            DeliveryDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1268.810617307067m,
                             TripId = 573
                         },
                         new
                         {
                             Id = 574,
-                            CompanyId = 10,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1165.128023260247m,
+                            Price = 989.2764980446634m,
                             TripId = 574
                         },
                         new
@@ -6965,161 +6967,161 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1288.311391397394m,
+                            Price = 1115.388345578676m,
                             TripId = 575
                         },
                         new
                         {
                             Id = 576,
-                            CompanyId = 8,
+                            CompanyId = 10,
                             DeliveryDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1047.5509837588804m,
+                            Price = 1127.45155809969m,
                             TripId = 576
                         },
                         new
                         {
                             Id = 577,
-                            CompanyId = 6,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1073.871296593078m,
+                            Price = 1057.249067436354m,
                             TripId = 577
                         },
                         new
                         {
                             Id = 578,
-                            CompanyId = 4,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1214.883510829874m,
+                            Price = 1266.170448363219m,
                             TripId = 578
                         },
                         new
                         {
                             Id = 579,
-                            CompanyId = 4,
-                            DeliveryDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 1004.8811646426948m,
-                            TripId = 579
-                        },
-                        new
-                        {
-                            Id = 580,
                             CompanyId = 6,
                             DeliveryDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1005.8629884774616m,
+                            Price = 1206.821592227118m,
+                            TripId = 579
+                        },
+                        new
+                        {
+                            Id = 580,
+                            CompanyId = 8,
+                            DeliveryDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1185.613644179959m,
                             TripId = 580
                         },
                         new
                         {
                             Id = 581,
-                            CompanyId = 7,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1158.204148689132m,
+                            Price = 1207.954472228457m,
                             TripId = 581
                         },
                         new
                         {
                             Id = 582,
-                            CompanyId = 3,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 986.5421833372248m,
+                            Price = 1117.253742812516m,
                             TripId = 582
                         },
                         new
                         {
                             Id = 583,
-                            CompanyId = 7,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1229.462205840132m,
+                            Price = 1159.422645574224m,
                             TripId = 583
                         },
                         new
                         {
                             Id = 584,
-                            CompanyId = 4,
+                            CompanyId = 7,
                             DeliveryDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1278.414911283964m,
+                            Price = 1237.922412721871m,
                             TripId = 584
                         },
                         new
                         {
                             Id = 585,
-                            CompanyId = 3,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 995.243551377164m,
+                            Price = 987.2590449607121m,
                             TripId = 585
                         },
                         new
                         {
                             Id = 586,
-                            CompanyId = 3,
+                            CompanyId = 8,
                             DeliveryDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 988.6745619494494m,
+                            Price = 960.9011056722284m,
                             TripId = 586
                         },
                         new
                         {
                             Id = 587,
-                            CompanyId = 4,
+                            CompanyId = 5,
                             DeliveryDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1018.5545377862636m,
+                            Price = 1252.419336139688m,
                             TripId = 587
                         },
                         new
                         {
                             Id = 588,
-                            CompanyId = 3,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1040.9363296291817m,
+                            Price = 1097.788316477103m,
                             TripId = 588
                         },
                         new
                         {
                             Id = 589,
-                            CompanyId = 3,
+                            CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1255.066180467038m,
+                            Price = 1069.50077967597m,
                             TripId = 589
                         },
                         new
@@ -7130,18 +7132,18 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 989.8081786686585m,
+                            Price = 1103.973196807568m,
                             TripId = 590
                         },
                         new
                         {
                             Id = 591,
-                            CompanyId = 3,
+                            CompanyId = 1,
                             DeliveryDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1207.615580558645m,
+                            Price = 1255.107244599323m,
                             TripId = 591
                         },
                         new
@@ -7152,29 +7154,29 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1108.996036261048m,
+                            Price = 1251.789375395953m,
                             TripId = 592
                         },
                         new
                         {
                             Id = 593,
-                            CompanyId = 3,
-                            DeliveryDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DeliveryPostCode = "Delivery",
-                            LoadingDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LoadingPostCode = "Loading",
-                            Price = 965.8082679242577m,
-                            TripId = 593
-                        },
-                        new
-                        {
-                            Id = 594,
                             CompanyId = 9,
                             DeliveryDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeliveryPostCode = "Delivery",
                             LoadingDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LoadingPostCode = "Loading",
-                            Price = 1081.654336026776m,
+                            Price = 1050.767653632788m,
+                            TripId = 593
+                        },
+                        new
+                        {
+                            Id = 594,
+                            CompanyId = 1,
+                            DeliveryDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeliveryPostCode = "Delivery",
+                            LoadingDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LoadingPostCode = "Loading",
+                            Price = 1193.175768048286m,
                             TripId = 594
                         });
                 });
@@ -7230,10 +7232,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 1,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5391691894773013493253373313m,
+                            EuPerKm = 1.1546534747711702355460385439m,
                             StartDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 667,
-                            TripPrice = 1026.62584938136m,
+                            TripKm = 934,
+                            TripPrice = 1078.446345436273m,
                             TruckId = 1
                         },
                         new
@@ -7241,10 +7243,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 2,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7900185616042873730043541364m,
+                            EuPerKm = 1.6201496589582634560906515581m,
                             StartDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 689,
-                            TripPrice = 1233.322788945354m,
+                            TripKm = 706,
+                            TripPrice = 1143.825659224534m,
                             TruckId = 2
                         },
                         new
@@ -7252,10 +7254,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 3,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3647139031569788135593220339m,
+                            EuPerKm = 1.7221619386363273231622746186m,
                             StartDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 944,
-                            TripPrice = 1288.289924580188m,
+                            TripKm = 721,
+                            TripPrice = 1241.678757756792m,
                             TruckId = 3
                         },
                         new
@@ -7263,10 +7265,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 4,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4800903022982976356050069541m,
+                            EuPerKm = 1.1997622028696242905788876277m,
                             StartDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 719,
-                            TripPrice = 1064.184927352476m,
+                            TripKm = 881,
+                            TripPrice = 1056.990500728139m,
                             TruckId = 4
                         },
                         new
@@ -7274,10 +7276,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 5,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1108554826735038051044083527m,
+                            EuPerKm = 1.4827775114353257966616084977m,
                             StartDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 862,
-                            TripPrice = 957.55742606456028m,
+                            TripKm = 659,
+                            TripPrice = 977.1503800358797m,
                             TruckId = 5
                         },
                         new
@@ -7285,10 +7287,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 6,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1741250451858575727181544634m,
+                            EuPerKm = 0.9675360276547577105014191107m,
                             StartDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 997,
-                            TripPrice = 1170.6026700503m,
+                            TripKm = 1057,
+                            TripPrice = 1022.6855812310789m,
                             TruckId = 6
                         },
                         new
@@ -7296,10 +7298,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 7,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.9175997128062959028831562974m,
+                            EuPerKm = 1.4178537786602865296803652968m,
                             StartDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 659,
-                            TripPrice = 1263.698210739349m,
+                            TripKm = 876,
+                            TripPrice = 1242.039910106411m,
                             TruckId = 1
                         },
                         new
@@ -7307,10 +7309,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 8,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1450079316689267116682738669m,
+                            EuPerKm = 1.8955101130463851851851851852m,
                             StartDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1037,
-                            TripPrice = 1187.373225140677m,
+                            TripKm = 675,
+                            TripPrice = 1279.46932630631m,
                             TruckId = 2
                         },
                         new
@@ -7318,10 +7320,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 9,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3825641706790824622531939605m,
+                            EuPerKm = 1.4524382268575134443021766965m,
                             StartDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 861,
-                            TripPrice = 1190.38775095469m,
+                            TripKm = 781,
+                            TripPrice = 1134.354255175718m,
                             TruckId = 3
                         },
                         new
@@ -7329,10 +7331,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 10,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1906039609038893023255813953m,
+                            EuPerKm = 1.0832121147695447761194029851m,
                             StartDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1075,
-                            TripPrice = 1279.899257971681m,
+                            TripKm = 1072,
+                            TripPrice = 1161.203387032952m,
                             TruckId = 4
                         },
                         new
@@ -7340,10 +7342,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 11,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2907688545740543032786885246m,
+                            EuPerKm = 1.4129530192139245742092457421m,
                             StartDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 976,
-                            TripPrice = 1259.790402064277m,
+                            TripKm = 822,
+                            TripPrice = 1161.447381793846m,
                             TruckId = 5
                         },
                         new
@@ -7351,10 +7353,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 12,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4263303866559346793349168646m,
+                            EuPerKm = 1.6219033758995788712011577424m,
                             StartDate = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 842,
-                            TripPrice = 1200.970185564297m,
+                            TripKm = 691,
+                            TripPrice = 1120.735232746609m,
                             TruckId = 6
                         },
                         new
@@ -7362,10 +7364,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 13,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4874784962834356197352587244m,
+                            EuPerKm = 1.3433409018087074756229685807m,
                             StartDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 831,
-                            TripPrice = 1236.094630411535m,
+                            TripKm = 923,
+                            TripPrice = 1239.903652369437m,
                             TruckId = 1
                         },
                         new
@@ -7373,10 +7375,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 14,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0513296278311073703366696997m,
+                            EuPerKm = 1.1676583566629321314952279958m,
                             StartDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1099,
-                            TripPrice = 1155.411260986387m,
+                            TripKm = 943,
+                            TripPrice = 1101.101830333145m,
                             TruckId = 2
                         },
                         new
@@ -7384,10 +7386,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 15,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1870709224401901066925315228m,
+                            EuPerKm = 1.3882808219948537414965986395m,
                             StartDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1031,
-                            TripPrice = 1223.870121035836m,
+                            TripKm = 882,
+                            TripPrice = 1224.463684999461m,
                             TruckId = 3
                         },
                         new
@@ -7395,10 +7397,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 16,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2565262036934070891514500537m,
+                            EuPerKm = 1.1156218185517346938775510204m,
                             StartDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 931,
-                            TripPrice = 1169.825895638562m,
+                            TripKm = 1029,
+                            TripPrice = 1147.974851289735m,
                             TruckId = 4
                         },
                         new
@@ -7406,10 +7408,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 17,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1567856208892044403330249769m,
+                            EuPerKm = 1.0199523927230611677479147359m,
                             StartDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1081,
-                            TripPrice = 1250.48525618123m,
+                            TripKm = 1079,
+                            TripPrice = 1100.528631748183m,
                             TruckId = 5
                         },
                         new
@@ -7417,10 +7419,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 18,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3862783591786787383177570093m,
+                            EuPerKm = 1.4936445014458865598027127004m,
                             StartDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 856,
-                            TripPrice = 1186.654275456949m,
+                            TripKm = 811,
+                            TripPrice = 1211.345690672614m,
                             TruckId = 6
                         },
                         new
@@ -7428,10 +7430,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 19,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5796291439903085642317380353m,
+                            EuPerKm = 1.5330969929877033792240300375m,
                             StartDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 794,
-                            TripPrice = 1254.225540328305m,
+                            TripKm = 799,
+                            TripPrice = 1224.944497397175m,
                             TruckId = 1
                         },
                         new
@@ -7439,10 +7441,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 20,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6126771157863895184135977337m,
+                            EuPerKm = 1.72805732764767828418230563m,
                             StartDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 706,
-                            TripPrice = 1138.550043745191m,
+                            TripKm = 746,
+                            TripPrice = 1289.130766425168m,
                             TruckId = 2
                         },
                         new
@@ -7450,10 +7452,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 21,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8677433775568328445747800587m,
+                            EuPerKm = 1.0800006242569134419551934827m,
                             StartDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 682,
-                            TripPrice = 1273.80098349376m,
+                            TripKm = 982,
+                            TripPrice = 1060.560613020289m,
                             TruckId = 3
                         },
                         new
@@ -7461,10 +7463,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 22,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9257682190801448307410795974m,
+                            EuPerKm = 1.5686867961366040816326530612m,
                             StartDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1093,
-                            TripPrice = 1011.8646634545983m,
+                            TripKm = 735,
+                            TripPrice = 1152.984795160404m,
                             TruckId = 4
                         },
                         new
@@ -7472,10 +7474,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 23,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7796744246618369230769230769m,
+                            EuPerKm = 1.6178948958300894206549118388m,
                             StartDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 650,
-                            TripPrice = 1156.788376030194m,
+                            TripKm = 794,
+                            TripPrice = 1284.608547289091m,
                             TruckId = 5
                         },
                         new
@@ -7483,10 +7485,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 24,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.303241539048485427135678392m,
+                            EuPerKm = 1.2523650917712711682743837085m,
                             StartDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 995,
-                            TripPrice = 1296.725331353243m,
+                            TripKm = 933,
+                            TripPrice = 1168.456630622596m,
                             TruckId = 6
                         },
                         new
@@ -7494,10 +7496,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 25,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2275441917045475728155339806m,
+                            EuPerKm = 1.1303746589421375661375661376m,
                             StartDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1030,
-                            TripPrice = 1264.370517455684m,
+                            TripKm = 945,
+                            TripPrice = 1068.20405270032m,
                             TruckId = 1
                         },
                         new
@@ -7505,10 +7507,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 26,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9948673200656820725388601036m,
+                            EuPerKm = 1.4480741184000953545232273839m,
                             StartDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 965,
-                            TripPrice = 960.0469638633832m,
+                            TripKm = 818,
+                            TripPrice = 1184.524628851278m,
                             TruckId = 2
                         },
                         new
@@ -7516,10 +7518,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 27,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1494348608277467532467532468m,
+                            EuPerKm = 1.2993023326246901579586877278m,
                             StartDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 924,
-                            TripPrice = 1062.077811404838m,
+                            TripKm = 823,
+                            TripPrice = 1069.32581975012m,
                             TruckId = 3
                         },
                         new
@@ -7527,10 +7529,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 28,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2741649187926060606060606061m,
+                            EuPerKm = 1.2395938344788393665158371041m,
                             StartDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 891,
-                            TripPrice = 1135.280942644212m,
+                            TripKm = 884,
+                            TripPrice = 1095.800949679294m,
                             TruckId = 4
                         },
                         new
@@ -7538,10 +7540,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 29,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0631642311005885371179039301m,
+                            EuPerKm = 0.9310144422400312256809338521m,
                             StartDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 916,
-                            TripPrice = 973.8584356881391m,
+                            TripKm = 1028,
+                            TripPrice = 957.0828466227521m,
                             TruckId = 5
                         },
                         new
@@ -7549,10 +7551,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 30,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4806647782252645480225988701m,
+                            EuPerKm = 1.1974027192534459724950884086m,
                             StartDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 708,
-                            TripPrice = 1048.3106629834873m,
+                            TripKm = 1018,
+                            TripPrice = 1218.955968200008m,
                             TruckId = 6
                         },
                         new
@@ -7560,10 +7562,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 31,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3888190042667700471698113208m,
+                            EuPerKm = 1.2416675300048293444328824142m,
                             StartDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 848,
-                            TripPrice = 1177.718515618221m,
+                            TripKm = 961,
+                            TripPrice = 1193.242496334641m,
                             TruckId = 1
                         },
                         new
@@ -7571,10 +7573,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 32,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2982154122027730812013348165m,
+                            EuPerKm = 1.315597145638712778429073857m,
                             StartDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 899,
-                            TripPrice = 1167.095655570293m,
+                            TripKm = 853,
+                            TripPrice = 1122.204365229822m,
                             TruckId = 2
                         },
                         new
@@ -7582,10 +7584,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 33,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4668875961719927007299270073m,
+                            EuPerKm = 0.9577552276891311506080449018m,
                             StartDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 822,
-                            TripPrice = 1205.781604053378m,
+                            TripKm = 1069,
+                            TripPrice = 1023.8403383996812m,
                             TruckId = 3
                         },
                         new
@@ -7593,10 +7595,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 34,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9091293590680590780809031044m,
+                            EuPerKm = 1.1233525009224383983572895277m,
                             StartDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1063,
-                            TripPrice = 966.4045086893468m,
+                            TripKm = 974,
+                            TripPrice = 1094.145335898455m,
                             TruckId = 4
                         },
                         new
@@ -7604,10 +7606,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 35,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6682901069175399698340874811m,
+                            EuPerKm = 1.1762595360799636542239685658m,
                             StartDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 663,
-                            TripPrice = 1106.076340886329m,
+                            TripKm = 1018,
+                            TripPrice = 1197.432207729403m,
                             TruckId = 5
                         },
                         new
@@ -7615,10 +7617,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 36,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0996798292695090909090909091m,
+                            EuPerKm = 1.1886838539971526190476190476m,
                             StartDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1045,
-                            TripPrice = 1149.165421586637m,
+                            TripKm = 840,
+                            TripPrice = 998.4944373576082m,
                             TruckId = 6
                         },
                         new
@@ -7626,10 +7628,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 37,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3948259881261573729863692689m,
+                            EuPerKm = 1.5331355071430055223880597015m,
                             StartDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 807,
-                            TripPrice = 1125.624572417809m,
+                            TripKm = 670,
+                            TripPrice = 1027.2007897858137m,
                             TruckId = 1
                         },
                         new
@@ -7637,10 +7639,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 38,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3931261385100265895953757225m,
+                            EuPerKm = 1.1664618693414869477911646586m,
                             StartDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 865,
-                            TripPrice = 1205.054109811173m,
+                            TripKm = 996,
+                            TripPrice = 1161.796021864121m,
                             TruckId = 2
                         },
                         new
@@ -7648,10 +7650,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 39,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0417039137528577479338842975m,
+                            EuPerKm = 1.1143382977458118118118118118m,
                             StartDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 968,
-                            TripPrice = 1008.3693885127663m,
+                            TripKm = 999,
+                            TripPrice = 1113.223959448066m,
                             TruckId = 3
                         },
                         new
@@ -7659,10 +7661,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 40,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.346374602230710958904109589m,
+                            EuPerKm = 1.7579070763862581521739130435m,
                             StartDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 730,
-                            TripPrice = 982.853459628419m,
+                            TripKm = 736,
+                            TripPrice = 1293.819608220286m,
                             TruckId = 4
                         },
                         new
@@ -7670,10 +7672,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 41,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1211111496093771689497716895m,
+                            EuPerKm = 1.182962700740987012987012987m,
                             StartDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 876,
-                            TripPrice = 982.0933670578144m,
+                            TripKm = 924,
+                            TripPrice = 1093.057535484672m,
                             TruckId = 5
                         },
                         new
@@ -7681,10 +7683,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 42,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1565319736318924387646432375m,
+                            EuPerKm = 0.948631282855876390243902439m,
                             StartDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 939,
-                            TripPrice = 1085.983523240347m,
+                            TripKm = 1025,
+                            TripPrice = 972.3470649272733m,
                             TruckId = 6
                         },
                         new
@@ -7692,10 +7694,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 43,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0762619280696119341563786008m,
+                            EuPerKm = 1.192864277150917093142272262m,
                             StartDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 972,
-                            TripPrice = 1046.1265940836628m,
+                            TripKm = 977,
+                            TripPrice = 1165.428398776446m,
                             TruckId = 1
                         },
                         new
@@ -7703,10 +7705,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 44,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3025969390153696969696969697m,
+                            EuPerKm = 1.2266525785849324055666003976m,
                             StartDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 825,
-                            TripPrice = 1074.64247468768m,
+                            TripKm = 1006,
+                            TripPrice = 1234.012494056442m,
                             TruckId = 2
                         },
                         new
@@ -7714,10 +7716,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 45,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1700644053197467116564417178m,
+                            EuPerKm = 0.947066544507277156862745098m,
                             StartDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 815,
-                            TripPrice = 953.60249033559357m,
+                            TripKm = 1020,
+                            TripPrice = 966.0078753974227m,
                             TruckId = 3
                         },
                         new
@@ -7725,10 +7727,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 46,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7415399166027231404958677686m,
+                            EuPerKm = 1.4761273654915622119815668203m,
                             StartDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 726,
-                            TripPrice = 1264.357979453577m,
+                            TripKm = 868,
+                            TripPrice = 1281.278553246676m,
                             TruckId = 4
                         },
                         new
@@ -7736,10 +7738,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 47,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1732797118769309989701338826m,
+                            EuPerKm = 1.784115682838062049062049062m,
                             StartDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 971,
-                            TripPrice = 1139.2546002325m,
+                            TripKm = 693,
+                            TripPrice = 1236.392168206777m,
                             TruckId = 5
                         },
                         new
@@ -7747,10 +7749,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 48,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5537233419938856382978723404m,
+                            EuPerKm = 1.233433406833311886586695747m,
                             StartDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 752,
-                            TripPrice = 1168.399953179402m,
+                            TripKm = 917,
+                            TripPrice = 1131.058434066147m,
                             TruckId = 6
                         },
                         new
@@ -7758,10 +7760,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 49,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9482821852582875243664717349m,
+                            EuPerKm = 1.3673729043069099863201094391m,
                             StartDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1026,
-                            TripPrice = 972.937522075003m,
+                            TripKm = 731,
+                            TripPrice = 999.5495930483512m,
                             TruckId = 1
                         },
                         new
@@ -7769,10 +7771,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 50,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2087297463400358874878758487m,
+                            EuPerKm = 1.4419836063019831387808041505m,
                             StartDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1031,
-                            TripPrice = 1246.200368476577m,
+                            TripKm = 771,
+                            TripPrice = 1111.769360458829m,
                             TruckId = 2
                         },
                         new
@@ -7780,10 +7782,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 51,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0202113838804935146443514644m,
+                            EuPerKm = 1.2775628068858271334792122538m,
                             StartDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 956,
-                            TripPrice = 975.3220829897518m,
+                            TripKm = 914,
+                            TripPrice = 1167.692405493646m,
                             TruckId = 3
                         },
                         new
@@ -7791,10 +7793,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 52,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4512316528672868965517241379m,
+                            EuPerKm = 1.249521466136987192118226601m,
                             StartDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 725,
-                            TripPrice = 1052.142948328783m,
+                            TripKm = 1015,
+                            TripPrice = 1268.264288129042m,
                             TruckId = 4
                         },
                         new
@@ -7802,10 +7804,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 53,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2754682848529086624203821656m,
+                            EuPerKm = 1.5928791628040037037037037037m,
                             StartDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 785,
-                            TripPrice = 1001.2426036095333m,
+                            TripKm = 810,
+                            TripPrice = 1290.232121871243m,
                             TruckId = 5
                         },
                         new
@@ -7813,10 +7815,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 54,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1680869343503929965556831228m,
+                            EuPerKm = 1.5673178380013907993966817496m,
                             StartDate = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 871,
-                            TripPrice = 1017.4037198191923m,
+                            TripKm = 663,
+                            TripPrice = 1039.1317265949221m,
                             TruckId = 6
                         },
                         new
@@ -7824,10 +7826,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 55,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4942775654742654088050314465m,
+                            EuPerKm = 1.219155988624977482088024565m,
                             StartDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 795,
-                            TripPrice = 1187.950664552041m,
+                            TripKm = 977,
+                            TripPrice = 1191.115400886603m,
                             TruckId = 1
                         },
                         new
@@ -7835,10 +7837,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 56,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2739517769784686390532544379m,
+                            EuPerKm = 1.2061637327743267857142857143m,
                             StartDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 845,
-                            TripPrice = 1076.489251546806m,
+                            TripKm = 840,
+                            TripPrice = 1013.1775355304345m,
                             TruckId = 2
                         },
                         new
@@ -7846,10 +7848,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 57,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5753077955538585987261146497m,
+                            EuPerKm = 1.4559832820937038567493112948m,
                             StartDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 785,
-                            TripPrice = 1236.616619509779m,
+                            TripKm = 726,
+                            TripPrice = 1057.043862800029m,
                             TruckId = 3
                         },
                         new
@@ -7857,10 +7859,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 58,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0532695108527069306930693069m,
+                            EuPerKm = 1.4205547066886274256144890039m,
                             StartDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1010,
-                            TripPrice = 1063.802205961234m,
+                            TripKm = 773,
+                            TripPrice = 1098.088788270309m,
                             TruckId = 4
                         },
                         new
@@ -7868,10 +7870,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 59,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9500690558658617810760667904m,
+                            EuPerKm = 1.5080505555629082687338501292m,
                             StartDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1078,
-                            TripPrice = 1024.174442223399m,
+                            TripKm = 774,
+                            TripPrice = 1167.231130005691m,
                             TruckId = 5
                         },
                         new
@@ -7879,10 +7881,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 60,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3767303470292322097378277154m,
+                            EuPerKm = 0.9247448472853920560747663551m,
                             StartDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 801,
-                            TripPrice = 1102.761007970415m,
+                            TripKm = 1070,
+                            TripPrice = 989.4769865953695m,
                             TruckId = 6
                         },
                         new
@@ -7890,10 +7892,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 61,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5871083331910039113428943937m,
+                            EuPerKm = 1.3742524733433947229551451187m,
                             StartDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 767,
-                            TripPrice = 1217.3120915575m,
+                            TripKm = 758,
+                            TripPrice = 1041.6833747942932m,
                             TruckId = 1
                         },
                         new
@@ -7901,10 +7903,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 62,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5349520779057816023738872404m,
+                            EuPerKm = 0.8954906261254394470046082949m,
                             StartDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 674,
-                            TripPrice = 1034.5577005084968m,
+                            TripKm = 1085,
+                            TripPrice = 971.6073293461018m,
                             TruckId = 2
                         },
                         new
@@ -7912,10 +7914,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 63,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.460081736336211139896373057m,
+                            EuPerKm = 1.523335997849067420814479638m,
                             StartDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 772,
-                            TripPrice = 1127.183100451555m,
+                            TripKm = 663,
+                            TripPrice = 1009.9717665739317m,
                             TruckId = 3
                         },
                         new
@@ -7923,10 +7925,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 64,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1622743745741432203389830508m,
+                            EuPerKm = 1.5529974403249985714285714286m,
                             StartDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 826,
-                            TripPrice = 960.0386333982423m,
+                            TripKm = 700,
+                            TripPrice = 1087.098208227499m,
                             TruckId = 4
                         },
                         new
@@ -7934,10 +7936,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 65,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2519340521272065775950668037m,
+                            EuPerKm = 1.2527694058227223952879581152m,
                             StartDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 973,
-                            TripPrice = 1218.131832719772m,
+                            TripKm = 764,
+                            TripPrice = 957.11582604855991m,
                             TruckId = 5
                         },
                         new
@@ -7945,10 +7947,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 66,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6291254408390935672514619883m,
+                            EuPerKm = 1.2103972197711470588235294118m,
                             StartDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 684,
-                            TripPrice = 1114.32180153394m,
+                            TripKm = 986,
+                            TripPrice = 1193.451658694351m,
                             TruckId = 6
                         },
                         new
@@ -7956,10 +7958,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 67,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0020571286781077003121748179m,
+                            EuPerKm = 1.2927503355468072409488139825m,
                             StartDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 961,
-                            TripPrice = 962.9769006596615m,
+                            TripKm = 801,
+                            TripPrice = 1035.4930187729926m,
                             TruckId = 1
                         },
                         new
@@ -7967,10 +7969,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 68,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3290512042879750632911392405m,
+                            EuPerKm = 1.3482444747316745529573590096m,
                             StartDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 790,
-                            TripPrice = 1049.9504513875003m,
+                            TripKm = 727,
+                            TripPrice = 980.1737331299274m,
                             TruckId = 2
                         },
                         new
@@ -7978,10 +7980,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 69,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5720314299768193224592220828m,
+                            EuPerKm = 1.3082472960865193370165745856m,
                             StartDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 797,
-                            TripPrice = 1252.909049691525m,
+                            TripKm = 905,
+                            TripPrice = 1183.9638029583m,
                             TruckId = 3
                         },
                         new
@@ -7989,10 +7991,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 70,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0608817251854654952076677316m,
+                            EuPerKm = 1.0399408885631109004739336493m,
                             StartDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 939,
-                            TripPrice = 996.1679399491521m,
+                            TripKm = 1055,
+                            TripPrice = 1097.137637434082m,
                             TruckId = 4
                         },
                         new
@@ -8000,10 +8002,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 71,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.350758356246298745724059293m,
+                            EuPerKm = 1.2131231321870470588235294118m,
                             StartDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 877,
-                            TripPrice = 1184.615078428004m,
+                            TripKm = 935,
+                            TripPrice = 1134.270128594889m,
                             TruckId = 5
                         },
                         new
@@ -8011,10 +8013,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 72,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5214046993027117486338797814m,
+                            EuPerKm = 1.0977277091277406049495875344m,
                             StartDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 732,
-                            TripPrice = 1113.668239889585m,
+                            TripKm = 1091,
+                            TripPrice = 1197.620930658365m,
                             TruckId = 6
                         },
                         new
@@ -8022,10 +8024,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 73,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3390199796864988962472406181m,
+                            EuPerKm = 1.3185799331888958441558441558m,
                             StartDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 906,
-                            TripPrice = 1213.152101595968m,
+                            TripKm = 770,
+                            TripPrice = 1015.3065485554498m,
                             TruckId = 1
                         },
                         new
@@ -8033,10 +8035,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 74,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.07952199114668721251149954m,
+                            EuPerKm = 1.3502729227706732217573221757m,
                             StartDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1087,
-                            TripPrice = 1173.440404376449m,
+                            TripKm = 717,
+                            TripPrice = 968.1456856265727m,
                             TruckId = 2
                         },
                         new
@@ -8044,10 +8046,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 75,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5159128102791951515151515152m,
+                            EuPerKm = 1.1301313504879381551362683438m,
                             StartDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 825,
-                            TripPrice = 1250.628068480336m,
+                            TripKm = 954,
+                            TripPrice = 1078.145308365493m,
                             TruckId = 3
                         },
                         new
@@ -8055,10 +8057,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 76,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3241702950602947761194029851m,
+                            EuPerKm = 1.594128439275938255033557047m,
                             StartDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 804,
-                            TripPrice = 1064.632917228477m,
+                            TripKm = 745,
+                            TripPrice = 1187.625687260574m,
                             TruckId = 4
                         },
                         new
@@ -8066,10 +8068,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 77,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1918727687437004310344827586m,
+                            EuPerKm = 1.7364455279326302521008403361m,
                             StartDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 928,
-                            TripPrice = 1106.057929394154m,
+                            TripKm = 714,
+                            TripPrice = 1239.822106943898m,
                             TruckId = 5
                         },
                         new
@@ -8077,10 +8079,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 78,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1794359439000487077534791252m,
+                            EuPerKm = 1.186157676283172192513368984m,
                             StartDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1006,
-                            TripPrice = 1186.512559563449m,
+                            TripKm = 935,
+                            TripPrice = 1109.057427324766m,
                             TruckId = 6
                         },
                         new
@@ -8088,10 +8090,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 79,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4922848444173918741808650066m,
+                            EuPerKm = 1.5212480257742147562582345191m,
                             StartDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 763,
-                            TripPrice = 1138.61333629047m,
+                            TripKm = 759,
+                            TripPrice = 1154.627251562629m,
                             TruckId = 1
                         },
                         new
@@ -8099,10 +8101,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 80,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9199627176901992474129821261m,
+                            EuPerKm = 1.3373521314535133064516129032m,
                             StartDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1063,
-                            TripPrice = 977.9203689046818m,
+                            TripKm = 744,
+                            TripPrice = 994.9899858014139m,
                             TruckId = 2
                         },
                         new
@@ -8110,10 +8112,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 81,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5788186340083068783068783069m,
+                            EuPerKm = 1.0896176298125122641509433962m,
                             StartDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 756,
-                            TripPrice = 1193.58688731028m,
+                            TripKm = 1060,
+                            TripPrice = 1154.994687601263m,
                             TruckId = 3
                         },
                         new
@@ -8121,10 +8123,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 82,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6255376532269653401797175866m,
+                            EuPerKm = 1.2887623806448835546475995914m,
                             StartDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 779,
-                            TripPrice = 1266.293831863806m,
+                            TripKm = 979,
+                            TripPrice = 1261.698370651341m,
                             TruckId = 4
                         },
                         new
@@ -8132,10 +8134,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 83,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1629286923629150234741784038m,
+                            EuPerKm = 1.0738425901390272930648769575m,
                             StartDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 852,
-                            TripPrice = 990.8152458932036m,
+                            TripKm = 894,
+                            TripPrice = 960.0152755842904m,
                             TruckId = 5
                         },
                         new
@@ -8143,10 +8145,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 84,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5023002298391671388101983003m,
+                            EuPerKm = 1.1764496990590552016985138004m,
                             StartDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 706,
-                            TripPrice = 1060.623962266452m,
+                            TripKm = 942,
+                            TripPrice = 1108.21561651363m,
                             TruckId = 6
                         },
                         new
@@ -8154,10 +8156,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 85,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0060891648102122722914669223m,
+                            EuPerKm = 1.9459670741233505311077389985m,
                             StartDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1043,
-                            TripPrice = 1049.3509988970514m,
+                            TripKm = 659,
+                            TripPrice = 1282.392301847288m,
                             TruckId = 1
                         },
                         new
@@ -8165,10 +8167,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 86,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.423648319214503945885005637m,
+                            EuPerKm = 1.2290832599526904761904761905m,
                             StartDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 887,
-                            TripPrice = 1262.776059143265m,
+                            TripKm = 966,
+                            TripPrice = 1187.294429114299m,
                             TruckId = 2
                         },
                         new
@@ -8176,10 +8178,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 87,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.635019362533364883401920439m,
+                            EuPerKm = 1.414300826928557997557997558m,
                             StartDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 729,
-                            TripPrice = 1191.929115286823m,
+                            TripKm = 819,
+                            TripPrice = 1158.312377254489m,
                             TruckId = 3
                         },
                         new
@@ -8187,10 +8189,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 88,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3188617892291025641025641026m,
+                            EuPerKm = 1.2366863174722308488612836439m,
                             StartDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 897,
-                            TripPrice = 1183.019024938505m,
+                            TripKm = 966,
+                            TripPrice = 1194.638982678175m,
                             TruckId = 4
                         },
                         new
@@ -8198,10 +8200,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 89,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3258497830348553719008264463m,
+                            EuPerKm = 0.9994113408277022263450834879m,
                             StartDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 968,
-                            TripPrice = 1283.42258997774m,
+                            TripKm = 1078,
+                            TripPrice = 1077.365425412263m,
                             TruckId = 5
                         },
                         new
@@ -8209,10 +8211,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 90,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9942105120360423330197554092m,
+                            EuPerKm = 1.4532692512955229591836734694m,
                             StartDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1063,
-                            TripPrice = 1056.845774294313m,
+                            TripKm = 784,
+                            TripPrice = 1139.36309301569m,
                             TruckId = 6
                         },
                         new
@@ -8220,10 +8222,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 91,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2299032641903141592920353982m,
+                            EuPerKm = 1.1676759037953944069431051109m,
                             StartDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 904,
-                            TripPrice = 1111.832550828044m,
+                            TripKm = 1037,
+                            TripPrice = 1210.879912235824m,
                             TruckId = 1
                         },
                         new
@@ -8231,10 +8233,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 92,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2897847505751248407643312102m,
+                            EuPerKm = 0.9819719807762874418604651163m,
                             StartDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 785,
-                            TripPrice = 1012.481029201473m,
+                            TripKm = 1075,
+                            TripPrice = 1055.619879334509m,
                             TruckId = 2
                         },
                         new
@@ -8242,10 +8244,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 93,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0863858019512479757085020243m,
+                            EuPerKm = 1.0438441701891423350253807107m,
                             StartDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 988,
-                            TripPrice = 1073.349172327833m,
+                            TripKm = 985,
+                            TripPrice = 1028.1865076363052m,
                             TruckId = 3
                         },
                         new
@@ -8253,10 +8255,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 94,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2158120957479289055191768007m,
+                            EuPerKm = 1.7253838912233366197183098592m,
                             StartDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1069,
-                            TripPrice = 1299.703130354536m,
+                            TripKm = 710,
+                            TripPrice = 1225.022562768569m,
                             TruckId = 4
                         },
                         new
@@ -8264,10 +8266,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 95,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0535813529605131195335276968m,
+                            EuPerKm = 1.4099612237455171503957783641m,
                             StartDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1029,
-                            TripPrice = 1084.135212196368m,
+                            TripKm = 758,
+                            TripPrice = 1068.750607599102m,
                             TruckId = 5
                         },
                         new
@@ -8275,10 +8277,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 96,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3076745336013179871520342612m,
+                            EuPerKm = 1.1573141789966439688715953307m,
                             StartDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 934,
-                            TripPrice = 1221.368014383631m,
+                            TripKm = 1028,
+                            TripPrice = 1189.71897600855m,
                             TruckId = 6
                         },
                         new
@@ -8286,10 +8288,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 97,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0379764927846183967112024666m,
+                            EuPerKm = 1.3160710699499293756397134084m,
                             StartDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 973,
-                            TripPrice = 1009.9511274794337m,
+                            TripKm = 977,
+                            TripPrice = 1285.801435341081m,
                             TruckId = 1
                         },
                         new
@@ -8297,10 +8299,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 98,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0267498594795568387096774194m,
+                            EuPerKm = 1.455340328063986873508353222m,
                             StartDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 930,
-                            TripPrice = 954.87736931598786m,
+                            TripKm = 838,
+                            TripPrice = 1219.575194917621m,
                             TruckId = 2
                         },
                         new
@@ -8308,10 +8310,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 99,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1158777861480538876889848812m,
+                            EuPerKm = 1.0303077467011597815292949355m,
                             StartDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 926,
-                            TripPrice = 1033.3028299730979m,
+                            TripKm = 1007,
+                            TripPrice = 1037.5199009280679m,
                             TruckId = 3
                         },
                         new
@@ -8319,10 +8321,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 100,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3648385399261036144578313253m,
+                            EuPerKm = 1.2563628584631672131147540984m,
                             StartDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 830,
-                            TripPrice = 1132.815988138666m,
+                            TripKm = 793,
+                            TripPrice = 996.2957467612916m,
                             TruckId = 4
                         },
                         new
@@ -8330,10 +8332,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 101,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.411363429291719047619047619m,
+                            EuPerKm = 1.2740392551287034068136272545m,
                             StartDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 840,
-                            TripPrice = 1185.545280605044m,
+                            TripKm = 998,
+                            TripPrice = 1271.491176618446m,
                             TruckId = 5
                         },
                         new
@@ -8341,10 +8343,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 102,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0380853058057427184466019417m,
+                            EuPerKm = 1.6674126877666079545454545455m,
                             StartDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1030,
-                            TripPrice = 1069.227864979915m,
+                            TripKm = 704,
+                            TripPrice = 1173.858532187692m,
                             TruckId = 6
                         },
                         new
@@ -8352,10 +8354,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 103,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3288895596478786885245901639m,
+                            EuPerKm = 1.1906908868099016548463356974m,
                             StartDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 915,
-                            TripPrice = 1215.933947077809m,
+                            TripKm = 846,
+                            TripPrice = 1007.3244902411768m,
                             TruckId = 1
                         },
                         new
@@ -8363,10 +8365,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 104,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2714854842948981206726013848m,
+                            EuPerKm = 1.6158999580107427122940430925m,
                             StartDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1011,
-                            TripPrice = 1285.471824622142m,
+                            TripKm = 789,
+                            TripPrice = 1274.945066870476m,
                             TruckId = 2
                         },
                         new
@@ -8374,10 +8376,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 105,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8225336486040748091603053435m,
+                            EuPerKm = 1.4177534534683582743988684583m,
                             StartDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 655,
-                            TripPrice = 1193.759539835669m,
+                            TripKm = 707,
+                            TripPrice = 1002.3516916021293m,
                             TruckId = 3
                         },
                         new
@@ -8385,10 +8387,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 106,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4672566313574598870056497175m,
+                            EuPerKm = 1.0534492001115091240875912409m,
                             StartDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 885,
-                            TripPrice = 1298.522118751352m,
+                            TripKm = 1096,
+                            TripPrice = 1154.580323322214m,
                             TruckId = 4
                         },
                         new
@@ -8396,10 +8398,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 107,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3822698800486291989664082687m,
+                            EuPerKm = 1.197287584324835032437442076m,
                             StartDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 774,
-                            TripPrice = 1069.876887157639m,
+                            TripKm = 1079,
+                            TripPrice = 1291.873303486497m,
                             TruckId = 5
                         },
                         new
@@ -8407,10 +8409,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 108,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.537434611668412291933418694m,
+                            EuPerKm = 1.1095429955043042675893886967m,
                             StartDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 781,
-                            TripPrice = 1200.73643171303m,
+                            TripKm = 867,
+                            TripPrice = 961.9737771022318m,
                             TruckId = 6
                         },
                         new
@@ -8418,10 +8420,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 109,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5631578673259689608636977058m,
+                            EuPerKm = 1.1801092186482508917954815696m,
                             StartDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 741,
-                            TripPrice = 1158.299979688543m,
+                            TripKm = 841,
+                            TripPrice = 992.471852883179m,
                             TruckId = 1
                         },
                         new
@@ -8429,10 +8431,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 110,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9606117518408184383819379116m,
+                            EuPerKm = 1.4758240719140916380297823597m,
                             StartDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1063,
-                            TripPrice = 1021.13029220679m,
+                            TripKm = 873,
+                            TripPrice = 1288.394414781002m,
                             TruckId = 2
                         },
                         new
@@ -8440,10 +8442,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 111,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1182291200653818350324374421m,
+                            EuPerKm = 1.0643850435653577777777777778m,
                             StartDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1079,
-                            TripPrice = 1206.569220550547m,
+                            TripKm = 945,
+                            TripPrice = 1005.8438661692631m,
                             TruckId = 3
                         },
                         new
@@ -8451,10 +8453,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 112,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6675894587962421203438395415m,
+                            EuPerKm = 1.559277265672548431105047749m,
                             StartDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 698,
-                            TripPrice = 1163.977442239777m,
+                            TripKm = 733,
+                            TripPrice = 1142.950235737978m,
                             TruckId = 4
                         },
                         new
@@ -8462,10 +8464,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 113,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5321453649272493857493857494m,
+                            EuPerKm = 1.5323392161203726027397260274m,
                             StartDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 814,
-                            TripPrice = 1247.166327050781m,
+                            TripKm = 730,
+                            TripPrice = 1118.607627767872m,
                             TruckId = 5
                         },
                         new
@@ -8473,10 +8475,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 114,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1246853407016132075471698113m,
+                            EuPerKm = 1.6141006467921950867052023121m,
                             StartDate = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1060,
-                            TripPrice = 1192.16646114371m,
+                            TripKm = 692,
+                            TripPrice = 1116.957647580199m,
                             TruckId = 6
                         },
                         new
@@ -8484,10 +8486,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 115,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5405309259450083333333333333m,
+                            EuPerKm = 1.0642383246381971074380165289m,
                             StartDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 720,
-                            TripPrice = 1109.182266680406m,
+                            TripKm = 968,
+                            TripPrice = 1030.1826982497748m,
                             TruckId = 1
                         },
                         new
@@ -8495,10 +8497,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 116,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1528940927723387922210849539m,
+                            EuPerKm = 1.3293266413604623921085080148m,
                             StartDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 977,
-                            TripPrice = 1126.377528638575m,
+                            TripKm = 811,
+                            TripPrice = 1078.083906143335m,
                             TruckId = 2
                         },
                         new
@@ -8506,10 +8508,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 117,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6753902121964691689008042895m,
+                            EuPerKm = 1.0750567750626120441988950276m,
                             StartDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 746,
-                            TripPrice = 1249.841098298566m,
+                            TripKm = 905,
+                            TripPrice = 972.9263814316639m,
                             TruckId = 3
                         },
                         new
@@ -8517,10 +8519,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 118,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3597905764641971522453450164m,
+                            EuPerKm = 1.3911647251837263157894736842m,
                             StartDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 913,
-                            TripPrice = 1241.488796311812m,
+                            TripKm = 855,
+                            TripPrice = 1189.445840032086m,
                             TruckId = 4
                         },
                         new
@@ -8528,10 +8530,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 119,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2001652333941642129105322763m,
+                            EuPerKm = 1.4394105801052310924369747899m,
                             StartDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 883,
-                            TripPrice = 1059.745901087047m,
+                            TripKm = 714,
+                            TripPrice = 1027.739154195135m,
                             TruckId = 5
                         },
                         new
@@ -8539,10 +8541,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 120,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.152334916161862200956937799m,
+                            EuPerKm = 1.5608293420141538461538461538m,
                             StartDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 836,
-                            TripPrice = 963.3519899113168m,
+                            TripKm = 676,
+                            TripPrice = 1055.120635201568m,
                             TruckId = 6
                         },
                         new
@@ -8550,10 +8552,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 121,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.11578136737976440329218107m,
+                            EuPerKm = 1.1838444537486937307297019527m,
                             StartDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 972,
-                            TripPrice = 1084.539489093131m,
+                            TripKm = 973,
+                            TripPrice = 1151.880653497479m,
                             TruckId = 1
                         },
                         new
@@ -8561,10 +8563,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 122,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6111042972026844919786096257m,
+                            EuPerKm = 1.1162170334211575029171528588m,
                             StartDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 748,
-                            TripPrice = 1205.106014307608m,
+                            TripKm = 857,
+                            TripPrice = 956.59799764193198m,
                             TruckId = 2
                         },
                         new
@@ -8572,10 +8574,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 123,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4548412779936431054461181924m,
+                            EuPerKm = 1.5520231972025771643663739021m,
                             StartDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 863,
-                            TripPrice = 1255.528022908514m,
+                            TripKm = 797,
+                            TripPrice = 1236.962488170454m,
                             TruckId = 3
                         },
                         new
@@ -8583,10 +8585,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 124,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9940285371415060129509713228m,
+                            EuPerKm = 1.2522816082293513824884792627m,
                             StartDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1081,
-                            TripPrice = 1074.544848649968m,
+                            TripKm = 868,
+                            TripPrice = 1086.980435943077m,
                             TruckId = 4
                         },
                         new
@@ -8594,10 +8596,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 125,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0788049478002156020942408377m,
+                            EuPerKm = 1.5180253587786344485749690211m,
                             StartDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 955,
-                            TripPrice = 1030.2587251492059m,
+                            TripKm = 807,
+                            TripPrice = 1225.046464534358m,
                             TruckId = 5
                         },
                         new
@@ -8605,10 +8607,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 126,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3909136263067630385487528345m,
+                            EuPerKm = 0.9987495591573501463414634146m,
                             StartDate = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 882,
-                            TripPrice = 1226.785818402565m,
+                            TripKm = 1025,
+                            TripPrice = 1023.7182981362839m,
                             TruckId = 6
                         },
                         new
@@ -8616,10 +8618,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 127,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.984263649816203311867525299m,
+                            EuPerKm = 1.5457273066080053691275167785m,
                             StartDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1087,
-                            TripPrice = 1069.894587350213m,
+                            TripKm = 745,
+                            TripPrice = 1151.566843422964m,
                             TruckId = 1
                         },
                         new
@@ -8627,10 +8629,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 128,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2834567431480130659767141009m,
+                            EuPerKm = 1.3813014919894507183908045977m,
                             StartDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 773,
-                            TripPrice = 992.1120624534141m,
+                            TripKm = 696,
+                            TripPrice = 961.3858384246577m,
                             TruckId = 2
                         },
                         new
@@ -8638,10 +8640,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 129,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9368129765638239766081871345m,
+                            EuPerKm = 1.1968726811432428023032629559m,
                             StartDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1026,
-                            TripPrice = 961.1701139544834m,
+                            TripKm = 1042,
+                            TripPrice = 1247.141333751259m,
                             TruckId = 3
                         },
                         new
@@ -8649,10 +8651,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 130,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4234843669854566473988439306m,
+                            EuPerKm = 1.1318153905614649484536082474m,
                             StartDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 865,
-                            TripPrice = 1231.31397744242m,
+                            TripKm = 970,
+                            TripPrice = 1097.860928844621m,
                             TruckId = 4
                         },
                         new
@@ -8660,10 +8662,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 131,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6024856949132421580928481807m,
+                            EuPerKm = 1.3140725895023455882352941176m,
                             StartDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 797,
-                            TripPrice = 1277.181098845854m,
+                            TripKm = 952,
+                            TripPrice = 1250.997105206233m,
                             TruckId = 5
                         },
                         new
@@ -8671,10 +8673,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 132,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3979141068870840620592383639m,
+                            EuPerKm = 1.7498043297307379912663755459m,
                             StartDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 709,
-                            TripPrice = 991.1211017829426m,
+                            TripKm = 687,
+                            TripPrice = 1202.115574525017m,
                             TruckId = 6
                         },
                         new
@@ -8682,10 +8684,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 133,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2724505418203211920529801325m,
+                            EuPerKm = 1.3898360368752529976019184652m,
                             StartDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 906,
-                            TripPrice = 1152.840190889211m,
+                            TripKm = 834,
+                            TripPrice = 1159.123254753961m,
                             TruckId = 1
                         },
                         new
@@ -8693,10 +8695,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 134,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3307166495154715789473684211m,
+                            EuPerKm = 1.4566532484651916010498687664m,
                             StartDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 950,
-                            TripPrice = 1264.180817039698m,
+                            TripKm = 762,
+                            TripPrice = 1109.969775330476m,
                             TruckId = 2
                         },
                         new
@@ -8704,10 +8706,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 135,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3755977579291734913793103448m,
+                            EuPerKm = 1.5308423042883507042253521127m,
                             StartDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 928,
-                            TripPrice = 1276.554719358273m,
+                            TripKm = 710,
+                            TripPrice = 1086.898036044729m,
                             TruckId = 3
                         },
                         new
@@ -8715,10 +8717,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 136,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3275360547705518433179723502m,
+                            EuPerKm = 1.3871284382824604966139954853m,
                             StartDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 868,
-                            TripPrice = 1152.301295540839m,
+                            TripKm = 886,
+                            TripPrice = 1228.99579631826m,
                             TruckId = 4
                         },
                         new
@@ -8726,10 +8728,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 137,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2827098207708302961275626424m,
+                            EuPerKm = 1.0693248836843353293413173653m,
                             StartDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 878,
-                            TripPrice = 1126.219222636789m,
+                            TripKm = 1002,
+                            TripPrice = 1071.463533451704m,
                             TruckId = 5
                         },
                         new
@@ -8737,10 +8739,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 138,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9141659206945067033976124885m,
+                            EuPerKm = 1.3152719954156432374866879659m,
                             StartDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1089,
-                            TripPrice = 995.5266876363178m,
+                            TripKm = 939,
+                            TripPrice = 1235.040403695289m,
                             TruckId = 6
                         },
                         new
@@ -8748,10 +8750,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 139,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4715571604598236632536973834m,
+                            EuPerKm = 1.1682365324631325301204819277m,
                             StartDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 879,
-                            TripPrice = 1293.498744044185m,
+                            TripKm = 1079,
+                            TripPrice = 1260.52721852772m,
                             TruckId = 1
                         },
                         new
@@ -8759,10 +8761,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 140,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2540726672860869074492099323m,
+                            EuPerKm = 1.3478788259054424581005586592m,
                             StartDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 886,
-                            TripPrice = 1111.108383215473m,
+                            TripKm = 895,
+                            TripPrice = 1206.351549185371m,
                             TruckId = 2
                         },
                         new
@@ -8770,10 +8772,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 141,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0799622648601434108527131783m,
+                            EuPerKm = 1.5676310131692031438935912938m,
                             StartDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1032,
-                            TripPrice = 1114.521057335668m,
+                            TripKm = 827,
+                            TripPrice = 1296.430847890931m,
                             TruckId = 3
                         },
                         new
@@ -8781,10 +8783,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 142,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2909526007579064748201438849m,
+                            EuPerKm = 1.2502946404400580912863070539m,
                             StartDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 834,
-                            TripPrice = 1076.654469032094m,
+                            TripKm = 964,
+                            TripPrice = 1205.284033384216m,
                             TruckId = 4
                         },
                         new
@@ -8792,10 +8794,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 143,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2514419342425795121951219512m,
+                            EuPerKm = 1.099201893302628169014084507m,
                             StartDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 820,
-                            TripPrice = 1026.1823860789152m,
+                            TripKm = 1065,
+                            TripPrice = 1170.650016367299m,
                             TruckId = 5
                         },
                         new
@@ -8803,10 +8805,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 144,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3425805741673677685950413223m,
+                            EuPerKm = 1.2851590171129933847850055127m,
                             StartDate = new DateTime(2023, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 968,
-                            TripPrice = 1299.617995794012m,
+                            TripKm = 907,
+                            TripPrice = 1165.639228521485m,
                             TruckId = 6
                         },
                         new
@@ -8814,10 +8816,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 145,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3590424954756089385474860335m,
+                            EuPerKm = 1.6780888990038010403120936281m,
                             StartDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 895,
-                            TripPrice = 1216.34303345067m,
+                            TripKm = 769,
+                            TripPrice = 1290.450363333923m,
                             TruckId = 1
                         },
                         new
@@ -8825,10 +8827,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 146,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0181313788599408553230209281m,
+                            EuPerKm = 1.2530287510822803532008830022m,
                             StartDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1099,
-                            TripPrice = 1118.926385367075m,
+                            TripKm = 906,
+                            TripPrice = 1135.244048480546m,
                             TruckId = 2
                         },
                         new
@@ -8836,10 +8838,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 147,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5164037627999936484490398818m,
+                            EuPerKm = 1.0351039061969393364928909953m,
                             StartDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 677,
-                            TripPrice = 1026.6053474155957m,
+                            TripKm = 1055,
+                            TripPrice = 1092.034621037771m,
                             TruckId = 3
                         },
                         new
@@ -8847,10 +8849,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 148,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.955730862670408876298394712m,
+                            EuPerKm = 1.3018500774993308913308913309m,
                             StartDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1059,
-                            TripPrice = 1012.118983567963m,
+                            TripKm = 819,
+                            TripPrice = 1066.215213471952m,
                             TruckId = 4
                         },
                         new
@@ -8858,10 +8860,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 149,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.8936598497889213503649635036m,
+                            EuPerKm = 1.2254114374489414634146341463m,
                             StartDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1096,
-                            TripPrice = 979.4511953686578m,
+                            TripKm = 1025,
+                            TripPrice = 1256.046723385165m,
                             TruckId = 5
                         },
                         new
@@ -8869,10 +8871,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 150,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.475481471094545045045045045m,
+                            EuPerKm = 1.5229715853702056303549571603m,
                             StartDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 666,
-                            TripPrice = 982.670659748967m,
+                            TripKm = 817,
+                            TripPrice = 1244.267785247458m,
                             TruckId = 6
                         },
                         new
@@ -8880,10 +8882,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 151,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4569379745536233062330623306m,
+                            EuPerKm = 1.1524675162518851931330472103m,
                             StartDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 738,
-                            TripPrice = 1075.220225220574m,
+                            TripKm = 932,
+                            TripPrice = 1074.099725146757m,
                             TruckId = 1
                         },
                         new
@@ -8891,10 +8893,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 152,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7040594589334646153846153846m,
+                            EuPerKm = 1.4715038194864327830188679245m,
                             StartDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 650,
-                            TripPrice = 1107.638648306752m,
+                            TripKm = 848,
+                            TripPrice = 1247.835238924495m,
                             TruckId = 2
                         },
                         new
@@ -8902,10 +8904,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 153,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5837797779937885862516212711m,
+                            EuPerKm = 1.4456047920085739766081871345m,
                             StartDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 771,
-                            TripPrice = 1221.094208833211m,
+                            TripKm = 684,
+                            TripPrice = 988.7936777338646m,
                             TruckId = 3
                         },
                         new
@@ -8913,10 +8915,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 154,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2047230709960608108108108108m,
+                            EuPerKm = 0.912954266376582967032967033m,
                             StartDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1036,
-                            TripPrice = 1248.093101551919m,
+                            TripKm = 1092,
+                            TripPrice = 996.9460588832286m,
                             TruckId = 4
                         },
                         new
@@ -8924,10 +8926,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 155,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2454006210435078277886497065m,
+                            EuPerKm = 1.2826304551360526315789473684m,
                             StartDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1022,
-                            TripPrice = 1272.799434706465m,
+                            TripKm = 988,
+                            TripPrice = 1267.23888967442m,
                             TruckId = 5
                         },
                         new
@@ -8935,10 +8937,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 156,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3744658304857637969094922737m,
+                            EuPerKm = 1.2707621696227492029755579171m,
                             StartDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 906,
-                            TripPrice = 1245.266042420102m,
+                            TripKm = 941,
+                            TripPrice = 1195.787201615007m,
                             TruckId = 6
                         },
                         new
@@ -8946,10 +8948,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 157,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7829245898857291960507757405m,
+                            EuPerKm = 1.2203566677899373716632443532m,
                             StartDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 709,
-                            TripPrice = 1264.093534228982m,
+                            TripKm = 974,
+                            TripPrice = 1188.627394427399m,
                             TruckId = 1
                         },
                         new
@@ -8957,10 +8959,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 158,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5010291241936259541984732824m,
+                            EuPerKm = 1.371630058919153077975376197m,
                             StartDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 786,
-                            TripPrice = 1179.80889161619m,
+                            TripKm = 731,
+                            TripPrice = 1002.6615730699009m,
                             TruckId = 2
                         },
                         new
@@ -8968,10 +8970,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 159,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4584592295837156862745098039m,
+                            EuPerKm = 1.4946213157382488425925925926m,
                             StartDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 714,
-                            TripPrice = 1041.339889922773m,
+                            TripKm = 864,
+                            TripPrice = 1291.352816797847m,
                             TruckId = 3
                         },
                         new
@@ -8979,10 +8981,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 160,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4602406629867928483353884094m,
+                            EuPerKm = 1.0301325421837300207039337474m,
                             StartDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 811,
-                            TripPrice = 1184.255177682289m,
+                            TripKm = 966,
+                            TripPrice = 995.1080357494832m,
                             TruckId = 4
                         },
                         new
@@ -8990,10 +8992,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 161,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8452616539978294797687861272m,
+                            EuPerKm = 1.5250357611498635097493036212m,
                             StartDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 692,
-                            TripPrice = 1276.921064566498m,
+                            TripKm = 718,
+                            TripPrice = 1094.975676505602m,
                             TruckId = 5
                         },
                         new
@@ -9001,10 +9003,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 162,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0163694867536670307845084409m,
+                            EuPerKm = 1.3388107090580369487485101311m,
                             StartDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1007,
-                            TripPrice = 1023.4840731609427m,
+                            TripKm = 839,
+                            TripPrice = 1123.262184899693m,
                             TruckId = 6
                         },
                         new
@@ -9012,10 +9014,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 163,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0972161188887602611940298507m,
+                            EuPerKm = 0.9989041944549699507389162562m,
                             StartDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1072,
-                            TripPrice = 1176.215679448751m,
+                            TripKm = 1015,
+                            TripPrice = 1013.8877573717945m,
                             TruckId = 1
                         },
                         new
@@ -9023,10 +9025,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 164,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4762217462102443490701001431m,
+                            EuPerKm = 1.5148368267586047087980173482m,
                             StartDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 699,
-                            TripPrice = 1031.8790006009608m,
+                            TripKm = 807,
+                            TripPrice = 1222.473319194194m,
                             TruckId = 2
                         },
                         new
@@ -9034,10 +9036,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 165,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7208505932044898550724637681m,
+                            EuPerKm = 1.7054626258384142857142857143m,
                             StartDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 690,
-                            TripPrice = 1187.386909311098m,
+                            TripKm = 700,
+                            TripPrice = 1193.82383808689m,
                             TruckId = 3
                         },
                         new
@@ -9045,10 +9047,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 166,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2083021169424876288659793814m,
+                            EuPerKm = 1.7617323323209448698315467075m,
                             StartDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 970,
-                            TripPrice = 1172.053053434213m,
+                            TripKm = 653,
+                            TripPrice = 1150.411213005577m,
                             TruckId = 4
                         },
                         new
@@ -9056,10 +9058,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 167,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2826182546552108179419525066m,
+                            EuPerKm = 1.3200370687955890080428954424m,
                             StartDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 758,
-                            TripPrice = 972.2246370286498m,
+                            TripKm = 746,
+                            TripPrice = 984.7476533215094m,
                             TruckId = 5
                         },
                         new
@@ -9067,10 +9069,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 168,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5334300140784410714285714286m,
+                            EuPerKm = 1.8768264630694264487369985141m,
                             StartDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 672,
-                            TripPrice = 1030.4649694607124m,
+                            TripKm = 673,
+                            TripPrice = 1263.104209645724m,
                             TruckId = 6
                         },
                         new
@@ -9078,10 +9080,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 169,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3483667298305543358946212953m,
+                            EuPerKm = 1.8602406370277035330261136713m,
                             StartDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 911,
-                            TripPrice = 1228.362090875635m,
+                            TripKm = 651,
+                            TripPrice = 1211.016654705035m,
                             TruckId = 1
                         },
                         new
@@ -9089,10 +9091,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 170,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0957733142384742630385487528m,
+                            EuPerKm = 1.0259193081350204479065238559m,
                             StartDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 882,
-                            TripPrice = 966.4720631583343m,
+                            TripKm = 1027,
+                            TripPrice = 1053.619129454666m,
                             TruckId = 2
                         },
                         new
@@ -9100,10 +9102,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 171,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5568909814592117647058823529m,
+                            EuPerKm = 1.0492130356006394199785177229m,
                             StartDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 765,
-                            TripPrice = 1191.021600816297m,
+                            TripKm = 931,
+                            TripPrice = 976.8173361441953m,
                             TruckId = 3
                         },
                         new
@@ -9111,10 +9113,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 172,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6780605477052282913165266106m,
+                            EuPerKm = 1.0775387023179586466165413534m,
                             StartDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 714,
-                            TripPrice = 1198.135231061533m,
+                            TripKm = 1064,
+                            TripPrice = 1146.501179266308m,
                             TruckId = 4
                         },
                         new
@@ -9122,10 +9124,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 173,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4754878104780774096385542169m,
+                            EuPerKm = 1.0143173170034408396946564885m,
                             StartDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 664,
-                            TripPrice = 979.7239061574434m,
+                            TripKm = 1048,
+                            TripPrice = 1063.004548219606m,
                             TruckId = 5
                         },
                         new
@@ -9133,10 +9135,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 174,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3729344133012937325905292479m,
+                            EuPerKm = 0.9991469326019862763037511436m,
                             StartDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 718,
-                            TripPrice = 985.7669087503289m,
+                            TripKm = 1093,
+                            TripPrice = 1092.067597333971m,
                             TruckId = 6
                         },
                         new
@@ -9144,10 +9146,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 175,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0048220951733590038314176245m,
+                            EuPerKm = 1.222489812497398635477582846m,
                             StartDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1044,
-                            TripPrice = 1049.0342673609868m,
+                            TripKm = 1026,
+                            TripPrice = 1254.274547622331m,
                             TruckId = 1
                         },
                         new
@@ -9155,10 +9157,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 176,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6785738244874555403556771546m,
+                            EuPerKm = 1.082294459860156686626746507m,
                             StartDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 731,
-                            TripPrice = 1227.03746570033m,
+                            TripKm = 1002,
+                            TripPrice = 1084.459048779877m,
                             TruckId = 2
                         },
                         new
@@ -9166,10 +9168,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 177,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0440001474338941m,
+                            EuPerKm = 1.6512083556366125730994152047m,
                             StartDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1000,
-                            TripPrice = 1044.0001474338941m,
+                            TripKm = 684,
+                            TripPrice = 1129.426515255443m,
                             TruckId = 3
                         },
                         new
@@ -9177,10 +9179,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 178,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2916647397855679723502304147m,
+                            EuPerKm = 1.7508241674370384615384615385m,
                             StartDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 868,
-                            TripPrice = 1121.164994133873m,
+                            TripKm = 728,
+                            TripPrice = 1274.599993894164m,
                             TruckId = 4
                         },
                         new
@@ -9188,10 +9190,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 179,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6187679802605256064690026954m,
+                            EuPerKm = 0.9811496804823060721062618596m,
                             StartDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 742,
-                            TripPrice = 1201.12584135331m,
+                            TripKm = 1054,
+                            TripPrice = 1034.1317632283506m,
                             TruckId = 5
                         },
                         new
@@ -9199,10 +9201,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 180,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0249927827032022684310018904m,
+                            EuPerKm = 1.3309636430542008324661810614m,
                             StartDate = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1058,
-                            TripPrice = 1084.442364099988m,
+                            TripKm = 961,
+                            TripPrice = 1279.056060975087m,
                             TruckId = 6
                         },
                         new
@@ -9210,10 +9212,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 181,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5532992806983565217391304348m,
+                            EuPerKm = 1.7858135437871143270622286541m,
                             StartDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 667,
-                            TripPrice = 1036.0506202258038m,
+                            TripKm = 691,
+                            TripPrice = 1233.997158756896m,
                             TruckId = 1
                         },
                         new
@@ -9221,10 +9223,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 182,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5381735871554034165571616294m,
+                            EuPerKm = 1.4287715192026104734576757532m,
                             StartDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 761,
-                            TripPrice = 1170.550099825262m,
+                            TripKm = 697,
+                            TripPrice = 995.8537488842195m,
                             TruckId = 2
                         },
                         new
@@ -9232,10 +9234,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 183,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2895913358411231578947368421m,
+                            EuPerKm = 1.4027211130514301470588235294m,
                             StartDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 950,
-                            TripPrice = 1225.111769049067m,
+                            TripKm = 816,
+                            TripPrice = 1144.620428249967m,
                             TruckId = 3
                         },
                         new
@@ -9243,10 +9245,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 184,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2053091603557078651685393258m,
+                            EuPerKm = 1.3412774518094699074074074074m,
                             StartDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 890,
-                            TripPrice = 1072.72515271658m,
+                            TripKm = 864,
+                            TripPrice = 1158.863718363382m,
                             TruckId = 4
                         },
                         new
@@ -9254,10 +9256,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 185,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1750266196850183585313174946m,
+                            EuPerKm = 1.2050037376351587822014051522m,
                             StartDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 926,
-                            TripPrice = 1088.074649828327m,
+                            TripKm = 854,
+                            TripPrice = 1029.0731919404256m,
                             TruckId = 5
                         },
                         new
@@ -9265,10 +9267,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 186,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.124238096831740273396424816m,
+                            EuPerKm = 1.0191936409621678328474246842m,
                             StartDate = new DateTime(2023, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 951,
-                            TripPrice = 1069.150430086985m,
+                            TripKm = 1029,
+                            TripPrice = 1048.7502565500707m,
                             TruckId = 6
                         },
                         new
@@ -9276,10 +9278,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 187,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3095669803839834710743801653m,
+                            EuPerKm = 1.0206785383828695384615384615m,
                             StartDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 968,
-                            TripPrice = 1267.660837011696m,
+                            TripKm = 975,
+                            TripPrice = 995.1615749232978m,
                             TruckId = 1
                         },
                         new
@@ -9287,10 +9289,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 188,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3188001608169749403341288783m,
+                            EuPerKm = 1.0521602247091341963322545847m,
                             StartDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 838,
-                            TripPrice = 1105.154534764625m,
+                            TripKm = 927,
+                            TripPrice = 975.3525283053674m,
                             TruckId = 2
                         },
                         new
@@ -9298,10 +9300,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 189,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0122598144321107602956705385m,
+                            EuPerKm = 1.5316294394438661870503597122m,
                             StartDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 947,
-                            TripPrice = 958.61004426720889m,
+                            TripKm = 695,
+                            TripPrice = 1064.482460413487m,
                             TruckId = 3
                         },
                         new
@@ -9309,10 +9311,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 190,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4797223613981721419185282523m,
+                            EuPerKm = 1.4748686579649043250327653997m,
                             StartDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 761,
-                            TripPrice = 1126.068717024009m,
+                            TripKm = 763,
+                            TripPrice = 1125.324786027222m,
                             TruckId = 4
                         },
                         new
@@ -9320,10 +9322,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 191,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7022931732034404761904761905m,
+                            EuPerKm = 1.13998724167272m,
                             StartDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 672,
-                            TripPrice = 1143.941012392712m,
+                            TripKm = 1000,
+                            TripPrice = 1139.98724167272m,
                             TruckId = 5
                         },
                         new
@@ -9331,10 +9333,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 192,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1207052205042051792828685259m,
+                            EuPerKm = 1.467672633848776158940397351m,
                             StartDate = new DateTime(2023, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1004,
-                            TripPrice = 1125.188041386222m,
+                            TripKm = 755,
+                            TripPrice = 1108.092838555826m,
                             TruckId = 6
                         },
                         new
@@ -9342,10 +9344,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 193,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2585930736746054279749478079m,
+                            EuPerKm = 0.9617153979830147826086956522m,
                             StartDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 958,
-                            TripPrice = 1205.732164580272m,
+                            TripKm = 1035,
+                            TripPrice = 995.3754369124203m,
                             TruckId = 1
                         },
                         new
@@ -9353,10 +9355,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 194,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3043012605740685948158253752m,
+                            EuPerKm = 1.1447999746905402542372881356m,
                             StartDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 733,
-                            TripPrice = 956.05282400079228m,
+                            TripKm = 944,
+                            TripPrice = 1080.69117610787m,
                             TruckId = 2
                         },
                         new
@@ -9364,10 +9366,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 195,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0441947612112131147540983607m,
+                            EuPerKm = 1.1292924836376344073647871116m,
                             StartDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1098,
-                            TripPrice = 1146.525847809912m,
+                            TripKm = 869,
+                            TripPrice = 981.3551682811043m,
                             TruckId = 3
                         },
                         new
@@ -9375,10 +9377,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 196,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8769356866580928882438316401m,
+                            EuPerKm = 1.2634650493539429778247096093m,
                             StartDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 689,
-                            TripPrice = 1293.208688107426m,
+                            TripKm = 947,
+                            TripPrice = 1196.501401738184m,
                             TruckId = 4
                         },
                         new
@@ -9386,10 +9388,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 197,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.252546073290078781512605042m,
+                            EuPerKm = 0.9715758164882953651115618661m,
                             StartDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 952,
-                            TripPrice = 1192.423861772155m,
+                            TripKm = 986,
+                            TripPrice = 957.97375505745923m,
                             TruckId = 5
                         },
                         new
@@ -9397,10 +9399,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 198,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9709135593648426349496797804m,
+                            EuPerKm = 1.2152595814882826086956521739m,
                             StartDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1093,
-                            TripPrice = 1061.208520385773m,
+                            TripKm = 966,
+                            TripPrice = 1173.940755717681m,
                             TruckId = 6
                         },
                         new
@@ -9408,10 +9410,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 199,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3291617664044328899637243047m,
+                            EuPerKm = 1.4345713672882776296296296296m,
                             StartDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 827,
-                            TripPrice = 1099.216780816466m,
+                            TripKm = 675,
+                            TripPrice = 968.3356729195874m,
                             TruckId = 1
                         },
                         new
@@ -9419,10 +9421,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 200,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.423646566633548993288590604m,
+                            EuPerKm = 1.3406301907648752717391304348m,
                             StartDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 745,
-                            TripPrice = 1060.616692141994m,
+                            TripKm = 736,
+                            TripPrice = 986.7038204029482m,
                             TruckId = 2
                         },
                         new
@@ -9430,10 +9432,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 201,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8496702705197473200612557427m,
+                            EuPerKm = 1.3306315757064660912453760789m,
                             StartDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 653,
-                            TripPrice = 1207.834686649395m,
+                            TripKm = 811,
+                            TripPrice = 1079.142207897944m,
                             TruckId = 3
                         },
                         new
@@ -9441,10 +9443,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 202,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3391224410495646328852119959m,
+                            EuPerKm = 1.0828619531474043620501635769m,
                             StartDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 967,
-                            TripPrice = 1294.931400494929m,
+                            TripKm = 917,
+                            TripPrice = 992.9844110361698m,
                             TruckId = 4
                         },
                         new
@@ -9452,10 +9454,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 203,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2343711277421977245508982036m,
+                            EuPerKm = 1.4381312477106154949784791966m,
                             StartDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 835,
-                            TripPrice = 1030.6998916647351m,
+                            TripKm = 697,
+                            TripPrice = 1002.377479654299m,
                             TruckId = 5
                         },
                         new
@@ -9463,10 +9465,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 204,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4037402122752888888888888889m,
+                            EuPerKm = 1.0789349843548406581740976645m,
                             StartDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 765,
-                            TripPrice = 1073.861262390596m,
+                            TripKm = 942,
+                            TripPrice = 1016.3567552622599m,
                             TruckId = 6
                         },
                         new
@@ -9474,10 +9476,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 205,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5202131674133075880758807588m,
+                            EuPerKm = 1.3239018055227574257425742574m,
                             StartDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 738,
-                            TripPrice = 1121.917317551021m,
+                            TripKm = 808,
+                            TripPrice = 1069.712658862388m,
                             TruckId = 1
                         },
                         new
@@ -9485,10 +9487,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 206,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2599406036772837528604118993m,
+                            EuPerKm = 1.1384392405322646775745909528m,
                             StartDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 874,
-                            TripPrice = 1101.188087613946m,
+                            TripKm = 1039,
+                            TripPrice = 1182.838370913023m,
                             TruckId = 2
                         },
                         new
@@ -9496,10 +9498,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 207,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1799910354221348623853211009m,
+                            EuPerKm = 1.2164924649124285714285714286m,
                             StartDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1090,
-                            TripPrice = 1286.190228610127m,
+                            TripKm = 966,
+                            TripPrice = 1175.131721105406m,
                             TruckId = 3
                         },
                         new
@@ -9507,10 +9509,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 208,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0963076418496563380281690141m,
+                            EuPerKm = 0.9577052304487164383561643836m,
                             StartDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1065,
-                            TripPrice = 1167.567638569884m,
+                            TripKm = 1095,
+                            TripPrice = 1048.6872273413445m,
                             TruckId = 4
                         },
                         new
@@ -9518,10 +9520,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 209,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4452815261876225247524752475m,
+                            EuPerKm = 1.062046421178075187969924812m,
                             StartDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 808,
-                            TripPrice = 1167.787473159599m,
+                            TripKm = 931,
+                            TripPrice = 988.765218116788m,
                             TruckId = 5
                         },
                         new
@@ -9529,10 +9531,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 210,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.324813590630226530612244898m,
+                            EuPerKm = 1.2318543389148774928774928775m,
                             StartDate = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 980,
-                            TripPrice = 1298.317318817622m,
+                            TripKm = 1053,
+                            TripPrice = 1297.142618877366m,
                             TruckId = 6
                         },
                         new
@@ -9540,10 +9542,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 211,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.184796760979863202545068929m,
+                            EuPerKm = 1.1182479929716975636766334441m,
                             StartDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 943,
-                            TripPrice = 1117.263345604011m,
+                            TripKm = 903,
+                            TripPrice = 1009.7779376534429m,
                             TruckId = 1
                         },
                         new
@@ -9551,10 +9553,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 212,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8678147889012441520467836257m,
+                            EuPerKm = 1.6259317496538837876614060258m,
                             StartDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 684,
-                            TripPrice = 1277.585315608451m,
+                            TripKm = 697,
+                            TripPrice = 1133.274429508757m,
                             TruckId = 2
                         },
                         new
@@ -9562,10 +9564,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 213,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9727238502030123420796890185m,
+                            EuPerKm = 1.3203509433254314928425357873m,
                             StartDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1029,
-                            TripPrice = 1000.9328418588997m,
+                            TripKm = 978,
+                            TripPrice = 1291.303222572272m,
                             TruckId = 3
                         },
                         new
@@ -9573,10 +9575,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 214,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6782158201211467025572005384m,
+                            EuPerKm = 1.1824876754145777777777777778m,
                             StartDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 743,
-                            TripPrice = 1246.914354350012m,
+                            TripKm = 945,
+                            TripPrice = 1117.450853266776m,
                             TruckId = 4
                         },
                         new
@@ -9584,10 +9586,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 215,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2092251034323767051416579224m,
+                            EuPerKm = 1.5668106660887352572145545797m,
                             StartDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 953,
-                            TripPrice = 1152.391523571055m,
+                            TripKm = 797,
+                            TripPrice = 1248.748100872722m,
                             TruckId = 5
                         },
                         new
@@ -9595,10 +9597,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 216,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3949639443366682867557715674m,
+                            EuPerKm = 1.1691915195532893401015228426m,
                             StartDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 823,
-                            TripPrice = 1148.055326189078m,
+                            TripKm = 985,
+                            TripPrice = 1151.65364675999m,
                             TruckId = 6
                         },
                         new
@@ -9606,10 +9608,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 217,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.172206607341877431906614786m,
+                            EuPerKm = 1.7904259728042046109510086455m,
                             StartDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1028,
-                            TripPrice = 1205.02839234745m,
+                            TripKm = 694,
+                            TripPrice = 1242.555625126118m,
                             TruckId = 1
                         },
                         new
@@ -9617,10 +9619,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 218,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3735834232971748878923766816m,
+                            EuPerKm = 1.3428159674513003618817852835m,
                             StartDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 892,
-                            TripPrice = 1225.23641358108m,
+                            TripKm = 829,
+                            TripPrice = 1113.194437017128m,
                             TruckId = 2
                         },
                         new
@@ -9628,10 +9630,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 219,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8551481767299640718562874251m,
+                            EuPerKm = 0.9758274845947300561797752809m,
                             StartDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 668,
-                            TripPrice = 1239.238982055616m,
+                            TripKm = 1068,
+                            TripPrice = 1042.1837535471717m,
                             TruckId = 3
                         },
                         new
@@ -9639,10 +9641,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 220,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3610940305999625m,
+                            EuPerKm = 1.6222967558271596180081855389m,
                             StartDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 736,
-                            TripPrice = 1001.7652065215724m,
+                            TripKm = 733,
+                            TripPrice = 1189.143522021308m,
                             TruckId = 4
                         },
                         new
@@ -9650,10 +9652,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 221,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4981543586220549581839904421m,
+                            EuPerKm = 0.9936537997527178308823529412m,
                             StartDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 837,
-                            TripPrice = 1253.95519816666m,
+                            TripKm = 1088,
+                            TripPrice = 1081.095334130957m,
                             TruckId = 5
                         },
                         new
@@ -9661,10 +9663,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 222,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1555596653935330143540669856m,
+                            EuPerKm = 1.3641940665158381877022653722m,
                             StartDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1045,
-                            TripPrice = 1207.559850336242m,
+                            TripKm = 927,
+                            TripPrice = 1264.607899660182m,
                             TruckId = 6
                         },
                         new
@@ -9672,10 +9674,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 223,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6489231843743515923566878981m,
+                            EuPerKm = 1.6176169280611991017964071856m,
                             StartDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 785,
-                            TripPrice = 1294.404699733866m,
+                            TripKm = 668,
+                            TripPrice = 1080.568107944881m,
                             TruckId = 1
                         },
                         new
@@ -9683,10 +9685,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 224,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3019752509963115637319316689m,
+                            EuPerKm = 1.5380020965473957016434892541m,
                             StartDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 761,
-                            TripPrice = 990.8031660081931m,
+                            TripKm = 791,
+                            TripPrice = 1216.55965836899m,
                             TruckId = 2
                         },
                         new
@@ -9694,10 +9696,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 225,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9114699501443554140127388535m,
+                            EuPerKm = 1.2267756152857680569684638861m,
                             StartDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1099,
-                            TripPrice = 1001.7054752086466m,
+                            TripKm = 983,
+                            TripPrice = 1205.92042982591m,
                             TruckId = 3
                         },
                         new
@@ -9705,10 +9707,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 226,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2259814341282356194690265487m,
+                            EuPerKm = 1.1650251430959860365198711063m,
                             StartDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 904,
-                            TripPrice = 1108.287216451925m,
+                            TripKm = 931,
+                            TripPrice = 1084.638408222363m,
                             TruckId = 4
                         },
                         new
@@ -9716,10 +9718,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 227,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4559570003353978115501519757m,
+                            EuPerKm = 1.6495069016044772413793103448m,
                             StartDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 658,
-                            TripPrice = 958.01970622069176m,
+                            TripKm = 725,
+                            TripPrice = 1195.892503663246m,
                             TruckId = 5
                         },
                         new
@@ -9727,10 +9729,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 228,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1756556407469373814041745731m,
+                            EuPerKm = 1.4616847276487950819672131148m,
                             StartDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1054,
-                            TripPrice = 1239.141045347272m,
+                            TripKm = 854,
+                            TripPrice = 1248.278757412071m,
                             TruckId = 6
                         },
                         new
@@ -9738,10 +9740,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 229,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1851059731119968944099378882m,
+                            EuPerKm = 1.6418542462895270457697642164m,
                             StartDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 966,
-                            TripPrice = 1144.812370026189m,
+                            TripKm = 721,
+                            TripPrice = 1183.776911574749m,
                             TruckId = 1
                         },
                         new
@@ -9749,10 +9751,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 230,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5620075238782874543239951279m,
+                            EuPerKm = 1.0049279607516819012797074954m,
                             StartDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 821,
-                            TripPrice = 1282.408177104074m,
+                            TripKm = 1094,
+                            TripPrice = 1099.39118906234m,
                             TruckId = 2
                         },
                         new
@@ -9760,10 +9762,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 231,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.131198357945162962962962963m,
+                            EuPerKm = 1.0943110986497966728280961183m,
                             StartDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 918,
-                            TripPrice = 1038.4400925936596m,
+                            TripKm = 1082,
+                            TripPrice = 1184.04460873908m,
                             TruckId = 3
                         },
                         new
@@ -9771,10 +9773,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 232,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1140547501847427331887201735m,
+                            EuPerKm = 0.9905393456547877731529656608m,
                             StartDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 922,
-                            TripPrice = 1027.1584796703328m,
+                            TripKm = 961,
+                            TripPrice = 951.90831117425105m,
                             TruckId = 4
                         },
                         new
@@ -9782,10 +9784,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 233,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2768839252404787654320987654m,
+                            EuPerKm = 1.1880697582682502443792766373m,
                             StartDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 810,
-                            TripPrice = 1034.2759794447878m,
+                            TripKm = 1023,
+                            TripPrice = 1215.39536270842m,
                             TruckId = 5
                         },
                         new
@@ -9793,10 +9795,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 234,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6391241259005170670037926675m,
+                            EuPerKm = 1.3998745746826191562143671608m,
                             StartDate = new DateTime(2023, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 791,
-                            TripPrice = 1296.547183587309m,
+                            TripKm = 877,
+                            TripPrice = 1227.690001996657m,
                             TruckId = 6
                         },
                         new
@@ -9804,10 +9806,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 235,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5228872566039738406658739596m,
+                            EuPerKm = 1.2054920369876233140655105973m,
                             StartDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 841,
-                            TripPrice = 1280.748182803942m,
+                            TripKm = 1038,
+                            TripPrice = 1251.300734393153m,
                             TruckId = 1
                         },
                         new
@@ -9815,10 +9817,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 236,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5117938737263281452658884565m,
+                            EuPerKm = 1.06751622744686952288218111m,
                             StartDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 771,
-                            TripPrice = 1165.593076642999m,
+                            TripKm = 1027,
+                            TripPrice = 1096.339165587935m,
                             TruckId = 2
                         },
                         new
@@ -9826,10 +9828,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 237,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2822637761684783653846153846m,
+                            EuPerKm = 1.4216259131927698898408812729m,
                             StartDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 832,
-                            TripPrice = 1066.843461772174m,
+                            TripKm = 817,
+                            TripPrice = 1161.468371078493m,
                             TruckId = 3
                         },
                         new
@@ -9837,10 +9839,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 238,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2809075224994474002418379686m,
+                            EuPerKm = 1.0479705644066830403309203723m,
                             StartDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 827,
-                            TripPrice = 1059.310521107043m,
+                            TripKm = 967,
+                            TripPrice = 1013.3875357812625m,
                             TruckId = 4
                         },
                         new
@@ -9848,10 +9850,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 239,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1693059747566246472248353716m,
+                            EuPerKm = 1.2032163250776567796610169492m,
                             StartDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1063,
-                            TripPrice = 1242.972251166292m,
+                            TripKm = 944,
+                            TripPrice = 1135.836210873308m,
                             TruckId = 5
                         },
                         new
@@ -9859,10 +9861,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 240,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4519749704276716826265389877m,
+                            EuPerKm = 1.5910790956029239130434782609m,
                             StartDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 731,
-                            TripPrice = 1061.393703382628m,
+                            TripKm = 736,
+                            TripPrice = 1171.034214363752m,
                             TruckId = 6
                         },
                         new
@@ -9870,10 +9872,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 241,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2107735679003669364161849711m,
+                            EuPerKm = 1.4645163030896890660592255125m,
                             StartDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 865,
-                            TripPrice = 1047.3191362338174m,
+                            TripKm = 878,
+                            TripPrice = 1285.845314112747m,
                             TruckId = 1
                         },
                         new
@@ -9881,10 +9883,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 242,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.321829470232404786680541103m,
+                            EuPerKm = 1.3749641128509558998808104887m,
                             StartDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 961,
-                            TripPrice = 1270.278120893341m,
+                            TripKm = 839,
+                            TripPrice = 1153.594890681952m,
                             TruckId = 2
                         },
                         new
@@ -9892,10 +9894,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 243,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1565608751174263862332695985m,
+                            EuPerKm = 1.053334670281126216814159292m,
                             StartDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1046,
-                            TripPrice = 1209.762675372828m,
+                            TripKm = 904,
+                            TripPrice = 952.2145419341381m,
                             TruckId = 3
                         },
                         new
@@ -9903,10 +9905,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 244,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2645755400153898704358068316m,
+                            EuPerKm = 1.4880248831172322678843226788m,
                             StartDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 849,
-                            TripPrice = 1073.624633473066m,
+                            TripKm = 657,
+                            TripPrice = 977.6323482080216m,
                             TruckId = 4
                         },
                         new
@@ -9914,10 +9916,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 245,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2043037048139609544468546638m,
+                            EuPerKm = 1.6252093297075814917127071823m,
                             StartDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 922,
-                            TripPrice = 1110.368015838472m,
+                            TripKm = 724,
+                            TripPrice = 1176.651554708289m,
                             TruckId = 5
                         },
                         new
@@ -9925,10 +9927,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 246,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0183195645466898832684824903m,
+                            EuPerKm = 1.6173384867747595712098009188m,
                             StartDate = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1028,
-                            TripPrice = 1046.8325123539972m,
+                            TripKm = 653,
+                            TripPrice = 1056.122031863918m,
                             TruckId = 6
                         },
                         new
@@ -9936,10 +9938,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 247,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2774724092160576923076923077m,
+                            EuPerKm = 1.0282596236149257861635220126m,
                             StartDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 754,
-                            TripPrice = 963.2141965489075m,
+                            TripKm = 954,
+                            TripPrice = 980.9596809286392m,
                             TruckId = 1
                         },
                         new
@@ -9947,10 +9949,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 248,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1154404773907320675105485232m,
+                            EuPerKm = 1.734055431130757617728531856m,
                             StartDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 948,
-                            TripPrice = 1057.437572566414m,
+                            TripKm = 722,
+                            TripPrice = 1251.988021276407m,
                             TruckId = 2
                         },
                         new
@@ -9958,10 +9960,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 249,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1292374818447007567567567568m,
+                            EuPerKm = 1.1125238769581418786692759295m,
                             StartDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 925,
-                            TripPrice = 1044.5446707063482m,
+                            TripKm = 1022,
+                            TripPrice = 1136.999402251221m,
                             TruckId = 3
                         },
                         new
@@ -9969,10 +9971,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 250,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0301533750430388257575757576m,
+                            EuPerKm = 1.579290519962293398533007335m,
                             StartDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1056,
-                            TripPrice = 1087.841964045449m,
+                            TripKm = 818,
+                            TripPrice = 1291.859645329156m,
                             TruckId = 4
                         },
                         new
@@ -9980,10 +9982,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 251,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2979776844093811659192825112m,
+                            EuPerKm = 1.5617350136999987113402061856m,
                             StartDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 892,
-                            TripPrice = 1157.796094493168m,
+                            TripKm = 776,
+                            TripPrice = 1211.906370631199m,
                             TruckId = 5
                         },
                         new
@@ -9991,10 +9993,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 252,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2396988138378309859154929577m,
+                            EuPerKm = 1.3618887868377221354166666667m,
                             StartDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 923,
-                            TripPrice = 1144.242005172318m,
+                            TripKm = 768,
+                            TripPrice = 1045.9305882913706m,
                             TruckId = 6
                         },
                         new
@@ -10002,10 +10004,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 253,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3225480579298905972045743329m,
+                            EuPerKm = 1.4910353266714514563106796117m,
                             StartDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 787,
-                            TripPrice = 1040.8453215908239m,
+                            TripKm = 824,
+                            TripPrice = 1228.613109177276m,
                             TruckId = 1
                         },
                         new
@@ -10013,10 +10015,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 254,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3495551178275786240786240786m,
+                            EuPerKm = 1.0594851352422991689750692521m,
                             StartDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 814,
-                            TripPrice = 1098.537865911649m,
+                            TripKm = 1083,
+                            TripPrice = 1147.42240146741m,
                             TruckId = 2
                         },
                         new
@@ -10024,10 +10026,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 255,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2314870277297917396745932416m,
+                            EuPerKm = 1.3925248259984633333333333333m,
                             StartDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 799,
-                            TripPrice = 983.9581351561036m,
+                            TripKm = 900,
+                            TripPrice = 1253.272343398617m,
                             TruckId = 3
                         },
                         new
@@ -10035,10 +10037,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 256,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1384917282140812705366922234m,
+                            EuPerKm = 1.4967851581983346720214190094m,
                             StartDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 913,
-                            TripPrice = 1039.4429478594562m,
+                            TripKm = 747,
+                            TripPrice = 1118.098513174156m,
                             TruckId = 4
                         },
                         new
@@ -10046,10 +10048,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 257,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7088199728721593172119487909m,
+                            EuPerKm = 1.1158545375212039403620873269m,
                             StartDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 703,
-                            TripPrice = 1201.300440929128m,
+                            TripKm = 939,
+                            TripPrice = 1047.7874107324105m,
                             TruckId = 5
                         },
                         new
@@ -10057,10 +10059,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 258,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2724545523127385474860335196m,
+                            EuPerKm = 1.0846238887865998142989786444m,
                             StartDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 895,
-                            TripPrice = 1138.846824319901m,
+                            TripKm = 1077,
+                            TripPrice = 1168.139928223168m,
                             TruckId = 6
                         },
                         new
@@ -10068,10 +10070,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 259,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4308768334910336473755047106m,
+                            EuPerKm = 1.2763060124744307891332470893m,
                             StartDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 743,
-                            TripPrice = 1063.141487283838m,
+                            TripKm = 773,
+                            TripPrice = 986.584547642735m,
                             TruckId = 1
                         },
                         new
@@ -10079,10 +10081,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 260,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1964173575891004739336492891m,
+                            EuPerKm = 0.9642047822415682634730538922m,
                             StartDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1055,
-                            TripPrice = 1262.220312256501m,
+                            TripKm = 1002,
+                            TripPrice = 966.1331918060514m,
                             TruckId = 2
                         },
                         new
@@ -10090,10 +10092,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 261,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3480603372837378151260504202m,
+                            EuPerKm = 1.0060801384225533203125m,
                             StartDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 714,
-                            TripPrice = 962.5150808205888m,
+                            TripKm = 1024,
+                            TripPrice = 1030.2260617446946m,
                             TruckId = 3
                         },
                         new
@@ -10101,10 +10103,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 262,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3177555591711083844580777096m,
+                            EuPerKm = 1.5097094558941183355006501951m,
                             StartDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 978,
-                            TripPrice = 1288.764936869344m,
+                            TripKm = 769,
+                            TripPrice = 1160.966571582577m,
                             TruckId = 4
                         },
                         new
@@ -10112,10 +10114,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 263,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.220226304690425531914893617m,
+                            EuPerKm = 1.4603709329414549819927971188m,
                             StartDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 987,
-                            TripPrice = 1204.36336272945m,
+                            TripKm = 833,
+                            TripPrice = 1216.488987140232m,
                             TruckId = 5
                         },
                         new
@@ -10123,10 +10125,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 264,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2717260668728017148981779207m,
+                            EuPerKm = 1.4374917899741112328767123288m,
                             StartDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 933,
-                            TripPrice = 1186.520420392324m,
+                            TripKm = 730,
+                            TripPrice = 1049.3690066811012m,
                             TruckId = 6
                         },
                         new
@@ -10134,10 +10136,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 265,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3079651237347948430493273543m,
+                            EuPerKm = 1.1971715555299234234234234234m,
                             StartDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 892,
-                            TripPrice = 1166.704890371437m,
+                            TripKm = 888,
+                            TripPrice = 1063.088341310572m,
                             TruckId = 1
                         },
                         new
@@ -10145,10 +10147,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 266,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1568263348561023041474654378m,
+                            EuPerKm = 1.1893652358181622678396871945m,
                             StartDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1085,
-                            TripPrice = 1255.156573318871m,
+                            TripKm = 1023,
+                            TripPrice = 1216.72063624198m,
                             TruckId = 2
                         },
                         new
@@ -10156,10 +10158,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 267,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9530943272527864087301587302m,
+                            EuPerKm = 1.707350378350259946949602122m,
                             StartDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1008,
-                            TripPrice = 960.7190818708087m,
+                            TripKm = 754,
+                            TripPrice = 1287.342185276096m,
                             TruckId = 3
                         },
                         new
@@ -10167,10 +10169,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 268,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1492436479522369402985074627m,
+                            EuPerKm = 1.2539159121170123203285420945m,
                             StartDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1072,
-                            TripPrice = 1231.989190604798m,
+                            TripKm = 974,
+                            TripPrice = 1221.31409840197m,
                             TruckId = 4
                         },
                         new
@@ -10178,10 +10180,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 269,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0473131670008886737657308809m,
+                            EuPerKm = 0.9906561545540191082802547771m,
                             StartDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1033,
-                            TripPrice = 1081.874501511918m,
+                            TripKm = 1099,
+                            TripPrice = 1088.731113854867m,
                             TruckId = 5
                         },
                         new
@@ -10189,10 +10191,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 270,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5472633442842918238993710692m,
+                            EuPerKm = 1.0286646927586162679425837321m,
                             StartDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 795,
-                            TripPrice = 1230.074358706012m,
+                            TripKm = 1045,
+                            TripPrice = 1074.954603932754m,
                             TruckId = 6
                         },
                         new
@@ -10200,10 +10202,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 271,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.48559745333012m,
+                            EuPerKm = 1.6620980148963389121338912134m,
                             StartDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 850,
-                            TripPrice = 1262.757835330602m,
+                            TripKm = 717,
+                            TripPrice = 1191.724276680675m,
                             TruckId = 1
                         },
                         new
@@ -10211,10 +10213,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 272,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7031040115181706989247311828m,
+                            EuPerKm = 1.1847284062842960222016651249m,
                             StartDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 744,
-                            TripPrice = 1267.109384569519m,
+                            TripKm = 1081,
+                            TripPrice = 1280.691407193324m,
                             TruckId = 2
                         },
                         new
@@ -10222,10 +10224,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 273,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9788202194238437209302325581m,
+                            EuPerKm = 1.6455649297401465968586387435m,
                             StartDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1075,
-                            TripPrice = 1052.231735880632m,
+                            TripKm = 764,
+                            TripPrice = 1257.211606321472m,
                             TruckId = 3
                         },
                         new
@@ -10233,10 +10235,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 274,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3398685831006409989594172737m,
+                            EuPerKm = 1.8719559733960929878048780488m,
                             StartDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 961,
-                            TripPrice = 1287.613708359716m,
+                            TripKm = 656,
+                            TripPrice = 1228.003118547837m,
                             TruckId = 4
                         },
                         new
@@ -10244,10 +10246,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 275,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5794896450319104895104895105m,
+                            EuPerKm = 1.4960085883480299145299145299m,
                             StartDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 715,
-                            TripPrice = 1129.335096197816m,
+                            TripKm = 702,
+                            TripPrice = 1050.198029020317m,
                             TruckId = 5
                         },
                         new
@@ -10255,10 +10257,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 276,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2514205330797702834799608993m,
+                            EuPerKm = 1.2956672269930680851063829787m,
                             StartDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1023,
-                            TripPrice = 1280.203205340605m,
+                            TripKm = 940,
+                            TripPrice = 1217.927193373484m,
                             TruckId = 6
                         },
                         new
@@ -10266,10 +10268,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 277,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1377768646460329436769394261m,
+                            EuPerKm = 1.5647315770373401688781664656m,
                             StartDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 941,
-                            TripPrice = 1070.648029631917m,
+                            TripKm = 829,
+                            TripPrice = 1297.162477363955m,
                             TruckId = 1
                         },
                         new
@@ -10277,10 +10279,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 278,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4301256011722538370720188902m,
+                            EuPerKm = 1.233559114552112280701754386m,
                             StartDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 847,
-                            TripPrice = 1211.316384192899m,
+                            TripKm = 855,
+                            TripPrice = 1054.693042942056m,
                             TruckId = 2
                         },
                         new
@@ -10288,10 +10290,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 279,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6710448136991938088829071332m,
+                            EuPerKm = 1.7206558244947603195739014647m,
                             StartDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 743,
-                            TripPrice = 1241.586296578501m,
+                            TripKm = 751,
+                            TripPrice = 1292.212524195565m,
                             TruckId = 3
                         },
                         new
@@ -10299,10 +10301,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 280,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.9395076637628114630467571644m,
+                            EuPerKm = 1.2240759652453932584269662921m,
                             StartDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 663,
-                            TripPrice = 1285.893581074744m,
+                            TripKm = 979,
+                            TripPrice = 1198.37036997524m,
                             TruckId = 4
                         },
                         new
@@ -10310,10 +10312,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 281,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3768151022571150442477876106m,
+                            EuPerKm = 0.9746604174134976030680728667m,
                             StartDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 904,
-                            TripPrice = 1244.640852440432m,
+                            TripKm = 1043,
+                            TripPrice = 1016.570815362278m,
                             TruckId = 5
                         },
                         new
@@ -10321,10 +10323,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 282,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3938369658800141095890410959m,
+                            EuPerKm = 1.6745673841975375170532060027m,
                             StartDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 730,
-                            TripPrice = 1017.5009850924103m,
+                            TripKm = 733,
+                            TripPrice = 1227.457892616795m,
                             TruckId = 6
                         },
                         new
@@ -10332,10 +10334,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 283,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0024391879435216515609264854m,
+                            EuPerKm = 1.4250685699146664392905866303m,
                             StartDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 993,
-                            TripPrice = 995.422113627917m,
+                            TripKm = 733,
+                            TripPrice = 1044.5752617474505m,
                             TruckId = 1
                         },
                         new
@@ -10343,10 +10345,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 284,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2116264380558690835850956697m,
+                            EuPerKm = 1.1408025883793829174664107486m,
                             StartDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 993,
-                            TripPrice = 1203.145052989478m,
+                            TripKm = 1042,
+                            TripPrice = 1188.716297091317m,
                             TruckId = 2
                         },
                         new
@@ -10354,10 +10356,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 285,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5998915148810025873221216041m,
+                            EuPerKm = 1.0281358916687295719844357977m,
                             StartDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 773,
-                            TripPrice = 1236.716141003015m,
+                            TripKm = 1028,
+                            TripPrice = 1056.923696635454m,
                             TruckId = 3
                         },
                         new
@@ -10365,10 +10367,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 286,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1562936759901829501915708812m,
+                            EuPerKm = 1.0523180740262423112767940354m,
                             StartDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1044,
-                            TripPrice = 1207.170597733751m,
+                            TripKm = 1073,
+                            TripPrice = 1129.137293430158m,
                             TruckId = 4
                         },
                         new
@@ -10376,10 +10378,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 287,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3947368581717399563953488372m,
+                            EuPerKm = 1.4309729000838530949105914718m,
                             StartDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 688,
-                            TripPrice = 959.57895842215709m,
+                            TripKm = 727,
+                            TripPrice = 1040.3172983609612m,
                             TruckId = 5
                         },
                         new
@@ -10387,10 +10389,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 288,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5841272860021898355754857997m,
+                            EuPerKm = 1.2990383937304388116308470291m,
                             StartDate = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 669,
-                            TripPrice = 1059.781154335465m,
+                            TripKm = 791,
+                            TripPrice = 1027.5393694407771m,
                             TruckId = 6
                         },
                         new
@@ -10398,10 +10400,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 289,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0793294319939286008230452675m,
+                            EuPerKm = 1.5052874106178898007033997655m,
                             StartDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 972,
-                            TripPrice = 1049.1082078980986m,
+                            TripKm = 853,
+                            TripPrice = 1284.01016125706m,
                             TruckId = 1
                         },
                         new
@@ -10409,10 +10411,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 290,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0906413431547431749241658241m,
+                            EuPerKm = 1.2347384774838457330415754923m,
                             StartDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 989,
-                            TripPrice = 1078.644288380041m,
+                            TripKm = 914,
+                            TripPrice = 1128.550968420235m,
                             TruckId = 2
                         },
                         new
@@ -10420,10 +10422,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 291,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4832608725290137226277372263m,
+                            EuPerKm = 1.1900433064184358264081255771m,
                             StartDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 685,
-                            TripPrice = 1016.0336976823744m,
+                            TripKm = 1083,
+                            TripPrice = 1288.816900851166m,
                             TruckId = 3
                         },
                         new
@@ -10431,10 +10433,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 292,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9344479940291604427333974976m,
+                            EuPerKm = 1.3738316497342033519553072626m,
                             StartDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1039,
-                            TripPrice = 970.8914657962977m,
+                            TripKm = 895,
+                            TripPrice = 1229.579326512112m,
                             TruckId = 4
                         },
                         new
@@ -10442,10 +10444,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 293,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3208792963901495422177009156m,
+                            EuPerKm = 1.6423505136624257142857142857m,
                             StartDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 983,
-                            TripPrice = 1298.424348351517m,
+                            TripKm = 700,
+                            TripPrice = 1149.645359563698m,
                             TruckId = 5
                         },
                         new
@@ -10453,10 +10455,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 294,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7953683830580014577259475219m,
+                            EuPerKm = 1.3811204573256974697469746975m,
                             StartDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 686,
-                            TripPrice = 1231.622710777789m,
+                            TripKm = 909,
+                            TripPrice = 1255.438495709059m,
                             TruckId = 6
                         },
                         new
@@ -10464,10 +10466,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 295,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4936016563345831168831168831m,
+                            EuPerKm = 1.4092256412467083333333333333m,
                             StartDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 770,
-                            TripPrice = 1150.073275377629m,
+                            TripKm = 720,
+                            TripPrice = 1014.64246169763m,
                             TruckId = 1
                         },
                         new
@@ -10475,10 +10477,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 296,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3148456406222787258248009101m,
+                            EuPerKm = 1.6728744539490796221322537112m,
                             StartDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 879,
-                            TripPrice = 1155.749318106983m,
+                            TripKm = 741,
+                            TripPrice = 1239.599970376268m,
                             TruckId = 2
                         },
                         new
@@ -10486,10 +10488,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 297,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.423108876920375m,
+                            EuPerKm = 1.1564164599536028446389496718m,
                             StartDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 848,
-                            TripPrice = 1206.796327628478m,
+                            TripKm = 914,
+                            TripPrice = 1056.964644397593m,
                             TruckId = 3
                         },
                         new
@@ -10497,10 +10499,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 298,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0873631041164206049149338374m,
+                            EuPerKm = 1.2808165111150602836879432624m,
                             StartDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1058,
-                            TripPrice = 1150.430164155173m,
+                            TripKm = 846,
+                            TripPrice = 1083.570768403341m,
                             TruckId = 4
                         },
                         new
@@ -10508,10 +10510,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 299,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9646880404253585156993339676m,
+                            EuPerKm = 1.0211423904160326m,
                             StartDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1051,
-                            TripPrice = 1013.8871304870518m,
+                            TripKm = 1000,
+                            TripPrice = 1021.1423904160326m,
                             TruckId = 5
                         },
                         new
@@ -10519,10 +10521,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 300,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.291515636210889344262295082m,
+                            EuPerKm = 1.4123710141885406685236768802m,
                             StartDate = new DateTime(2023, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 976,
-                            TripPrice = 1260.519260941828m,
+                            TripKm = 718,
+                            TripPrice = 1014.0823881873722m,
                             TruckId = 6
                         },
                         new
@@ -10530,10 +10532,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 301,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5009277661176188055908513342m,
+                            EuPerKm = 1.5046275470672132330827067669m,
                             StartDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 787,
-                            TripPrice = 1181.230151934566m,
+                            TripKm = 665,
+                            TripPrice = 1000.5773187996968m,
                             TruckId = 1
                         },
                         new
@@ -10541,10 +10543,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 302,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.084436337532730732635585157m,
+                            EuPerKm = 0.990259080687779631425800194m,
                             StartDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1051,
-                            TripPrice = 1139.7425907469m,
+                            TripKm = 1031,
+                            TripPrice = 1020.9571121891008m,
                             TruckId = 2
                         },
                         new
@@ -10552,10 +10554,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 303,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.463055860133143184421534937m,
+                            EuPerKm = 1.3945380243520336134453781513m,
                             StartDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 873,
-                            TripPrice = 1277.247765896234m,
+                            TripKm = 833,
+                            TripPrice = 1161.650174285244m,
                             TruckId = 3
                         },
                         new
@@ -10563,10 +10565,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 304,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1842642074663839373163565132m,
+                            EuPerKm = 1.2562215381437591346153846154m,
                             StartDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1021,
-                            TripPrice = 1209.133755823178m,
+                            TripKm = 832,
+                            TripPrice = 1045.1763197356076m,
                             TruckId = 4
                         },
                         new
@@ -10574,10 +10576,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 305,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7364267402688136986301369863m,
+                            EuPerKm = 1.4830982058528685157421289355m,
                             StartDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 730,
-                            TripPrice = 1267.591520396234m,
+                            TripKm = 667,
+                            TripPrice = 989.2265033038633m,
                             TruckId = 5
                         },
                         new
@@ -10585,10 +10587,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 306,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.9078884292533675595238095238m,
+                            EuPerKm = 1.6288698900412395128552097429m,
                             StartDate = new DateTime(2023, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 672,
-                            TripPrice = 1282.101024458263m,
+                            TripKm = 739,
+                            TripPrice = 1203.734848740476m,
                             TruckId = 6
                         },
                         new
@@ -10596,10 +10598,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 307,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.9043117505432840236686390533m,
+                            EuPerKm = 1.1581489100972127232142857143m,
                             StartDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 676,
-                            TripPrice = 1287.31474336726m,
+                            TripKm = 896,
+                            TripPrice = 1037.7014234471026m,
                             TruckId = 1
                         },
                         new
@@ -10607,10 +10609,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 308,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2251004516531854663774403471m,
+                            EuPerKm = 1.6715964542511595174262734584m,
                             StartDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 922,
-                            TripPrice = 1129.542616424237m,
+                            TripKm = 746,
+                            TripPrice = 1247.010954871365m,
                             TruckId = 2
                         },
                         new
@@ -10618,10 +10620,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 309,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1449588489680635071090047393m,
+                            EuPerKm = 1.0416216506027596984924623116m,
                             StartDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1055,
-                            TripPrice = 1207.931585661307m,
+                            TripKm = 995,
+                            TripPrice = 1036.4135423497459m,
                             TruckId = 3
                         },
                         new
@@ -10629,10 +10631,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 310,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.110469965958401380042462845m,
+                            EuPerKm = 1.4260538058862139175257731959m,
                             StartDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 942,
-                            TripPrice = 1046.0627079328141m,
+                            TripKm = 776,
+                            TripPrice = 1106.617753367702m,
                             TruckId = 4
                         },
                         new
@@ -10640,10 +10642,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 311,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.230368071228300726392251816m,
+                            EuPerKm = 1.5312159610230748959778085992m,
                             StartDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 826,
-                            TripPrice = 1016.2840268345764m,
+                            TripKm = 721,
+                            TripPrice = 1104.006707897637m,
                             TruckId = 5
                         },
                         new
@@ -10651,10 +10653,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 312,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7820377579269291907514450867m,
+                            EuPerKm = 1.4099199345764655555555555556m,
                             StartDate = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 692,
-                            TripPrice = 1233.170128485435m,
+                            TripKm = 900,
+                            TripPrice = 1268.927941118819m,
                             TruckId = 6
                         },
                         new
@@ -10662,10 +10664,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 313,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5762795006284769001490312966m,
+                            EuPerKm = 1.102029728253349457058242843m,
                             StartDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 671,
-                            TripPrice = 1057.683544921708m,
+                            TripKm = 1013,
+                            TripPrice = 1116.356114720643m,
                             TruckId = 1
                         },
                         new
@@ -10673,10 +10675,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 314,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2807150615345036119711042312m,
+                            EuPerKm = 1.1384226946765108866442199776m,
                             StartDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 969,
-                            TripPrice = 1241.012894626934m,
+                            TripKm = 891,
+                            TripPrice = 1014.3346209567712m,
                             TruckId = 2
                         },
                         new
@@ -10684,10 +10686,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 315,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5105152491138939393939393939m,
+                            EuPerKm = 1.4283319666995556586826347305m,
                             StartDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 792,
-                            TripPrice = 1196.328077298204m,
+                            TripKm = 668,
+                            TripPrice = 954.12575375530318m,
                             TruckId = 3
                         },
                         new
@@ -10695,10 +10697,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 316,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2244187688152841796875m,
+                            EuPerKm = 1.3130576710259904661016949153m,
                             StartDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1024,
-                            TripPrice = 1253.804819266851m,
+                            TripKm = 944,
+                            TripPrice = 1239.526441448535m,
                             TruckId = 4
                         },
                         new
@@ -10706,10 +10708,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 317,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1270076979605201698513800425m,
+                            EuPerKm = 1.3270444335600574837310195228m,
                             StartDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 942,
-                            TripPrice = 1061.64125147881m,
+                            TripKm = 922,
+                            TripPrice = 1223.534967742373m,
                             TruckId = 5
                         },
                         new
@@ -10717,10 +10719,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 318,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3734893662591470937129300119m,
+                            EuPerKm = 1.5080697295611867559523809524m,
                             StartDate = new DateTime(2023, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 843,
-                            TripPrice = 1157.851535756461m,
+                            TripKm = 672,
+                            TripPrice = 1013.4228582651175m,
                             TruckId = 6
                         },
                         new
@@ -10728,10 +10730,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 319,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0363361045194612387612387612m,
+                            EuPerKm = 1.2311528178320674904942965779m,
                             StartDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1001,
-                            TripPrice = 1037.3724406239807m,
+                            TripKm = 1052,
+                            TripPrice = 1295.172764359335m,
                             TruckId = 1
                         },
                         new
@@ -10739,10 +10741,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 320,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3999383467237133423180592992m,
+                            EuPerKm = 1.5976448726540752972258916777m,
                             StartDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 742,
-                            TripPrice = 1038.7542532689953m,
+                            TripKm = 757,
+                            TripPrice = 1209.417168599135m,
                             TruckId = 2
                         },
                         new
@@ -10750,10 +10752,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 321,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4758379001159382871536523929m,
+                            EuPerKm = 1.3324983050620847639484978541m,
                             StartDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 794,
-                            TripPrice = 1171.815292692055m,
+                            TripKm = 932,
+                            TripPrice = 1241.888420317863m,
                             TruckId = 3
                         },
                         new
@@ -10761,10 +10763,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 322,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.726703535098781437125748503m,
+                            EuPerKm = 1.2060819172603550792171481827m,
                             StartDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 668,
-                            TripPrice = 1153.437961445986m,
+                            TripKm = 1073,
+                            TripPrice = 1294.125897220361m,
                             TruckId = 4
                         },
                         new
@@ -10772,10 +10774,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 323,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4134412520633675953079178886m,
+                            EuPerKm = 1.4567033173899057377049180328m,
                             StartDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 682,
-                            TripPrice = 963.9669339072167m,
+                            TripKm = 732,
+                            TripPrice = 1066.306828329411m,
                             TruckId = 5
                         },
                         new
@@ -10783,10 +10785,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 324,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1533494760308415458937198068m,
+                            EuPerKm = 1.6837395215256697108066971081m,
                             StartDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1035,
-                            TripPrice = 1193.716707691921m,
+                            TripKm = 657,
+                            TripPrice = 1106.216865642365m,
                             TruckId = 6
                         },
                         new
@@ -10794,10 +10796,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 325,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.64728358175992m,
+                            EuPerKm = 1.0544257658835796257796257796m,
                             StartDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 650,
-                            TripPrice = 1070.734328143948m,
+                            TripKm = 962,
+                            TripPrice = 1014.3575867800036m,
                             TruckId = 1
                         },
                         new
@@ -10805,10 +10807,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 326,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5299865661214589963280293758m,
+                            EuPerKm = 1.2363136588557682403433476395m,
                             StartDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 817,
-                            TripPrice = 1249.999024521232m,
+                            TripKm = 932,
+                            TripPrice = 1152.244330053576m,
                             TruckId = 2
                         },
                         new
@@ -10816,10 +10818,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 327,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3120502908139195849546044099m,
+                            EuPerKm = 1.1400272848670210645526613817m,
                             StartDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 771,
-                            TripPrice = 1011.590774217532m,
+                            TripKm = 883,
+                            TripPrice = 1006.6440925375796m,
                             TruckId = 3
                         },
                         new
@@ -10827,10 +10829,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 328,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1423412855513537037037037037m,
+                            EuPerKm = 1.4840653697555543345543345543m,
                             StartDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1080,
-                            TripPrice = 1233.728588395462m,
+                            TripKm = 819,
+                            TripPrice = 1215.449537829799m,
                             TruckId = 4
                         },
                         new
@@ -10838,10 +10840,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 329,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7930632439189125188536953243m,
+                            EuPerKm = 0.987007326715436397400185701m,
                             StartDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 663,
-                            TripPrice = 1188.800930718239m,
+                            TripKm = 1077,
+                            TripPrice = 1063.006890872525m,
                             TruckId = 5
                         },
                         new
@@ -10849,10 +10851,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 330,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1098840163939400921658986175m,
+                            EuPerKm = 1.180713223721347953216374269m,
                             StartDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 868,
-                            TripPrice = 963.37932622994m,
+                            TripKm = 1026,
+                            TripPrice = 1211.411767538103m,
                             TruckId = 6
                         },
                         new
@@ -10860,10 +10862,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 331,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4526747251204850208044382802m,
+                            EuPerKm = 1.4139009579384933035714285714m,
                             StartDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 721,
-                            TripPrice = 1047.3784768118697m,
+                            TripKm = 896,
+                            TripPrice = 1266.85525831289m,
                             TruckId = 1
                         },
                         new
@@ -10871,10 +10873,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 332,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9766021319382807051909892262m,
+                            EuPerKm = 1.3447796124331554726368159204m,
                             StartDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1021,
-                            TripPrice = 997.1107767089846m,
+                            TripKm = 804,
+                            TripPrice = 1081.202808396257m,
                             TruckId = 2
                         },
                         new
@@ -10882,10 +10884,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 333,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0069919790953026973026973027m,
+                            EuPerKm = 1.7816306482944647887323943662m,
                             StartDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1001,
-                            TripPrice = 1007.998971074398m,
+                            TripKm = 710,
+                            TripPrice = 1264.95776028907m,
                             TruckId = 3
                         },
                         new
@@ -10893,10 +10895,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 334,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5567861961058739184177997528m,
+                            EuPerKm = 1.1151798452145698818897637795m,
                             StartDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 809,
-                            TripPrice = 1259.440032649652m,
+                            TripKm = 1016,
+                            TripPrice = 1133.022722738003m,
                             TruckId = 4
                         },
                         new
@@ -10904,10 +10906,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 335,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1890742113773783209351753454m,
+                            EuPerKm = 1.1014316911567786046511627907m,
                             StartDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 941,
-                            TripPrice = 1118.918832906113m,
+                            TripKm = 1075,
+                            TripPrice = 1184.039067993537m,
                             TruckId = 5
                         },
                         new
@@ -10915,10 +10917,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 336,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1038266513427130952380952381m,
+                            EuPerKm = 1.5188831293604709677419354839m,
                             StartDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 924,
-                            TripPrice = 1019.9358258406669m,
+                            TripKm = 775,
+                            TripPrice = 1177.134425254365m,
                             TruckId = 6
                         },
                         new
@@ -10926,10 +10928,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 337,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1901205950713450346420323326m,
+                            EuPerKm = 1.1805647988876263221153846154m,
                             StartDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 866,
-                            TripPrice = 1030.6444353317848m,
+                            TripKm = 832,
+                            TripPrice = 982.2299126745051m,
                             TruckId = 1
                         },
                         new
@@ -10937,10 +10939,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 338,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5081916832447078804347826087m,
+                            EuPerKm = 1.0975381116932746913580246914m,
                             StartDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 736,
-                            TripPrice = 1110.029078868105m,
+                            TripKm = 972,
+                            TripPrice = 1066.807044565863m,
                             TruckId = 2
                         },
                         new
@@ -10948,10 +10950,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 339,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.766414867346615819209039548m,
+                            EuPerKm = 1.3497867993121363088057901086m,
                             StartDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 708,
-                            TripPrice = 1250.621726081404m,
+                            TripKm = 829,
+                            TripPrice = 1118.973256629761m,
                             TruckId = 3
                         },
                         new
@@ -10959,10 +10961,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 340,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1392976847148672897196261682m,
+                            EuPerKm = 1.1161898342849427038626609442m,
                             StartDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 856,
-                            TripPrice = 975.2388181159264m,
+                            TripKm = 932,
+                            TripPrice = 1040.2889255535666m,
                             TruckId = 4
                         },
                         new
@@ -10970,10 +10972,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 341,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1473688751202595744680851064m,
+                            EuPerKm = 1.2065211571909342984409799555m,
                             StartDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 940,
-                            TripPrice = 1078.526742613044m,
+                            TripKm = 898,
+                            TripPrice = 1083.455999157459m,
                             TruckId = 5
                         },
                         new
@@ -10981,10 +10983,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 342,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3124347668620816993464052288m,
+                            EuPerKm = 1.0577078636501155378486055777m,
                             StartDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 918,
-                            TripPrice = 1204.815115979391m,
+                            TripKm = 1004,
+                            TripPrice = 1061.938695104716m,
                             TruckId = 6
                         },
                         new
@@ -10992,10 +10994,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 343,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.55511074305359514687100894m,
+                            EuPerKm = 1.7510282533745329249617151608m,
                             StartDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 783,
-                            TripPrice = 1217.651711810965m,
+                            TripKm = 653,
+                            TripPrice = 1143.42144945357m,
                             TruckId = 1
                         },
                         new
@@ -11003,10 +11005,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 344,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3002275332886696230598669623m,
+                            EuPerKm = 1.4477351838853895104895104895m,
                             StartDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 902,
-                            TripPrice = 1172.80523502638m,
+                            TripKm = 715,
+                            TripPrice = 1035.1306564780535m,
                             TruckId = 2
                         },
                         new
@@ -11014,10 +11016,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 345,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.731552801526665158371040724m,
+                            EuPerKm = 1.5528027873413389175257731959m,
                             StartDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 663,
-                            TripPrice = 1148.019507412179m,
+                            TripKm = 776,
+                            TripPrice = 1204.974962976879m,
                             TruckId = 3
                         },
                         new
@@ -11025,10 +11027,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 346,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2840142709101143497757847534m,
+                            EuPerKm = 1.4735909510924638633377135348m,
                             StartDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 892,
-                            TripPrice = 1145.340729651822m,
+                            TripKm = 761,
+                            TripPrice = 1121.402713781365m,
                             TruckId = 4
                         },
                         new
@@ -11036,10 +11038,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 347,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9835325662959183495145631068m,
+                            EuPerKm = 1.1955835849344385527876631079m,
                             StartDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1030,
-                            TripPrice = 1013.0385432847959m,
+                            TripKm = 843,
+                            TripPrice = 1007.8769620997317m,
                             TruckId = 5
                         },
                         new
@@ -11047,10 +11049,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 348,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3616155830320639606396063961m,
+                            EuPerKm = 0.9686476139956751178133836004m,
                             StartDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 813,
-                            TripPrice = 1106.993469005068m,
+                            TripKm = 1061,
+                            TripPrice = 1027.7351184494113m,
                             TruckId = 6
                         },
                         new
@@ -11058,10 +11060,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 349,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4156168723814872122762148338m,
+                            EuPerKm = 1.4470728413511233236151603499m,
                             StartDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 782,
-                            TripPrice = 1107.012394202323m,
+                            TripKm = 686,
+                            TripPrice = 992.6919691668706m,
                             TruckId = 1
                         },
                         new
@@ -11069,10 +11071,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 350,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.152456933097402224281742354m,
+                            EuPerKm = 1.7211665926671870026525198939m,
                             StartDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1079,
-                            TripPrice = 1243.501030812097m,
+                            TripKm = 754,
+                            TripPrice = 1297.759610871059m,
                             TruckId = 2
                         },
                         new
@@ -11080,10 +11082,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 351,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3573913888001252676659528908m,
+                            EuPerKm = 1.2982547050980578697421981004m,
                             StartDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 934,
-                            TripPrice = 1267.803557139317m,
+                            TripKm = 737,
+                            TripPrice = 956.81371765726865m,
                             TruckId = 3
                         },
                         new
@@ -11091,10 +11093,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 352,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1030522531029567010309278351m,
+                            EuPerKm = 1.0437586772694674329501915709m,
                             StartDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 970,
-                            TripPrice = 1069.960685509868m,
+                            TripKm = 1044,
+                            TripPrice = 1089.684059069324m,
                             TruckId = 4
                         },
                         new
@@ -11102,10 +11104,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 353,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5926915470485992167101827676m,
+                            EuPerKm = 1.1545278464467314285714285714m,
                             StartDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 766,
-                            TripPrice = 1220.001725039227m,
+                            TripKm = 1050,
+                            TripPrice = 1212.254238769068m,
                             TruckId = 5
                         },
                         new
@@ -11113,10 +11115,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 354,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6561911776948756906077348066m,
+                            EuPerKm = 1.3087742172338442714126807564m,
                             StartDate = new DateTime(2023, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 724,
-                            TripPrice = 1199.08241265109m,
+                            TripKm = 899,
+                            TripPrice = 1176.588021293226m,
                             TruckId = 6
                         },
                         new
@@ -11124,10 +11126,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 355,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5858611072108380716934487021m,
+                            EuPerKm = 1.2080328083576012461059190031m,
                             StartDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 809,
-                            TripPrice = 1282.961635733568m,
+                            TripKm = 963,
+                            TripPrice = 1163.33559444837m,
                             TruckId = 1
                         },
                         new
@@ -11135,10 +11137,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 356,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1514264711124736297828335057m,
+                            EuPerKm = 1.4796734388625337078651685393m,
                             StartDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 967,
-                            TripPrice = 1113.429397565762m,
+                            TripKm = 712,
+                            TripPrice = 1053.527488470124m,
                             TruckId = 2
                         },
                         new
@@ -11146,10 +11148,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 357,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0153692784731730769230769231m,
+                            EuPerKm = 0.8908928443992703327171903882m,
                             StartDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1092,
-                            TripPrice = 1108.783252092705m,
+                            TripKm = 1082,
+                            TripPrice = 963.9460576400105m,
                             TruckId = 3
                         },
                         new
@@ -11157,10 +11159,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 358,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4824635156821961325966850829m,
+                            EuPerKm = 1.0675078896861900826446280992m,
                             StartDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 724,
-                            TripPrice = 1073.30358535391m,
+                            TripKm = 1089,
+                            TripPrice = 1162.516091868261m,
                             TruckId = 4
                         },
                         new
@@ -11168,10 +11170,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 359,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5411156302616348808030112923m,
+                            EuPerKm = 1.1003110794887721590909090909m,
                             StartDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 797,
-                            TripPrice = 1228.269157318523m,
+                            TripKm = 880,
+                            TripPrice = 968.2737499501195m,
                             TruckId = 5
                         },
                         new
@@ -11179,10 +11181,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 360,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2075911232792352380952380952m,
+                            EuPerKm = 1.4872034548976828358208955224m,
                             StartDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1050,
-                            TripPrice = 1267.970679443197m,
+                            TripKm = 804,
+                            TripPrice = 1195.711577737737m,
                             TruckId = 6
                         },
                         new
@@ -11190,10 +11192,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 361,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3825187413314901856763925729m,
+                            EuPerKm = 1.6634398498900229419703103914m,
                             StartDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 754,
-                            TripPrice = 1042.4191309639436m,
+                            TripKm = 741,
+                            TripPrice = 1232.608928768507m,
                             TruckId = 1
                         },
                         new
@@ -11201,10 +11203,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 362,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2277717407932870466321243523m,
+                            EuPerKm = 0.8818324478271449585253456221m,
                             StartDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 965,
-                            TripPrice = 1184.799729865522m,
+                            TripKm = 1085,
+                            TripPrice = 956.78820589245228m,
                             TruckId = 2
                         },
                         new
@@ -11212,10 +11214,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 363,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.707904158261487977369165488m,
+                            EuPerKm = 1.3792331603661042553191489362m,
                             StartDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 707,
-                            TripPrice = 1207.488239890872m,
+                            TripKm = 940,
+                            TripPrice = 1296.479170744138m,
                             TruckId = 3
                         },
                         new
@@ -11223,10 +11225,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 364,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5851584801622722137404580153m,
+                            EuPerKm = 1.60193287025948m,
                             StartDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 655,
-                            TripPrice = 1038.2788045062883m,
+                            TripKm = 800,
+                            TripPrice = 1281.546296207584m,
                             TruckId = 4
                         },
                         new
@@ -11234,10 +11236,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 365,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.024391843330588625134264232m,
+                            EuPerKm = 1.403497022924132300357568534m,
                             StartDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 931,
-                            TripPrice = 953.70880614077801m,
+                            TripKm = 839,
+                            TripPrice = 1177.534002233347m,
                             TruckId = 5
                         },
                         new
@@ -11245,10 +11247,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 366,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2525401565937802441731409545m,
+                            EuPerKm = 1.6290429335311190839694656489m,
                             StartDate = new DateTime(2023, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 901,
-                            TripPrice = 1128.538681090996m,
+                            TripKm = 655,
+                            TripPrice = 1067.023121462883m,
                             TruckId = 6
                         },
                         new
@@ -11256,10 +11258,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 367,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1347823073242741457858769932m,
+                            EuPerKm = 1.3037518912359486624203821656m,
                             StartDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 878,
-                            TripPrice = 996.3388658307127m,
+                            TripKm = 785,
+                            TripPrice = 1023.4452346202197m,
                             TruckId = 1
                         },
                         new
@@ -11267,10 +11269,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 368,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3865886191631514666666666667m,
+                            EuPerKm = 1.2069651817806583242655059848m,
                             StartDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 750,
-                            TripPrice = 1039.9414643723636m,
+                            TripKm = 919,
+                            TripPrice = 1109.201002056425m,
                             TruckId = 2
                         },
                         new
@@ -11278,10 +11280,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 369,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1649524622537066381156316916m,
+                            EuPerKm = 1.5727707092951150602409638554m,
                             StartDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 934,
-                            TripPrice = 1088.065599744962m,
+                            TripKm = 664,
+                            TripPrice = 1044.3197509719564m,
                             TruckId = 3
                         },
                         new
@@ -11289,10 +11291,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 370,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.153799394314240695067264574m,
+                            EuPerKm = 1.0710268419917216629464285714m,
                             StartDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 892,
-                            TripPrice = 1029.1890597283027m,
+                            TripKm = 896,
+                            TripPrice = 959.64005042458261m,
                             TruckId = 4
                         },
                         new
@@ -11300,10 +11302,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 371,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5280183764560368663594470046m,
+                            EuPerKm = 1.5987941045571134020618556701m,
                             StartDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 651,
-                            TripPrice = 994.73996307288m,
+                            TripKm = 679,
+                            TripPrice = 1085.58119699428m,
                             TruckId = 5
                         },
                         new
@@ -11311,10 +11313,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 372,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4426618620151432706222865412m,
+                            EuPerKm = 1.1666793486302570228091236495m,
                             StartDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 691,
-                            TripPrice = 996.879346652464m,
+                            TripKm = 833,
+                            TripPrice = 971.8438974090041m,
                             TruckId = 6
                         },
                         new
@@ -11322,10 +11324,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 373,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5455642467300543478260869565m,
+                            EuPerKm = 1.4940030887179442282749675746m,
                             StartDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 736,
-                            TripPrice = 1137.53528559332m,
+                            TripKm = 771,
+                            TripPrice = 1151.876381401535m,
                             TruckId = 1
                         },
                         new
@@ -11333,10 +11335,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 374,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2139458050597082474226804124m,
+                            EuPerKm = 1.0288831635898471976401179941m,
                             StartDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 970,
-                            TripPrice = 1177.527430907917m,
+                            TripKm = 1017,
+                            TripPrice = 1046.3741773708746m,
                             TruckId = 2
                         },
                         new
@@ -11344,10 +11346,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 375,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4699524486567758518518518519m,
+                            EuPerKm = 1.5068436382032568681318681319m,
                             StartDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 675,
-                            TripPrice = 992.2179028433237m,
+                            TripKm = 728,
+                            TripPrice = 1096.982168611971m,
                             TruckId = 3
                         },
                         new
@@ -11355,10 +11357,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 376,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5659435369480012626262626263m,
+                            EuPerKm = 1.1880187766749824561403508772m,
                             StartDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 792,
-                            TripPrice = 1240.227281262817m,
+                            TripKm = 1026,
+                            TripPrice = 1218.907264868532m,
                             TruckId = 4
                         },
                         new
@@ -11366,10 +11368,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 377,
                             EmployeeId = 4,
                             EndDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2897250926713154897494305239m,
+                            EuPerKm = 1.2162900563690381294964028777m,
                             StartDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 878,
-                            TripPrice = 1132.378631365415m,
+                            TripKm = 834,
+                            TripPrice = 1014.3859070117778m,
                             TruckId = 5
                         },
                         new
@@ -11377,10 +11379,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 378,
                             EmployeeId = 3,
                             EndDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3526891186346982968369829684m,
+                            EuPerKm = 1.0944408542086921806167400881m,
                             StartDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 822,
-                            TripPrice = 1111.910455517722m,
+                            TripKm = 908,
+                            TripPrice = 993.7522956214925m,
                             TruckId = 6
                         },
                         new
@@ -11388,10 +11390,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 379,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5769186176207593659942363112m,
+                            EuPerKm = 1.1142054745810705645161290323m,
                             StartDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 694,
-                            TripPrice = 1094.381520628807m,
+                            TripKm = 992,
+                            TripPrice = 1105.291830784422m,
                             TruckId = 1
                         },
                         new
@@ -11399,10 +11401,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 380,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1565332484964976613657623948m,
+                            EuPerKm = 1.1472736772611993957703927492m,
                             StartDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1069,
-                            TripPrice = 1236.334042642756m,
+                            TripKm = 993,
+                            TripPrice = 1139.242761520371m,
                             TruckId = 2
                         },
                         new
@@ -11410,10 +11412,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 381,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7736593447910178306092124814m,
+                            EuPerKm = 1.7564727907214560606060606061m,
                             StartDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 673,
-                            TripPrice = 1193.672739044355m,
+                            TripKm = 660,
+                            TripPrice = 1159.272041876161m,
                             TruckId = 3
                         },
                         new
@@ -11421,10 +11423,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 382,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2184798520408884339815762538m,
+                            EuPerKm = 1.4579927287565345268542199488m,
                             StartDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 977,
-                            TripPrice = 1190.454815443948m,
+                            TripKm = 782,
+                            TripPrice = 1140.15031388761m,
                             TruckId = 4
                         },
                         new
@@ -11432,10 +11434,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 383,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1112197208719247844827586207m,
+                            EuPerKm = 1.1775645615905934861278648975m,
                             StartDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 928,
-                            TripPrice = 1031.2119009691462m,
+                            TripKm = 829,
+                            TripPrice = 976.201021558602m,
                             TruckId = 5
                         },
                         new
@@ -11443,10 +11445,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 384,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9854751122130949849548645938m,
+                            EuPerKm = 1.0935380930376032757051865332m,
                             StartDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 997,
-                            TripPrice = 982.5186868764557m,
+                            TripKm = 1099,
+                            TripPrice = 1201.798364248326m,
                             TruckId = 6
                         },
                         new
@@ -11454,10 +11456,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 385,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2839337062361197097944377267m,
+                            EuPerKm = 1.1767850930012660958904109589m,
                             StartDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 827,
-                            TripPrice = 1061.813175057271m,
+                            TripKm = 876,
+                            TripPrice = 1030.8637414691091m,
                             TruckId = 1
                         },
                         new
@@ -11465,10 +11467,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 386,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2556027216518340857787810384m,
+                            EuPerKm = 1.2506700296564422434367541766m,
                             StartDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 886,
-                            TripPrice = 1112.464011383525m,
+                            TripKm = 838,
+                            TripPrice = 1048.0614848520986m,
                             TruckId = 2
                         },
                         new
@@ -11476,10 +11478,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 387,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2826034551864439083232810615m,
+                            EuPerKm = 1.1546211255458983700862895494m,
                             StartDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 829,
-                            TripPrice = 1063.278264349562m,
+                            TripKm = 1043,
+                            TripPrice = 1204.269833944372m,
                             TruckId = 3
                         },
                         new
@@ -11487,10 +11489,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 388,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8180802902212217391304347826m,
+                            EuPerKm = 1.0657014031124714436248682824m,
                             StartDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 690,
-                            TripPrice = 1254.475400252643m,
+                            TripKm = 949,
+                            TripPrice = 1011.3506315537354m,
                             TruckId = 4
                         },
                         new
@@ -11498,10 +11500,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 389,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3035455724489170886075949367m,
+                            EuPerKm = 1.5453698052023316062176165803m,
                             StartDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 790,
-                            TripPrice = 1029.8010022346445m,
+                            TripKm = 772,
+                            TripPrice = 1193.0254896162m,
                             TruckId = 5
                         },
                         new
@@ -11509,10 +11511,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 390,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8709592248058685015290519878m,
+                            EuPerKm = 1.7550973280719341917024320458m,
                             StartDate = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 654,
-                            TripPrice = 1223.607333023038m,
+                            TripKm = 699,
+                            TripPrice = 1226.813032322282m,
                             TruckId = 6
                         },
                         new
@@ -11520,10 +11522,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 391,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6205614256382123893805309735m,
+                            EuPerKm = 1.0715401175827109533468559838m,
                             StartDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 678,
-                            TripPrice = 1098.740646582708m,
+                            TripKm = 986,
+                            TripPrice = 1056.538555936553m,
                             TruckId = 1
                         },
                         new
@@ -11531,10 +11533,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 392,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7528084143608491620111731844m,
+                            EuPerKm = 1.456475153842863960113960114m,
                             StartDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 716,
-                            TripPrice = 1255.010824682368m,
+                            TripKm = 702,
+                            TripPrice = 1022.4455579976905m,
                             TruckId = 2
                         },
                         new
@@ -11542,10 +11544,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 393,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.207631987267802875157629256m,
+                            EuPerKm = 0.9077186223018166515013648772m,
                             StartDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 793,
-                            TripPrice = 957.65216590336768m,
+                            TripKm = 1099,
+                            TripPrice = 997.5827659096965m,
                             TruckId = 3
                         },
                         new
@@ -11553,10 +11555,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 394,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3501489851679459148446490219m,
+                            EuPerKm = 1.3058322811518985680190930788m,
                             StartDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 869,
-                            TripPrice = 1173.279468110945m,
+                            TripKm = 838,
+                            TripPrice = 1094.287451605291m,
                             TruckId = 4
                         },
                         new
@@ -11564,10 +11566,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 395,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0690425938438767676767676768m,
+                            EuPerKm = 1.0173306834313839854413102821m,
                             StartDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 990,
-                            TripPrice = 1058.352167905438m,
+                            TripKm = 1099,
+                            TripPrice = 1118.046421091091m,
                             TruckId = 5
                         },
                         new
@@ -11575,10 +11577,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 396,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0071758964849341983317886932m,
+                            EuPerKm = 0.9854391774837094704684317719m,
                             StartDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1079,
-                            TripPrice = 1086.742792307244m,
+                            TripKm = 982,
+                            TripPrice = 967.7012722890027m,
                             TruckId = 6
                         },
                         new
@@ -11586,10 +11588,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 397,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8728071892700670553935860058m,
+                            EuPerKm = 1.1082096740245982575024201355m,
                             StartDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 686,
-                            TripPrice = 1284.745731839266m,
+                            TripKm = 1033,
+                            TripPrice = 1144.78059326741m,
                             TruckId = 1
                         },
                         new
@@ -11597,10 +11599,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 398,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9465621425716564198687910028m,
+                            EuPerKm = 1.317614416581820040899795501m,
                             StartDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1067,
-                            TripPrice = 1009.9818061239574m,
+                            TripKm = 978,
+                            TripPrice = 1288.62689941702m,
                             TruckId = 2
                         },
                         new
@@ -11608,10 +11610,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 399,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.135222002280187624750499002m,
+                            EuPerKm = 1.3970120205456095108695652174m,
                             StartDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1002,
-                            TripPrice = 1137.492446284748m,
+                            TripKm = 736,
+                            TripPrice = 1028.2008471215686m,
                             TruckId = 3
                         },
                         new
@@ -11619,10 +11621,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 400,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1329437239535058479532163743m,
+                            EuPerKm = 1.4671423170260943722943722944m,
                             StartDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1026,
-                            TripPrice = 1162.400260776297m,
+                            TripKm = 693,
+                            TripPrice = 1016.7296256990834m,
                             TruckId = 4
                         },
                         new
@@ -11630,10 +11632,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 401,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2554682029650040201005025126m,
+                            EuPerKm = 1.3939777085665470514429109159m,
                             StartDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 995,
-                            TripPrice = 1249.190861950179m,
+                            TripKm = 797,
+                            TripPrice = 1111.000233727538m,
                             TruckId = 5
                         },
                         new
@@ -11641,10 +11643,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 402,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3416788579688156484458735263m,
+                            EuPerKm = 1.5170939147804849493487698987m,
                             StartDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 933,
-                            TripPrice = 1251.786374484905m,
+                            TripKm = 691,
+                            TripPrice = 1048.3118951133151m,
                             TruckId = 6
                         },
                         new
@@ -11652,10 +11654,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 403,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7841101013856846473029045643m,
+                            EuPerKm = 1.809355800323013986013986014m,
                             StartDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 723,
-                            TripPrice = 1289.91160330185m,
+                            TripKm = 715,
+                            TripPrice = 1293.689397230955m,
                             TruckId = 1
                         },
                         new
@@ -11663,10 +11665,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 404,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2655521208259565217391304348m,
+                            EuPerKm = 1.147851991219457753017641597m,
                             StartDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 920,
-                            TripPrice = 1164.30795115988m,
+                            TripKm = 1077,
+                            TripPrice = 1236.236594543356m,
                             TruckId = 2
                         },
                         new
@@ -11674,10 +11676,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 405,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0349700821042859830667920978m,
+                            EuPerKm = 1.0675175388526190935390549662m,
                             StartDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1063,
-                            TripPrice = 1100.173197276856m,
+                            TripKm = 1037,
+                            TripPrice = 1107.015687790166m,
                             TruckId = 3
                         },
                         new
@@ -11685,10 +11687,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 406,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0192899366344747937671860678m,
+                            EuPerKm = 1.3380813058139643268124280783m,
                             StartDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1091,
-                            TripPrice = 1112.045320868212m,
+                            TripKm = 869,
+                            TripPrice = 1162.792654752335m,
                             TruckId = 4
                         },
                         new
@@ -11696,10 +11698,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 407,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.115472713662104662226450999m,
+                            EuPerKm = 1.2821001758468446014127144299m,
                             StartDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1051,
-                            TripPrice = 1172.361822058872m,
+                            TripKm = 991,
+                            TripPrice = 1270.561274264223m,
                             TruckId = 5
                         },
                         new
@@ -11707,10 +11709,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 408,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1036219966820909970958373669m,
+                            EuPerKm = 1.4070168388481773142112125163m,
                             StartDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1033,
-                            TripPrice = 1140.0415225726m,
+                            TripKm = 767,
+                            TripPrice = 1079.181915396552m,
                             TruckId = 6
                         },
                         new
@@ -11718,10 +11720,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 409,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4059524392725348288075560803m,
+                            EuPerKm = 1.6428404591474769230769230769m,
                             StartDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 847,
-                            TripPrice = 1190.841716063837m,
+                            TripKm = 780,
+                            TripPrice = 1281.415558135032m,
                             TruckId = 1
                         },
                         new
@@ -11729,10 +11731,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 410,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0511564004584336688014638609m,
+                            EuPerKm = 1.6278397558272681940700808625m,
                             StartDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1093,
-                            TripPrice = 1148.913945701068m,
+                            TripKm = 742,
+                            TripPrice = 1207.857098823833m,
                             TruckId = 2
                         },
                         new
@@ -11740,10 +11742,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 411,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0448294050004210526315789474m,
+                            EuPerKm = 1.0625018201312688937568455641m,
                             StartDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1083,
-                            TripPrice = 1131.550245615456m,
+                            TripKm = 913,
+                            TripPrice = 970.0641617798485m,
                             TruckId = 3
                         },
                         new
@@ -11751,10 +11753,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 412,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4508531339914145688350983359m,
+                            EuPerKm = 1.3038999002270742734122712594m,
                             StartDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 661,
-                            TripPrice = 959.01392156832503m,
+                            TripKm = 929,
+                            TripPrice = 1211.323007310952m,
                             TruckId = 4
                         },
                         new
@@ -11762,10 +11764,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 413,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9177206846654830547550432277m,
+                            EuPerKm = 1.3744942268542166301969365427m,
                             StartDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1041,
-                            TripPrice = 955.34723273676786m,
+                            TripKm = 914,
+                            TripPrice = 1256.287723344754m,
                             TruckId = 5
                         },
                         new
@@ -11773,10 +11775,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 414,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9723242608992338679245283019m,
+                            EuPerKm = 1.2189112245261819160387513455m,
                             StartDate = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1060,
-                            TripPrice = 1030.6637165531879m,
+                            TripKm = 929,
+                            TripPrice = 1132.368527584823m,
                             TruckId = 6
                         },
                         new
@@ -11784,10 +11786,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 415,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1828289155912546777546777547m,
+                            EuPerKm = 1.3581317994463540445486518171m,
                             StartDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 962,
-                            TripPrice = 1137.881416798787m,
+                            TripKm = 853,
+                            TripPrice = 1158.48642492774m,
                             TruckId = 1
                         },
                         new
@@ -11795,10 +11797,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 416,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0438098287651056737588652482m,
+                            EuPerKm = 1.1191887663528703703703703704m,
                             StartDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 987,
-                            TripPrice = 1030.2403009911593m,
+                            TripKm = 1026,
+                            TripPrice = 1148.287674278045m,
                             TruckId = 2
                         },
                         new
@@ -11806,10 +11808,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 417,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2090107810218888888888888889m,
+                            EuPerKm = 1.6306623347337030456852791878m,
                             StartDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 918,
-                            TripPrice = 1109.871896978094m,
+                            TripKm = 788,
+                            TripPrice = 1284.961919770158m,
                             TruckId = 3
                         },
                         new
@@ -11817,10 +11819,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 418,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3297389637645195402298850575m,
+                            EuPerKm = 1.5270709827832571428571428571m,
                             StartDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 870,
-                            TripPrice = 1156.872898475132m,
+                            TripKm = 735,
+                            TripPrice = 1122.397172345694m,
                             TruckId = 4
                         },
                         new
@@ -11828,10 +11830,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 419,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.12976366381625m,
+                            EuPerKm = 1.2287106352652362694300518135m,
                             StartDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 952,
-                            TripPrice = 1075.53500795307m,
+                            TripKm = 965,
+                            TripPrice = 1185.705763030953m,
                             TruckId = 5
                         },
                         new
@@ -11839,10 +11841,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 420,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1189455374203679738562091503m,
+                            EuPerKm = 1.4152692881850176678445229682m,
                             StartDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 918,
-                            TripPrice = 1027.1920033518978m,
+                            TripKm = 849,
+                            TripPrice = 1201.56362566908m,
                             TruckId = 6
                         },
                         new
@@ -11850,10 +11852,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 421,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2936101127615141581632653061m,
+                            EuPerKm = 1.2759197272067109704641350211m,
                             StartDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 784,
-                            TripPrice = 1014.1903284050271m,
+                            TripKm = 948,
+                            TripPrice = 1209.571901391962m,
                             TruckId = 1
                         },
                         new
@@ -11861,10 +11863,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 422,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4987475440361009852216748768m,
+                            EuPerKm = 1.3259474642981233624454148472m,
                             StartDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 812,
-                            TripPrice = 1216.983005757314m,
+                            TripKm = 916,
+                            TripPrice = 1214.567877297081m,
                             TruckId = 2
                         },
                         new
@@ -11872,10 +11874,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 423,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4586103648396128843338213763m,
+                            EuPerKm = 1.4131871126503090692124105012m,
                             StartDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 683,
-                            TripPrice = 996.2308791854556m,
+                            TripKm = 838,
+                            TripPrice = 1184.250800400959m,
                             TruckId = 3
                         },
                         new
@@ -11883,10 +11885,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 424,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6306073302390615989515072084m,
+                            EuPerKm = 1.238033204560986m,
                             StartDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 763,
-                            TripPrice = 1244.153392972404m,
+                            TripKm = 1000,
+                            TripPrice = 1238.033204560986m,
                             TruckId = 4
                         },
                         new
@@ -11894,10 +11896,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 425,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4683986640843855243722304284m,
+                            EuPerKm = 1.7023739641744038179148311307m,
                             StartDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 677,
-                            TripPrice = 994.105895585129m,
+                            TripKm = 681,
+                            TripPrice = 1159.316669602769m,
                             TruckId = 5
                         },
                         new
@@ -11905,10 +11907,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 426,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.299372037081812972972972973m,
+                            EuPerKm = 1.4253243410903937007874015748m,
                             StartDate = new DateTime(2024, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 925,
-                            TripPrice = 1201.919134300677m,
+                            TripKm = 762,
+                            TripPrice = 1086.09714791088m,
                             TruckId = 6
                         },
                         new
@@ -11916,10 +11918,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 427,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.060600598168898880976602238m,
+                            EuPerKm = 1.3798372919551169655172413793m,
                             StartDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 983,
-                            TripPrice = 1042.5703880000276m,
+                            TripKm = 725,
+                            TripPrice = 1000.3820366674598m,
                             TruckId = 1
                         },
                         new
@@ -11927,10 +11929,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 428,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0845138326630690661478599222m,
+                            EuPerKm = 0.9785970808479635635635635636m,
                             StartDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1028,
-                            TripPrice = 1114.880219977635m,
+                            TripKm = 999,
+                            TripPrice = 977.6184837671156m,
                             TruckId = 2
                         },
                         new
@@ -11938,10 +11940,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 429,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5854597364969944367176634214m,
+                            EuPerKm = 0.9508445649248861660079051383m,
                             StartDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 719,
-                            TripPrice = 1139.945550541339m,
+                            TripKm = 1012,
+                            TripPrice = 962.2546997039848m,
                             TruckId = 3
                         },
                         new
@@ -11949,10 +11951,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 430,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4774993071401507779349363508m,
+                            EuPerKm = 1.1797060602158447916666666667m,
                             StartDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 707,
-                            TripPrice = 1044.5920101480866m,
+                            TripKm = 960,
+                            TripPrice = 1132.517817807211m,
                             TruckId = 4
                         },
                         new
@@ -11960,10 +11962,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 431,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4476180972813475258918296893m,
+                            EuPerKm = 1.5811065860363472409152086137m,
                             StartDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 869,
-                            TripPrice = 1257.980126537491m,
+                            TripKm = 743,
+                            TripPrice = 1174.762193425006m,
                             TruckId = 5
                         },
                         new
@@ -11971,10 +11973,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 432,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5041493371908617886178861789m,
+                            EuPerKm = 1.1316637112912374517374517375m,
                             StartDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 861,
-                            TripPrice = 1295.072579321332m,
+                            TripKm = 1036,
+                            TripPrice = 1172.403604897722m,
                             TruckId = 6
                         },
                         new
@@ -11982,10 +11984,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 433,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2655728577129463019250253293m,
+                            EuPerKm = 1.2555068948467764705882352941m,
                             StartDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 987,
-                            TripPrice = 1249.120410562678m,
+                            TripKm = 1020,
+                            TripPrice = 1280.617032743712m,
                             TruckId = 1
                         },
                         new
@@ -11993,10 +11995,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 434,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1801314899776526946107784431m,
+                            EuPerKm = 1.0599208639293129844097995546m,
                             StartDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1002,
-                            TripPrice = 1182.491752957608m,
+                            TripKm = 898,
+                            TripPrice = 951.80893580852306m,
                             TruckId = 2
                         },
                         new
@@ -12004,10 +12006,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 435,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7090917571063839416058394161m,
+                            EuPerKm = 1.7136638527848567493112947658m,
                             StartDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 685,
-                            TripPrice = 1170.727853617873m,
+                            TripKm = 726,
+                            TripPrice = 1244.119957121806m,
                             TruckId = 3
                         },
                         new
@@ -12015,10 +12017,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 436,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5994648918336118090452261307m,
+                            EuPerKm = 1.8062048033912873082287308229m,
                             StartDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 796,
-                            TripPrice = 1273.174053899555m,
+                            TripKm = 717,
+                            TripPrice = 1295.048844031553m,
                             TruckId = 4
                         },
                         new
@@ -12026,10 +12028,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 437,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0702623438573404371584699454m,
+                            EuPerKm = 0.9676471861867530791788856305m,
                             StartDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 915,
-                            TripPrice = 979.2900446294665m,
+                            TripKm = 1023,
+                            TripPrice = 989.9030714690484m,
                             TruckId = 5
                         },
                         new
@@ -12037,10 +12039,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 438,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1608902100780988372093023256m,
+                            EuPerKm = 1.8081376357643938115330520394m,
                             StartDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1032,
-                            TripPrice = 1198.038696800598m,
+                            TripKm = 711,
+                            TripPrice = 1285.585859028484m,
                             TruckId = 6
                         },
                         new
@@ -12048,10 +12050,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 439,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5960506508374712041884816754m,
+                            EuPerKm = 1.3578400127179126344086021505m,
                             StartDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 764,
-                            TripPrice = 1219.382697239828m,
+                            TripKm = 744,
+                            TripPrice = 1010.232969462127m,
                             TruckId = 1
                         },
                         new
@@ -12059,10 +12061,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 440,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2464740982583445652173913043m,
+                            EuPerKm = 1.4883193701575794947994056464m,
                             StartDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 920,
-                            TripPrice = 1146.756170397677m,
+                            TripKm = 673,
+                            TripPrice = 1001.638936116051m,
                             TruckId = 2
                         },
                         new
@@ -12070,10 +12072,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 441,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0224571275403383177570093458m,
+                            EuPerKm = 1.2397672679939180327868852459m,
                             StartDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1070,
-                            TripPrice = 1094.029126468162m,
+                            TripKm = 854,
+                            TripPrice = 1058.761246866806m,
                             TruckId = 3
                         },
                         new
@@ -12081,10 +12083,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 442,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0561284571168733542319749216m,
+                            EuPerKm = 1.3144971991471061744966442953m,
                             StartDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 957,
-                            TripPrice = 1010.7149334608478m,
+                            TripKm = 745,
+                            TripPrice = 979.3004133645941m,
                             TruckId = 4
                         },
                         new
@@ -12092,10 +12094,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 443,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4921810588230100147275405007m,
+                            EuPerKm = 1.0618363200880458201058201058m,
                             StartDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 679,
-                            TripPrice = 1013.1909389408238m,
+                            TripKm = 945,
+                            TripPrice = 1003.4353224832033m,
                             TruckId = 5
                         },
                         new
@@ -12103,10 +12105,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 444,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.106212247481096875m,
+                            EuPerKm = 1.0414601856547682328907048008m,
                             StartDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 928,
-                            TripPrice = 1026.5649656624579m,
+                            TripKm = 979,
+                            TripPrice = 1019.5895217560181m,
                             TruckId = 6
                         },
                         new
@@ -12114,10 +12116,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 445,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9528738565719081055607917059m,
+                            EuPerKm = 1.3886616369639987775061124694m,
                             StartDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1061,
-                            TripPrice = 1010.9991618227945m,
+                            TripKm = 818,
+                            TripPrice = 1135.925219036551m,
                             TruckId = 1
                         },
                         new
@@ -12125,10 +12127,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 446,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4257904162580112994350282486m,
+                            EuPerKm = 1.0646147735398914728682170543m,
                             StartDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 885,
-                            TripPrice = 1261.82451838834m,
+                            TripKm = 1032,
+                            TripPrice = 1098.682446293168m,
                             TruckId = 2
                         },
                         new
@@ -12136,10 +12138,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 447,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4460769540276684285714285714m,
+                            EuPerKm = 1.3623298594842733606557377049m,
                             StartDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 700,
-                            TripPrice = 1012.2538678193679m,
+                            TripKm = 732,
+                            TripPrice = 997.2254571424881m,
                             TruckId = 3
                         },
                         new
@@ -12147,10 +12149,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 448,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4604182620091072319201995012m,
+                            EuPerKm = 1.35488292104787828418230563m,
                             StartDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 802,
-                            TripPrice = 1171.255446131304m,
+                            TripKm = 746,
+                            TripPrice = 1010.7426591017172m,
                             TruckId = 4
                         },
                         new
@@ -12158,10 +12160,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 449,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3959421432865195822454308094m,
+                            EuPerKm = 1.3714134521326146788990825688m,
                             StartDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 766,
-                            TripPrice = 1069.291681757474m,
+                            TripKm = 872,
+                            TripPrice = 1195.87253025964m,
                             TruckId = 5
                         },
                         new
@@ -12169,10 +12171,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 450,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9364204136515527014218009479m,
+                            EuPerKm = 1.5830902081789753623188405797m,
                             StartDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1055,
-                            TripPrice = 987.9235364023881m,
+                            TripKm = 690,
+                            TripPrice = 1092.332243643493m,
                             TruckId = 6
                         },
                         new
@@ -12180,10 +12182,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 451,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1324632722553724279835390947m,
+                            EuPerKm = 0.9480040485833861495844875346m,
                             StartDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 972,
-                            TripPrice = 1100.754300632222m,
+                            TripKm = 1083,
+                            TripPrice = 1026.6883846158072m,
                             TruckId = 1
                         },
                         new
@@ -12191,10 +12193,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 452,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.9413251818803013493253373313m,
+                            EuPerKm = 1.6599828412301326259946949602m,
                             StartDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 667,
-                            TripPrice = 1294.863896314161m,
+                            TripKm = 754,
+                            TripPrice = 1251.62706228752m,
                             TruckId = 2
                         },
                         new
@@ -12202,10 +12204,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 453,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9226656366368340057636887608m,
+                            EuPerKm = 1.2286354082870513064133016627m,
                             StartDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1041,
-                            TripPrice = 960.4949277389442m,
+                            TripKm = 842,
+                            TripPrice = 1034.5110137776972m,
                             TruckId = 3
                         },
                         new
@@ -12213,10 +12215,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 454,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4510319954981015169194865811m,
+                            EuPerKm = 1.1191895003433371212121212121m,
                             StartDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 857,
-                            TripPrice = 1243.534420141873m,
+                            TripKm = 1056,
+                            TripPrice = 1181.864112362564m,
                             TruckId = 4
                         },
                         new
@@ -12224,10 +12226,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 455,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.113633030248987459807073955m,
+                            EuPerKm = 1.4141294452608829663962920046m,
                             StartDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 933,
-                            TripPrice = 1039.0196172223053m,
+                            TripKm = 863,
+                            TripPrice = 1220.393711260142m,
                             TruckId = 5
                         },
                         new
@@ -12235,10 +12237,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 456,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3473805773425388736263736264m,
+                            EuPerKm = 1.1079447672583742889647326507m,
                             StartDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 728,
-                            TripPrice = 980.8930603053683m,
+                            TripKm = 879,
+                            TripPrice = 973.883450420111m,
                             TruckId = 6
                         },
                         new
@@ -12246,10 +12248,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 457,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1923459805734641148325358852m,
+                            EuPerKm = 1.1897498435496780626780626781m,
                             StartDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1045,
-                            TripPrice = 1246.00154969927m,
+                            TripKm = 1053,
+                            TripPrice = 1252.806585257811m,
                             TruckId = 1
                         },
                         new
@@ -12257,10 +12259,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 458,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.175039442985325381679389313m,
+                            EuPerKm = 1.392247219583018716577540107m,
                             StartDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1048,
-                            TripPrice = 1231.441336248621m,
+                            TripKm = 748,
+                            TripPrice = 1041.400920248098m,
                             TruckId = 2
                         },
                         new
@@ -12268,10 +12270,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 459,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5236866142079615384615384615m,
+                            EuPerKm = 1.6917757905846890156918687589m,
                             StartDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 806,
-                            TripPrice = 1228.091411051617m,
+                            TripKm = 701,
+                            TripPrice = 1185.934829199867m,
                             TruckId = 3
                         },
                         new
@@ -12279,10 +12281,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 460,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3189479319972270693512304251m,
+                            EuPerKm = 1.0355190987652082922013820336m,
                             StartDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 894,
-                            TripPrice = 1179.139451205521m,
+                            TripKm = 1013,
+                            TripPrice = 1048.980847049156m,
                             TruckId = 4
                         },
                         new
@@ -12290,10 +12292,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 461,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1082006459263005952380952381m,
+                            EuPerKm = 1.1099070133415771205357142857m,
                             StartDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1008,
-                            TripPrice = 1117.066251093711m,
+                            TripKm = 896,
+                            TripPrice = 994.4766839540531m,
                             TruckId = 5
                         },
                         new
@@ -12301,10 +12303,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 462,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2880011057728832689832689833m,
+                            EuPerKm = 1.1189364349993562058526740666m,
                             StartDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 777,
-                            TripPrice = 1000.7768591855303m,
+                            TripKm = 991,
+                            TripPrice = 1108.866007084362m,
                             TruckId = 6
                         },
                         new
@@ -12312,10 +12314,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 463,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4875237229753403990024937656m,
+                            EuPerKm = 0.9728604130214227420998980632m,
                             StartDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 802,
-                            TripPrice = 1192.994025826223m,
+                            TripKm = 981,
+                            TripPrice = 954.37606517401571m,
                             TruckId = 1
                         },
                         new
@@ -12323,10 +12325,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 464,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4007731822396644664466446645m,
+                            EuPerKm = 1.304665871587674002574002574m,
                             StartDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 909,
-                            TripPrice = 1273.302822655855m,
+                            TripKm = 777,
+                            TripPrice = 1013.7253822236227m,
                             TruckId = 2
                         },
                         new
@@ -12334,10 +12336,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 465,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2753680509033774230330672748m,
+                            EuPerKm = 1.5766057278071189320388349515m,
                             StartDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 877,
-                            TripPrice = 1118.497780642262m,
+                            TripKm = 824,
+                            TripPrice = 1299.123119713066m,
                             TruckId = 3
                         },
                         new
@@ -12345,10 +12347,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 466,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1041231424823643995749202976m,
+                            EuPerKm = 1.0503092183704326306141154904m,
                             StartDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 941,
-                            TripPrice = 1038.9798770759049m,
+                            TripKm = 1091,
+                            TripPrice = 1145.887357242142m,
                             TruckId = 4
                         },
                         new
@@ -12356,10 +12358,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 467,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1892112199169962441314553991m,
+                            EuPerKm = 1.6945231504838144927536231884m,
                             StartDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1065,
-                            TripPrice = 1266.509949211601m,
+                            TripKm = 690,
+                            TripPrice = 1169.220973833832m,
                             TruckId = 5
                         },
                         new
@@ -12367,10 +12369,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 468,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3434398684259158113730929265m,
+                            EuPerKm = 1.8709381087555914634146341463m,
                             StartDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 721,
-                            TripPrice = 968.6201451350853m,
+                            TripKm = 656,
+                            TripPrice = 1227.335399343668m,
                             TruckId = 6
                         },
                         new
@@ -12378,10 +12380,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 469,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5917761270453125m,
+                            EuPerKm = 1.1421654833848466589861751152m,
                             StartDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 704,
-                            TripPrice = 1120.6103934399m,
+                            TripKm = 868,
+                            TripPrice = 991.3996395780469m,
                             TruckId = 1
                         },
                         new
@@ -12389,10 +12391,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 470,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6085679887214366197183098592m,
+                            EuPerKm = 1.6351039693824177777777777778m,
                             StartDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 710,
-                            TripPrice = 1142.08327199222m,
+                            TripKm = 675,
+                            TripPrice = 1103.695179333132m,
                             TruckId = 2
                         },
                         new
@@ -12400,10 +12402,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 471,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.526747394242345873786407767m,
+                            EuPerKm = 1.0564113389170700643776824034m,
                             StartDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 824,
-                            TripPrice = 1258.039852855693m,
+                            TripKm = 932,
+                            TripPrice = 984.5753678707093m,
                             TruckId = 3
                         },
                         new
@@ -12411,10 +12413,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 472,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.338343802681416156670746634m,
+                            EuPerKm = 1.0463191775154126126126126126m,
                             StartDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 817,
-                            TripPrice = 1093.426886790717m,
+                            TripKm = 999,
+                            TripPrice = 1045.2728583378972m,
                             TruckId = 4
                         },
                         new
@@ -12422,10 +12424,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 473,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1028730999439321175278622087m,
+                            EuPerKm = 1.2972906994428598790322580645m,
                             StartDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 987,
-                            TripPrice = 1088.535749644661m,
+                            TripKm = 992,
+                            TripPrice = 1286.912373847317m,
                             TruckId = 5
                         },
                         new
@@ -12433,10 +12435,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 474,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5623425872070088945362134689m,
+                            EuPerKm = 1.2573173689165290482076637824m,
                             StartDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 787,
-                            TripPrice = 1229.563616131916m,
+                            TripKm = 809,
+                            TripPrice = 1017.169751453472m,
                             TruckId = 6
                         },
                         new
@@ -12444,10 +12446,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 475,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3303327131390011061946902655m,
+                            EuPerKm = 1.3784625154343360091743119266m,
                             StartDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 904,
-                            TripPrice = 1202.620772677657m,
+                            TripKm = 872,
+                            TripPrice = 1202.019313458741m,
                             TruckId = 1
                         },
                         new
@@ -12455,10 +12457,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 476,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2649744143210788126919140225m,
+                            EuPerKm = 1.6386574241652445054945054945m,
                             StartDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 977,
-                            TripPrice = 1235.880002791694m,
+                            TripKm = 728,
+                            TripPrice = 1192.942604792298m,
                             TruckId = 2
                         },
                         new
@@ -12466,10 +12468,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 477,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6989368688321572700296735905m,
+                            EuPerKm = 1.1383411588034465753424657534m,
                             StartDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 674,
-                            TripPrice = 1145.083449592874m,
+                            TripKm = 876,
+                            TripPrice = 997.1868551118192m,
                             TruckId = 3
                         },
                         new
@@ -12477,10 +12479,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 478,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.411082612028340958605664488m,
+                            EuPerKm = 1.3438521596246662983425414365m,
                             StartDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 918,
-                            TripPrice = 1295.373837842017m,
+                            TripKm = 905,
+                            TripPrice = 1216.186204460323m,
                             TruckId = 4
                         },
                         new
@@ -12488,10 +12490,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 479,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1124432860735934579439252336m,
+                            EuPerKm = 1.4960197080177449118046132972m,
                             StartDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1070,
-                            TripPrice = 1190.314316098745m,
+                            TripKm = 737,
+                            TripPrice = 1102.566524809078m,
                             TruckId = 5
                         },
                         new
@@ -12499,10 +12501,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 480,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4075566283569486215538847118m,
+                            EuPerKm = 1.8003301675383742937853107345m,
                             StartDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 798,
-                            TripPrice = 1123.230189428845m,
+                            TripKm = 708,
+                            TripPrice = 1274.633758617169m,
                             TruckId = 6
                         },
                         new
@@ -12510,10 +12512,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 481,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4278655758732868525896414343m,
+                            EuPerKm = 1.3323178995089747586206896552m,
                             StartDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 753,
-                            TripPrice = 1075.182778632585m,
+                            TripKm = 725,
+                            TripPrice = 965.9304771440067m,
                             TruckId = 1
                         },
                         new
@@ -12521,10 +12523,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 482,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.741535513561444121915820029m,
+                            EuPerKm = 1.2514828739312194616977225673m,
                             StartDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 689,
-                            TripPrice = 1199.917968843835m,
+                            TripKm = 966,
+                            TripPrice = 1208.932456217558m,
                             TruckId = 2
                         },
                         new
@@ -12532,10 +12534,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 483,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3741438400999669156883671291m,
+                            EuPerKm = 1.2575985381780528662420382166m,
                             StartDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 937,
-                            TripPrice = 1287.572778173669m,
+                            TripKm = 785,
+                            TripPrice = 987.2148524697715m,
                             TruckId = 3
                         },
                         new
@@ -12543,10 +12545,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 484,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9801686039199038817005545287m,
+                            EuPerKm = 1.3761377539391504591104734577m,
                             StartDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1082,
-                            TripPrice = 1060.542429441336m,
+                            TripKm = 697,
+                            TripPrice = 959.16801449558787m,
                             TruckId = 4
                         },
                         new
@@ -12554,10 +12556,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 485,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1722091603394225216554379211m,
+                            EuPerKm = 1.2607317495296548076923076923m,
                             StartDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1039,
-                            TripPrice = 1217.92531759266m,
+                            TripKm = 832,
+                            TripPrice = 1048.9288156086728m,
                             TruckId = 5
                         },
                         new
@@ -12565,10 +12567,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 486,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1632692996899041331802525832m,
+                            EuPerKm = 1.1193271356680660835762876579m,
                             StartDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 871,
-                            TripPrice = 1013.2075600299065m,
+                            TripKm = 1029,
+                            TripPrice = 1151.78762260244m,
                             TruckId = 6
                         },
                         new
@@ -12576,10 +12578,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 487,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4793536343065744460856720827m,
+                            EuPerKm = 0.9457766572128419704433497537m,
                             StartDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 677,
-                            TripPrice = 1001.5224104255509m,
+                            TripKm = 1015,
+                            TripPrice = 959.9633070710346m,
                             TruckId = 1
                         },
                         new
@@ -12587,10 +12589,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 488,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.421614572438785876993166287m,
+                            EuPerKm = 1.8022376200146261261261261261m,
                             StartDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 878,
-                            TripPrice = 1248.177594601254m,
+                            TripKm = 666,
+                            TripPrice = 1200.290254929741m,
                             TruckId = 2
                         },
                         new
@@ -12598,10 +12600,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 489,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4963223635769209535759096612m,
+                            EuPerKm = 1.2200259932211450892857142857m,
                             StartDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 797,
-                            TripPrice = 1192.568923770806m,
+                            TripKm = 896,
+                            TripPrice = 1093.143289926146m,
                             TruckId = 3
                         },
                         new
@@ -12609,10 +12611,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 490,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4926023281619322990126939351m,
+                            EuPerKm = 1.4740524725440915411355735805m,
                             StartDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 709,
-                            TripPrice = 1058.25505066681m,
+                            TripKm = 863,
+                            TripPrice = 1272.107283805551m,
                             TruckId = 4
                         },
                         new
@@ -12620,10 +12622,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 491,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8372857754948762886597938144m,
+                            EuPerKm = 1.0952842928672198697068403909m,
                             StartDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 679,
-                            TripPrice = 1247.517041561021m,
+                            TripKm = 921,
+                            TripPrice = 1008.7568337307095m,
                             TruckId = 5
                         },
                         new
@@ -12631,10 +12633,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 492,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1945136710737548918640576725m,
+                            EuPerKm = 1.734925926974841958041958042m,
                             StartDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 971,
-                            TripPrice = 1159.872774612616m,
+                            TripKm = 715,
+                            TripPrice = 1240.472037787012m,
                             TruckId = 6
                         },
                         new
@@ -12642,10 +12644,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 493,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4575478521617208121827411168m,
+                            EuPerKm = 1.4687095973751466208476517755m,
                             StartDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 788,
-                            TripPrice = 1148.547707503436m,
+                            TripKm = 873,
+                            TripPrice = 1282.183478508503m,
                             TruckId = 1
                         },
                         new
@@ -12653,10 +12655,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 494,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5099770091711754601226993865m,
+                            EuPerKm = 1.9246356667345172413793103448m,
                             StartDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 815,
-                            TripPrice = 1230.631262474508m,
+                            TripKm = 667,
+                            TripPrice = 1283.731989711923m,
                             TruckId = 2
                         },
                         new
@@ -12664,10 +12666,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 495,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0493260215183296703296703297m,
+                            EuPerKm = 1.6394092479166993548387096774m,
                             StartDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1001,
-                            TripPrice = 1050.375347539848m,
+                            TripKm = 775,
+                            TripPrice = 1270.542167135442m,
                             TruckId = 3
                         },
                         new
@@ -12675,10 +12677,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 496,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1962304405291683991683991684m,
+                            EuPerKm = 1.1618284942051085776330076004m,
                             StartDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 962,
-                            TripPrice = 1150.77368378906m,
+                            TripKm = 921,
+                            TripPrice = 1070.044043162905m,
                             TruckId = 4
                         },
                         new
@@ -12686,10 +12688,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 497,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8297500559720779220779220779m,
+                            EuPerKm = 1.6655012895799673913043478261m,
                             StartDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 693,
-                            TripPrice = 1268.01678878865m,
+                            TripKm = 736,
+                            TripPrice = 1225.808949130856m,
                             TruckId = 5
                         },
                         new
@@ -12697,10 +12699,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 498,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0884591161943646994535519126m,
+                            EuPerKm = 1.630294667804792156862745098m,
                             StartDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 915,
-                            TripPrice = 995.9400913178437m,
+                            TripKm = 765,
+                            TripPrice = 1247.175420870666m,
                             TruckId = 6
                         },
                         new
@@ -12708,10 +12710,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 499,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2202338359677080981595092025m,
+                            EuPerKm = 1.5754619689985538243626062323m,
                             StartDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 815,
-                            TripPrice = 994.4905763136821m,
+                            TripKm = 706,
+                            TripPrice = 1112.276150112979m,
                             TruckId = 1
                         },
                         new
@@ -12719,10 +12721,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 500,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2348185835002567567567567568m,
+                            EuPerKm = 1.1194942202002475149105367793m,
                             StartDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 888,
-                            TripPrice = 1096.518902148228m,
+                            TripKm = 1006,
+                            TripPrice = 1126.211185521449m,
                             TruckId = 2
                         },
                         new
@@ -12730,10 +12732,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 501,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3349459482243044871794871795m,
+                            EuPerKm = 1.4482403044258586800573888092m,
                             StartDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 936,
-                            TripPrice = 1249.509407537949m,
+                            TripKm = 697,
+                            TripPrice = 1009.4234921848235m,
                             TruckId = 3
                         },
                         new
@@ -12741,10 +12743,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 502,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2140389387175493895671476138m,
+                            EuPerKm = 1.3968001444954347383720930233m,
                             StartDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 901,
-                            TripPrice = 1093.849083784512m,
+                            TripKm = 688,
+                            TripPrice = 960.9984994128591m,
                             TruckId = 4
                         },
                         new
@@ -12752,10 +12754,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 503,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.234704938477492817679558011m,
+                            EuPerKm = 1.6945073628810479041916167665m,
                             StartDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 905,
-                            TripPrice = 1117.407969322131m,
+                            TripKm = 668,
+                            TripPrice = 1131.93091840454m,
                             TruckId = 5
                         },
                         new
@@ -12763,10 +12765,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 504,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.989911696600412568306010929m,
+                            EuPerKm = 1.3290805119043726635514018692m,
                             StartDate = new DateTime(2024, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1098,
-                            TripPrice = 1086.923042867253m,
+                            TripKm = 856,
+                            TripPrice = 1137.692918190143m,
                             TruckId = 6
                         },
                         new
@@ -12774,10 +12776,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 505,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1180650077752814021421616358m,
+                            EuPerKm = 1.6013864496521526908635794743m,
                             StartDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1027,
-                            TripPrice = 1148.252762985214m,
+                            TripKm = 799,
+                            TripPrice = 1279.50777327207m,
                             TruckId = 1
                         },
                         new
@@ -12785,10 +12787,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 506,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0641700450399498945147679325m,
+                            EuPerKm = 0.9451135572516248372093023256m,
                             StartDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 948,
-                            TripPrice = 1008.8332026978725m,
+                            TripKm = 1075,
+                            TripPrice = 1015.9970740454967m,
                             TruckId = 2
                         },
                         new
@@ -12796,10 +12798,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 507,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1194241868912246486486486486m,
+                            EuPerKm = 0.9012347442584312676056338028m,
                             StartDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 925,
-                            TripPrice = 1035.4673728743828m,
+                            TripKm = 1065,
+                            TripPrice = 959.8150026352293m,
                             TruckId = 3
                         },
                         new
@@ -12807,10 +12809,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 508,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5056335098582875481386392811m,
+                            EuPerKm = 1.0208291533090269271383315734m,
                             StartDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 779,
-                            TripPrice = 1172.888504179606m,
+                            TripKm = 947,
+                            TripPrice = 966.7252081836485m,
                             TruckId = 4
                         },
                         new
@@ -12818,10 +12820,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 509,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1133031190878308668076109937m,
+                            EuPerKm = 1.0847026887885596059113300493m,
                             StartDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 946,
-                            TripPrice = 1053.184750657088m,
+                            TripKm = 1015,
+                            TripPrice = 1100.973229120388m,
                             TruckId = 5
                         },
                         new
@@ -12829,10 +12831,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 510,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2491546850504976415094339623m,
+                            EuPerKm = 1.0033358015275041398344066237m,
                             StartDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 848,
-                            TripPrice = 1059.283172922822m,
+                            TripKm = 1087,
+                            TripPrice = 1090.626016260397m,
                             TruckId = 6
                         },
                         new
@@ -12840,10 +12842,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 511,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2083031440202060913705583756m,
+                            EuPerKm = 1.7787744300156308139534883721m,
                             StartDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 985,
-                            TripPrice = 1190.178596859903m,
+                            TripKm = 688,
+                            TripPrice = 1223.796807850754m,
                             TruckId = 1
                         },
                         new
@@ -12851,10 +12853,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 512,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1082158295124969264544456641m,
+                            EuPerKm = 1.2869099864887934065934065934m,
                             StartDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 911,
-                            TripPrice = 1009.5846206858847m,
+                            TripKm = 910,
+                            TripPrice = 1171.088087704802m,
                             TruckId = 2
                         },
                         new
@@ -12862,10 +12864,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 513,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3230511428207841191066997519m,
+                            EuPerKm = 1.4327188790103156654888103651m,
                             StartDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 806,
-                            TripPrice = 1066.379221113552m,
+                            TripKm = 849,
+                            TripPrice = 1216.378328279758m,
                             TruckId = 3
                         },
                         new
@@ -12873,10 +12875,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 514,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9188019075065421631530705775m,
+                            EuPerKm = 1.095730830078425512104283054m,
                             StartDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1091,
-                            TripPrice = 1002.4128810896375m,
+                            TripKm = 1074,
+                            TripPrice = 1176.814911504229m,
                             TruckId = 4
                         },
                         new
@@ -12884,10 +12886,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 515,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5094594650930089628681177977m,
+                            EuPerKm = 1.4769771087477797001153402537m,
                             StartDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 781,
-                            TripPrice = 1178.88784223764m,
+                            TripKm = 867,
+                            TripPrice = 1280.539153284325m,
                             TruckId = 5
                         },
                         new
@@ -12895,10 +12897,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 516,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7277938098662569343065693431m,
+                            EuPerKm = 1.4657604098553175m,
                             StartDate = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 685,
-                            TripPrice = 1183.538759758386m,
+                            TripKm = 800,
+                            TripPrice = 1172.608327884254m,
                             TruckId = 6
                         },
                         new
@@ -12906,10 +12908,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 517,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1122479449147441643323996265m,
+                            EuPerKm = 1.2885666387652550607287449393m,
                             StartDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1071,
-                            TripPrice = 1191.217549003691m,
+                            TripKm = 988,
+                            TripPrice = 1273.103839100072m,
                             TruckId = 1
                         },
                         new
@@ -12917,10 +12919,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 518,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5264731869175800561797752809m,
+                            EuPerKm = 1.3449420289456232894736842105m,
                             StartDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 712,
-                            TripPrice = 1086.848909085317m,
+                            TripKm = 760,
+                            TripPrice = 1022.1559419986737m,
                             TruckId = 2
                         },
                         new
@@ -12928,10 +12930,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 519,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4273682833506066176470588235m,
+                            EuPerKm = 1.3860341723666791131855309218m,
                             StartDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 816,
-                            TripPrice = 1164.732519214095m,
+                            TripKm = 857,
+                            TripPrice = 1187.831285718244m,
                             TruckId = 3
                         },
                         new
@@ -12939,10 +12941,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 520,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.353126258991237467362924282m,
+                            EuPerKm = 1.077077061421322265625m,
                             StartDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 766,
-                            TripPrice = 1036.4947143872879m,
+                            TripKm = 1024,
+                            TripPrice = 1102.926910895434m,
                             TruckId = 4
                         },
                         new
@@ -12950,10 +12952,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 521,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.9128466453728151862464183381m,
+                            EuPerKm = 1.4760121989954992412746585736m,
                             StartDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1047,
-                            TripPrice = 955.7504377053375m,
+                            TripKm = 659,
+                            TripPrice = 972.692039138034m,
                             TruckId = 5
                         },
                         new
@@ -12961,10 +12963,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 522,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1418465728248205607476635514m,
+                            EuPerKm = 1.611923156803016602809706258m,
                             StartDate = new DateTime(2024, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1070,
-                            TripPrice = 1221.775832922558m,
+                            TripKm = 783,
+                            TripPrice = 1262.135831776762m,
                             TruckId = 6
                         },
                         new
@@ -12972,10 +12974,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 523,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4435913691383641425389755011m,
+                            EuPerKm = 1.1707962408395053763440860215m,
                             StartDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 898,
-                            TripPrice = 1296.345049486251m,
+                            TripKm = 930,
+                            TripPrice = 1088.84050398074m,
                             TruckId = 1
                         },
                         new
@@ -12983,10 +12985,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 524,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1913360358829307262569832402m,
+                            EuPerKm = 1.419948007795669239250275634m,
                             StartDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 895,
-                            TripPrice = 1066.245752115223m,
+                            TripKm = 907,
+                            TripPrice = 1287.892843070672m,
                             TruckId = 2
                         },
                         new
@@ -12994,10 +12996,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 525,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.268248672054884828349944629m,
+                            EuPerKm = 1.2831565746741157829839704069m,
                             StartDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 903,
-                            TripPrice = 1145.228550865561m,
+                            TripKm = 811,
+                            TripPrice = 1040.6399820607079m,
                             TruckId = 3
                         },
                         new
@@ -13005,10 +13007,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 526,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3574829467309858695652173913m,
+                            EuPerKm = 1.1822157300540748603351955307m,
                             StartDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 920,
-                            TripPrice = 1248.884310992507m,
+                            TripKm = 895,
+                            TripPrice = 1058.083078398397m,
                             TruckId = 4
                         },
                         new
@@ -13016,10 +13018,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 527,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3244077020443552278820375335m,
+                            EuPerKm = 1.2124309075565526046986721144m,
                             StartDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 746,
-                            TripPrice = 988.008145725089m,
+                            TripKm = 979,
+                            TripPrice = 1186.969858497865m,
                             TruckId = 5
                         },
                         new
@@ -13027,10 +13029,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 528,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0602903811126040330920372285m,
+                            EuPerKm = 1.4678923330602613365155131265m,
                             StartDate = new DateTime(2024, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 967,
-                            TripPrice = 1025.3007985358881m,
+                            TripKm = 838,
+                            TripPrice = 1230.093775104499m,
                             TruckId = 6
                         },
                         new
@@ -13038,10 +13040,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 529,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3510414077227856315179606025m,
+                            EuPerKm = 1.4250604638220263636363636364m,
                             StartDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 863,
-                            TripPrice = 1165.948734864764m,
+                            TripKm = 671,
+                            TripPrice = 956.21557122457969m,
                             TruckId = 1
                         },
                         new
@@ -13049,10 +13051,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 530,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4753412480109518853695324284m,
+                            EuPerKm = 1.1756424991396066252587991718m,
                             StartDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 663,
-                            TripPrice = 978.1512474312611m,
+                            TripKm = 966,
+                            TripPrice = 1135.67065416886m,
                             TruckId = 2
                         },
                         new
@@ -13060,10 +13062,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 531,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3409682578580392638036809816m,
+                            EuPerKm = 1.126164410210023719165085389m,
                             StartDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 815,
-                            TripPrice = 1092.889130154302m,
+                            TripKm = 1054,
+                            TripPrice = 1186.977288361365m,
                             TruckId = 3
                         },
                         new
@@ -13071,10 +13073,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 532,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2658806133987538619979402678m,
+                            EuPerKm = 0.990078810407864257528556594m,
                             StartDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 971,
-                            TripPrice = 1229.17007561019m,
+                            TripKm = 963,
+                            TripPrice = 953.44589442277328m,
                             TruckId = 4
                         },
                         new
@@ -13082,10 +13084,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 533,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0089822365077964646464646465m,
+                            EuPerKm = 1.1084802461072263056092843327m,
                             StartDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 990,
-                            TripPrice = 998.8924141427185m,
+                            TripKm = 1034,
+                            TripPrice = 1146.168574474872m,
                             TruckId = 5
                         },
                         new
@@ -13093,10 +13095,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 534,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6894364533319298780487804878m,
+                            EuPerKm = 1.0917256286979487972508591065m,
                             StartDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 656,
-                            TripPrice = 1108.270313385746m,
+                            TripKm = 873,
+                            TripPrice = 953.0764738533093m,
                             TruckId = 6
                         },
                         new
@@ -13104,10 +13106,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 535,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1022910325600575471698113208m,
+                            EuPerKm = 1.244392474752397979797979798m,
                             StartDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1060,
-                            TripPrice = 1168.428494513661m,
+                            TripKm = 990,
+                            TripPrice = 1231.948550004874m,
                             TruckId = 1
                         },
                         new
@@ -13115,10 +13117,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 536,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3966246178058658698539176627m,
+                            EuPerKm = 1.6388249633935580029368575624m,
                             StartDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 753,
-                            TripPrice = 1051.658337207817m,
+                            TripKm = 681,
+                            TripPrice = 1116.039800071013m,
                             TruckId = 2
                         },
                         new
@@ -13126,10 +13128,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 537,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.128860638621516028955532575m,
+                            EuPerKm = 1.2872283772993227771010962241m,
                             StartDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 967,
-                            TripPrice = 1091.608237547006m,
+                            TripKm = 821,
+                            TripPrice = 1056.814497762744m,
                             TruckId = 3
                         },
                         new
@@ -13137,10 +13139,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 538,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2980954518190234466588511137m,
+                            EuPerKm = 1.3063340970584789473684210526m,
                             StartDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 853,
-                            TripPrice = 1107.275420401627m,
+                            TripKm = 950,
+                            TripPrice = 1241.017392205555m,
                             TruckId = 4
                         },
                         new
@@ -13148,10 +13150,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 539,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4350666071107222531293463143m,
+                            EuPerKm = 1.2936926128187229437229437229m,
                             StartDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 719,
-                            TripPrice = 1031.8128905126093m,
+                            TripKm = 924,
+                            TripPrice = 1195.3719742445m,
                             TruckId = 5
                         },
                         new
@@ -13159,10 +13161,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 540,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7653718889540524079320113314m,
+                            EuPerKm = 1.7763316541159070100143061516m,
                             StartDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 706,
-                            TripPrice = 1246.352553601561m,
+                            TripKm = 699,
+                            TripPrice = 1241.655826227019m,
                             TruckId = 6
                         },
                         new
@@ -13170,10 +13172,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 541,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7451476572103356164383561644m,
+                            EuPerKm = 1.2802536070432936693548387097m,
                             StartDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 730,
-                            TripPrice = 1273.957789763545m,
+                            TripKm = 744,
+                            TripPrice = 952.50868364021049m,
                             TruckId = 1
                         },
                         new
@@ -13181,10 +13183,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 542,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.357281735825294965034965035m,
+                            EuPerKm = 1.0733756039481946865037194474m,
                             StartDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 715,
-                            TripPrice = 970.4564411150859m,
+                            TripKm = 941,
+                            TripPrice = 1010.0464433152512m,
                             TruckId = 2
                         },
                         new
@@ -13192,10 +13194,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 543,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3978744642449417596034696406m,
+                            EuPerKm = 1.1679747524768464285714285714m,
                             StartDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 807,
-                            TripPrice = 1128.084692645668m,
+                            TripKm = 868,
+                            TripPrice = 1013.8020851499027m,
                             TruckId = 3
                         },
                         new
@@ -13203,10 +13205,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 544,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4517308621668117489986648865m,
+                            EuPerKm = 1.3795791211108454440599769319m,
                             StartDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 749,
-                            TripPrice = 1087.346415762942m,
+                            TripKm = 867,
+                            TripPrice = 1196.095098003103m,
                             TruckId = 4
                         },
                         new
@@ -13214,10 +13216,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 545,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1323552939432523267838676319m,
+                            EuPerKm = 1.2613144675290412262156448203m,
                             StartDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 967,
-                            TripPrice = 1094.987569243125m,
+                            TripKm = 946,
+                            TripPrice = 1193.203486282473m,
                             TruckId = 5
                         },
                         new
@@ -13225,10 +13227,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 546,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0565369397687748237885462555m,
+                            EuPerKm = 1.2841513911411386946386946387m,
                             StartDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 908,
-                            TripPrice = 959.33554131004754m,
+                            TripKm = 858,
+                            TripPrice = 1101.801893599097m,
                             TruckId = 6
                         },
                         new
@@ -13236,10 +13238,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 547,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1678013718475647619047619048m,
+                            EuPerKm = 1.1967968934552724580454096742m,
                             StartDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1050,
-                            TripPrice = 1226.191440439943m,
+                            TripKm = 1013,
+                            TripPrice = 1212.355253070191m,
                             TruckId = 1
                         },
                         new
@@ -13247,10 +13249,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 548,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2990993005803206578947368421m,
+                            EuPerKm = 1.5903162689776970474967907574m,
                             StartDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 760,
-                            TripPrice = 987.3154684410437m,
+                            TripKm = 779,
+                            TripPrice = 1238.856373533626m,
                             TruckId = 2
                         },
                         new
@@ -13258,10 +13260,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 549,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.397931226143684393063583815m,
+                            EuPerKm = 1.6417903679080697674418604651m,
                             StartDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 865,
-                            TripPrice = 1209.210510614287m,
+                            TripKm = 688,
+                            TripPrice = 1129.551773120752m,
                             TruckId = 3
                         },
                         new
@@ -13269,10 +13271,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 550,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5784426223779305555555555556m,
+                            EuPerKm = 1.4434892385042770562770562771m,
                             StartDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 720,
-                            TripPrice = 1136.47868811211m,
+                            TripKm = 693,
+                            TripPrice = 1000.338042283464m,
                             TruckId = 4
                         },
                         new
@@ -13280,10 +13282,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 551,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0877314075482484711211778029m,
+                            EuPerKm = 1.3339415806896031042128603104m,
                             StartDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 883,
-                            TripPrice = 960.4668328651034m,
+                            TripKm = 902,
+                            TripPrice = 1203.215305782022m,
                             TruckId = 5
                         },
                         new
@@ -13291,10 +13293,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 552,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.064218099163891983556012333m,
+                            EuPerKm = 1.102848480021345464725643897m,
                             StartDate = new DateTime(2024, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 973,
-                            TripPrice = 1035.4842104864669m,
+                            TripKm = 893,
+                            TripPrice = 984.8436926590615m,
                             TruckId = 6
                         },
                         new
@@ -13302,10 +13304,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 553,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3104090508055767002518891688m,
+                            EuPerKm = 1.3995505966019111644657863145m,
                             StartDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 794,
-                            TripPrice = 1040.4647863396279m,
+                            TripKm = 833,
+                            TripPrice = 1165.825646969392m,
                             TruckId = 1
                         },
                         new
@@ -13313,10 +13315,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 554,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1370671825518680981595092025m,
+                            EuPerKm = 1.2109238385713364879074658254m,
                             StartDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 978,
-                            TripPrice = 1112.051704535727m,
+                            TripKm = 951,
+                            TripPrice = 1151.588570481341m,
                             TruckId = 2
                         },
                         new
@@ -13324,10 +13326,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 555,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2649050099174691629955947137m,
+                            EuPerKm = 1.3590962219271094710947109471m,
                             StartDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 908,
-                            TripPrice = 1148.533749005062m,
+                            TripKm = 813,
+                            TripPrice = 1104.94522842674m,
                             TruckId = 3
                         },
                         new
@@ -13335,10 +13337,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 556,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2045115078305007425742574257m,
+                            EuPerKm = 1.3146720859568176470588235294m,
                             StartDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 808,
-                            TripPrice = 973.2452983270446m,
+                            TripKm = 850,
+                            TripPrice = 1117.471273063295m,
                             TruckId = 4
                         },
                         new
@@ -13346,10 +13348,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 557,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1788339112012032598274209012m,
+                            EuPerKm = 1.621612507801472400513478819m,
                             StartDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1043,
-                            TripPrice = 1229.523769382855m,
+                            TripKm = 779,
+                            TripPrice = 1263.236143577347m,
                             TruckId = 5
                         },
                         new
@@ -13357,10 +13359,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 558,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0023094772267542797494780793m,
+                            EuPerKm = 1.180394557848595372460496614m,
                             StartDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 958,
-                            TripPrice = 960.2124791832306m,
+                            TripKm = 886,
+                            TripPrice = 1045.8295782538555m,
                             TruckId = 6
                         },
                         new
@@ -13368,10 +13370,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 559,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1093544251644382022471910112m,
+                            EuPerKm = 1.3308846974210011074197120709m,
                             StartDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1068,
-                            TripPrice = 1184.79052607562m,
+                            TripKm = 903,
+                            TripPrice = 1201.788881771164m,
                             TruckId = 1
                         },
                         new
@@ -13379,10 +13381,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 560,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1459971954158994172494172494m,
+                            EuPerKm = 1.6889584064672440318302387268m,
                             StartDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 858,
-                            TripPrice = 983.2655936668417m,
+                            TripKm = 754,
+                            TripPrice = 1273.474638476302m,
                             TruckId = 2
                         },
                         new
@@ -13390,10 +13392,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 561,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3926533513288671875m,
+                            EuPerKm = 1.3476597256600807486631016043m,
                             StartDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 896,
-                            TripPrice = 1247.817402790665m,
+                            TripKm = 748,
+                            TripPrice = 1008.0494747937404m,
                             TruckId = 3
                         },
                         new
@@ -13401,10 +13403,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 562,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5495020194802798913043478261m,
+                            EuPerKm = 1.6221741164263451851851851852m,
                             StartDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 736,
-                            TripPrice = 1140.433486337486m,
+                            TripKm = 675,
+                            TripPrice = 1094.967528587783m,
                             TruckId = 4
                         },
                         new
@@ -13412,10 +13414,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 563,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.7940055684006296296296296296m,
+                            EuPerKm = 1.5676417529272859195402298851m,
                             StartDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 675,
-                            TripPrice = 1210.953758670425m,
+                            TripKm = 696,
+                            TripPrice = 1091.078660037391m,
                             TruckId = 5
                         },
                         new
@@ -13423,10 +13425,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 564,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5740958147138564356435643564m,
+                            EuPerKm = 1.3766227366323505376344086022m,
                             StartDate = new DateTime(2024, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 808,
-                            TripPrice = 1271.869418288796m,
+                            TripKm = 744,
+                            TripPrice = 1024.2073160544688m,
                             TruckId = 6
                         },
                         new
@@ -13434,10 +13436,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 565,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0960346847601059957173447537m,
+                            EuPerKm = 1.3444190843428433476394849785m,
                             StartDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 934,
-                            TripPrice = 1023.696395565939m,
+                            TripKm = 932,
+                            TripPrice = 1252.99858660753m,
                             TruckId = 1
                         },
                         new
@@ -13445,10 +13447,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 566,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3837238271716959896507115136m,
+                            EuPerKm = 1.2496272736217761627906976744m,
                             StartDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 773,
-                            TripPrice = 1069.618518403721m,
+                            TripKm = 1032,
+                            TripPrice = 1289.615346377673m,
                             TruckId = 2
                         },
                         new
@@ -13456,10 +13458,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 567,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0250488257865828460038986355m,
+                            EuPerKm = 1.0950742958225679513184584178m,
                             StartDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1026,
-                            TripPrice = 1051.700095257034m,
+                            TripKm = 986,
+                            TripPrice = 1079.743255681052m,
                             TruckId = 3
                         },
                         new
@@ -13467,10 +13469,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 568,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2309876838098647398843930636m,
+                            EuPerKm = 1.2230463685809048582995951417m,
                             StartDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 865,
-                            TripPrice = 1064.804346495533m,
+                            TripKm = 988,
+                            TripPrice = 1208.369812157934m,
                             TruckId = 4
                         },
                         new
@@ -13478,10 +13480,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 569,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3469694872166050516647531573m,
+                            EuPerKm = 1.1105596946718730127462340672m,
                             StartDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 871,
-                            TripPrice = 1173.210423365663m,
+                            TripKm = 863,
+                            TripPrice = 958.41301650182641m,
                             TruckId = 5
                         },
                         new
@@ -13489,10 +13491,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 570,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.476862271077873485868102288m,
+                            EuPerKm = 1.8355572052846017069701280228m,
                             StartDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 743,
-                            TripPrice = 1097.30866741086m,
+                            TripKm = 703,
+                            TripPrice = 1290.396715315075m,
                             TruckId = 6
                         },
                         new
@@ -13500,10 +13502,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 571,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3368486464365348542458808619m,
+                            EuPerKm = 1.7193974503296364985163204748m,
                             StartDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 789,
-                            TripPrice = 1054.773582038426m,
+                            TripKm = 674,
+                            TripPrice = 1158.873881522175m,
                             TruckId = 1
                         },
                         new
@@ -13511,10 +13513,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 572,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3042353626382133928571428571m,
+                            EuPerKm = 1.092375339300895910780669145m,
                             StartDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 784,
-                            TripPrice = 1022.5205243083593m,
+                            TripKm = 1076,
+                            TripPrice = 1175.395865087764m,
                             TruckId = 2
                         },
                         new
@@ -13522,10 +13524,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 573,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.3144058012204770233196159122m,
+                            EuPerKm = 1.1802889463321553488372093023m,
                             StartDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 729,
-                            TripPrice = 958.20182908972775m,
+                            TripKm = 1075,
+                            TripPrice = 1268.810617307067m,
                             TruckId = 3
                         },
                         new
@@ -13533,10 +13535,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 574,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6597265288607507122507122507m,
+                            EuPerKm = 1.114050110410656981981981982m,
                             StartDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 702,
-                            TripPrice = 1165.128023260247m,
+                            TripKm = 888,
+                            TripPrice = 989.2764980446634m,
                             TruckId = 4
                         },
                         new
@@ -13544,10 +13546,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 575,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.8807465567845167883211678832m,
+                            EuPerKm = 1.4951586401858927613941018767m,
                             StartDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 685,
-                            TripPrice = 1288.311391397394m,
+                            TripKm = 746,
+                            TripPrice = 1115.388345578676m,
                             TruckId = 5
                         },
                         new
@@ -13555,10 +13557,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 576,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1704480265462350837988826816m,
+                            EuPerKm = 1.4093144476246125m,
                             StartDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 895,
-                            TripPrice = 1047.5509837588804m,
+                            TripKm = 800,
+                            TripPrice = 1127.45155809969m,
                             TruckId = 6
                         },
                         new
@@ -13566,10 +13568,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 577,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5319134045550328102710413695m,
+                            EuPerKm = 1.024466150616622093023255814m,
                             StartDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 701,
-                            TripPrice = 1073.871296593078m,
+                            TripKm = 1032,
+                            TripPrice = 1057.249067436354m,
                             TruckId = 1
                         },
                         new
@@ -13577,10 +13579,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 578,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6803368061270733056708160443m,
+                            EuPerKm = 1.1734665879177191844300278035m,
                             StartDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 723,
-                            TripPrice = 1214.883510829874m,
+                            TripKm = 1079,
+                            TripPrice = 1266.170448363219m,
                             TruckId = 2
                         },
                         new
@@ -13588,10 +13590,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 579,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5271750222533355623100303951m,
+                            EuPerKm = 1.3484040136615843575418994413m,
                             StartDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 658,
-                            TripPrice = 1004.8811646426948m,
+                            TripKm = 895,
+                            TripPrice = 1206.821592227118m,
                             TruckId = 3
                         },
                         new
@@ -13599,10 +13601,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 580,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4369471263963737142857142857m,
+                            EuPerKm = 1.5914277103086697986577181208m,
                             StartDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 700,
-                            TripPrice = 1005.8629884774616m,
+                            TripKm = 745,
+                            TripPrice = 1185.613644179959m,
                             TruckId = 4
                         },
                         new
@@ -13610,10 +13612,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 581,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.6381954012576124469589816124m,
+                            EuPerKm = 1.4128122482204175438596491228m,
                             StartDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 707,
-                            TripPrice = 1158.204148689132m,
+                            TripKm = 855,
+                            TripPrice = 1207.954472228457m,
                             TruckId = 5
                         },
                         new
@@ -13621,10 +13623,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 582,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.2060417889208127139364303178m,
+                            EuPerKm = 1.1835315072166483050847457627m,
                             StartDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 818,
-                            TripPrice = 986.5421833372248m,
+                            TripKm = 944,
+                            TripPrice = 1117.253742812516m,
                             TruckId = 6
                         },
                         new
@@ -13632,10 +13634,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 583,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.5197307859581359703337453646m,
+                            EuPerKm = 1.5316019096092787318361955086m,
                             StartDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 809,
-                            TripPrice = 1229.462205840132m,
+                            TripKm = 757,
+                            TripPrice = 1159.422645574224m,
                             TruckId = 1
                         },
                         new
@@ -13643,10 +13645,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 584,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.4126131616397392265193370166m,
+                            EuPerKm = 1.6683590467949743935309973046m,
                             StartDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 905,
-                            TripPrice = 1278.414911283964m,
+                            TripKm = 742,
+                            TripPrice = 1237.922412721871m,
                             TruckId = 2
                         },
                         new
@@ -13654,10 +13656,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 585,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0002447752534311557788944724m,
+                            EuPerKm = 0.9132831128221203515263644773m,
                             StartDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 995,
-                            TripPrice = 995.243551377164m,
+                            TripKm = 1081,
+                            TripPrice = 987.2590449607121m,
                             TruckId = 3
                         },
                         new
@@ -13665,10 +13667,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 586,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0888486365082041850220264317m,
+                            EuPerKm = 0.9168903680078515267175572519m,
                             StartDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 908,
-                            TripPrice = 988.6745619494494m,
+                            TripKm = 1048,
+                            TripPrice = 960.9011056722284m,
                             TruckId = 4
                         },
                         new
@@ -13676,10 +13678,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 587,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.1355123052243741360089186176m,
+                            EuPerKm = 1.4717030976964606345475910693m,
                             StartDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 897,
-                            TripPrice = 1018.5545377862636m,
+                            TripKm = 851,
+                            TripPrice = 1252.419336139688m,
                             TruckId = 5
                         },
                         new
@@ -13687,10 +13689,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 588,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.0514508380092744444444444444m,
+                            EuPerKm = 1.0879963493331050545094152626m,
                             StartDate = new DateTime(2024, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 990,
-                            TripPrice = 1040.9363296291817m,
+                            TripKm = 1009,
+                            TripPrice = 1097.788316477103m,
                             TruckId = 6
                         },
                         new
@@ -13698,10 +13700,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 589,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.257581343153344689378757515m,
+                            EuPerKm = 1.5500011299651739130434782609m,
                             StartDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 998,
-                            TripPrice = 1255.066180467038m,
+                            TripKm = 690,
+                            TripPrice = 1069.50077967597m,
                             TruckId = 1
                         },
                         new
@@ -13709,10 +13711,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 590,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.403983232154125531914893617m,
+                            EuPerKm = 1.1781997831457502668089647812m,
                             StartDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 705,
-                            TripPrice = 989.8081786686585m,
+                            TripKm = 937,
+                            TripPrice = 1103.973196807568m,
                             TruckId = 2
                         },
                         new
@@ -13720,10 +13722,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 591,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.807807755327312874251497006m,
+                            EuPerKm = 1.3792387303289263736263736264m,
                             StartDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 668,
-                            TripPrice = 1207.615580558645m,
+                            TripKm = 910,
+                            TripPrice = 1255.107244599323m,
                             TruckId = 3
                         },
                         new
@@ -13731,10 +13733,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 592,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.093684453906358974358974359m,
+                            EuPerKm = 1.6757555226184109772423025435m,
                             StartDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1014,
-                            TripPrice = 1108.996036261048m,
+                            TripKm = 747,
+                            TripPrice = 1251.789375395953m,
                             TruckId = 4
                         },
                         new
@@ -13742,10 +13744,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 593,
                             EmployeeId = 4,
                             EndDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 0.8852504747243425297891842346m,
+                            EuPerKm = 0.997880012946617283950617284m,
                             StartDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 1091,
-                            TripPrice = 965.8082679242577m,
+                            TripKm = 1053,
+                            TripPrice = 1050.767653632788m,
                             TruckId = 5
                         },
                         new
@@ -13753,10 +13755,10 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                             Id = 594,
                             EmployeeId = 3,
                             EndDate = new DateTime(2024, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EuPerKm = 1.521314115368180028129395218m,
+                            EuPerKm = 1.5658474646302965879265091864m,
                             StartDate = new DateTime(2024, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TripKm = 711,
-                            TripPrice = 1081.654336026776m,
+                            TripKm = 762,
+                            TripPrice = 1193.175768048286m,
                             TruckId = 6
                         });
                 });
@@ -16577,21 +16579,21 @@ namespace TruckManagementWeb.Infrastructure.Migrations
                         new
                         {
                             Id = "adminRoleId",
-                            ConcurrencyStamp = "d7fad50d-ebf8-4366-ab90-54388cf99cef",
+                            ConcurrencyStamp = "4278df70-c5bd-4643-b343-5f131a7a34b3",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "managerRoleId",
-                            ConcurrencyStamp = "29ef0efc-9c68-4d06-99dd-de71c8aea75e",
+                            ConcurrencyStamp = "37e0b199-9d85-418a-b9f2-f954d179588c",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
                             Id = "dispatcherRoleId",
-                            ConcurrencyStamp = "b9aca965-41f2-485e-9977-1168f27e2125",
+                            ConcurrencyStamp = "a6b40199-1830-4922-bb27-e4dde1b0b79e",
                             Name = "Dispo",
                             NormalizedName = "DISPO"
                         });

@@ -15,6 +15,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Configuration
                 new ApplicationUser
                 {
                     Id = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9",
+                    FullName = "Admin Admin",
                     Email = "admin@truck.com",
                     NormalizedEmail = "admin@truck.com".ToUpper(),
                     UserName = "admin@truck.com",
@@ -25,6 +26,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Configuration
                 new ApplicationUser
                 {
                     Id = "0261d5ca-050a-423e-90cb-c7e990f67959",
+                    FullName = "Chief Chiefov",
                     Email = "manager@truck.com",
                     NormalizedEmail = "manager@truck.com".ToUpper(),
                     UserName = "manager@truck.com",
@@ -35,6 +37,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Configuration
                 new ApplicationUser
                 {
                     Id = "62154153-66df-4b35-91ed-56ac983c9a8e",
+                    FullName = "Hans Uno",
                     Email = "dispo1@truck.com",
                     NormalizedEmail = "dispo1@truck.com".ToUpper(),
                     UserName = "dispo1@truck.com",
@@ -45,6 +48,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Configuration
                 new ApplicationUser
                 {
                     Id = "19918df1-9468-434b-aaf9-a3d22b2d12e2",
+                    FullName = "Hans Due",
                     Email = "dispo2@truck.com",
                     NormalizedEmail = "dispo2@truck.com".ToUpper(),
                     UserName = "dispo2@truck.com",

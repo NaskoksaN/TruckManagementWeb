@@ -2,8 +2,6 @@
 using System.Security.Claims;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Trip;
-using TruckManagementWeb.Core.Service;
-using TruckManagementWeb.Infrastructure.Data.Common;
 
 namespace TruckManagementWeb.Controllers
 {
@@ -125,13 +123,14 @@ namespace TruckManagementWeb.Controllers
 
             return View(model);
         }
+
+
         [HttpGet]
         public async Task<IActionResult> TripIndex()
         {
-            var allTrips = await service.GetAllTripAsync();
-
-            return View(allTrips);
+            var trips = await service.GetAllTripAsync();
+            var tripsForView = trips.Take(50).ToList();
+            return View(tripsForView);
         }
-
     }
 }

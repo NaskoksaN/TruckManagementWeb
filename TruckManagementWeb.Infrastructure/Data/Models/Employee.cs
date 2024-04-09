@@ -24,13 +24,6 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [MaxLength(EmployeeMailMaxLenght)]
         [Comment("Employee e-mail")]
         public string Email {  get; set; } = string.Empty;
-        /// <summary>
-        /// Employee full name
-        /// </summary>
-        [Required]
-        [MaxLength(EmployeeNameMaxLenght)]
-        [Comment("Employee full name")]
-        public string FullName {  get; set; }= string.Empty;
 
         /// <summary>
         /// Employee activity

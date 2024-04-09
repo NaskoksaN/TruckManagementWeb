@@ -40,6 +40,7 @@ namespace TruckManagementWeb.Data
                 modelBuilder.ApplyConfiguration(new IdentityRoleConfiguration());
                 modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration());
                 modelBuilder.ApplyConfiguration(new IdentityUserRoleConfiguration());
+                modelBuilder.ApplyConfiguration(new UserClaimsConfiguration());
 
                 modelBuilder.ApplyConfiguration(new TruckConfiguration());
                 modelBuilder.ApplyConfiguration(new CompanyConfiguration());

@@ -41,7 +41,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
             Employee employee = new Employee()
             {
                 Email = "admin@truck.com",
-                FullName = "FullName",
                 EmployeeUserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9",
                 RoleId = "adminRoleId",
             };
@@ -68,7 +67,6 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
             Employee employee = new Employee()
             {
                 Email = "admin@truck.com",
-                FullName = "FullName",
                 EmployeeUserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9",
                 RoleId = "adminRoleId",
             };
@@ -95,8 +93,8 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
 
             var employees = new List<Employee>
             {
-                new Employee { Id = 1, FullName = "John Doe", Email = "john@example.com", IsActive = true, RoleId = "adminRoleId", EmployeeUserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9"  },
-                new Employee { Id = 2, FullName = "Jane Doe", Email = "jane@example.com", IsActive = false,  RoleId = "managerRoleId", EmployeeUserId = "0261d5ca-050a-423e-90cb-c7e990f67959"  }
+                new Employee { Id = 1,  Email = "john@example.com", IsActive = true, RoleId = "adminRoleId", EmployeeUserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9"  },
+                new Employee { Id = 2, Email = "jane@example.com", IsActive = false,  RoleId = "managerRoleId", EmployeeUserId = "0261d5ca-050a-423e-90cb-c7e990f67959"  }
             };
             await repo.AddRangeAsync<Employee>(employees);
             await repo.SaveChangesAsync();

@@ -74,7 +74,7 @@ namespace TruckManagementWeb.Core.Service
         /// </summary>
         public async Task<IEnumerable<TripViewModel>> GetAllTripAsync()
         {
-            var result = await repository.AllAsync<Trip>()
+            var result = await repository.AllReadOnlyAsync<Trip>()
                  .Include(o => o.Orders)
                  .Select(t => new TripViewModel
                  {
@@ -95,7 +95,7 @@ namespace TruckManagementWeb.Core.Service
                      .OrderBy(t=> t.LoadingDate)
                     .ToList()
                  })
-                
+                 .OrderByDescending(t => t.LoadingDate)
                  .ToListAsync();
 
             return result;
