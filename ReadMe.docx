@@ -1,0 +1,47 @@
+## Description 
+TruckManagementWebMvcApp is a web-based application built using ASP.NET MVC framework. It allows companies to manage their business.
+
+## Features 
+User Authentication and Authorization:
+Allow Admin to register user’s account. All Users can log in and logout. Implement role-based access control to restrict access to certain parts of the application based on user roles.
+
+Email Notifications and Alerts:
+Implement automated email notifications when Admin register user. E-mail is send with login details to User e-mails.
+
+Search and Filtering Functionality:
+Provide users with robust search and filtering capabilities to quickly find and navigate through large datasets or content within the application. Implement search bars, filters, and sorting options to refine search results and customize the user experience based on user preferences.
+
+CRUD Operations for Entities:
+Enable users to perform CRUD (Create, Read, Update, Delete) operations on various entities within the application, such as products, customers, or tasks. 
+Implement a user-friendly interface for managing data, including forms for creating new records, tables for viewing existing data, and options for editing or deleting records.
+
+Reporting and Analytics:
+Generate comprehensive reports and analytics dashboards to provide insights into key performance indicators (KPIs) and business metrics.
+
+## Installation 
+Database initial is seed with 
+1.Email = "admin@truck.com", password = “a12345”
+2.Email = "manager@truck.com", password = “a12345”
+3.Email = "dispo1@truck.com", password = “a12345”
+4.Email = "dispo2@truck.com", password = “a12345”
+For sending e-mails to new users login details is used Abv.bg, Username =webtruckfounder@abv.bg  , pass = “Aa@123456”
+
+## Usage 
+1. Access the application in your web browser at `http://localhost:5000` 
+2. Sign up for an account or log in with your existing credentials 
+3. Explore the different features and functionalities available 
+
+## Contributing 
+We welcome contributions from the community! If you'd like to contribute to the project, please follow these guidelines... 
+## License 
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. 
+
+## Credits 
+- ASP.NET Core MVC: [Documentation](https://docs.microsoft.com/en-us/aspnet/core/mvc/)
+ - Entity Framework Core: [Documentation](https://docs.microsoft.com/en-us/ef/core/) 
+- Bootstrap: [Website](https://getbootstrap.com/) 
+- X.PageList.Mvc.Core: [GitHub](https://github.com/Xabaril/PageList)
+- MailKit: [GitHub](https://github.com/jstedfast/MailKit)
+
+## Contact 
+For questions or feedback, feel free to reach out me nbobchev@yahoo.com
