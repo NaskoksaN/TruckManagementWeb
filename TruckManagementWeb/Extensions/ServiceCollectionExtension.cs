@@ -18,7 +18,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IReports, ReportService>();
             services.AddScoped<IExpenseService, ExpenseService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
-
+            services.AddScoped<IMyEmailService, MyEmailService>();
 
             return services;
         }

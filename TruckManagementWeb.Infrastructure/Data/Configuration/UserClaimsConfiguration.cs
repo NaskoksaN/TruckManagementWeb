@@ -36,7 +36,7 @@ namespace TruckManagementWeb.Infrastructure.Data.Configuration
                      Id = 4,
                      UserId = "19918df1-9468-434b-aaf9-a3d22b2d12e2",
                      ClaimType = "user:fullname",
-                     ClaimValue = "Admin Admin"
+                     ClaimValue = "Hans Due"
                  }
                 );
         }
