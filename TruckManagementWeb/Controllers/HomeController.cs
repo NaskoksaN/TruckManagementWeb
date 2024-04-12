@@ -58,11 +58,11 @@ namespace TruckManagementWeb.Controllers
         {
             if (statusCode == 400)
             {
-                return View("Error400");
+                return View("Error404");
             }
             if (statusCode == 401)
             {
-                return View("Error401");
+                return View("Error500");
             }
             return View();
         }
