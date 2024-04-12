@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Newtonsoft.Json;
+using System.Net;
 using System.Security.Claims;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Trip;
@@ -126,11 +129,59 @@ namespace TruckManagementWeb.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> TripIndex()
+        public async Task<IActionResult> TripIndex(TripIndexPeriodViewModel model)
         {
-            var trips = await service.GetAllTripAsync();
-            var tripsForView = trips.Take(50).ToList();
-            return View(tripsForView);
+            var trips = await service.GetTripsForPeriodAsync(model.StartDate, model.EndDate);
+            return View(trips);
+        }
+
+        [HttpGet]
+        public IActionResult TripPeriodIndex()
+        {
+
+            var model = new TripIndexPeriodViewModel
+            {
+                StartDate = DateTime.Today.AddDays(-60),
+                EndDate = DateTime.Today
+            };
+
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> TripPeriodIndex(TripIndexPeriodViewModel model)
+        {
+            var differenceInDays = (model.EndDate - model.StartDate).Days;
+            if (differenceInDays > 60)
+            {
+                ModelState.AddModelError(nameof(model), "The difference between Start Date and End Date cannot exceed 60 days.");
+            }
+
+            if (model.EndDate < model.StartDate)
+            {
+                ModelState.AddModelError(nameof(model.EndDate), "End date cannot be before start date.");
+            }
+
+            if (model.StartDate > DateTime.Today)
+            {
+                ModelState.AddModelError(nameof(model.StartDate), "Start date cannot be in the future");
+            }
+
+            if (model.EndDate > DateTime.Today)
+            {
+                ModelState.AddModelError(nameof(model.EndDate), "End date cannot be in the future.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var newModel = new TripIndexPeriodViewModel
+                {
+                    StartDate = DateTime.Today.AddDays(-60),
+                    EndDate = DateTime.Today
+                };
+                return View(newModel);
+            }
+
+            return RedirectToAction(nameof(TripIndex), model);
         }
     }
 }

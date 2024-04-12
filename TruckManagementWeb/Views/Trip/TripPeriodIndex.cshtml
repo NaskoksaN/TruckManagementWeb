@@ -1,0 +1,35 @@
+﻿@model TripIndexPeriodViewModel
+
+@{
+    ViewBag.Title = "Choose trip period. Trip period must be max 60 days";
+}
+
+<h6 class="text-center">@ViewBag.Title</h6>
+<hr />
+
+<form asp-action="TripPeriodIndex" method="post">
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="StartDate" value="@Model.StartDate.ToString("yyyy-MM-dd")" required>
+    <br />
+    <span asp-validation-for="StartDate" class="text-danger"></span> 
+    <br />
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="EndDate" value="@Model.EndDate.ToString("yyyy-MM-dd")" required>
+    <br />
+    <span asp-validation-for="EndDate" class="text-danger"></span> 
+    <br />
+
+    <button type="submit">Submit</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<style>
+    .text-danger {
+        display: block;
+        margin-top: 5px;
+    }
+</style>
