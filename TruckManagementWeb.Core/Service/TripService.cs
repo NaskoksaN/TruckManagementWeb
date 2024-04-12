@@ -72,9 +72,11 @@ namespace TruckManagementWeb.Core.Service
         /// <summary>
         /// Retrieves all trips with associated orders.
         /// </summary>
-        public async Task<IEnumerable<TripViewModel>> GetAllTripAsync()
+        public async Task<IEnumerable<TripViewModel>> GetTripsForPeriodAsync(DateTime startDate,
+                                                                 DateTime endDate)
         {
             var result = await repository.AllReadOnlyAsync<Trip>()
+                .Where(t=>t.StartDate>= startDate && t.StartDate<=endDate)
                  .Include(o => o.Orders)
                  .Select(t => new TripViewModel
                  {
@@ -97,7 +99,7 @@ namespace TruckManagementWeb.Core.Service
                  })
                  .OrderByDescending(t => t.LoadingDate)
                  .ToListAsync();
-
+            int i = 1;
             return result;
         }
 

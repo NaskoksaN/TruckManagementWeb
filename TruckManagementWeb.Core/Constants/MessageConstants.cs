@@ -17,5 +17,6 @@ namespace TruckManagementWeb.Core.Constants
         public const string TripPriceMessage = "The {0} must be between {1} and {2}.";
         public const string ExpensePriceMessage = "The {0} must be between {1} and {2}.";
         public const string EmailMsg = "Invalid email format";
+        public const string TripPeriodMsg = "The difference between Start Date and End Date cannot exceed 60 days.";
     }
 }

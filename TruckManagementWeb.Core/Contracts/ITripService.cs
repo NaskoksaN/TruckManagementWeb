@@ -11,7 +11,8 @@ namespace TruckManagementWeb.Core.Contracts
     {
         Task<int> CreateTripAsync(TripFormModel form);
         Task DeleteGivenTripWithOrders(int tripId);
-        Task<IEnumerable<TripViewModel>> GetAllTripAsync();
+        Task<IEnumerable<TripViewModel>> GetTripsForPeriodAsync(DateTime startDate,
+                                                                 DateTime endDate);
         Task<TripViewModel> GetViewTripByIdAsync(int id);
         Task SaveOrderToTripAsync(OrderFormModel form);
     }
