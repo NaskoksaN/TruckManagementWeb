@@ -25,11 +25,39 @@ Database initial is seed with
 3.Email = "dispo1@truck.com", password = “a12345”
 4.Email = "dispo2@truck.com", password = “a12345”
 For sending e-mails to new users login details is used Abv.bg, Username =webtruckfounder@abv.bg  , pass = “Aa@123456”
+4.Db is seed with 6 truck, 10 companies , 594 trips , 594 orders and 264 expense types.
 
 ## Usage 
-1. Access the application in your web browser at `http://localhost:5000` 
-2. Sign up for an account or log in with your existing credentials 
-3. Explore the different features and functionalities available 
+1. Access the application in your web browser 
+2. Sign up for an account or log in with your existing credentials.
+3. Explore the different features and functionalities available.
+
+Roles and Permissions:
+  Admin Role: Email = "admin@truck.com", password = “a12345”
+        Capabilities:
+             Perform CRUD operations on Trucks and Companies.
+             Create new user accounts and send login details via email (username and password).
+  Manager Role: Email = "manager@truck.com", password = “a12345”
+        Capabilities:
+             View lists and search for specific Trucks or Companies.
+             Generate various reports related to trucks and all truck data.
+             Create new trips and record expenses.
+             Filter Company Revenue Reports using two filters and search by partial or full name.
+ Dispatcher (Dipso) Role: "dispo1@truck.com", password = “a12345”, "dispo2@truck.com", password = “a12345” 
+        Capabilities:
+             View lists and search for specific Trucks or Companies.
+             Create new trips and record expenses.
+Homepage Statistics
+ Overview
+       Total Trucks on Service (This Year):
+              Displays the count of trucks currently in service from the beginning of the current year. 
+              This information is retrieved from the database and cached for optimal performance, updating daily.
+       Total Orders Made:
+              Shows the cumulative count of orders made since the inception of the system. 
+              This data is sourced from the database and cached for efficient access, refreshed daily.
+       Total Covered Kilometers:
+              Presents the total distance covered by all trucks since the system's initiation. 
+              This data is fetched from the database and cached, with updates occurring on a daily basis for real-time accuracy.
 
 ## Contributing 
 We welcome contributions from the community! If you'd like to contribute to the project, please follow these guidelines... 
