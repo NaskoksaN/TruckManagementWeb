@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 using TruckManagementWeb.Core.Contracts;
+using TruckManagementWeb.Core.Models.Expense;
+using TruckManagementWeb.Core.Models.Truck;
 using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Data;
 using TruckManagementWeb.Infrastructure.Data.Common;
@@ -37,18 +39,29 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
             ITruckService truckService = new TruckService(repo);
             var expenseService = new ExpenseService(repo, truckService);
 
-            TruckExpense expense = new()
+            var newTruck = new Truck()
             {
-                TruckId = 1,
+                TruckPlate = "B8511TC",
+                TruckBrand = "Iveco",
+                TruckModel = "With Iveco, you dont go too nadaleko",
+                TruckInitialKm = 5,
+                ProductionYear = 2017
+            };
+            await repo.AddAsync(newTruck);
+            await repo.SaveChangesAsync();
+
+            ExpenseFormModel expense = new ExpenseFormModel()
+            {
+                TruckPlate = "B8511TC",
                 Amount = 1000,
                 Notes = "fuel",
                 ExpenseDate = DateTime.Now,
                 EmployeeId = 1,
             };
-            await repo.AddAsync(expense);
-            await repo.SaveChangesAsync();
+            await expenseService.AddExpenseAsync(expense);
 
-            var tempExpense = await repo.GetByIdAsync<TruckExpense>(1);
+
+            var tempExpense = await expenseService.GetExpenseByIdAsync(1);
             int id = tempExpense.Id;
 
             Assert.That(id, Is.EqualTo(1));
