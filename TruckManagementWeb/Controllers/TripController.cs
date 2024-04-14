@@ -1,7 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Newtonsoft.Json;
-using System.Net;
 using System.Security.Claims;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Trip;
@@ -134,6 +131,8 @@ namespace TruckManagementWeb.Controllers
             var trips = await service.GetTripsForPeriodAsync(model.StartDate, model.EndDate);
             return View(trips);
         }
+
+
 
         [HttpGet]
         public IActionResult TripPeriodIndex()
