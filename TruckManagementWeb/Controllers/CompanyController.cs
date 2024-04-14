@@ -158,6 +158,7 @@ namespace TruckManagementWeb.Controllers
         public async Task<IActionResult> SelectedCountry()
         {
             HashSet<CompanyCountryViewModel> countries = await service.GetAllUniqueCountryAsync();
+            //var countries = service.UniqueCountryAsync();
             return View(countries);
         }
 

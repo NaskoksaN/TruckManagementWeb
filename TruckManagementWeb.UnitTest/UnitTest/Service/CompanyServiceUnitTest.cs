@@ -284,6 +284,44 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         }
 
         [Test]
+        public async Task Test_UniqueCountryAsync()
+        {
+
+            var repo = new Repository(truckDbContext);
+
+            companyService = new CompanyService(repo);
+            await repo.AddRangeAsync(new List<Company>()
+                            {
+                                new Company (){ Id=1,
+                                                CompanyVat = "123456789",
+                                                CompanyName = "AAAAA",
+                                                CompanyCountry="France",
+                                                CompanyTown="Colmar",
+                                                CompanyAddress="rue papin 10"},
+                                new Company() { Id = 2,
+                                                CompanyVat = "987654321",
+                                                CompanyName = "BBBBB",
+                                                CompanyCountry = "Germany",
+                                                CompanyTown = "Berlin",
+                                                CompanyAddress = "Hauptstraße 1" },
+                                new Company() { Id = 3,
+                                                CompanyVat = "087654320",
+                                                CompanyName = "DDDDDDD",
+                                                CompanyCountry = "Germany",
+                                                CompanyTown = "Koblenz",
+                                                CompanyAddress = "Hauptstraße 11" }
+                            });
+            await repo.SaveChangesAsync();
+
+            var result = await companyService.UniqueCountryAsync();
+
+
+            Assert.That(result.Contains("FRANCE"), Is.True);
+            Assert.That(result.Contains("GERMANY"), Is.True);
+            Assert.That(result.Count, Is.EqualTo(2));
+        }
+
+        [Test]
         public async Task Test_GetCompanyForEditByIdAsync()
         {
             var repo = new Repository(truckDbContext);
