@@ -35,8 +35,6 @@ namespace TruckManagementWeb.Core.Service
             await repository.SaveChangesAsync();
         }
 
-
-
         /// <summary>
         /// Asynchronously finds the ID of the employee associated with the provided user ID.
         /// </summary>

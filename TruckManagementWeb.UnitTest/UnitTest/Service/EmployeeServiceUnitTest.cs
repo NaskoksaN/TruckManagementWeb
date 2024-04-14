@@ -38,15 +38,17 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
             var repo = new Repository(applicationDbContext);
             employeeService = new EmployeeService(repo);
 
-            Employee employee = new Employee()
+            RegisterFormModel model = new RegisterFormModel()
             {
                 Email = "admin@truck.com",
-                EmployeeUserId = "d401e5f8-2fe9-45e2-9209-69b7db1c1de9",
-                RoleId = "adminRoleId",
+                Password = "sdf",
+                ConfirmPassword = "sdf",
+                FullName="hans hansov",
+                SelectedRole = "adminRoleId",
+               
             };
 
-            await repo.AddAsync(employee);
-            await repo.SaveChangesAsync();
+            await employeeService.CreateEmployeeAsync(model,"d401e5f8-2fe9-45e2-9209-69b7db1c1de9", "adminRoleId");
 
             var result = await repo.GetByIdAsync<Employee>(1);
 
