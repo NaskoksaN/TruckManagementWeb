@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
 using TruckManagementWeb.Core.Contracts;
+using TruckManagementWeb.Core.Models.Company;
 using TruckManagementWeb.Core.Models.Trip;
 using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Data;
@@ -261,21 +262,30 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
                 TripKm = 1000,
                 Orders = new List<Order>()
             };
+
+            var newCompany = new Company()
+            {
+                Id=1,
+                CompanyVat = "123456789",
+                CompanyName = "FRANCE COMPANY",
+                CompanyCountry = "France",
+                CompanyTown = "Colmar",
+                CompanyAddress = "rue papin 10"
+            };
+            await repo.AddAsync(newCompany);
             await repo.AddAsync(trip);
             await repo.SaveChangesAsync();
             int count = trip.Orders.Count;
-            var order = new Order
+            var order = new OrderFormModel
             {
-                Id = 1,
                 TripId = 1,
                 LoadingDate = DateTime.Now,
-                CompanyId = 1,
+                CompanyVat = "123456789",
                 Price = 500,
                 LoadingPostCode = "12345",
                 DeliveryPostCode = "67890"
             };
-            await repo.AddAsync(order);
-            await repo.SaveChangesAsync();
+            await tripService.SaveOrderToTripAsync(order);
 
             var result = await repo.GetByIdAsync<Trip>(1);
 
