@@ -119,8 +119,8 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
                }
             });
             await repo.SaveChangesAsync();
-
-            var result = tripService.GetAllTripAsync();
+            DateTime sixtyDaysAgo = DateTime.Now.AddDays(-60);
+            var result = tripService.GetTripsForPeriodAsync(sixtyDaysAgo, DateTime.Now);
             Assert.IsNotNull(result);
         }
 

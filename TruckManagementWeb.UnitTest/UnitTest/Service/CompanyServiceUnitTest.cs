@@ -247,6 +247,7 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_GetAllUniqueCountryAsync()
         {
+
             var repo = new Repository(truckDbContext);
 
             companyService = new CompanyService(repo);

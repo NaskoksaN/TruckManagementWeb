@@ -147,7 +147,7 @@ namespace TruckManagementWeb.Core.Service
             return result;
         }
 
-        public async Task<List<string>> UniqueCountryAsync()=> await repository
+        public async Task<List<string>> UniqueCountryAsync() => await repository
                             .AllReadOnlyAsync<Company>()
                             .Where(c => c.IsActive == true)
                             .Select(c => c.CompanyCountry.ToUpper())
