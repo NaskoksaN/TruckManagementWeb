@@ -219,7 +219,15 @@ namespace TruckManagementWeb.Core.Service
             return (title, yearlyResults);
         }
 
-
+        /// <summary>
+        /// Filters and sorts company revenue data based on the provided criteria.
+        /// </summary>
+        /// <param name="country"></param>
+        /// <param name="searchTerm"></param>
+        /// <param name="sorting"></param>
+        /// <param name="currentPgae"></param>
+        /// <param name="companyPerPage"></param>
+        /// <returns></returns>
         public async Task<CompanyRevenueQueryModel> FilteredCompanyRevenue(string? country,
                             string? searchTerm,
                             CompanyRevenueSorting sorting = CompanyRevenueSorting.None
@@ -262,6 +270,12 @@ namespace TruckManagementWeb.Core.Service
 
             return model;
         }
+
+        /// <summary>
+        /// Retrieves overall information about trucks, including total truck count, total traveled kilometers, and total orders made within the current year.
+        /// </summary>
+        /// </summary>
+        /// <returns></returns>
         public async Task<OveralTrucksInfoViewModel> OveralInfo()
         {
             DateTime yearBeginning = new DateTime (DateTime.Now.Year,1,1);

@@ -4,6 +4,7 @@ using Moq;
 using NUnit.Framework;
 using System.Reflection;
 using TruckManagementWeb.Core.Contracts;
+using TruckManagementWeb.Core.Models.Expense;
 using TruckManagementWeb.Core.Models.Reports;
 using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Data;
@@ -76,34 +77,115 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
         [Test]
         public async Task Test_GetMonthlyTrucksResultAsync()
         {
-            var repoMock = new Mock<Repository>(applicationDbContext);
-            var reportService = new ReportService(repoMock.Object);
+            var repo = new Repository(applicationDbContext);
+            reportService = new ReportService(repo);
 
-            DateTime today = new DateTime(2024, 3, 5);
-            string period = "month";
-            DateTime firstDayOfLastMonth = new DateTime(today.Year, today.Month - 1, 1);
-            DateTime lastDayOfLastMonth = firstDayOfLastMonth.AddMonths(1).AddDays(-1);
+            var truckData = new List<Truck>
+            {
+                new Truck
+                {
+                    TruckPlate = "B8511TC",
+                    TruckBrand = "Iveco",
+                    TruckModel = "With Iveco, you don't go too far",
+                    TruckInitialKm = 5,
+                    ProductionYear = 2017
+                },
+                new Truck
+                {
+                    TruckPlate = "B1234AB",
+                    TruckBrand = "Volvo",
+                    TruckModel = "Volvo Trucks",
+                    TruckInitialKm = 10,
+                    ProductionYear = 2019
+                }
+            };
 
-            var truck1 = new TruckMonthSimpleViewModel { TotalEuros = 1000, TotalExpenses = 500 };
-            var truck2 = new TruckMonthSimpleViewModel { TotalEuros = 1500, TotalExpenses = 1000 };
-            var truckPeriod = new List<TruckMonthSimpleViewModel> { truck1, truck2 };
+            var tripData = new List<Trip>
+            {
+                new Trip
+                {
+                    Id = 1,
+                    StartDate = DateTime.Now.AddMonths(-2),
+                    TruckId = 1,
+                    TripPrice = 1300,
+                    TripKm = 1000,
+                    Orders = new List<Order>
+                    {
+                        new Order
+                        {
+                            Id = 1,
+                            LoadingDate = DateTime.Now.AddMonths(-2),
+                            CompanyId = 1,
+                            Price = 1300,
+                            LoadingPostCode = "12345",
+                            DeliveryPostCode = "67890"
+                        }
+                    }
+                },
+                new Trip
+                {
+                    Id = 2,
+                    StartDate = DateTime.Now.AddMonths(-1),
+                    TruckId = 2,
+                    TripPrice = 1500,
+                    TripKm = 1200,
+                    Orders = new List<Order>
+                    {
+                        new Order
+                        {
+                            Id = 2,
+                            LoadingDate = DateTime.Now.AddMonths(-1),
+                            CompanyId = 2,
+                            Price = 1500,
+                            LoadingPostCode = "54321",
+                            DeliveryPostCode = "09876"
+                        }
+                    }
+                }
+            };
 
-            var getTitleMethod = reportService.GetType().GetMethod("GetTitle", BindingFlags.NonPublic | BindingFlags.Instance);
-            string title = (string)getTitleMethod.Invoke(reportService, new object[] { truckPeriod, period, firstDayOfLastMonth, lastDayOfLastMonth });
+            var expenseData = new List<TruckExpense>
+            {
+                new TruckExpense
+                {
+                    TruckId = 1,
+                    Amount = 1000,
+                    Notes = "fuel",
+                    ExpenseDate = DateTime.Now.AddMonths(-2),
+                    EmployeeId = 1
+                },
+                new TruckExpense
+                {
+                    TruckId = 2,
+                    Amount = 1200,
+                    Notes = "maintenance",
+                    ExpenseDate = DateTime.Now.AddMonths(-1),
+                    EmployeeId = 1
+                }
+            };
 
-            decimal profit = truckPeriod.Sum(t => t.TotalEuros) - truckPeriod.Sum(t => t.TotalExpenses);
-            string profitLabel = profit >= 0 ? "Profit" : "Loss";
-            string expectedTitle = $"Trucks last {period} ({firstDayOfLastMonth.ToString("dd/MM/yyyy")} - {lastDayOfLastMonth.ToString("dd/MM/yyyy")}) Result: {profitLabel} {Math.Abs(profit)} euro";
+            await repo.AddRangeAsync(truckData);
+            await repo.AddRangeAsync(tripData);
+            await repo.AddRangeAsync(expenseData);
+            await repo.SaveChangesAsync();
 
-            Assert.AreEqual(expectedTitle, title);
-            Assert.AreEqual(2, truckPeriod.Count);
-            Assert.AreEqual(1000, truckPeriod[0].TotalEuros);
-            Assert.AreEqual(500, truckPeriod[0].TotalExpenses);
-            Assert.AreEqual(1500, truckPeriod[1].TotalEuros);
-            Assert.AreEqual(1000, truckPeriod[1].TotalExpenses);
+            var (title, result) = await reportService.GetTrucksYearResultAsync();
 
+            Assert.IsNotNull(result); 
+
+            Assert.AreEqual("B8511TC", result[0].PlateNumber); 
+            Assert.AreEqual(1000, result[0].TotalKilometers); 
+            Assert.AreEqual(1300, result[0].TotalEuros); 
+            Assert.AreEqual(1000, result[0].TotalExpenses); 
+
+            Assert.AreEqual("B1234AB", result[1].PlateNumber); 
+            Assert.AreEqual(1200, result[1].TotalKilometers); 
+            Assert.AreEqual(1500, result[1].TotalEuros); 
+            Assert.AreEqual(1200, result[1].TotalExpenses); 
+
+            Assert.AreEqual(2, result.Count); 
+            
         }
-
 
         [Test]
         public async Task Test_GetTrucksYearResultAsync_ReturnsCorrectResults_AndNotCountTripOutsideYear()
@@ -217,7 +299,145 @@ namespace TruckManagementWeb.UnitTest.UnitTest.Service
 
         }
 
+        [Test]
+        public async Task Test_GetTruckYearReport()
+        {
+            var repo = new Repository(applicationDbContext);
+            var reportService = new ReportService(repo);
 
+            string truckPlate = "B8511TC";
+            var truckData = new List<Truck> { new Truck(){
+                                            TruckPlate = "B8511TC",
+                                            TruckBrand = "Iveco",
+                                            TruckModel = "With Iveco, you don't go too far",
+                                            TruckInitialKm = 5,
+                                            ProductionYear = 2017
+                                        }};
+
+            var tripData = new List<Trip> { new Trip(){
+                                    Id = 1,
+                                    StartDate = DateTime.Now.AddMonths(-2),
+                                    TruckId = 1,
+                                    TripPrice = 1300,
+                                    TripKm = 1000,
+                                    Orders = new List<Order>
+                                    {
+                                        new Order
+                                        {
+                                            Id=1,
+                                            LoadingDate = DateTime.Now.AddMonths(-2),
+                                            CompanyId =1,
+                                            Price = 500,
+                                            LoadingPostCode = "12345",
+                                            DeliveryPostCode = "67890"
+                                        }
+                                    }
+                                }};
+            var expenseData = new List<TruckExpense> { new TruckExpense()
+            {
+                TruckId = 1,
+                Amount = 1000,
+                Notes = "fuel",
+                ExpenseDate = DateTime.Now,
+                EmployeeId = 1,
+            }};
+
+            await repo.AddRangeAsync(truckData);
+            await repo.AddRangeAsync(tripData);
+            await repo.AddRangeAsync(expenseData);
+            await repo.SaveChangesAsync();
+            
+
+            var result = await reportService.GetTruckYearReport(truckPlate);
+
+            Assert.IsNotNull(result); 
+            Assert.AreEqual(12, result.Count());
+            Assert.AreEqual(0, result.First().TotalKilometers); 
+            Assert.AreEqual(0, result.First().TotalEuros); 
+            Assert.AreEqual(1000, result.Skip(1).First().TotalKilometers); 
+            Assert.AreEqual(1300, result.Skip(1).First().TotalEuros);
+        }
+
+        [Test]
+        public async Task Test_OveralInfo()
+        {
+            var repo = new Repository(applicationDbContext);
+            var reportService = new ReportService(repo);
+
+            var truckData = new List<Truck> { new Truck(){
+                                            TruckPlate = "B8511TC",
+                                            TruckBrand = "Iveco",
+                                            TruckModel = "With Iveco, you don't go too far",
+                                            TruckInitialKm = 5,
+                                            ProductionYear = 2017
+                                            },
+                                            new Truck
+                                            {
+                                                TruckPlate = "B1234AB",
+                                                TruckBrand = "Volvo",
+                                                TruckModel = "Volvo Trucks",
+                                                TruckInitialKm = 10,
+                                                ProductionYear = 2019,
+                                                IsActive = false // Set one truck as inactive
+                                            }};
+
+            var tripData = new List<Trip>
+            {
+                new Trip
+                {
+                    Id = 1,
+                    StartDate = DateTime.Now.AddMonths(-2),
+                    TruckId = 1,
+                    TripPrice = 1300,
+                    TripKm = 1000,
+                    Orders = new List<Order>
+                    {
+                        new Order
+                        {
+                            Id = 1,
+                            LoadingDate = DateTime.Now.AddMonths(-2),
+                            CompanyId = 1,
+                            Price = 500,
+                            LoadingPostCode = "12345",
+                            DeliveryPostCode = "67890"
+                        }
+                    }
+                },
+                new Trip
+                {
+                    Id = 2,
+                    StartDate = DateTime.Now.AddYears(-1).AddMonths(-3),
+                    TruckId = 1,
+                    TripPrice = 1500,
+                    TripKm = 1200,
+                    Orders = new List<Order>
+                    {
+                        new Order
+                        {
+                            Id = 2,
+                            LoadingDate = DateTime.Now.AddYears(-1).AddMonths(-3),
+                            CompanyId = 2,
+                            Price = 600,
+                            LoadingPostCode = "54321",
+                            DeliveryPostCode = "09876"
+                        }
+                    }
+                }
+            };
+
+            await repo.AddRangeAsync(truckData);
+            await repo.AddRangeAsync(tripData);
+            await repo.SaveChangesAsync();
+
+            
+            var result = await reportService.OveralInfo();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.TotaltruckCount); 
+            Assert.AreEqual(1000, result.TotalTraveledKm); 
+            Assert.AreEqual(1, result.TotalOrdersMade); 
+
+        }
 
         private async Task SeedTruckDataAsync(IRepository repo, DateTime start1, DateTime start2)
         {
