@@ -1,7 +1,55 @@
-﻿@model string
-@{
-    ViewBag.Name = Model;
+﻿@model List<string>
+
+<h4>Welcome @ViewBag.Name</h4>
+<hr />
+<p>Add your daily reminders. Mind you quiting or close browser will lose all reminders</p>
+
+<button type="button" class="btn btn-primary" onclick="openAddTaskDialog()">
+    Add Task
+</button>
+
+<div id="addTaskDialog" style="display: none;">
+    <form method="post" asp-action="AddNotes">
+        <div class="form-group">
+            <label for="taskInput">Task:</label>
+            <input type="text" class="form-control" id="taskInput" name="notes" maxlength="100" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Task</button>
+        <button type="button" class="btn btn-secondary" onclick="closeAddTaskDialog()">Cancel</button>
+    </form>
+</div>
+
+<hr />
+
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var task in Model)
+        {
+            <li>
+                @task
+                <form method="post" asp-action="DeleteNotes" class="d-inline">
+                    <input type="hidden" name="task" value="@task" />
+                    <button type="submit" class="btn btn-sm btn-danger">Done</button>
+                </form>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No tasks added yet.</p>
 }
 
-<h4> Wellcome from claims  @ViewBag.Name..work work work </h4>
-<p> your daily task/reminder are foloowing. Mark what is done </p>
+@section Scripts {
+    <script>
+        function openAddTaskDialog() {
+            document.getElementById("addTaskDialog").style.display = "block";
+            document.getElementById("taskInput").focus();
+        }
+
+        function closeAddTaskDialog() {
+            document.getElementById("addTaskDialog").style.display = "none";
+        }
+    </script>
+}
