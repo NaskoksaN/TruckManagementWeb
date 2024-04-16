@@ -2,20 +2,24 @@
 
 <h4>Welcome @ViewBag.Name</h4>
 <hr />
-<p>Add your daily reminders. Mind you quiting or close browser will lose all reminders</p>
+<p>Add your daily reminders. Mind you quiting or close browser will lose all notes.</p>
 
 <button type="button" class="btn btn-primary" onclick="openAddTaskDialog()">
-    Add Task
+    Add Notes
 </button>
 
 <div id="addTaskDialog" style="display: none;">
     <form method="post" asp-action="AddNotes">
-        <div class="form-group">
-            <label for="taskInput">Task:</label>
-            <input type="text" class="form-control" id="taskInput" name="notes" maxlength="100" required>
+        <div class="form-group row">
+            <label for="taskInput" class="col-sm-3 col-form-label">Notes:</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="taskInput" name="notes" maxlength="100" required>
+            </div>
+            <div class="col-sm-3">
+                <button type="submit" class="btn btn-primary">Add Notes</button>
+                <button type="button" class="btn btn-secondary" onclick="closeAddTaskDialog()">Cancel</button>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Add Task</button>
-        <button type="button" class="btn btn-secondary" onclick="closeAddTaskDialog()">Cancel</button>
     </form>
 </div>
 
