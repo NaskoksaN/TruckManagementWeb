@@ -1,18 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
-using Newtonsoft.Json;
 using System.Security.Claims;
 
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Reports;
+using TruckManagementWeb.Extensions;
 using static TruckManagementWeb.Constants.WebConstants;
 using static TruckManagementWeb.Core.Constants.CustomClaims;
-using TruckManagementWeb.Core.Models;
-using System.Threading.Tasks;
-using TruckManagementWeb.Extensions;
 
 namespace TruckManagementWeb.Controllers
 {

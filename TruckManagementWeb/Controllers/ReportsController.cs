@@ -1,13 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using TruckManagementWeb.Core.Contracts;
-using TruckManagementWeb.Core.Enumeration;
-using TruckManagementWeb.Core.Models.Company;
 using TruckManagementWeb.Core.Models.Reports;
 using TruckManagementWeb.Core.Models.Truck;
-using TruckManagementWeb.Infrastructure.Data.Common;
-using TruckManagementWeb.Infrastructure.Data.Models;
 
 namespace TruckManagementWeb.Controllers
 {
@@ -120,6 +114,7 @@ namespace TruckManagementWeb.Controllers
             {
                 return BadRequest();
             }
+
             ViewBag.TruckPlate = truckPlate;
             return View(truckReport);
         }
@@ -208,6 +203,5 @@ namespace TruckManagementWeb.Controllers
             return View(query);
         }
     }
-
     
 }
