@@ -8,7 +8,7 @@
         public const int CompanyPageStartIndex = 1;
         public const int CompanyPageEndIndex = 8;
 
-        public const int ChacheHomeIndexTime = 1;
+        public const int ChacheHomeIndexTime = 8;
 
         public const string HomeOveralInfoKey = "HomeOveralInfoKey";
 
