@@ -50,6 +50,16 @@ app.UseAuthorization();
 app.UseSession();
 
 app.MapDefaultControllerRoute();
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllerRoute(
+//        name: "logout",
+//        pattern: "logout",
+//        defaults: new { controller = "User", action = "Logout" }
+//    );
+
+//    endpoints.MapDefaultControllerRoute();
+//});
 
 app.MapRazorPages();
 

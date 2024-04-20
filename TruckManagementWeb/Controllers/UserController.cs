@@ -1,6 +1,7 @@
 ﻿using MailKit;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,19 +20,22 @@ namespace TruckManagementWeb.Controllers
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly IEmployeeService employeeService;
         private readonly IMyEmailService mailService;
+        private readonly IHttpContextAccessor httpContextAccessor;
 
 
         public UserController(UserManager<ApplicationUser> _userManager,
                                 SignInManager<ApplicationUser> _signInManager,
                                 RoleManager<IdentityRole> _roleManager,
                                 IEmployeeService _employeeService,
-                                IMyEmailService _mailService)
+                                IMyEmailService _mailService,
+                                IHttpContextAccessor _httpContextAccessor)
         {
             userManager = _userManager;
             signInManager = _signInManager;
             roleManager = _roleManager;
             employeeService = _employeeService;
             mailService = _mailService;
+            httpContextAccessor = _httpContextAccessor;
         }
 
         [HttpGet]
@@ -147,6 +151,15 @@ namespace TruckManagementWeb.Controllers
             }
 
             return Redirect(model.ReturnUrl ?? "~/Home/HomeUserIndex");
+        }
+
+        [HttpPost]
+        [Route("/User/Logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            HttpContext.Session.Remove("Notes");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]

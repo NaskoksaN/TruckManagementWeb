@@ -65,7 +65,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.ConfigureApplicationCookie(options=>
             {
                 options.LoginPath = $"/User/Login";
-                options.LogoutPath = $"/Identity/Account/Logout";
+                options.LogoutPath = $"/User/Logout";
             });
 
 
