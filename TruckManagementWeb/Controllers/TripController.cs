@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Trip;
 
 namespace TruckManagementWeb.Controllers
 {
+    [Authorize(Roles = "Dispo, Manager")]
     public class TripController : BaseController
     {
         private readonly ITripService service;

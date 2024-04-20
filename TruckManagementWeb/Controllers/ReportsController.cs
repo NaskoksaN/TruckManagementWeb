@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Reports;
 using TruckManagementWeb.Core.Models.Truck;
 
 namespace TruckManagementWeb.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class ReportsController : BaseController
     {
         private readonly ITruckService truckService;

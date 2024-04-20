@@ -5,6 +5,7 @@ using TruckManagementWeb.Core.Models.Truck;
 using static TruckManagementWeb.Constants.WebConstants;
 
 using X.PagedList;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TruckManagementWeb.Controllers
 {
@@ -21,6 +22,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult AddTruck()
         {
             TruckFormModel model = new TruckFormModel();
@@ -49,9 +51,11 @@ namespace TruckManagementWeb.Controllers
         public async Task<IActionResult> TruckDetails(int id)
         {
             TruckViewModel? viewModel = await service.FindTruckByIdAsyncc(id);
+           
             return View(viewModel);
         }
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteTruck(int id)
         {
             TruckViewModel? model = await service.FindTruckByIdAsyncc(id);
@@ -63,6 +67,7 @@ namespace TruckManagementWeb.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             TruckViewModel model = await service.RemoveTruckAsync(id);
@@ -114,6 +119,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> EditTruck(int id)
         {
             TruckEditFormModel? form = await service.GetTruckForEditByIdAsync(id);

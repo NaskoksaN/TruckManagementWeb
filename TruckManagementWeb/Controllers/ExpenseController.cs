@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Expense;
@@ -6,6 +7,7 @@ using TruckManagementWeb.Core.Service;
 
 namespace TruckManagementWeb.Controllers
 {
+    [Authorize(Roles = "Dispo, Manager")]
     public class ExpenseController : BaseController
     {
         private readonly IExpenseService service;
