@@ -48,6 +48,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Dispo, Manager, Admin")]
         public async Task<IActionResult> TruckDetails(int id)
         {
             TruckViewModel? viewModel = await service.FindTruckByIdAsyncc(id);
@@ -80,6 +81,7 @@ namespace TruckManagementWeb.Controllers
             return RedirectToAction(nameof(TruckController.TruckDetails), new { id = model?.Id });
         }
         [HttpGet]
+        [Authorize(Roles = "Admin, Dispo, Manager")]
         public IActionResult FindTruck()
         {
             FindTruckFormModel formModel = new();
@@ -87,6 +89,7 @@ namespace TruckManagementWeb.Controllers
             return View(formModel);
         }
         [HttpPost]
+        [Authorize(Roles = "Dispo, Manager, Admin")]
         public async Task<IActionResult> FindTruck(FindTruckFormModel form)
         {
             TruckViewModel? model = await service.FindTruckByPlateAsync(form.TruckPlate);
@@ -105,6 +108,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Dispo, Manager, Admin")]
         public async Task<IActionResult> TruckIndex(int? page)
         {
             int pageNumber = page ?? TruckPageStartIndex;
@@ -131,6 +135,7 @@ namespace TruckManagementWeb.Controllers
             return View(form);
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> EditTruck(int id, TruckEditFormModel form)
         {
             if(id != form.Id)

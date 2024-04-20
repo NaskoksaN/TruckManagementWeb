@@ -50,6 +50,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin, Dispo, Manager")]
         public async Task<IActionResult> CompanyDetails(int id)
         {
             CompanyViewModel? viewModel = await service.FindCompanyByIdAsync(id);
@@ -120,6 +121,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin, Dispo, Manager")]
         public async Task<IActionResult> FindCompany()
         {
             FindCompanyFormModel form = new();
@@ -127,6 +129,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin, Dispo, Manager")]
         public async Task<IActionResult> FindCompany(FindCompanyFormModel form)
         {
             CompanyViewModel model = await service.FindCompanyByVatAsync(form.CompanyVat);
@@ -146,6 +149,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin, Dispo, Manager")]
         public async Task<IActionResult> CompanyIndex (int? page)
         {
 
@@ -161,6 +165,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin, Dispo, Manager")]
         public async Task<IActionResult> SelectedCountry()
         {
             HashSet<CompanyCountryViewModel> countries = await service.GetAllUniqueCountryAsync();
@@ -168,6 +173,7 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin, Dispo, Manager")]
         public async Task<IActionResult> CompanyByCountry(string selectedCountry, int? page)
         {
             int pageNumber = page ?? CompanyPageStartIndex;
