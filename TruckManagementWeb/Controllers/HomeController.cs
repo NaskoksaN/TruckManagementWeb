@@ -88,11 +88,11 @@ namespace TruckManagementWeb.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<IActionResult> Error(int statusCode)
         {
-            if (statusCode == 400)
+            if (statusCode == 404)
             {
                 return View("Error404");
             }
-            if (statusCode == 401)
+            if (statusCode == 500)
             {
                 return View("Error500");
             }
