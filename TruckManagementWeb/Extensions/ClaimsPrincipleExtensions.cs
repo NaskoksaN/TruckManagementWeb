@@ -8,5 +8,7 @@ namespace TruckManagementWeb.Extensions
         {
             return user.FindFirstValue(ClaimTypes.NameIdentifier);
         }
+
+
     }
 }

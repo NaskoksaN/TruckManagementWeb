@@ -1,4 +1,5 @@
 using HouseRentingSystem.ModelBinders;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -49,7 +50,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
 
-app.MapDefaultControllerRoute();
+//app.MapDefaultControllerRoute();
 //app.UseEndpoints(endpoints =>
 //{
 //    endpoints.MapControllerRoute(
@@ -60,7 +61,23 @@ app.MapDefaultControllerRoute();
 
 //    endpoints.MapDefaultControllerRoute();
 //});
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+            name: "logout",
+            pattern: "logout",
+            defaults: new { controller = "User", action = "Logout" }
+        );
 
-app.MapRazorPages();
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+    );
+
+    endpoints.MapDefaultControllerRoute();
+    endpoints.MapRazorPages();
+});
+
+await app.CreateAdminRoleAsync();
 
 await app.RunAsync();
