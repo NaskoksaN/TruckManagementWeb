@@ -1,8 +1,9 @@
 ﻿@model TruckFormModel
 
+
 <div class="row">
     <div class="col-sm-12 offset-lg-4 col-lg-4 offset-xl-3 col-xl-4">
-        <form method="post">
+        <form asp-area="Admin" asp-controller="AdminTruck" asp-action="AddTruck" method="post">
             <div class="form-group">
                 <label asp-for="TruckPlate"></label>
                 <input asp-for="TruckPlate" class="form-control" placeholder="Truck plate ..">

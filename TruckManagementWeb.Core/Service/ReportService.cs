@@ -182,7 +182,7 @@ namespace TruckManagementWeb.Core.Service
         /// <summary>
         /// Retrieves the yearly revenue data from companies within the last year.
         /// </summary>
-        public async Task<(string title,List<ReportRevenueFromCompany>)> YearlyCompanyRevenueAsync()
+        public async Task<(string title, List<ReportRevenueFromCompany>)> YearlyCompanyRevenueAsync()
         {
             DateTime today = DateTime.Today;
             string period = "year";

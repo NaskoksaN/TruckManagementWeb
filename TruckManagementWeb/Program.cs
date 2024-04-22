@@ -27,18 +27,18 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    //app.UseDeveloperExceptionPage();
-    //app.UseMigrationsEndPoint();
+    app.UseDeveloperExceptionPage();
+    app.UseMigrationsEndPoint();
+    //app.UseExceptionHandler("/Home/Error/500");
+    //app.UseStatusCodePagesWithRedirects("/Home/Error?statusCode={0}");
+    //app.UseHsts();
+}
+else
+{
     app.UseExceptionHandler("/Home/Error/500");
     app.UseStatusCodePagesWithRedirects("/Home/Error?statusCode={0}");
     app.UseHsts();
 }
-//else
-//{
-//    app.UseExceptionHandler("/Home/Error/500");
-//    app.UseStatusCodePagesWithRedirects("/Home/Error?statusCode={0}");
-//    app.UseHsts();
-//}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -50,17 +50,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
 
-//app.MapDefaultControllerRoute();
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapControllerRoute(
-//        name: "logout",
-//        pattern: "logout",
-//        defaults: new { controller = "User", action = "Logout" }
-//    );
-
-//    endpoints.MapDefaultControllerRoute();
-//});
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(

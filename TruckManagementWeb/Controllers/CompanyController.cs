@@ -19,35 +19,6 @@ namespace TruckManagementWeb.Controllers
             logger = _logger;
         }
 
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public IActionResult AddCompany()
-        {
-            CompanyFormModel form = new CompanyFormModel();
-
-            return View(form);
-        }
-
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> AddCompany(CompanyFormModel form)
-        {
-            if (await service.IsCompanyExistByVat(form.CompanyVat))
-            {
-                this.ModelState.AddModelError(nameof(form.CompanyVat),
-                   "Company with this vat already added");
-            }
-
-            if(!ModelState.IsValid)
-            {
-                return View(form);
-            }
-
-            int newCompanyId = await service.CreateAsync(form);
-
-            return RedirectToAction(nameof(CompanyController.CompanyDetails), new { id = newCompanyId });
-
-        }
 
         [HttpGet]
         [Authorize(Roles = "Admin, Dispo, Manager")]

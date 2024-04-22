@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+using static TruckManagementWeb.Core.Constants.RoleConstants;
+
 namespace TruckManagementWeb.Areas.Admin.Controllers
 {
-    [Authorize(Roles ="")]
+    [Area("Admin")]
+    [Authorize(Roles = AdminRole)]
     public class AdminBaseController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+       
     }
 }

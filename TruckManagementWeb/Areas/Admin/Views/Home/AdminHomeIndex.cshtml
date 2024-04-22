@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Admin CRUD area";
+}
+<h4 class="text-center">@ViewBag.Title</h4>
+<div class="mt-4 p-5 bg-light text-center">
+    <a asp-area="Admin" asp-controller="AdminTruck" asp-action="AddTruck"
+       class="btn btn-primary btn-lg">Create truck</a>
+    <a asp-area="Admin" asp-controller="Company" asp-action="CreateCompany"
+       class="btn btn-primary btn-lg">Create company</a>
+</div>
+

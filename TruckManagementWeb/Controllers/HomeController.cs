@@ -55,6 +55,10 @@ namespace TruckManagementWeb.Controllers
             string userName = User.FindFirstValue(UserFullNameClaims) ?? string.Empty;
             List<string> notes = HttpContext.Session.Get<List<string>>("Notes") ?? new List<string>();
             @ViewBag.Name = userName;
+            if(User.IsAdmin())
+            {
+                return RedirectToAction("AdminHomeIndex", "Home", new {area="Admin"});
+            }
             return View(nameof(HomeUserIndex), notes);
         }
 

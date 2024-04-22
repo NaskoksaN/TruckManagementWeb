@@ -21,31 +21,31 @@ namespace TruckManagementWeb.Controllers
             logger = _logger;
         }
 
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public IActionResult AddTruck()
-        {
-            TruckFormModel model = new TruckFormModel();
-            return View(model);
-        }
-        [HttpPost]
-        public async Task<IActionResult> AddTruck(TruckFormModel form)
-        {
-            if(await service.IsTruckByPlateExistAsync(form.TruckPlate))
-            {
-                this.ModelState.AddModelError(nameof(form.TruckPlate),
-                    "Truck with this plate already added");
-            }
+        //[HttpGet]
+        //[Authorize(Roles = "Admin")]
+        //public IActionResult AddTruck()
+        //{
+        //    TruckFormModel model = new TruckFormModel();
+        //    return View(model);
+        //}
+        //[HttpPost]
+        //public async Task<IActionResult> AddTruck(TruckFormModel form)
+        //{
+        //    if(await service.IsTruckByPlateExistAsync(form.TruckPlate))
+        //    {
+        //        this.ModelState.AddModelError(nameof(form.TruckPlate),
+        //            "Truck with this plate already added");
+        //    }
 
-            if (!ModelState.IsValid)
-            {
-                return View(form);
-            }
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(form);
+        //    }
 
-            int newTruckId = await service.CreateAsync(form);
+        //    int newTruckId = await service.CreateAsync(form);
 
-            return RedirectToAction(nameof(TruckController.TruckDetails), new {id=newTruckId});
-        }
+        //    return RedirectToAction(nameof(TruckController.TruckDetails), new {id=newTruckId});
+        //}
 
         [HttpGet]
         [Authorize(Roles = "Dispo, Manager, Admin")]

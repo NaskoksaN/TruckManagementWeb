@@ -163,28 +163,6 @@ namespace TruckManagementWeb.Controllers
             ViewBag.Title = title;
             return View(monthlyResult);
         }
-        [HttpGet]
-        public async Task<IActionResult> YearlyRevenueFromCompanies(int page =1)
-        {
-            var (title, companiesRevenue) = await reportService.YearlyCompanyRevenueAsync();
-
-            int itemsPerPage = 6;
-            int totalCompanies = companiesRevenue.Count;
-            int totalPages = (int)Math.Ceiling((double)totalCompanies / itemsPerPage);
-
-            page = Math.Max(1, Math.Min(page, totalPages));
-
-            int startIndex = (page - 1) * itemsPerPage;
-            int endIndex = Math.Min(startIndex + itemsPerPage, totalCompanies);
-
-            List<ReportRevenueFromCompany> companiesForPage = companiesRevenue.GetRange(startIndex, endIndex - startIndex);
-
-            ViewBag.Title = title;
-            ViewBag.CurrentPage = page;
-            ViewBag.TotalPages = totalPages;
-
-            return View(companiesForPage);
-        }
 
         [HttpGet]
         public async Task<IActionResult> FilteredCompanyRevenue([FromQuery] CompanyQueryModel query)
