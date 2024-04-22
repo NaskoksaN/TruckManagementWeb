@@ -5,8 +5,20 @@
 
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
+<form asp-controller="AdminCompany" asp-action="AddCompany" method="post">
+    <div class="col-sm-12 offset-lg-4 col-lg-4 offset-xl-3 col-xl-4">
+        <div class="form-group">
+            <label asp-for="CompanyVat"></label>
+            <input asp-for="CompanyVat" class="form-control" placeholder="Company Vat ..">
+            <span asp-validation-for="CompanyVat" class="small text-danger"></span>
+        </div>
+    </div>
 
-<partial name="_CompanyFormPartial" model="@Model" />
+    <div class="form-group">
+        <partial name="_CompanyFormPartial" model="@Model" />
+    </div>
+
+</form>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

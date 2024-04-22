@@ -6,15 +6,8 @@ using static TruckManagementWeb.Infrastructure.Constants.DataConstants;
 
 namespace TruckManagementWeb.Core.Models.Company
 {
-    public class CompanyFormModel
+    public class CompanyFormModel 
     {
-
-        [Required(ErrorMessage = RequiredMessage)]
-        [StringLength(CompanyNameMaxLength,
-            MinimumLength = CompanyNameMinLength,
-            ErrorMessage = LengthMessage
-            )]
-        public string Name { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredMessage)]
         [Display(Name = "Company Vat")]
@@ -23,6 +16,13 @@ namespace TruckManagementWeb.Core.Models.Company
             ErrorMessage = LengthMessage)]
         [RegularExpression(VatRegeValidation, ErrorMessage = VatRegexMessage)]
         public string CompanyVat { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = RequiredMessage)]
+        [StringLength(CompanyNameMaxLength,
+            MinimumLength = CompanyNameMinLength,
+            ErrorMessage = LengthMessage
+            )]
+        public string Name { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredMessage)]
         [StringLength(CompanyCountryMaxLength,
@@ -43,5 +43,6 @@ namespace TruckManagementWeb.Core.Models.Company
         public string Address { get; set; } = string.Empty;
 
         public bool ShowCompanyVatField { get; set; } = true;
+
     }
 }

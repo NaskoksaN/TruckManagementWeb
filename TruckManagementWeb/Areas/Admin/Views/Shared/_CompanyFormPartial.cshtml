@@ -8,14 +8,6 @@
                 <input asp-for="Name" class="form-control" placeholder="Company name ..">
                 <span asp-validation-for="Name" class="small text-danger"></span>
             </div>
-            @if (Model.ShowCompanyVatField) 
-            {
-                <div class="form-group">
-                    <label asp-for="CompanyVat"></label>
-                    <input asp-for="CompanyVat" class="form-control" placeholder="Company Vat ..">
-                    <span asp-validation-for="CompanyVat" class="small text-danger"></span>
-                </div>
-            }
             <div class="form-group">
                 <label asp-for="Country"></label>
                 <input asp-for="Country" class="form-control" placeholder="Company country ..">
@@ -31,8 +23,9 @@
                 <input asp-for="Address" class="form-control" placeholder="Company address ..">
                 <span asp-validation-for="Address" class="small text-danger"></span>
             </div>
-            <div class="text-center">
+            <div class="d-flex justify-content-between">
                 <input class="btn btn-primary mt-3" type="submit" value="Save" />
+                <a asp-area="Admin" asp-controller="Home" asp-action="AdminHomeIndex" class="btn btn-primary mt-3">Back to Admin area page</a>
             </div>
         </form>
     </div>

@@ -41,7 +41,7 @@ namespace TruckManagementWeb.Areas.Admin.Controllers
 
             int newCompanyId = await service.CreateAsync(form);
 
-            return RedirectToAction(nameof(CompanyController.CompanyDetails), new { id = newCompanyId });
+            return RedirectToAction("CompanyDetails", "Company", new { area = "", id = newCompanyId });
         }
 
         [HttpGet]
@@ -57,12 +57,12 @@ namespace TruckManagementWeb.Areas.Admin.Controllers
         {
             if (id != form.Id)
             {
-                return BadRequest();
+                return StatusCode(500);
             }
             var existingCompany = await service.GetCompanyForEditByIdAsync(id);
-            form.CompanyVat = existingCompany.CompanyVat;
-            if (form.Id != existingCompany.Id &&
-                form.Name == existingCompany.Name)
+            
+            if (form.Id == existingCompany.Id &&
+                form.Name.ToLower() == existingCompany.Name.ToLower())
             {
                 this.ModelState.AddModelError(nameof(form.Name),
                     "Company with this name already added and have VAT");
@@ -77,7 +77,7 @@ namespace TruckManagementWeb.Areas.Admin.Controllers
 
             await service.EditAsync(id, form);
 
-            return RedirectToAction(nameof(CompanyController.CompanyDetails), new { id = form.Id });
+            return RedirectToAction("CompanyDetails", "Company", new { area = "", id = form.Id });
         }
 
         [HttpGet]
@@ -102,7 +102,7 @@ namespace TruckManagementWeb.Areas.Admin.Controllers
                     "Company with this Vat not exist");
             }
 
-            return RedirectToAction(nameof(CompanyController.CompanyDetails), new { id = model?.Id });
+            return RedirectToAction("CompanyDetails", "Company", new { area = "", id = model?.Id });
         }
 
     }
