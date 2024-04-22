@@ -14,6 +14,10 @@
             </div>
             <div class="text-center">
                 <input class="btn btn-primary mt-3" type="submit" value="Find" />
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <a asp-area="Admin" asp-controller="Home" asp-action="AdminHomeIndex" class="btn btn-primary mt-3">Back to Admin area page</a>
+                }
             </div>
         </form>
     </div>

@@ -6,7 +6,20 @@
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
 
-<partial name="_TruckFormPartial" model="@Model" />
+<form asp-controller="AdminTruck" asp-action="Addtruck" method="post">
+    <div class="col-sm-12 offset-lg-4 col-lg-4 offset-xl-3 col-xl-4">
+        <div class="form-group">
+            <label asp-for="TruckPlate"></label>
+            <input asp-for="TruckPlate" class="form-control" placeholder="Truck plate ..">
+            <span asp-validation-for="TruckPlate" class="small text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <partial name="_TruckFormPartial" model="@Model" />
+    </div>
+
+</form>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

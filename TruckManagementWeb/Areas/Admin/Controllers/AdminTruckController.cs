@@ -39,8 +39,8 @@ namespace TruckManagementWeb.Areas.Admin.Controllers
             }
 
             int newTruckId = await service.CreateAsync(form);
-
-            return RedirectToAction(nameof(TruckController.TruckDetails), new { id = newTruckId });
+            
+            return RedirectToAction("TruckDetails", "Truck", new { area = "", id = newTruckId });
         }
 
         [HttpGet]
@@ -64,7 +64,7 @@ namespace TruckManagementWeb.Areas.Admin.Controllers
                     "Truck with this plate not exist");
             }
 
-            return RedirectToAction(nameof(TruckController.TruckDetails), new { id = model?.Id });
+            return RedirectToAction("TruckDetails", "Truck", new { area = "", id = model?.Id });
         }
 
         [HttpGet]
@@ -100,7 +100,7 @@ namespace TruckManagementWeb.Areas.Admin.Controllers
 
             await service.EditAsync(id, form);
 
-            return RedirectToAction(nameof(TruckController.TruckDetails), new { id = form.Id });
+            return RedirectToAction("TruckDetails", "Truck", new { area = "", id = form.Id});
         }
     }
 }

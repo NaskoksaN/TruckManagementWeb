@@ -140,6 +140,7 @@ namespace TruckManagementWeb.Core.Service
                                   t.RemovedDate.Value.ToString(UsedDateFormat) 
                                   : null
                 })
+                .OrderByDescending(t=> t.IsActive)
                 .FirstOrDefaultAsync();
 
             return model;
