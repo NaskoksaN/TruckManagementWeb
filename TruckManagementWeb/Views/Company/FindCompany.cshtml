@@ -2,6 +2,10 @@
 
 @{
     ViewBag.Title = "Find truck by plate";
+    if (User.IsAdmin())
+    {
+        Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    }
 }
 
 <h2 class="text-center">@ViewBag.Title</h2>

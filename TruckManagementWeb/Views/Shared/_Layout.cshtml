@@ -22,7 +22,7 @@
                 }
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        @if ( this.User.Identity.IsAuthenticated)
+                        @if ( !this.User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -38,14 +38,20 @@
                             </li>
                             @if (User.Identity.IsAuthenticated && User.IsAdmin())
                             {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="EnterAdminArea">Enter Admin area</a>
+                                </li>
+                            }
+                            @if (User.Identity.IsAuthenticated && User.IsAdmin())
+                            {
                                 <li class="nav-item dropdown">
                                     <div class="dropdown">
                                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                            Admin Area
+                                            User zone
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
-                                                <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Register">Register User</a>
+                                                <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Register">User registration</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="VewAllUser">View all users</a>
@@ -60,21 +66,16 @@
                                         Truck
                                     </button>
                                     <ul class="dropdown-menu">
-                                        @if (User.Identity.IsAuthenticated && User.IsAdmin())
+                                        @if (User.Identity.IsAuthenticated)
                                         {
                                             <li class="nav-item">
-                                                <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="FindTruck">Find, Delete, Edit truck data</a>
+                                                @if (!User.IsAdmin())
+                                                {
+                                                    <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="FindTruck">Find truck</a>
+                                                }
+                                                <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="TruckIndex">View all trucks</a>
                                             </li>
                                         }
-                                        else
-                                        {
-                                            <li class="nav-item">
-                                                <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="FindTruck">Find truck</a>
-                                            </li>
-                                        }
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="" asp-controller="Truck" asp-action="TruckIndex">View all trucks</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -84,24 +85,21 @@
                                         Company
                                     </button>
                                     <ul class="dropdown-menu">
-                                        @if (User.Identity.IsAuthenticated && User.IsAdmin())
+                                        @if (User.Identity.IsAuthenticated)
                                         {
                                             <li class="nav-item">
-                                                <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="FindCompany">Find, Delete, Edit company data</a>
+                                                @if (!User.IsAdmin())
+                                                {
+                                                    <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="FindCompany">Find company</a>
+                                                }
                                             </li>
-                                        }
-                                        else
-                                        {
                                             <li class="nav-item">
                                                 <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="SelectedCountry">View by country</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="FindCompany">Find</a>
+                                                <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="CompanyIndex">View all company</a>
                                             </li>
                                         }
-                                        <li class="nav-item">
-                                            <a class="dropdown-item" asp-area="" asp-controller="Company" asp-action="CompanyIndex">View all company</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </li>

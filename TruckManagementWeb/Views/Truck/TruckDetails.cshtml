@@ -1,6 +1,10 @@
 ﻿@model TruckViewModel
 @{
     ViewBag.Title = "Truck details for: " + Model.TruckPlate;
+    if (User.IsAdmin())
+    {
+        Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    }
 }
 
 <h2 class="text-center">@ViewBag.Title</h2>
@@ -12,17 +16,6 @@
 }
 else if (Model.IsActive == false)
 {
-    @* <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <h3>This truck was added for service on date: @Model.AddedDate</h3>
-                <h3>This truck was removed from service on date: @Model.RemovedDate</h3>
-                <div class="text-center">
-                    <a asp-controller="Truck" asp-action="FindTruck" class="btn btn-primary">Find another truck</a>
-                </div>
-            </div>
-        </div>
-    </div> *@
     <form id="findTruckForm" method="post" asp-controller="Truck" asp-action="FindTruck" style="display: inline;">
         <div class="container">
             <div class="row">

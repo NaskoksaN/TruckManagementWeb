@@ -41,5 +41,7 @@ namespace TruckManagementWeb.Core.Models.Company
             MinimumLength = CompanyAddressMinLength,
             ErrorMessage = LengthMessage)]
         public string Address { get; set; } = string.Empty;
+
+        public bool ShowCompanyVatField { get; set; } = true;
     }
 }
