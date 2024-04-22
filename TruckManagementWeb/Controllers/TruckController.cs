@@ -21,32 +21,6 @@ namespace TruckManagementWeb.Controllers
             logger = _logger;
         }
 
-        //[HttpGet]
-        //[Authorize(Roles = "Admin")]
-        //public IActionResult AddTruck()
-        //{
-        //    TruckFormModel model = new TruckFormModel();
-        //    return View(model);
-        //}
-        //[HttpPost]
-        //public async Task<IActionResult> AddTruck(TruckFormModel form)
-        //{
-        //    if(await service.IsTruckByPlateExistAsync(form.TruckPlate))
-        //    {
-        //        this.ModelState.AddModelError(nameof(form.TruckPlate),
-        //            "Truck with this plate already added");
-        //    }
-
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(form);
-        //    }
-
-        //    int newTruckId = await service.CreateAsync(form);
-
-        //    return RedirectToAction(nameof(TruckController.TruckDetails), new {id=newTruckId});
-        //}
-
         [HttpGet]
         [Authorize(Roles = "Dispo, Manager, Admin")]
         public async Task<IActionResult> TruckDetails(int id)
@@ -55,31 +29,7 @@ namespace TruckManagementWeb.Controllers
            
             return View(viewModel);
         }
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> DeleteTruck(int id)
-        {
-            TruckViewModel? model = await service.FindTruckByIdAsyncc(id);
-            if (model == null)
-            {
-                this.ModelState.AddModelError(nameof(model.Id),
-                    "Truck with this plate not exist");
-            }
-            return View(model);
-        }
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            TruckViewModel model = await service.RemoveTruckAsync(id);
-            if(model== null)
-            {
-                this.ModelState.AddModelError(nameof(model.Id),
-                    "Truck with this plate not exist");
-            }
-
-            return RedirectToAction(nameof(TruckController.TruckDetails), new { id = model?.Id });
-        }
+        
         [HttpGet]
         [Authorize(Roles = "Admin, Dispo, Manager")]
         public IActionResult FindTruck()

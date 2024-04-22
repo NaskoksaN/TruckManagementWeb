@@ -30,68 +30,6 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> DeleteCompany(int id)
-        {
-            CompanyViewModel? viewModel = await service.FindCompanyByIdAsync(id);
-            if (viewModel == null)
-            {
-                this.ModelState.AddModelError(nameof(viewModel.Id),
-                    "Truck with this plate not exist");
-            }
-            return View(viewModel);
-        }
-
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            CompanyViewModel model = await service.RemoveCompanyByIdAsync(id);
-            if (model == null)
-            {
-                this.ModelState.AddModelError(nameof(model.Id),
-                    "Company with this Vat not exist");
-            }
-
-            return RedirectToAction(nameof(CompanyController.CompanyDetails), new { id = model?.Id });
-        }
-
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> EditCompany(int id)
-        {
-            CompanyEditFormModel form = await service.GetCompanyForEditByIdAsync(id);
-
-            return View(form);
-        }
-
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> EditCompany(int id, CompanyEditFormModel form)
-        {
-            if (id != form.Id)
-            {
-                return BadRequest();
-            }
-            var existingCompany = await service.FindCompanyByVatAsync(form.CompanyVat);
-            if (form.Id != existingCompany.Id &&
-                form.Name!= existingCompany.Name)
-            {
-                this.ModelState.AddModelError(nameof(form.CompanyVat),
-                    "Company with this Vat already added");
-            }
-
-            if (!ModelState.IsValid)
-            {
-                return View(form);
-            }
-
-            await service.EditAsync(id, form);
-
-            return RedirectToAction(nameof(CompanyController.CompanyDetails), new { id = form.Id });
-        }
-
-        [HttpGet]
         [Authorize(Roles = "Admin, Dispo, Manager")]
         public async Task<IActionResult> FindCompany()
         {
