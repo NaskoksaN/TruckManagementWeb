@@ -43,5 +43,67 @@ namespace TruckManagementWeb.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(CompanyController.CompanyDetails), new { id = newCompanyId });
         }
+
+        [HttpGet]
+        public async Task<IActionResult> EditCompany(int id)
+        {
+            CompanyEditFormModel form = await service.GetCompanyForEditByIdAsync(id);
+            form.ShowCompanyVatField = false;
+            return View(form);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditCompany(int id, CompanyEditFormModel form)
+        {
+            if (id != form.Id)
+            {
+                return BadRequest();
+            }
+            var existingCompany = await service.GetCompanyForEditByIdAsync(id);
+            form.CompanyVat = existingCompany.CompanyVat;
+            if (form.Id != existingCompany.Id &&
+                form.Name == existingCompany.Name)
+            {
+                this.ModelState.AddModelError(nameof(form.Name),
+                    "Company with this name already added and have VAT");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                form.ShowCompanyVatField = false;
+                form.CompanyVat = existingCompany.CompanyVat;
+                return View(form);
+            }
+
+            await service.EditAsync(id, form);
+
+            return RedirectToAction(nameof(CompanyController.CompanyDetails), new { id = form.Id });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DeleteCompany(int id)
+        {
+            CompanyViewModel? viewModel = await service.FindCompanyByIdAsync(id);
+            if (viewModel == null)
+            {
+                this.ModelState.AddModelError(nameof(viewModel.Id),
+                    "Truck with this plate not exist");
+            }
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            CompanyViewModel model = await service.RemoveCompanyByIdAsync(id);
+            if (model == null)
+            {
+                this.ModelState.AddModelError(nameof(model.Id),
+                    "Company with this Vat not exist");
+            }
+
+            return RedirectToAction(nameof(CompanyController.CompanyDetails), new { id = model?.Id });
+        }
+
     }
 }

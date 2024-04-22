@@ -1,0 +1,13 @@
+﻿@model CompanyEditFormModel
+@{
+    ViewBag.Title = $"Edit details for company with VAT: {Model.CompanyVat}";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<partial name="_CompanyFormPartial" model="@Model" />
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

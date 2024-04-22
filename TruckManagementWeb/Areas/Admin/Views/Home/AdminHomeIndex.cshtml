@@ -3,9 +3,30 @@
 }
 <h4 class="text-center">@ViewBag.Title</h4>
 <div class="mt-4 p-5 bg-light text-center">
-    <a asp-area="Admin" asp-controller="AdminTruck" asp-action="AddTruck"
-       class="btn btn-primary btn-lg">Create truck</a>
-    <a asp-area="Admin" asp-controller="Company" asp-action="CreateCompany"
-       class="btn btn-primary btn-lg">Create company</a>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>
+                    <a asp-area="Admin" asp-controller="AdminTruck" asp-action="AddTruck"
+                       class="btn btn-primary btn-lg">Create truck</a>
+                </td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Company" asp-action="CreateCompany"
+                       class="btn btn-primary btn-lg">Create company</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a asp-area="" asp-controller="Truck" asp-action="FindTruck"
+                       class="btn btn-primary btn-lg">Find, edit, delete truck</a>
+                </td>
+                <td>
+                    <a asp-area="" asp-controller="Company" asp-action="FindCompany"
+                       class="btn btn-primary btn-lg">Find, edit, delete company</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+
 

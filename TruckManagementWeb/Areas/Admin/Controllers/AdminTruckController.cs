@@ -42,5 +42,65 @@ namespace TruckManagementWeb.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(TruckController.TruckDetails), new { id = newTruckId });
         }
+
+        [HttpGet]
+        public async Task<IActionResult> DeleteTruck(int id)
+        {
+            TruckViewModel? model = await service.FindTruckByIdAsyncc(id);
+            if (model == null)
+            {
+                this.ModelState.AddModelError(nameof(model.Id),
+                    "Truck with this plate not exist");
+            }
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            TruckViewModel model = await service.RemoveTruckAsync(id);
+            if (model == null)
+            {
+                this.ModelState.AddModelError(nameof(model.Id),
+                    "Truck with this plate not exist");
+            }
+
+            return RedirectToAction(nameof(TruckController.TruckDetails), new { id = model?.Id });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditTruck(int id)
+        {
+            TruckEditFormModel? form = await service.GetTruckForEditByIdAsync(id);
+            if (form == null)
+            {
+                return BadRequest();
+            }
+
+            return View(form);
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditTruck(int id, TruckEditFormModel form)
+        {
+            if (id != form.Id)
+            {
+                return BadRequest();
+            }
+            var existTruck = await service.FindTruckByPlateAsync(form.TruckPlate);
+
+            if (existTruck.Id != form.Id)
+            {
+                this.ModelState.AddModelError(nameof(form.TruckPlate),
+                    "Truck with this plate already added");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(form);
+            }
+
+            await service.EditAsync(id, form);
+
+            return RedirectToAction(nameof(TruckController.TruckDetails), new { id = form.Id });
+        }
     }
 }
