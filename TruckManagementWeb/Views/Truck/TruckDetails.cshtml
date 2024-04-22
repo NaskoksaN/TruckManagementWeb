@@ -44,10 +44,14 @@ else
                     <div class="text-center">
                         @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                         {
-                            <a asp-controller="Truck" asp-action="EditTruck" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
-                            <a asp-controller="Truck" asp-action="DeleteTruck" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+                            <a asp-area="Admin" asp-controller="AdminTruck" asp-action="EditTruck" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+                            <a asp-area="Admin" asp-controller="AdminTruck" asp-action="DeleteTruck" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+                            <a asp-area="Admin" asp-controller="Home" asp-action="AdminHomeIndex" class="btn btn-primary">Back to Admin area page</a>
                         }
+                        else
+                        {
                            <a asp-controller="Truck" asp-action="TruckIndex" class="btn btn-primary">Back to truck list</a>
+                        }
                     </div>
                 </div>
             </div>
