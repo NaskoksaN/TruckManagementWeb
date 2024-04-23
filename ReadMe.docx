@@ -32,6 +32,10 @@ For sending e-mails to new users login details is used Abv.bg, Username =webtruc
 2. Sign up for an account or log in with your existing credentials.
 3. Explore the different features and functionalities available.
 
+Area's : 
+  Admin Area
+        The Admin Area allows CRUD (Create, Read, Update, Delete) operations on Trucks and Companies.
+
 Roles and Permissions:
   Admin Role: Email = "admin@truck.com", password = “a12345”
         Capabilities:
