@@ -61,8 +61,7 @@ namespace TruckManagementWeb.Areas.Admin.Controllers
             }
             var existingCompany = await service.GetCompanyForEditByIdAsync(id);
             
-            if (form.Id == existingCompany.Id &&
-                form.Name.ToLower() == existingCompany.Name.ToLower())
+            if (form.Id != existingCompany.Id)
             {
                 this.ModelState.AddModelError(nameof(form.Name),
                     "Company with this name already added and have VAT");

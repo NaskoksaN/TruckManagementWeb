@@ -55,6 +55,7 @@ namespace TruckManagementWeb.Controllers
             string userName = User.FindFirstValue(UserFullNameClaims) ?? string.Empty;
             List<string> notes = HttpContext.Session.Get<List<string>>("Notes") ?? new List<string>();
             @ViewBag.Name = userName;
+
             return View(nameof(HomeUserIndex), notes);
         }
         [HttpGet]

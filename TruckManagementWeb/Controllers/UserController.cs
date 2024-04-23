@@ -1,14 +1,18 @@
 ﻿using MailKit;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.ApplicationUser;
 using TruckManagementWeb.Core.Models.User;
+using TruckManagementWeb.Extensions;
 using static TruckManagementWeb.Core.Constants.CustomClaims;
+using static TruckManagementWeb.Core.Constants.RoleConstants;
 
 namespace TruckManagementWeb.Controllers
 {
@@ -132,9 +136,9 @@ namespace TruckManagementWeb.Controllers
         }
         [AllowAnonymous]
         [HttpPost]
-        public async Task <IActionResult> Login(LoginFormModel model)
+        public async Task<IActionResult> Login(LoginFormModel model)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }
@@ -142,7 +146,7 @@ namespace TruckManagementWeb.Controllers
             Microsoft.AspNetCore.Identity.SignInResult? result =
                 await signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
 
-            if(!result.Succeeded)
+            if (!result.Succeeded)
             {
                 this.ModelState.AddModelError(string.Empty,
                    "Error while in login in. Contact administrator");
@@ -150,11 +154,24 @@ namespace TruckManagementWeb.Controllers
                 return View(model);
             }
 
+            var user = await userManager.FindByEmailAsync(model.Email);
+
+            var roles = await userManager.GetRolesAsync(user);
+
+            var roleClaims = roles.Select(role => new Claim(ClaimTypes.Role, role));
+
+            var identity = (ClaimsIdentity)User.Identity;
+            identity.AddClaims(roleClaims);
+
+            if (user!=null && User.IsAdmin())
+            {
+                return RedirectToAction("AdminHomeIndex", "Home", new {area="Admin"});
+            }
+
             return Redirect(model.ReturnUrl ?? "~/Home/HomeUserIndex");
         }
 
-        [HttpPost]
-        [Route("/User/Logout")]
+        [HttpPost("/User/Logout")]
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();

@@ -53,15 +53,15 @@ app.UseSession();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
-            name: "logout",
-            pattern: "logout",
-            defaults: new { controller = "User", action = "Logout" }
-        );
+                    name: "logout",
+                    pattern: "logout",
+                    defaults: new { controller = "User", action = "Logout" }
+                    );
 
     endpoints.MapControllerRoute(
-      name: "areas",
-      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-    );
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                     );
 
     endpoints.MapDefaultControllerRoute();
     endpoints.MapRazorPages();
