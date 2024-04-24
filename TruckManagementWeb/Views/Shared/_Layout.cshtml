@@ -41,9 +41,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="EnterAdminArea">Enter Admin area</a>
                                 </li>
-                            }
-                            @if (User.Identity.IsAuthenticated && User.IsAdmin())
-                            {
                                 <li class="nav-item dropdown">
                                     <div class="dropdown">
                                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">

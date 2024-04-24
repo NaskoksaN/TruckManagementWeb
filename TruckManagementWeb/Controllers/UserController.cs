@@ -172,8 +172,14 @@ namespace TruckManagementWeb.Controllers
         }
 
         [HttpPost("/User/Logout")]
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             await signInManager.SignOutAsync();
             HttpContext.Session.Remove("Notes");
             return RedirectToAction("Index", "Home");

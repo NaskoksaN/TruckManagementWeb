@@ -34,8 +34,8 @@ namespace TruckManagementWeb.Data
                 .HasForeignKey(o => o.TripId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            if (seedDb == true)
-            {
+            //if (seedDb == true)
+            //{
 
                 modelBuilder.ApplyConfiguration(new IdentityRoleConfiguration());
                 modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration());
@@ -48,7 +48,7 @@ namespace TruckManagementWeb.Data
                 modelBuilder.ApplyConfiguration(new TruckExpenseConfiguration());
 
                 TripSeeder.SeedData(modelBuilder);
-            }
+            //}
 
             base.OnModelCreating(modelBuilder);
         }
@@ -60,5 +60,7 @@ namespace TruckManagementWeb.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Trip> Tripes { get; set; }
         public DbSet<Employee> Employees { get; set; }
+
+        public DbSet<SoldOrder> SoldsOrders { get; set; }
     }
 }

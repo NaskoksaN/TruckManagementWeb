@@ -58,5 +58,14 @@
         public const int EmployeeMailMinLenght = 5;
         public const int EmployeeMailMaxLenght = 50;
 
+        public const int RefMinLength = 1;
+        public const int RefMaxLength = 30;
+
+        public const double LoadingMetterMin = 0.1;
+        public const double LoadingMetterMax = 15.6;
+
+        public const double LoadingWeightMin = 0.1;
+        public const double LoadingWeightMax = 35.0;
+
     }
 }

@@ -73,5 +73,6 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         public DateTime? RemovedDate { get; set; }
 
         public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public ICollection<SoldOrder> SoldOrders {  get; set; }=new List<SoldOrder>();
     }
 }

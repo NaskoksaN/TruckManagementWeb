@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Moq;
+﻿using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.User;
@@ -9,7 +6,6 @@ using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Data;
 using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Models;
-using TruckManagementWeb.Infrastructure.Migrations;
 
 namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
