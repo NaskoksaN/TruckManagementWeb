@@ -9,6 +9,7 @@ namespace TruckManagementWeb.Core.Contracts
 {
     public interface ISellOrder
     {
-        Task AddSoldOrderAsync(SoldOrderFormModel formModel);
+        Task<int> AddSoldOrderAsync(SoldOrderFormModel formModel);
+        Task<SoldViewFomrModel> GetSoldOrderByIdAsync(int id);
     }
 }

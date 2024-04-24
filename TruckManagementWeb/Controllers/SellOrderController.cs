@@ -42,7 +42,7 @@ namespace TruckManagementWeb.Controllers
                 return View(formModel);
             }
 
-            await sellOrderService.AddSoldOrderAsync(formModel);
+            int soldOrderId = await sellOrderService.AddSoldOrderAsync(formModel);
 
             string confirmationUrl = Url.Action("ConfirmOrder", "SellOrder", new { token = formModel.OrderGuid }, Request.Scheme);
 
@@ -51,9 +51,14 @@ namespace TruckManagementWeb.Controllers
 
             mailService.SendMail(formModel.ClientEmail, emailContent, emailTitle);
 
-            return View();
+            return RedirectToAction(nameof(OrderDetails), new { id = soldOrderId });
         }
 
+        public async Task<IActionResult> OrderDetails(int id)
+        {
+            SoldViewFomrModel model = await sellOrderService.GetSoldOrderByIdAsync(id);
+            return View(model);
+        }
         //[HttpGet]
         //public async Task<IActionResult> ConfirmOrder(Guid token)
         //{

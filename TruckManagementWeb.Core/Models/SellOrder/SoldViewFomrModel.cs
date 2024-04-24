@@ -29,6 +29,7 @@ namespace TruckManagementWeb.Core.Models.SoldOrder
 
         public string ClientEmail { get; set; } = string.Empty;
 
+
         [Required]
         public Guid OrderGuid { get; set; }
 

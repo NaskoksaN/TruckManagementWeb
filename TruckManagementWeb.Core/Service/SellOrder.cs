@@ -1,7 +1,9 @@
-﻿using TruckManagementWeb.Core.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.SoldOrder;
 using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Models;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace TruckManagementWeb.Core.Service
 {
@@ -15,7 +17,7 @@ namespace TruckManagementWeb.Core.Service
             repository = _repository;
             companyService = _companyService;
         }
-        public async Task AddSoldOrderAsync(SoldOrderFormModel formModel)
+        public async Task <int>AddSoldOrderAsync(SoldOrderFormModel formModel)
         {
             var company = await companyService.FindCompanyByVatAsync(formModel.ClientCompanyVat);
 
@@ -34,10 +36,39 @@ namespace TruckManagementWeb.Core.Service
                 LoadingReference = formModel.LoadingReference,
                 DeliveryReference = formModel.DeliveryReference,
                 Price = formModel.Price,
+                ClientEmail= formModel.ClientEmail
             };
 
             await repository.AddAsync(order);
             await repository.SaveChangesAsync();
+
+            return order.Id;
+        }
+
+        public async Task<SoldViewFomrModel> GetSoldOrderByIdAsync(int id)
+        {
+           
+            SoldViewFomrModel result = await repository.AllReadOnlyAsync<SoldOrder>()
+                .Where(s => s.Id == id)
+                .Select(s=> new SoldViewFomrModel()
+                {
+                    OrderGuid = s.OrderGuid,
+                    ClientEmail=s.ClientEmail,
+                    LoadingCompany = s.LoadingCompany,
+                    LoadingStreet = s.LoadingStreet,
+                    LoadingTown = s.LoadingTown,
+                    DeliveryCompany = s.DeliveryCompany,
+                    DeliveryStreet = s.DeliveryStreet,
+                    DeliveryTown = s.DeliveryTown,
+                    LoadingMeter = s.LoadingMeter,
+                    Weight = s.Weight,
+                    LoadingReference = s.LoadingReference,
+                    DeliveryReference = s.DeliveryReference,
+                    Price = s.Price
+                })
+                .FirstOrDefaultAsync();
+
+            return result;
         }
     }
 }
