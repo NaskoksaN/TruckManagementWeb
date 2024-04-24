@@ -1,0 +1,61 @@
+﻿@model SoldViewFomrModel
+
+<div class="container">
+    <h2>Confirm Order</h2>
+    <hr>
+
+    <p>Loading company: @Model.LoadingCompany, street: @Model.LoadingStreet, town: @Model.LoadingTown</p>
+    <p>Loading ref: @Model.LoadingReference</p>
+    <p>Load meters: @Model.LoadingMeter, weight: @Model.Weight</p>
+    <p>Delivery company: @Model.DeliveryCompany, street: @Model.DeliveryStreet, town: @Model.DeliveryTown</p>
+    <p>Delivery ref: @Model.DeliveryReference</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <form asp-action="ConfirmLoading" asp-controller="SellOrder" method="post">
+                    <input type="hidden" name="token" value="@Model.OrderGuid" />
+                    @if (!Model.LoadingDateTime.HasValue)
+                    {
+                        <div class="form-group">
+                            <label asp-for="LoadingDateTime" class="control-label">Enter Loading Date:</label>
+                            <input asp-for="LoadingDateTime" class="form-control datepicker" type="date" />
+                            <span asp-validation-for="LoadingDateTime" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Confirm Loading</button>
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <label class="control-label">Loading Date:</label>
+                            <input class="form-control" type="text" value="@Model.LoadingDateTime?.ToString("yyyy-MM-dd")" readonly />
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <form asp-action="ConfirmDelivery" asp-controller="SellOrder" method="post">
+                    <input type="hidden" name="token" value="@Model.OrderGuid" />
+                    @if (!Model.DeliveryDateTime.HasValue)
+                    {
+                        <div class="form-group">
+                            <label asp-for="DeliveryDateTime" class="control-label">Enter Delivery Date:</label>
+                            <input asp-for="DeliveryDateTime" class="form-control datepicker" type="date" />
+                            <span asp-validation-for="DeliveryDateTime" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Confirm Loading</button>
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <label class="control-label">Loading Date:</label>
+                            <input class="form-control" type="text" value="@Model.DeliveryDateTime?.ToString("yyyy-MM-dd")" readonly />
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
