@@ -72,10 +72,12 @@ namespace TruckManagementWeb.Infrastructure.Data.Models
         [Comment("Weight of the load")]
         public double Weight { get; set; }
 
-        [Comment("price of the load")]
+        [Comment("Price of the load")]
         [Column(TypeName = DecimalColumnType)]
         public decimal Price {  get; set; }
 
+        [Comment("Client e-mail")]
+        public string ClientEmail { get; set; } = string.Empty;
 
         [ForeignKey(nameof(CompanyId))]
         public Company Company { get; set; } = null!;
