@@ -14,48 +14,44 @@
         <div class="col-md-6">
             <div class="form-group">
                 <form asp-action="ConfirmLoading" asp-controller="SellOrder" method="post">
-                    <input type="hidden" name="token" value="@Model.OrderGuid" />
-                    @if (!Model.LoadingDateTime.HasValue)
+                    @if (Model.LoadingDateTime == null)
                     {
-                        <div class="form-group">
-                            <label asp-for="LoadingDateTime" class="control-label">Enter Loading Date:</label>
-                            <input asp-for="LoadingDateTime" class="form-control datepicker" type="date" />
-                            <span asp-validation-for="LoadingDateTime" class="text-danger"></span>
-                        </div>
+                        <input type="hidden" name="token" value="@Model.OrderGuid" />
+                        <label for="loadingDate">Loading Date:</label>
+                        <input type="date" id="loadingDate" name="loadingDate" value="@Model.LoadingDateTime?.ToString("yyyy-MM-dd")" required>
+                        <br />
+                        <span asp-validation-for="LoadingDateTime" class="text-danger"></span>
                         <button type="submit" class="btn btn-primary">Confirm Loading</button>
                     }
                     else
                     {
-                        <div class="form-group">
-                            <label class="control-label">Loading Date:</label>
-                            <input class="form-control" type="text" value="@Model.LoadingDateTime?.ToString("yyyy-MM-dd")" readonly />
-                        </div>
+                        <div class="form-control">@Model.LoadingDateTime?.ToString("yyyy-MM-dd")</div>
                     }
+                    <br />
                 </form>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <form asp-action="ConfirmDelivery" asp-controller="SellOrder" method="post">
-                    <input type="hidden" name="token" value="@Model.OrderGuid" />
-                    @if (!Model.DeliveryDateTime.HasValue)
+                    @if (Model.DeliveryDateTime == null)
                     {
-                        <div class="form-group">
-                            <label asp-for="DeliveryDateTime" class="control-label">Enter Delivery Date:</label>
-                            <input asp-for="DeliveryDateTime" class="form-control datepicker" type="date" />
-                            <span asp-validation-for="DeliveryDateTime" class="text-danger"></span>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Confirm Loading</button>
+                        <input type="hidden" name="token" value="@Model.OrderGuid" />
+                        <label for="DeliveryDateTime">Delivery Date:</label>
+                        <input type="date" id="DeliveryDateTime" name="deliveryDate" value="@Model.DeliveryDateTime?.ToString("yyyy-MM-dd")" required>
+                        <br />
+                        <span asp-validation-for="DeliveryDateTime" class="text-danger"></span>
+                        <button type="submit" class="btn btn-primary">Confirm Delivery</button>
                     }
                     else
                     {
-                        <div class="form-group">
-                            <label class="control-label">Loading Date:</label>
-                            <input class="form-control" type="text" value="@Model.DeliveryDateTime?.ToString("yyyy-MM-dd")" readonly />
-                        </div>
+                        <div class="form-control">@Model.DeliveryDateTime?.ToString("yyyy-MM-dd")</div>
                     }
+                    <br />
                 </form>
+
             </div>
         </div>
+
     </div>
 </div>

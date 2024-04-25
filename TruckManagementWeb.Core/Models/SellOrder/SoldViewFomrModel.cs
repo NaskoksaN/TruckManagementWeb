@@ -33,7 +33,11 @@ namespace TruckManagementWeb.Core.Models.SoldOrder
         [Required]
         public Guid OrderGuid { get; set; }
 
+        [Display(Name = "Loading Date")]
         public DateTime? LoadingDateTime { get; set; }
+
+        [Display(Name = "Delivery Date")]
         public DateTime? DeliveryDateTime { get; set; }
+
     }
 }

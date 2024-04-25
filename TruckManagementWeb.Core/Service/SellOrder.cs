@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.SoldOrder;
 using TruckManagementWeb.Infrastructure.Data.Common;
@@ -17,6 +18,27 @@ namespace TruckManagementWeb.Core.Service
             repository = _repository;
             companyService = _companyService;
         }
+
+        public async Task AddDateAsync(Guid token, DateTime? date, string action)
+        {
+            var order = await repository.AllAsync<SoldOrder>()
+                .Where(s=> s.OrderGuid==token)
+                .FirstOrDefaultAsync();
+
+            if (order != null && date != null)
+            {
+                if (action == "loaded")
+                {
+                    order.LoadingDateTime = date;
+                }
+                if (action == "delivered")
+                {
+                    order.DeliveryDateTime = date;
+                }
+                await repository.SaveChangesAsync();
+            }
+        }
+
         public async Task <int>AddSoldOrderAsync(SoldOrderFormModel formModel)
         {
             var company = await companyService.FindCompanyByVatAsync(formModel.ClientCompanyVat);
@@ -43,6 +65,32 @@ namespace TruckManagementWeb.Core.Service
             await repository.SaveChangesAsync();
 
             return order.Id;
+        }
+
+        public async Task<SoldViewFomrModel> GetOrderByTokeAsync(Guid token)
+        {
+            SoldViewFomrModel result = await repository.AllAsync<SoldOrder>()
+                 .Where(order => order.OrderGuid == token)
+                 .Select(s=> new SoldViewFomrModel()
+                 {
+                    OrderGuid = s.OrderGuid,
+                    ClientEmail = s.ClientEmail,
+                    LoadingCompany = s.LoadingCompany,
+                    LoadingStreet = s.LoadingStreet,
+                    LoadingTown = s.LoadingTown,
+                    DeliveryCompany = s.DeliveryCompany,
+                    DeliveryStreet = s.DeliveryStreet,
+                    DeliveryTown = s.DeliveryTown,
+                    LoadingMeter = s.LoadingMeter,
+                    Weight = s.Weight,
+                    LoadingReference = s.LoadingReference,
+                    DeliveryReference = s.DeliveryReference,
+                    Price = s.Price,
+                    LoadingDateTime = s.LoadingDateTime.HasValue ? s.LoadingDateTime : null,
+                    DeliveryDateTime = s.DeliveryDateTime.HasValue ? s.DeliveryDateTime : null
+                 })
+                 .FirstOrDefaultAsync();
+            return result;
         }
 
         public async Task<SoldViewFomrModel> GetSoldOrderByIdAsync(int id)
