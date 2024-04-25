@@ -32,6 +32,11 @@ For sending e-mails to new users login details is used Abv.bg, Username =webtruc
 2. Sign up for an account or log in with your existing credentials.
 3. Explore the different features and functionalities available.
 
+Order Status Update
+  Client Notification: The application allows dispo or managers to send email notifications to clients containing links to update the status of their orders.
+  Secure Authentication: Clients can securely access the provided link without the need for authentication, ensuring ease of use.
+  Real-time Updates: Upon clicking the link, clients can update the status of their orders in real-time, providing transparency and efficiency in order management.
+
 Area's : 
   Admin Area
         The Admin Area allows CRUD (Create, Read, Update, Delete) operations on Trucks and Companies.
