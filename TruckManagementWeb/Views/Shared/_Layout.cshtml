@@ -30,9 +30,6 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contacts">Contacts us</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="SellOrder" asp-action="Create">Send order link</a>
-                            </li>
                         }
                         @if (this.User.Identity.IsAuthenticated) 
                         {
@@ -155,6 +152,12 @@
                                             </li>
                                         </ul>
                                     </div>
+                                </li>
+                            }
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("Manager") || User.IsInRole("Dispo"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="SellOrder" asp-action="Create">Create and send order link</a>
                                 </li>
                             }
                         } 

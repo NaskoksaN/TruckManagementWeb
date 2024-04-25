@@ -101,8 +101,8 @@ namespace TruckManagementWeb.Controllers
                                         .Claims
                                         .Claim(UserFullNameClaims, $"{user.FullName}"));
                 string msg = $"login: {model.Email} , pass: {model.Password}";
-
-                mailService.SendMail(model.EMail, msg, model.FullName);
+                string mailSubject = $"{model.FullName}, your work account is created, find login details";
+                mailService.SendMail(model.EMail, msg, mailSubject);
 
                 return RedirectToAction("HomeUserIndex", "Home");
             }
@@ -165,8 +165,11 @@ namespace TruckManagementWeb.Controllers
 
             if (user!=null && User.IsAdmin())
             {
+                HttpContext.Session.Remove("Notes");
                 return RedirectToAction("AdminHomeIndex", "Home", new {area="Admin"});
             }
+
+            HttpContext.Session.Remove("Notes");
 
             return Redirect(model.ReturnUrl ?? "~/Home/HomeUserIndex");
         }

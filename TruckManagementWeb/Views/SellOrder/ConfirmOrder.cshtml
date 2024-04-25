@@ -52,6 +52,16 @@
 
             </div>
         </div>
+        @if (Model.DeliveryDateTime != null)
+        {
+            <form asp-action="UploadFile" asp-controller="SellOrder" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="token" value="@Model.OrderGuid" />
+                <label for="file">Upload POD File:</label>
+                <input type="file" id="file" name="file" required accept=".pdf,.jpeg,.jpg">
+                <br />
+                <button type="submit" class="btn btn-primary">Upload File -  not implement </button>
+            </form>
+        }
 
     </div>
 </div>

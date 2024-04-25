@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.SoldOrder;
 
 namespace TruckManagementWeb.Controllers
 {
+    [Authorize(Roles = "Dispo, Manager")]
     public class SellOrderController : Controller
     {
         private readonly IMyEmailService mailService;
@@ -44,12 +46,13 @@ namespace TruckManagementWeb.Controllers
 
             int soldOrderId = await sellOrderService.AddSoldOrderAsync(formModel);
 
-            string confirmationUrl = Url.Action("ConfirmOrder", "SellOrder", new { token = formModel.OrderGuid }, Request.Scheme);
+            //string confirmationUrl = Url.Action("ConfirmOrder", "SellOrder", new { token = formModel.OrderGuid }, Request.Scheme);
+            string confirmationUrl = Url.Action("Index", "Link", new { token = formModel.OrderGuid }, Request.Scheme);
 
             string emailContent = $"Find your order clicking the following link: <a href=\"{confirmationUrl}\">Update Order</a>";
-            string emailTitle = $"Find Your Order details {formModel.LoadingTown} to {formModel.DeliveryTown}";
+            string mailSubject = $"Find Your Order details {formModel.LoadingTown} to {formModel.DeliveryTown}";
 
-            mailService.SendMail(formModel.ClientEmail, emailContent, emailTitle);
+            mailService.SendMail(formModel.ClientEmail, emailContent, mailSubject);
 
             return RedirectToAction(nameof(OrderDetails), new {id = soldOrderId });
         }
@@ -60,6 +63,7 @@ namespace TruckManagementWeb.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> ConfirmOrder(Guid token)
         {
@@ -67,6 +71,7 @@ namespace TruckManagementWeb.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> ConfirmLoading(Guid token, DateTime? loadingDate)
         {
@@ -87,6 +92,8 @@ namespace TruckManagementWeb.Controllers
 
             return RedirectToAction(nameof(ConfirmOrder), new { token = token });
         }
+
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> ConfirmDelivery(Guid token, DateTime deliveryDate)
         {
@@ -96,17 +103,29 @@ namespace TruckManagementWeb.Controllers
                 return NotFound();
             }
 
-
-            //if (!ModelState.IsValid)
-            //{
-            //    return View("ConfirmOrderDetails", order); 
-            //}
+            if (!ModelState.IsValid)
+            {
+                return View("ConfirmOrderDetails", order);
+            }
 
             order.LoadingDateTime = deliveryDate;
 
             await sellOrderService.AddDateAsync(token, deliveryDate, "delivered");
 
             return RedirectToAction(nameof(ConfirmOrder), new { token = token });
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> UploadFile(IFormFile file, Guid token)
+        {
+            if (file == null || file.Length == 0)
+            {
+                ModelState.AddModelError("file", "Please select a file to upload.");
+                return RedirectToAction("ConfirmOrder", new { token = token });
+            }
+
+            return RedirectToAction("ConfirmationPage");
         }
     }
 }
