@@ -11,7 +11,7 @@ namespace TruckManagementWeb.Core.Contracts
     {
         Task AddDateAsync(Guid token, DateTime? deliveryDate, string action);
         Task<int> AddSoldOrderAsync(SoldOrderFormModel formModel);
-        Task<SoldViewFomrModel> GetOrderByTokeAsync(Guid token);
+        Task<SoldViewFomrModel> GetOrderByTokenAsync(Guid token);
         Task<SoldViewFomrModel> GetSoldOrderByIdAsync(int id);
     }
 }

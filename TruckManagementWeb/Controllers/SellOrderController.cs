@@ -67,7 +67,7 @@ namespace TruckManagementWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> ConfirmOrder(Guid token)
         {
-            SoldViewFomrModel model = await sellOrderService.GetOrderByTokeAsync(token);
+            SoldViewFomrModel model = await sellOrderService.GetOrderByTokenAsync(token);
             return View(model);
         }
 
@@ -75,7 +75,7 @@ namespace TruckManagementWeb.Controllers
         [HttpPost]
         public async Task<IActionResult> ConfirmLoading(Guid token, DateTime? loadingDate)
         {
-            var order = await sellOrderService.GetOrderByTokeAsync(token);
+            var order = await sellOrderService.GetOrderByTokenAsync(token);
             if (order == null)
             {
                 return NotFound();
@@ -97,7 +97,7 @@ namespace TruckManagementWeb.Controllers
         [HttpPost]
         public async Task<IActionResult> ConfirmDelivery(Guid token, DateTime deliveryDate)
         {
-            var order = await sellOrderService.GetOrderByTokeAsync(token);
+            var order = await sellOrderService.GetOrderByTokenAsync(token);
             if (order == null)
             {
                 return NotFound();

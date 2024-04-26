@@ -67,7 +67,7 @@ namespace TruckManagementWeb.Core.Service
             return order.Id;
         }
 
-        public async Task<SoldViewFomrModel> GetOrderByTokeAsync(Guid token)
+        public async Task<SoldViewFomrModel> GetOrderByTokenAsync(Guid token)
         {
             SoldViewFomrModel result = await repository.AllAsync<SoldOrder>()
                  .Where(order => order.OrderGuid == token)
