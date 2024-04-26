@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using TruckManagementWeb.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Truck;
 
