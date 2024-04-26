@@ -163,9 +163,10 @@ namespace TruckManagementWeb.Controllers
             var identity = (ClaimsIdentity)User.Identity;
             identity.AddClaims(roleClaims);
 
+            HttpContext.Session.Remove("Notes");
+
             if (user!=null && User.IsAdmin())
             {
-                HttpContext.Session.Remove("Notes");
                 return RedirectToAction("AdminHomeIndex", "Home", new {area="Admin"});
             }
 
