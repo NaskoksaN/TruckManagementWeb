@@ -1,17 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Company;
 using TruckManagementWeb.Core.Models.SellOrder;
 using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Data;
 using TruckManagementWeb.Infrastructure.Data.Common;
-using TruckManagementWeb.Infrastructure.Data.Models;
 
 namespace TruckManagementWeb.UnitTest.UnitTest.Service
 {
