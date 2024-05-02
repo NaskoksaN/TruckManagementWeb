@@ -4,7 +4,7 @@ using static TruckManagementWeb.Core.Constants.MessageConstants;
 using static TruckManagementWeb.Core.Constants.ValidationConstants;
 using static TruckManagementWeb.Infrastructure.Constants.DataConstants;
 
-namespace TruckManagementWeb.Core.Models.SoldOrder
+namespace TruckManagementWeb.Core.Models.SellOrder
 {
     public  class SoldOrderFormModel
     {

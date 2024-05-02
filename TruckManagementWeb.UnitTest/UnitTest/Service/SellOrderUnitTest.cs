@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TruckManagementWeb.Core.Contracts;
 using TruckManagementWeb.Core.Models.Company;
-using TruckManagementWeb.Core.Models.SoldOrder;
+using TruckManagementWeb.Core.Models.SellOrder;
 using TruckManagementWeb.Core.Service;
 using TruckManagementWeb.Data;
 using TruckManagementWeb.Infrastructure.Data.Common;

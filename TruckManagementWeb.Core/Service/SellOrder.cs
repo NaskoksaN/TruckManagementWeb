@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using TruckManagementWeb.Core.Contracts;
-using TruckManagementWeb.Core.Models.SoldOrder;
+using TruckManagementWeb.Core.Models.SellOrder;
 using TruckManagementWeb.Infrastructure.Data.Common;
 using TruckManagementWeb.Infrastructure.Data.Models;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TruckManagementWeb.Core.Models.SoldOrder
+namespace TruckManagementWeb.Core.Models.SellOrder
 {
     public  class SoldViewFomrModel
     { 
