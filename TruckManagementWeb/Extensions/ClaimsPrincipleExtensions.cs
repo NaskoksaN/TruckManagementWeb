@@ -15,5 +15,10 @@ namespace TruckManagementWeb.Extensions
         {
             return user.IsInRole(AdminRole);
         }
+
+        public static bool IsManager(this ClaimsPrincipal user)
+        {
+            return user.IsInRole(ManagerRole);
+        }
     }
 }
