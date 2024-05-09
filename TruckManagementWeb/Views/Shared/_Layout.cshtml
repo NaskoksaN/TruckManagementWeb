@@ -57,6 +57,12 @@
                                     </div>
                                 </li>
                             }
+                            @if (User.Identity.IsAuthenticated && User.IsManager())
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="EnterSpeditionArea">Enter Spedition area</a>
+                                </li>
+                            }
                             <li class="nav-item dropdown">
                                 <div class="dropdown">
                                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -154,7 +160,7 @@
                                     </div>
                                 </li>
                             }
-                            @if (User.Identity.IsAuthenticated && User.IsInRole("Manager") || User.IsInRole("Dispo"))
+                            @if (User.Identity.IsAuthenticated &&  User.IsInRole("Dispo"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="SellOrder" asp-action="Create">Create and send order link</a>

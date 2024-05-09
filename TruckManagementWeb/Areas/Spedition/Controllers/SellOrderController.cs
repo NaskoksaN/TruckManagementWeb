@@ -5,8 +5,7 @@ using TruckManagementWeb.Core.Models.SellOrder;
 
 namespace TruckManagementWeb.Areas.Spedition.Controllers
 {
-    [Authorize(Roles = "Dispo, Manager")]
-    public class SellOrderController : Controller
+    public class SellOrderController : SpeditionBaseController
     {
         private readonly IMyEmailService mailService;
         private readonly ISellOrder sellOrderService;
@@ -46,7 +45,6 @@ namespace TruckManagementWeb.Areas.Spedition.Controllers
 
             int soldOrderId = await sellOrderService.AddSoldOrderAsync(formModel);
 
-            //string confirmationUrl = Url.Action("ConfirmOrder", "SellOrder", new { token = formModel.OrderGuid }, Request.Scheme);
             string confirmationUrl = Url.Action("Index", "Link", new { token = formModel.OrderGuid }, Request.Scheme);
 
             string emailContent = $"Find your order clicking the following link: <a href=\"{confirmationUrl}\">Update Order</a>";
@@ -57,6 +55,7 @@ namespace TruckManagementWeb.Areas.Spedition.Controllers
             return RedirectToAction(nameof(OrderDetails), new { id = soldOrderId });
         }
 
+        [HttpGet]
         public async Task<IActionResult> OrderDetails(int id)
         {
             SoldViewFomrModel model = await sellOrderService.GetSoldOrderByIdAsync(id);

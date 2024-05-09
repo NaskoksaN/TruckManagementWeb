@@ -64,6 +64,12 @@ namespace TruckManagementWeb.Controllers
             return RedirectToAction("AdminHomeIndex", "Home", new { area = "Admin" });
         }
 
+        [HttpGet]
+        public IActionResult EnterSpeditionArea()
+        {
+            return RedirectToAction("AdminHomeIndex", "Home", new { area = "Spedition" });
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddNotes(string notes)
         {
