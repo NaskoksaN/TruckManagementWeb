@@ -14,7 +14,7 @@
         <div class="col-md-6">
             <h6>Loading Date</h6>
             <div class="form-group">
-                <form asp-action="ConfirmLoading" asp-controller="SellOrder" method="post">
+                <form asp-area="Spedition" asp-action="ConfirmLoading" asp-controller="SellOrder" method="post">
                     @if (Model.LoadingDateTime == null)
                     {
                         <input type="hidden" name="token" value="@Model.OrderGuid" />
@@ -35,7 +35,7 @@
         <div class="col-md-6">
             <h6>Delivery Date</h6>
             <div class="form-group">
-                <form asp-action="ConfirmDelivery" asp-controller="SellOrder" method="post">
+                <form asp-area="Spedition" asp-action="ConfirmDelivery" asp-controller="SellOrder" method="post">
                     @if (Model.DeliveryDateTime == null)
                     {
                         <input type="hidden" name="token" value="@Model.OrderGuid" />
@@ -56,7 +56,7 @@
         </div>
         @if (Model.DeliveryDateTime != null)
         {
-            <form asp-action="UploadFile" asp-controller="SellOrder" method="post" enctype="multipart/form-data">
+            <form asp-area="Spedition" asp-action="UploadFile" asp-controller="SellOrder" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="token" value="@Model.OrderGuid" />
                 <label for="file">Upload POD File:</label>
                 <input type="file" id="file" name="file" required accept=".pdf,.jpeg,.jpg">
