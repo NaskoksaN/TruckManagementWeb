@@ -13,13 +13,13 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                @if (User.IsAdmin())
-                {
-                    <div class="navbar-collapse d-flex justify-content-between align-items-center">
+                <div class="navbar-collapse d-flex justify-content-between align-items-center">
+                    @if (User.IsManager())
+                    {
                         <a class="navbar-brand" asp-area="Spedition" asp-controller="Home" asp-action="QuitArea">QuitArea</a>
                         <partial name="_LoginPartial" />
-                    </div>
-                }
+                    }
+                </div>
             </div>
         </nav>
     </header>
