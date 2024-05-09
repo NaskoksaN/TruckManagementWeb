@@ -45,7 +45,7 @@ namespace TruckManagementWeb.Areas.Spedition.Controllers
 
             int soldOrderId = await sellOrderService.AddSoldOrderAsync(formModel);
 
-            string confirmationUrl = Url.Action("Index", "Link", new { token = formModel.OrderGuid }, Request.Scheme);
+            string confirmationUrl = Url.Action("Index", "EPod", new { area="", token = formModel.OrderGuid }, Request.Scheme);
 
             string emailContent = $"Find your order clicking the following link: <a href=\"{confirmationUrl}\">Update Order</a>";
             string mailSubject = $"Find Your Order details {formModel.LoadingTown} to {formModel.DeliveryTown}";
