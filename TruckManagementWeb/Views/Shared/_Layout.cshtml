@@ -160,12 +160,6 @@
                                     </div>
                                 </li>
                             }
-                            @if (User.Identity.IsAuthenticated &&  User.IsInRole("Dispo"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="SellOrder" asp-action="Create">Create and send order link</a>
-                                </li>
-                            }
                         } 
                     </ul>
                     <partial name="_LoginPartial" />

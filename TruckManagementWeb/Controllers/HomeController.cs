@@ -67,7 +67,7 @@ namespace TruckManagementWeb.Controllers
         [HttpGet]
         public IActionResult EnterSpeditionArea()
         {
-            return RedirectToAction("AdminHomeIndex", "Home", new { area = "Spedition" });
+            return RedirectToAction("SpeditionHomeIndex", "Home", new { area = "Spedition" });
         }
 
         [HttpPost]
