@@ -24,8 +24,8 @@ Database initial is seed with
 2.Email = "manager@truck.com", password = “a12345”
 3.Email = "dispo1@truck.com", password = “a12345”
 4.Email = "dispo2@truck.com", password = “a12345”
-For sending e-mails to new users login details is used Abv.bg, Username =webtruckfounder@abv.bg  , pass = “Aa@123456”
-4.Db is seed with 6 truck, 10 companies , 594 trips , 594 orders and 264 expense types.
+For sending e-mails to new users login details is used Abv.bg, Username =webtruckfounder@abv.bg  
+5.Db is seed with 6 truck, 10 companies , 594 trips , 594 orders and 264 expense types.
 
 ## Usage 
 1. Access the application in your web browser 
